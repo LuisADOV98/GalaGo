@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root{
+    --color1: #093a54;
+    --color2: #ffc9ce;
+    --color3: #cfe2eb;
+    --titulo: "Pattaya", sans-serif;
+}
+*{
+    font-size: 15px;
+    font-family:"Pavanam", sans-serif;
+}
+
