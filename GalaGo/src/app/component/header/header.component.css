@@ -1,5 +1,43 @@
+
 .navbar-brand {
   font-size: 24px;
   font-family: var(--titulo);
   color:var(--color1);
+
+  background: var(--AZUL-DEG, linear-gradient(180deg, rgba(7, 84, 124, 0.59) 0%, #093A54 100%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Pattaya;
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 29.9px */
+letter-spacing: 1.15px;
+
+}
+.nav-item1{
+  color:black;
+}
+
+.nav-item a{
+  color:var(--color1);
+}
+
+.navbar {
+  height: 44px;
+  width: 360px;
+}
+hr{
+  fill: #FFF;
+stroke-width: 1px;
+stroke: #FFC9CE;
+
+width: 135px;
+height: 0px;
+flex-shrink: 0;
+
 }

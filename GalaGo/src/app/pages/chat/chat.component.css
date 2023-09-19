@@ -1,3 +1,4 @@
-p{
-    color:var(--color2)
+.titulo{
+    background-color: var(--color2);
+    font-family:"Pavanam", sans-serif;
 }
