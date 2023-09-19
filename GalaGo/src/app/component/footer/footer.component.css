@@ -1,65 +1,22 @@
 .foo{
-    
+
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: 38;
-    width: 360px;
-    background-color: #cfe2eb;
-    padding: 20px;
-
-
-}
-.caja{
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    height: 44px;
+    width: 100%;
+    background-color: #cfe2eb;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
 }
-.caja div{
-    color: var(--color1);
-    font-size: 13px;
-}
-.logos{
+.info{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 95px;
-    gap: 20px;
+    gap: 70px;
 }
-.logo{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 95px;
-    gap: 2px;
-}
-.logo img{
-    height: 3vh;
-}
-.logo a{
+.info a{
     text-decoration: none;
-    font-size: 13px;
-    color: var(--color1);
+    color: var(--dark_blue);
 }
 
-
-@media screen and (max-width: 360px)
-{
-
-  
-    footer{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 10px;
-        font-size: 10px;
-        
-    }
-  
- 
-  
-
-
-} 
