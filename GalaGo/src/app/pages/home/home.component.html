@@ -1,1 +1,94 @@
-<p>home works!</p>
+<body>
+    <div class="home">
+        <h1 class="homeText">Home</h1>
+    </div>
+
+    <!-- ICONOS FILTRO -->
+    <div class="row1">
+        <!-- MUJER -->
+        <div class="icono1" [ngClass]="{'click': mujerActive}" (click)="filterMujer()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:mujerActive ? '#FFC9CE' : '#CFE2EB'}" />
+            </svg>
+            <img src="../../../assets/home-filtros/mujer.png" alt="" >
+            <p class="iconosText">Mujer</p>
+        </div>
+        
+        <!-- HOMBRE -->
+        <div class="icono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+            </svg>
+            <img src="../../../assets/home-filtros/hombre.png" alt="" >
+            <p class="iconosText">Hombre</p>
+        </div>
+
+        <!-- COMPLEMENTOS -->
+        <div class="icono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+            </svg>
+            <img src="../../../assets/home-filtros/complementos.png" alt="" >
+            <p class="iconosText">Complementos</p>
+        </div>
+    </div>
+ 
+    <div class="row2"> 
+        <!-- COMPLEMENTOS -->
+        <div class="icono1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+            </svg>
+            <img src="../../../assets/home-filtros/€.png" alt="" class="euro">
+            <p class="iconosText">Precio</p>
+        </div>
+
+        <!-- EVENTO -->
+        <div class="icono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- fill="#CFE2EB" -->
+            </svg>
+            <img src="../../../assets/home-filtros/eventos.png" alt="">
+            <p class="iconosText">Eventos</p>
+        </div>
+
+         <!-- UBICACIÓN -->
+         <div class="icono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+            </svg>
+            <img src="../../../assets/home-filtros/ubicacion.png" alt="">
+            <p class="iconosText">Ubicación</p>
+        </div>
+    </div>
+
+    <div>
+        <h1>Cards: </h1>
+        <ul>
+            <li *ngFor="let prenda of prendas">
+                <ng-container *ngIf="(!filtrado && !mujerActive) ; else soloMujer">
+                    Titulo: {{prenda.titulo}} 
+                    <br>Precio: {{prenda.precio}}
+                    <br>Evento: {{prenda.evento}}
+                    <br>Mujer: {{prenda.mujer}}
+                    <br>Hombre: {{prenda.hombre}}
+                    <br>Accesorio: {{prenda.accesorio}}
+                    <br>----------------------------
+                </ng-container>
+
+                <ng-template #soloMujer>
+                    <ng-container *ngIf="(prenda.mujer && mujerActive)">
+                        Titulo: {{prenda.titulo}} 
+                        <br>Precio: {{prenda.precio}}
+                        <br>Evento: {{prenda.evento}}
+                        <br>Mujer: {{prenda.mujer}}
+                        <br>----------------------------
+                    </ng-container>
+                </ng-template>
+                
+            </li>
+        </ul>
+    </div>
+   
+</body> 
