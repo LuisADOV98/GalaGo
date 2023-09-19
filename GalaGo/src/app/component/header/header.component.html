@@ -1,30 +1,3 @@
-<!-- <header>
-    <div class="logo">GalaGo!</div>
-    <nav>
-      
-        -<div class="menu" *ngIf="!this.userService.logueado; else logueado">-->
-        <!-- <div class="menu">
-        <ul> 
-          <li><a routerLink="/registro">Regístrate</a></li>
-            <li><a routerLink="/login">Iniciar Sesión</a></li>
-            <li><a routerLink="/quienes-somos" >¿Quiénes Somos?</a></li>
-          </ul>
-        </div> -->
-        <!-- <ng-template #logueado>
-          <ul>
-        <li><a routerLink="/publicar-prenda">Publicar</a></li>
-        <li><a routerLink="/chat">Chats</a></li>
-        <li><a >Favoritos</a></li>
-        <li><a routerLink="/perfil">Perfil</a></li>
-        <li><a >Cerrar Sesión</a></li>
-        <li><a routerLink="/contacta">¿Necesitas Ayuda?</a></li>
-      </ul>
-      </ng-template> -->
-     
-    <!-- </nav>
-  </header> -->
-
-
 
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
@@ -39,14 +12,20 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Regístrate</a>
+            <li class="nav-item1">
+              <a routerLink="/registro" class="nav-link active" aria-current="page" href="#">Regístrate</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Inicia Sesión</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="135" height="2" viewBox="0 0 135 2" fill="none">
+              <path d="M0 0.628296H135" stroke="#FFC9CE"/>
+            </svg>
+            <li class="nav-item1">
+              <a routerLink="/login" class="nav-link active" href="#">Inicia sesión</a>
             </li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="135" height="2" viewBox="0 0 135 2" fill="none">
+              <path d="M0 0.628296H135" stroke="#FFC9CE"/>
+            </svg>
             <li class="nav-item">
-              <a class="nav-link" href="#">¿Quiénes Somos?</a>
+              <a routerLink="/quienes-somos" class="nav-link" href="#">¿Quiénes Somos?</a>
             </li>
             
           </ul>
@@ -55,3 +34,4 @@
       </div>
     </div>
   </nav>
+
