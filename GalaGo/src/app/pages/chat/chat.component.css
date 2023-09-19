@@ -1,4 +1,5 @@
 .titulo{
-    background-color: var(--color2);
+    background: var(--pink);
     font-family:"Pavanam", sans-serif;
+    height: 40px;
 }

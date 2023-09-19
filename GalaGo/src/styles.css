@@ -5,10 +5,10 @@
 }
 
 :root{
-    --color1: #093a54;
-    --color2: #ffc9ce;
-    --color3: #cfe2eb;
-    --color4:white;
+    --dark_blue: #093a54;
+    --pink: #ffc9ce;
+    --ligth_blue: #cfe2eb;
+    --white:#ffffff;
     --titulo: "Pattaya", sans-serif;
 }
 *{
