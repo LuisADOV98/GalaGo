@@ -1,0 +1,109 @@
+.forms2{
+    margin-top: 20px;
+    gap:px;
+}
+.barra{
+    height: 44px;
+    width: 100%;
+    margin-top: 44px;
+    background-color: var(--pink);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.barra h1{
+    font-weight: lighter;
+    margin-top: 10px;
+}
+.btn{
+    background-color: var(--dark_blue);
+    color: var(--white);
+    width: 320px;
+}
+.col-12{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.form-select{
+    border: 1px solid var(--dark_blue);
+    width: 320px;
+}
+.col-md-3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.form-control{
+    border: 1px solid var(--dark_blue);
+    width: 320px;
+}
+.col-md-4{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.input-group{
+    color: 1px solid var(--dark_blue);
+    width: 320px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row{
+    margin-top: 1px;
+}
+
+.imagesUpload{
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.custum-file-upload {
+    height: 110px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--dark_blue);
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    /* box-shadow: 0px 48px 35px -48px #e8e8e8; */
+  }
+  
+  .custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .icon svg {
+    height: 80px;
+    fill: #e8e8e8;
+  }
+  
+  .custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custum-file-upload .text span {
+    font-weight: 400;
+    color: #e8e8e8;
+  }
+  
+  .custum-file-upload input {
+    display: none;
+  }

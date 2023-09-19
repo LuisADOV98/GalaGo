@@ -14,9 +14,9 @@ export class HomeComponent {
 
   constructor(){
     this.prendas = [
-      new Prenda("Uno", 10, "descip", "Alc", "nuevo","boda", false, false, true),
-      new Prenda("Dos", 20, "descip", "Mdr", "nuevo","boda", true, false, false),
-      new Prenda("Tres", 30, "descip", "Val", "nuevo","boda", false, true, false)
+      new Prenda("Uno", 10, "Descip", "Alc", "Nuevo","xs","Boda","Mujer"),
+      new Prenda("Dos", 20, "Descip", "Mdr", "Nuevo","xs","Boda","Hombre"),
+      new Prenda("Tres", 30, "Descip", "Val", "Nuevo","xs","Boda","Accesorio")
     ]
     console.log("filterMujer:",this.mujerActive);
   }
