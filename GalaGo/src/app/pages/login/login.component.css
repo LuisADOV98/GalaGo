@@ -1,0 +1,117 @@
+
+.padreSupremo{
+    background: linear-gradient(180deg, #FFACB7 0.01%, #93BFD3 100%);
+    /* background-color: #212121; */
+    /* background: url("C:\Users\juana\Downloads\azul 2.png"), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 360px;
+height: 800px;
+flex-shrink: 0;
+display: flex;
+    flex-direction: column;
+    
+}
+.padre{
+
+    display: flex;
+width: 360px;
+height: 194px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+}
+.foto{
+  width: 600px;
+  height: 800px;
+  background: url("https://s3-alpha-sig.figma.com/img/f6bd/3c95/5347aef8cb791f6ba2cc7253a0f3e3ba?Expires=1696204800&Signature=Vk~gb4hJ5-dWBSjvKs5-l3yCMRR4zP6IhLzIoacRaCUaliqso5ozrkQ9QUuFL0JEGapH8w-px1qwRC0U6spQF0kNeuwsXFE1T-O7ucv5Q9S3O-oEU182GynZUSw-o2h2jWvmM3nH9NlnUATtYjHcb8Uk4Z16~4HFPeL0VDJkqjvNbaKXOxSuhR6vrAgps-5jCOqaWtnngqHc6wsOUqPWqHYQdx3DXwXctf0cHiKS-WrHi2phhnXFZwTIRfnzzwDoTXW1zp8BQXnoajp-3JXO8sXXGIUgo83h0kySFC2vY57~fEVw1IUhy758PNjHfGfHxwCiWGaIOh5SvkGogY7Ntw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+  background-size: 600px;
+background-position-x: right;
+  background-repeat: no-repeat;
+}
+.hijo{
+
+color: var(--AZUL-LISO, #104967);
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: "Pattaya variant0", Tofu;
+font-size: 80px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%;
+}
+
+
+
+.feed-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-left: 27px;
+  }
+  .feed-form input {
+    
+    height: 54px;
+    border-radius: 5px;
+    /* background: rgb(216,179,193); background en mismo color, queda feo*/
+    /* background-color: white; backgroound en blanco*/
+    background: transparent;
+    margin-bottom: 15px;
+    border: 2px solid rgb(255, 255, 255); /* borde en negro
+    /* border: 2px solid rgb(255, 255, 255); borde en blanco */
+    /* border: 2px solid rgb(216,179,193); borde en mismo color */
+    padding: 0 20px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  
+  .button_submit:hover, .feed-form input:hover {
+    transform: scale(1.009);
+    box-shadow: 0px 0px 3px 0px #ffffff;
+    color: white;
+  } 
+  
+  .button_submit {
+    width: 100%;
+    height: 54px;
+    font-size: 14px;
+    color: white;
+    background: rgb(9, 58, 84);
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+
+
+
+.link {
+  
+  color: rgb(9,58,84);
+  text-decoration: none;
+}
+
+.signup-link {
+  align-self: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.signup-link .link {
+  font-weight: 400;
+}
+
+ .link:hover {
+  text-decoration: underline;
+}
