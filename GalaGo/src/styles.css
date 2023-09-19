@@ -5,11 +5,6 @@
     
 }
 
-body{
-    width: 360px;
-    height: 800px;
-    border: 1px black solid;
-}
 :root{
     --color1: #093a54;
     --color2: #ffc9ce;

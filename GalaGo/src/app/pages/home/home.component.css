@@ -1,12 +1,4 @@
-body{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    width: 360px;
-    height: 800px;
-    position: relative; 
-    /* border: 0.5px red solid; */
-}
+
 .home{
     margin-top: 53px; /**** CAMBIAR CON HEADER ****/
     width: 360px;
