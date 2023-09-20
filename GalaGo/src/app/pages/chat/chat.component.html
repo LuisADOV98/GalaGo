@@ -1,33 +1,19 @@
-<div class="padre">
-    <div class="titulo">Chats</div>
-    <div class = "conversacionAll">
-        <div class = "chat1">
-            <div class="usuario_foto">
-                <img src="./src/assets/imageneschat/vestido-fiesta-corto-verde-agua-drapeado-manga-2022-539x813 1.png" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
-                <p>Alberto</p>
-                <p>Traje Boda</p>
-            </div>
-            <div class ="hora">
-                <p>19:00</p>   
-            </div>
+<body>
+    <div class="contenido_Chat">
+        <div class="Chats">
+            <h1 class="chatsText">Chats</h1>
         </div>
-        <div class = "chat1">
-            <img src="./src/assets/imagenes/vestido-fiesta-corto-verde-agua-drapeado-manga-2022-539x813 1.png" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
-            <p>Marta</p>
-            <p>Traje Boda</p>
-            <p>19:00</p>
+        <div *ngIf = "chats.length >=1; else noChat" class="condicional_ngIf">
+           
+            <ng-container *ngFor="let chat of chats">
+                <br>
+                <app-tarjeta-chat [chat]="chat" [chats]="chats"></app-tarjeta-chat>
+            </ng-container>
         </div>
-        <div class = "chat1">
-            <img src="./src/assets/imagenes/vestido-fiesta-corto-verde-agua-drapeado-manga-2022-539x813 1.png" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
-            <p>Irene</p>
-            <p>Traje Boda</p>
-            <p>19:00</p>
-        </div>
-        <div class = "chat1">
-            <img src="./src/assets/imagenes/vestido-fiesta-corto-verde-agua-drapeado-manga-2022-539x813 1.png" class="card-img-top" style="width: 100%; max-height: 350px;" alt="...">
-            <p>Lorena</p>
-            <p>Traje Boda</p>
-            <p>19:00</p>
-        </div>
+                
+        <!--En caso que el array chats este vacío se deberá mostrar un mensaje indicándolo (haciendo
+        uso del *ngIf)-->
+        <ng-template #noChat >No hay chats en este momento</ng-template>
+ 
     </div>
-</div>
+</body>

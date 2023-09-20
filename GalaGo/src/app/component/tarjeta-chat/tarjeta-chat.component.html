@@ -1,1 +1,23 @@
-<p>tarjeta-chat works!</p>
+
+<div class="contenido_Chat">
+        <!-- <div class="card" style="width: 24rem;"> -->
+        <div class="card mb-3" style="max-width: 390px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{chat.foto}}" class="img-fluid rounded-start"style="width: 67px; max-height: 56px;" alt="...">
+                </div> 
+                <div class="col-md-8"> 
+                    <div class="card-body">
+                <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
+                        <br>
+                        <h5 class="card-title" style="color: #104967 ;">{{chat.nombre}}</h5>
+                        <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
+                        <p class="card-text" ><small class="text-body-secondary">{{chat.hora}}</small></p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+</div>
+

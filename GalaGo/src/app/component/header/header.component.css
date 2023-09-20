@@ -42,3 +42,11 @@ height: 0px;
 flex-shrink: 0;
 
 }
+/* Anula los estilos del icono del menú hamburguesa */
+.navbar-toggler-icon {
+  border: none !important;
+  box-shadow: none !important;
+  /* Otros estilos si es necesario */
+}
+
+

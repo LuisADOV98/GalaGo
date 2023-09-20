@@ -1,5 +1,38 @@
-.titulo{
-    background: var(--pink);
+body{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 390px;
+    height: 844px;
+    position: relative; 
+    /* border: 0.5px red solid; */
+}
+
+
+.Chats{
+    height: 44px;
+    width: 100%;
+    margin-top: 44px;
+    background-color: var(--pink);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.chatsText{
+    width: 86px;
+    height: 27px;
+    flex-shrink: 0;
+    /* TIPOGRAFÍA */
+    color: #000;
+    text-align: center; 
+    font-feature-settings: 'clig' off, 'liga' off;
     font-family:"Pavanam", sans-serif;
-    height: 40px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; 
+    letter-spacing: 1.2px;
 }
