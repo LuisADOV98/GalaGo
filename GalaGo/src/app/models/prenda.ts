@@ -7,16 +7,14 @@ export class Prenda {
     public evento: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
     public tipo: String //"Accesorio", "Mujer", "Hombre"
     public talla:String //"Unica","S","M","L","XL","XXL"
-
-    constructor(titulo:String,
+    constructor(titulo:string,
                 precio:number, 
-                descripcion:String,
-                ubicacion:String,
-                estado:String, 
-                talla:String,
-                evento?:String, 
-                tipo?:String){
-
+                descripcion:string,
+                ubicacion:string,
+                estado:string, 
+                talla:string,
+                evento?:string, 
+                tipo?:string){
                     this.titulo = titulo;
                     this.precio = precio;
                     this.descripcion = descripcion;
