@@ -2,21 +2,27 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 44px;
     width: 100%;
     background-color: #cfe2eb;
     padding: 20px;
-    position: fixed;
+    position: relative;
+    margin-top: 10px;
     bottom: 0;
 }
 .info{
     display: flex;
-    gap: 70px;
+    width: 100%;
+    gap: 106px;
+    align-items: center;
 }
 .info a{
     text-decoration: none;
     color: var(--dark_blue);
+    display: flex;
+    align-items: center;
+
 }
 
