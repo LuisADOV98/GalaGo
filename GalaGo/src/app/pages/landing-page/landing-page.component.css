@@ -47,6 +47,9 @@
 
 /* s22 ultra */
 @media screen and (min-width: 412px) {
+    .banner{
+        margin-top: 50px;
+    }
     .boton{
         height: 50px;
         width: 150px;
@@ -64,6 +67,7 @@
     
     .banner{
         height: 500px;
+        margin-top: 90px;
     }
     .boton{
         height: 60px;
@@ -84,6 +88,7 @@
     
     .banner{
         height: 580px;
+        margin-top: 90px;
     }
     .boton{
         height: 70px;
