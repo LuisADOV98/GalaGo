@@ -20,6 +20,7 @@ import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.compo
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
-  ],
+    FormsModule,ReactiveFormsModule,
+    CommonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

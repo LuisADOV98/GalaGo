@@ -1,94 +1,176 @@
-<body>
-    <div class="home">
-        <h1 class="homeText">Home</h1>
-    </div>
+<app-header></app-header>
 
+<div class="home">
+    <h1 class="homeText">Home</h1>
+</div>
+
+<div class="filtros ">
     <!-- ICONOS FILTRO -->
     <div class="row1">
         <!-- MUJER -->
-        <div class="icono1" [ngClass]="{'click': mujerActive}" (click)="filterMujer()">
+        <div class="icono" [ngClass]="{'click': mujerActive}" (click)="filterMujer()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <!-- Cambiará el color(fill) del circle cuando mujerActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
                 <circle cx="30" cy="30" r="30" [ngStyle]="{fill:mujerActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/mujer.png" alt="" >
             <p class="iconosText">Mujer</p>
         </div>
-        
+
         <!-- HOMBRE -->
-        <div class="icono">
+        <div class="icono" [ngClass]="{'click': hombreActive}" (click)="filterHombre()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- Cambiará el color(fill) del circle cuando hombreActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:hombreActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/hombre.png" alt="" >
             <p class="iconosText">Hombre</p>
         </div>
 
-        <!-- COMPLEMENTOS -->
-        <div class="icono">
+        <!-- ACCESORIOS -->
+        <div class="icono" [ngClass]="{'click': accesorioActive}" (click)="filterAccesorio()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- Cambiará el color(fill) del circle cuando accesorioActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:accesorioActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/complementos.png" alt="" >
-            <p class="iconosText">Complementos</p>
+            <p class="iconosText">Accesorios</p>
         </div>
     </div>
- 
+
     <div class="row2"> 
-        <!-- COMPLEMENTOS -->
-        <div class="icono1">
+        <!-- PRECIO -->
+        <div class="icono" [ngClass]="{'click': precioActive}" (click)="filterPrecio()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- Cambiará el color(fill) del circle cuando precioActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:precioActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/€.png" alt="" class="euro">
             <p class="iconosText">Precio</p>
         </div>
 
         <!-- EVENTO -->
-        <div class="icono">
+        <div class="icono" [ngClass]="{'click': eventoActive}" (click)="filterEvento()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- Cambiará el color(fill) del circle cuando eventoActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:eventoActive ? '#FFC9CE' : '#CFE2EB'}" />
                 <!-- fill="#CFE2EB" -->
             </svg>
             <img src="../../../assets/home-filtros/eventos.png" alt="">
             <p class="iconosText">Eventos</p>
         </div>
 
-         <!-- UBICACIÓN -->
-         <div class="icono">
+        <!-- UBICACIÓN -->
+        <div class="icono" [ngClass]="{'click': ubicacionActive}" (click)="filterUbicacion()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <circle cx="30" cy="30" r="30" fill="#CFE2EB"/>
+                <!-- Cambiará el color(fill) del circle cuando ubicacionActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
+                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:ubicacionActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/ubicacion.png" alt="">
             <p class="iconosText">Ubicación</p>
         </div>
     </div>
+</div>
 
-    <div>
-        <h1>Cards: </h1>
-        <ul>
-            <li *ngFor="let prenda of prendas">
-                <ng-container *ngIf="(!filtrado && !mujerActive) ; else soloMujer">
+<!-- SELECCIÓN DE TALLAS MUJER -->
+<div class="filtro" *ngIf="mujerActive">
+    <select class="form-select" #talla placeholder="Talla" (change)="tallaMujer(talla.value)">
+      <option selected disabled fill="#FFC9CE">Talla mujer...</option>
+      <ng-container *ngFor="let talla of arrTalla">
+          <option [value]="talla">
+              Talla mujer {{talla}} 
+          </option>
+      </ng-container>
+    </select>
+</div>
+
+<!-- SELECCIÓN DE TALLAS HOMBRE -->
+<div class="filtro" *ngIf="hombreActive">
+    <select class="form-select" #talla placeholder="Talla">
+      <option selected disabled fill="#FFC9CE">Talla hombre...</option>
+      <ng-container *ngFor="let talla of arrTalla">
+          <option value="">
+              Talla hombre {{talla}} 
+          </option>
+      </ng-container>
+    </select>
+</div>
+
+<!-- SELECCIÓN DE PRECIO -->
+<div class="div-precio" *ngIf="precioActive">
+    <div class="slide-padre">
+        <input type="range" min="0" max="500" class="slide-rango"[(ngModel)]="valorRango" #sliderInput (input)="actualizarValor()">
+        <!-- <span class="slider-value" #sliderValue>{{valorRango}}</span> -->
+
+        <div class="field">
+            <div class="value right">{{valorRango}}€</div>
+        </div>
+    </div>  
+
+    <!-- <script>
+        const slideValue = document.querySelector("span");
+        const inputSlider = document.querySelector("input");
+
+        inputSlider.oninput = (() =>{
+            let value = inputSlider.value;
+            slideValue.textContent = value;
+            slideValue.style.left = (value/5) + "%";
+            slideValue.classList.add("show");
+        });
+        inputSlider.onblur = (()=>{
+            slideValue.classList.remove("show");
+        });
+    </script> -->
+</div>
+
+<!-- SELECCIÓN DE EVENTOS -->
+<div class="filtro" *ngIf="eventoActive">
+    <select class="form-select" #evento placeholder="Tipo de evento">
+        <option selected disabled fill="#FFC9CE">Tipo de evento...</option>
+        <ng-container *ngFor="let evento of arrEvento">
+            <option value="">
+                Evento: {{evento}} 
+            </option>
+        </ng-container>
+      </select> 
+</div>
+
+<!-- SELECCIÓN DE UBICACIÓN -->
+<div class="filtro" *ngIf="ubicacionActive">
+    <select class="form-select" #evento placeholder="ubicacion">
+        <option selected disabled fill="#FFC9CE">Ubicación...</option>
+        <ng-container *ngFor="let provincia of arrUbicacion">
+            <option value="">
+                Provincia: {{provincia}} 
+            </option>
+        </ng-container>
+      </select> 
+</div>
+
+
+<div class="cards">
+ 
+        <!-- <ul>
+        <li *ngFor="let prenda of prendas">
+            <ng-container *ngIf="(!filtrado && !mujerActive) ; else soloMujer">
+                Titulo: {{prenda.titulo}} 
+                <br>Precio: {{prenda.precio}}
+                <br>Evento: {{prenda.evento}}
+                <br>Tipo: {{prenda.tipo}}
+                <hr>
+            </ng-container>
+
+                <ng-template #soloMujer>
+                <ng-container *ngIf="(mujerActive)">
                     Titulo: {{prenda.titulo}} 
                     <br>Precio: {{prenda.precio}}
                     <br>Evento: {{prenda.evento}}
-                    <br>Mujer: {{prenda.mujer}}
-                    <br>Hombre: {{prenda.hombre}}
-                    <br>Accesorio: {{prenda.accesorio}}
-                    <br>-------------------------------
+                    <br>Tipo: {{prenda.tipo}}
+                    <hr>
                 </ng-container>
-
-                <ng-template #soloMujer>
-                    <ng-container *ngIf="(prenda.mujer && mujerActive)">
-                        Titulo: {{prenda.titulo}} 
-                        <br>Precio: {{prenda.precio}}
-                        <br>Evento: {{prenda.evento}}
-                        <br>Mujer: {{prenda.mujer}}
-                        <br>----------------------------
-                    </ng-container>
-                </ng-template>
-                
-            </li>
-        </ul>
-    </div>
-   
-</body> 
+            </ng-template> 
+            
+        </li>
+    </ul> -->
+</div>
+<app-footer></app-footer>
