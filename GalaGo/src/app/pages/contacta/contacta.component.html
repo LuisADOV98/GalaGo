@@ -1,1 +1,39 @@
-<p>contacta works!</p>
+<app-header></app-header>
+
+<div class="contacta">
+    <h1 class="contactaTexto">Contacta con nosotros</h1>
+</div>
+
+<div class="galago">
+    <img src="../../../assets/galago/GalaGo.png" alt="">
+</div>
+
+<div class="formulario">
+    <h2>Mándanos un mensaje</h2>
+    <form (ngSubmit)="enviarMensaje()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" [(ngModel)]="mensaje" required></textarea>
+      </div>
+      <button type="submit" [disabled]="!nombre || !email || !mensaje">Enviar</button>
+    </form>
+  </div>
+
+  <!-- LINEA ROSA: -->
+  <div class="linea"></div> 
+  <!--  -->
+
+  <div class="footer">
+    <p>Teléfono</p>
+    <p>	📞 +34 623 23 23 21</p>
+    <p>Dirección</p>
+    <p>📌 Calle noseque</p>
+  </div>

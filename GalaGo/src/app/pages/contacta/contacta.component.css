@@ -1,0 +1,109 @@
+.contacta{
+    height: 44px;
+    width: 100%;
+    margin-top: 48px;
+    background-color: var(--pink);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contactaTexto{
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-top: 10px;
+}
+
+.galago{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 22px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    .formulario h2{
+        color: var(--dark_blue);
+        margin-top: 35px;
+        margin-bottom: 20px;
+        align-self: flex-start;
+        margin-left: 58px;
+    }
+
+/* contenedor del formulario */
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px; 
+    }
+    
+    /* elementos del formulario */
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+
+    label {
+        color: var(--dark_blue);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+    
+    
+    input[type="text"],
+    input[type="email"] {
+        border-radius: 6px;
+        border: 1px solid var(--ligth_blue);
+        background: #FFF;
+        width: 274px;
+        height: 42px;
+        flex-shrink: 0;
+    }
+    
+    textarea{
+        width: 274px;
+        height: 128px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        border: 1px solid #D1D5DB;
+        background: #FFF;
+    }
+
+    button{
+        width: 141px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        background: var(--dark_blue);
+        color: aliceblue;
+    }
+
+.linea {
+    border-top: 1px solid var(--pink);
+    height: 2px;
+    max-width: 275px;
+    padding: 0;
+    margin: 55px auto 0 auto;
+    }
+
+.footer{
+    margin-top: 10px;
+    margin-left: 58px;
+    color: #000;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
