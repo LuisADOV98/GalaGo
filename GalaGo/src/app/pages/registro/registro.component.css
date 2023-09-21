@@ -1,0 +1,129 @@
+.padreSupremo{
+/* background: linear-gradient(141deg, rgb(126, 189, 255) 4.01%, rgb(241,148,159), rgb(209,110,130)); */
+/* background: url("https://s3-alpha-sig.figma.com/img/70e1/b870/dcf048ae7ee70b5349529554c823aa29?Expires=1696204800&Signature=W-4Vbq6lGcdhGqmkR4D9Y4io8UPOOxNWf8IweIvpcASOirMHwnnzfzdIEfX1UptXzAkJDdaJcFV6P9b4Pxs9btabY~aP2ihfDkNvker0WtrEN8SNEoJk2CirSCGVPpQulDJEk4A0-vURJyT0TXgC7i0js-~ACZenYJGs2qMl5KWAYpcnbaNKNnsrNuYqXr5oDuH9ISAZy9YMkl5jnyjuHmfZB4GiKbxvy3Dh3bMVtMUO7inBvxS-VTiLS0r51y1aqxxA31Zk8pY7jpTFrNkOk0ofq6lPBWRYagm49Qvr-7xRx3HI~IfUmNucw~1WRGGxtLNrnKneIsgKrhg4YQtc2A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); */
+/* background: linear-gradient(141deg, rgba(154, 192, 211, 0.88) 12.01%, #EC8A98 58.68%, #FBA7B0 83.08%); */
+/* font-feature-settings: 'clig' off, 'liga' off; */
+    /* background-color: #212121; */
+    /* background: url("C:\Users\juana\Downloads\azul 2.png"), lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* position: fixed; */
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 390px;
+display: flex;
+    flex-direction: column;
+    
+    
+}
+.padre2{
+  position: absolute;
+  /* border: 2px solid red; */
+  height: 500px;
+}
+.padre{
+  /* border: 2px solid red; */
+    display: flex;
+width: 390px;
+height: 194px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+}
+.foto{
+    
+   width: 390px;
+  height:450px;
+  /* background: url("https://s3-alpha-sig.figma.com/img/70e1/b870/dcf048ae7ee70b5349529554c823aa29?Expires=1696204800&Signature=W-4Vbq6lGcdhGqmkR4D9Y4io8UPOOxNWf8IweIvpcASOirMHwnnzfzdIEfX1UptXzAkJDdaJcFV6P9b4Pxs9btabY~aP2ihfDkNvker0WtrEN8SNEoJk2CirSCGVPpQulDJEk4A0-vURJyT0TXgC7i0js-~ACZenYJGs2qMl5KWAYpcnbaNKNnsrNuYqXr5oDuH9ISAZy9YMkl5jnyjuHmfZB4GiKbxvy3Dh3bMVtMUO7inBvxS-VTiLS0r51y1aqxxA31Zk8pY7jpTFrNkOk0ofq6lPBWRYagm49Qvr-7xRx3HI~IfUmNucw~1WRGGxtLNrnKneIsgKrhg4YQtc2A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); */
+  /* background: url("");
+  background-size: 400px;
+background-position-x: right;
+  background-repeat: no-repeat; */
+}
+.foto2{
+    
+   width: 390px;
+  height:394px;
+  /* background: url("https://s3-alpha-sig.figma.com/img/70e1/b870/dcf048ae7ee70b5349529554c823aa29?Expires=1696204800&Signature=W-4Vbq6lGcdhGqmkR4D9Y4io8UPOOxNWf8IweIvpcASOirMHwnnzfzdIEfX1UptXzAkJDdaJcFV6P9b4Pxs9btabY~aP2ihfDkNvker0WtrEN8SNEoJk2CirSCGVPpQulDJEk4A0-vURJyT0TXgC7i0js-~ACZenYJGs2qMl5KWAYpcnbaNKNnsrNuYqXr5oDuH9ISAZy9YMkl5jnyjuHmfZB4GiKbxvy3Dh3bMVtMUO7inBvxS-VTiLS0r51y1aqxxA31Zk8pY7jpTFrNkOk0ofq6lPBWRYagm49Qvr-7xRx3HI~IfUmNucw~1WRGGxtLNrnKneIsgKrhg4YQtc2A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); */
+  /* background: url("");
+  background-size: 400px;
+background-position-x: right;
+  background-repeat: no-repeat; */
+}
+
+.hijo{
+   /* border: 2px solid red; */
+padding-top: 50px;
+color: var(--AZUL-LISO, #104967);
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: var(--titulo);
+font-size: 80px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%;
+margin-left: 20px
+}
+
+
+.feed-form {
+    /* border: 2px solid red; */
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-left: 27px;
+  }
+  .feed-form input {
+    /* position: fixed; */
+    width: 270px;
+    height: 30px;
+    border-radius: 5px;
+    /* background: rgb(216,179,193); background en mismo color, queda feo*/
+    /* background-color: white; backgroound en blanco*/
+    background: transparent;
+    margin-bottom: 15px;
+    border: 2px solid #104967; /* borde en negro
+    /* border: 2px solid rgb(255, 255, 255); borde en blanco */
+    /* border: 2px solid rgb(216,179,193); borde en mismo color */
+    padding: 0 20px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  
+  .button_submit:hover, .feed-form input:hover {
+    transform: scale(1.009);
+    box-shadow: 0px 0px 3px 0px #ffffff;
+    color: rgb(9,58,84);
+  } 
+  
+  .button_submit {
+    width: 270px;
+    height: 30px;
+    font-size: 14px;
+    color: white;
+    background: rgb(9, 58, 84);
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .section_form{
+    position: absolute;
+    /* border: 2px solid red; */
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 2px solid red; */
+    /* width: 330px; */
+    height: 400px;
+    border-radius: 5px;
+    background: rgba(255, 201, 206, 0.65);    
+  }
