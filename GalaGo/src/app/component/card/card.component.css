@@ -1,0 +1,159 @@
+.tarjeta {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: 233px;
+    font-size: 13px;
+    font-family: "Pavanam";
+    margin-left: 12px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  } 
+  
+    .foto {
+        position: absolute;
+        top: 13px;
+        left: -2px;
+        width: 175px;
+        height: 185px;
+        object-fit: cover;
+    }
+    
+    .texto {
+        top: 197.84px;
+        left: -2px;
+        /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); */
+    }
+  
+
+    .texto {
+        position: absolute;
+        width: 170px;
+        height: 36px;
+    } 
+  
+    .contenedor_texto {
+        position: absolute;
+        border: 0.2px solid rgba(58, 58, 58, 0.37);
+        width: 175px;
+        height: 36.16px;
+    }
+  
+  
+        .titulo {
+            display: flex;
+            align-items: center;
+            position: absolute; 
+            margin-top: 3px;
+            letter-spacing: 0.06em;
+            width: 108.28px;
+            height: 16.07px;
+            margin-left: 5px;
+            color: black;
+            font-weight: 500;
+        }
+        
+        .precio {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 18.16px;
+            left: 5px;
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            color: rgba(0, 0, 0, 0.7);
+            width: 38px;
+            height: 20px;
+        }
+        
+        
+        /* boton de uiverse: */
+        
+        .heart-container {
+            --heart-color: rgb(255, 91, 137);
+            position: absolute;
+            top: 10.89%;
+            left: 85%;
+            width: 16px;
+            height: 14.066px;
+            flex-shrink: 0;
+            transition: .3s;
+        }
+        
+        .heart-container .checkbox {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 20;
+            cursor: pointer;
+        }
+        
+        .heart-container .svg-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .heart-container .svg-outline,
+                .heart-container .svg-filled {
+            fill: var(--heart-color);
+            position: absolute;
+        }
+        
+        .heart-container .svg-filled {
+            animation: keyframes-svg-filled 1s;
+            display: none;
+        }
+        
+        .heart-container .svg-celebrate {
+            position: absolute;
+            animation: keyframes-svg-celebrate .5s;
+            animation-fill-mode: forwards;
+            display: none;
+            stroke: var(--heart-color);
+            fill: var(--heart-color);
+            stroke-width: 2px;
+        }
+        
+        .heart-container .checkbox:checked~.svg-container .svg-filled {
+            display: block
+        }
+        
+        .heart-container .checkbox:checked~.svg-container .svg-celebrate {
+            display: block
+        }
+        
+        @keyframes keyframes-svg-filled {
+            0% {
+            transform: scale(0);
+            }
+        
+            25% {
+            transform: scale(1.2);
+            }
+        
+            50% {
+            transform: scale(1);
+            filter: brightness(1.5);
+            }
+        }
+        
+        @keyframes keyframes-svg-celebrate {
+            0% {
+            transform: scale(0);
+            }
+        
+            50% {
+            opacity: 1;
+            filter: brightness(1.5);
+            }
+        
+            100% {
+            transform: scale(1.4);
+            opacity: 0;
+            display: none;
+            }
+        }
