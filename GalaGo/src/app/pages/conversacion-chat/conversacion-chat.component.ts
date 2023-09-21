@@ -73,6 +73,15 @@ mensajesrecibidos:any=[
     texto:"Si en Madrid, todo esta en la descripción",
   },
 ];
+
+// mensajes = [
+//   { id: 1, contenido: 'Mensaje 1', leido: false },
+//   { id: 2, contenido: 'Mensaje 2', leido: true },
+//   { id: 3, contenido: 'Mensaje 3', leido: false },
+// ];
+
+
+
 // constructor(private authService:AuthService){}
 constructor(){}
 ngOnInit(): void {
@@ -87,4 +96,12 @@ enviarMensaje(){
   console.log(this.nuevoMensaje);
   this.nuevoMensaje="";
 }
+
+// marcarComoNoLeido(mensajeId: number) {
+//   const mensaje = this.mensajes.find((m) => m.id === mensajeId);
+//   if (mensaje) {
+//     mensaje.leido = false;
+//   }
+// }
 }
+
