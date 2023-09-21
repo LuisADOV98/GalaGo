@@ -29,7 +29,7 @@ letter-spacing: 1.15px;
 
 .navbar {
   height: 44px;
-  width: 360px;
+  /* width: 360px; */
   position:absolute;
 }
 hr{

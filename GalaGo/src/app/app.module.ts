@@ -19,6 +19,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

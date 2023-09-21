@@ -5,7 +5,7 @@ export class Prenda {
     public ubicacion: String;//"Madrid","Barcelona","Badajoz","avila"
     public estado: String;//"Nuevo", "Semi nuevo","Usado"
     public evento: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public tipo: String //"Accesorio", "Mujer", "Hombre"
+    public tipo: String //"Mujer", "Hombre", "Accesorio"
     public talla:String //"Unica","S","M","L","XL","XXL"
 
     constructor(titulo:String,
