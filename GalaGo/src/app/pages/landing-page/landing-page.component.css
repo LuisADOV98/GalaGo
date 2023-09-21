@@ -16,6 +16,7 @@
     
 }
 
+
 .cardsContainer{
     
     height: auto;
@@ -38,10 +39,62 @@
     position: absolute;
 
 }
-
-
-
 .boton h1{
     color: var(--white);
     font-weight: lighter;
+}
+
+
+/* s22 ultra */
+@media screen and (min-width: 412px) {
+    .boton{
+        height: 50px;
+        width: 150px;
+        margin-top: 320px;
+    }
+
+    .slogan img{
+        height: 70px;
+        width: 250px;
+    }
+}
+
+/* ipad mini */
+@media screen and (min-width: 768px) {
+    
+    .banner{
+        height: 500px;
+    }
+    .boton{
+        height: 60px;
+        width: 240px;
+        margin-top: 462px;
+    }
+    .boton h1{
+        font-size: 40px;
+    }
+    .slogan img{
+        height: 90px;
+        width: 450px;
+    }
+}
+
+/* ipad air */
+@media screen and (min-width: 820px) {
+    
+    .banner{
+        height: 580px;
+    }
+    .boton{
+        height: 70px;
+        width: 250px;
+        margin-top: 542px;
+    }
+    .boton h1{
+        font-size: 40px;
+    }
+    .slogan img{
+        height: 100px;
+        width: 490px;
+    }
 }

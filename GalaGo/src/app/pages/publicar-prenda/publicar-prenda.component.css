@@ -13,6 +13,8 @@
 .barra h1{
     font-weight: lighter;
     margin-top: 10px;
+    font-size: 20px;
+    letter-spacing: 1.2px;
 }
 .form-group div p{
   height: 2px;
@@ -157,19 +159,19 @@
      .form-control{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
      }
      .form-select{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
      }
      .btn{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
        margin-bottom: 40px;
      }
@@ -178,7 +180,7 @@
      }
      .form-group div p{
       padding: 8px;
-      font-size: 30px;
+      font-size: 25px;
      }
      .barra{
       height: 80px;
@@ -228,26 +230,29 @@
      .form-control{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
      }
      .form-select{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
      }
      .btn{
       border: 2px solid var(--dark_blue);
        height: 60px;
-       font-size: 40px;
+       font-size: 30px;
        width: 600px;
        margin-bottom: 40px;
      }
      .formulario{
        gap: 10px;
      }
-
+     .form-group div p{
+      padding: 8px;
+      font-size: 25px;
+     }
      .barra{
       height: 80px;
       width: 100%;

@@ -19,9 +19,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { Prenda } from './models/prenda';
 
 const routes: Routes = [
-  // {path:"", component: LandingPageComponent},
-  {path:"", component: ConversacionChatComponent},
-
+  {path:"", component: LandingPageComponent},
   {path:"card", component: CardComponent},
   {path:"footer", component: FooterComponent},
   {path:"header", component: HeaderComponent},

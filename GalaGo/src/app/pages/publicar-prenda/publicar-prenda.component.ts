@@ -37,7 +37,6 @@ export class PublicarPrendaComponent {
       console.log(prendaForm.value);
       console.log(this.prenda);
       this.router.navigate(["/perfil"]);
-      
     }
 } 
 
