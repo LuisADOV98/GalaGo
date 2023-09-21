@@ -1,22 +1,29 @@
 export class Prenda {
-    public titulo: String;
-    public precio: number;
-    public descripcion: String; 
-    public ubicacion: String;//"Madrid","Barcelona","Badajoz","avila"
-    public estado: String;//"Nuevo", "Semi nuevo","Usado"
-    public evento: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public tipo: String //"Accesorio", "Mujer", "Hombre"
-    public talla:String //"Unica","S","M","L","XL","XXL"
+   
+    public titulo?: String;
+    public precio?: number;
+    public descripcion?: String; 
+    public ubicacion?: String;//"Madrid","Barcelona","Badajoz","avila"
+    public estado?: String;//"Nuevo", "Semi nuevo","Usado"
+    public evento?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
+    public tipo?: String //"Accesorio", "Mujer", "Hombre"
+    public talla?:String //"Unica","S","M","L","XL","XXL"
+    public imagen?: String
+    public id?: number;
 
-    constructor(titulo:String,
-                precio:number, 
-                descripcion:String,
-                ubicacion:String,
-                estado:String, 
-                talla:String,
+    constructor(
+                titulo?:String,
+                precio?:number,
+                descripcion?:String,
+                ubicacion?:String,
+                estado?:String, 
+                talla?:String,
                 evento?:String, 
-                tipo?:String){
+                tipo?:String,
+                imagen?: String,
+                id?:number,){
 
+                    
                     this.titulo = titulo;
                     this.precio = precio;
                     this.descripcion = descripcion;
@@ -24,7 +31,9 @@ export class Prenda {
                     this.estado = estado;
                     this.talla = talla;
                     this.evento = evento;
-                    this.tipo = tipo
+                    this.tipo = tipo;
+                    this.imagen = imagen;
+                    this.id = id;
 
     }
 
