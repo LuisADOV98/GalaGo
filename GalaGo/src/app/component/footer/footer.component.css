@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+   
     align-items: center;
     height: 44px;
     width: 100%;
@@ -13,16 +14,84 @@
     bottom: 0;
 }
 .info{
+    width: 100%;
     display: flex;
     width: 100%;
     gap: 106px;
+
+    justify-content: space-around;
     align-items: center;
+    gap: 70px;
+    margin-left: 0px;
+
 }
 .info a{
+    width: 50%;
     text-decoration: none;
     color: var(--dark_blue);
     display: flex;
     align-items: center;
 
 }
+.info p{
+    width: 50%;
+    color: var(--dark_blue);
+    align-items: center;
+    margin-top: 0px;
+}
 
+
+
+@media screen and (min-width: 412px)
+{
+.info{
+    width: 350px;
+    gap: 60px;
+    margin-right: -50px;
+}
+.info p{
+    font-size: 15px;
+    margin-top: 16px;
+}  
+.info a{
+    font-size: 15px;
+} 
+}
+@media screen and (min-width: 768px)
+{
+    .foo{
+        height: 80px;
+    }    
+    .info{
+        width: 670px;
+        gap: 150px;
+        margin-right: -80px;
+    }
+    .info a{
+        font-size: 26px;
+    }
+    .info p{
+        font-size: 26px;
+        margin-top: 20px;
+    
+    }    
+}
+
+@media screen and (min-width: 820px)
+{
+.foo{
+    height: 80px;
+}    
+.info{
+    width: 730px;
+    gap: 200px;
+    margin-right: -20px;
+}
+.info a{
+    font-size: 27px;
+}
+.info p{
+    font-size: 27px;
+    margin-top: 20px;
+}
+}

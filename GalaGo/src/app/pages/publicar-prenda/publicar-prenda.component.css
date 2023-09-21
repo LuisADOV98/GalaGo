@@ -150,6 +150,9 @@
       height: 50px;
       font-size: 30px;
     }
+    .barra{
+      margin-top: 50px;
+    }
    
    } 
 
@@ -185,7 +188,7 @@
      .barra{
       height: 80px;
       width: 100%;
-      margin-top: 44px;
+      margin-top: 90px;
       
   }
   
@@ -256,7 +259,7 @@
      .barra{
       height: 80px;
       width: 100%;
-      margin-top: 44px;
+      margin-top: 90px;
       
   }
   

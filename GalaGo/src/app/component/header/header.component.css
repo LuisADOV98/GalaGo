@@ -1,5 +1,7 @@
 
 .navbar-brand {
+  position: relative;
+  height: 44px;
   font-size: 24px;
   font-family: var(--titulo);
   color:var(--color1);
@@ -17,7 +19,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 130%; /* 29.9px */
 letter-spacing: 1.15px;
-
+margin-top: -5px;
 }
 .nav-item1{
   color:black;
@@ -46,7 +48,83 @@ flex-shrink: 0;
 .navbar-toggler-icon {
   border: none !important;
   box-shadow: none !important;
+ 
   /* Otros estilos si es necesario */
+}
+.navbar-toggler{
+  height: 32px;
+  margin-top: -12px;
+}
+.luis{
+  height: 44px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+@media screen and (min-width: 412px) {
+  .navbar{
+    height: 50px;
+  }
+  .luis{
+    height: 50px;
+  
+  }
+  .navbar-brand{
+    font-size: 28px;
+    margin-top: -12px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar{
+    height: 90px;
+    padding: 10px;
+  }
+   .navbar-brand{
+    margin-top: 10px;
+    font-size: 40px;
+    height: 90px;
+    width: 162px;
+  }
+  .navbar-toggler{
+    height: 55px;
+    width: 55px;
+    margin-top: -25px;
+  }
+  .navbar-toggler-icon{
+    height: 40px;
+    width: 30px;
+  }
+  .luis{
+    height: 90px;
+  }
 }
 
 
+@media screen and (min-width: 820px) {
+  .navbar{
+    height: 90px;
+    padding: 10px;
+  }
+   .navbar-brand{
+    margin-top: 0px;
+    font-size: 45px;
+    height: 90px;
+    width: 162px;
+  }
+  .navbar-toggler{
+    height: 55px;
+    width: 60px;
+    margin-top: -25px;
+  }
+  .navbar-toggler-icon{
+    height: 40px;
+    width: 33px;
+  }
+  .luis{
+    height: 90px;
+  }
+}
