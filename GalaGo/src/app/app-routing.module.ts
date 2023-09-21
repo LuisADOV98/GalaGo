@@ -20,8 +20,9 @@ import { Prenda } from './models/prenda';
 
 const routes: Routes = [
   // {path:"", component: LandingPageComponent},
-  {path:"", component: ConversacionChatComponent},
-
+  //{path:"", component: ConversacionChatComponent},
+  {path:"", component: LandingPageComponent},
+  
   {path:"card", component: CardComponent},
   {path:"footer", component: FooterComponent},
   {path:"header", component: HeaderComponent},
@@ -29,7 +30,7 @@ const routes: Routes = [
   {path:"chat", component: ChatComponent},
   {path:"contacta", component: ContactaComponent},
   {path:"conversacion-chat", component: ConversacionChatComponent},
-  {path:"detalle-prenda", component: DetallePrendaComponent},
+  {path:"detalle-prenda/:id", component: DetallePrendaComponent},
   {path:"editar-prenda", component: EditarPrendaComponent},
   {path:"home", component: HomeComponent},
   {path:"landing-page", component: LandingPageComponent},

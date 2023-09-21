@@ -116,7 +116,7 @@ export class CardComponent implements OnInit {
 
 
 //PARA DETALLE-CARD
-  verDetallePrenda(id:number){
+  public verDetallePrenda(id:number){
     /* detalle-prenda */
     this.router.navigate(['/detalle-prenda', id]);
   }
