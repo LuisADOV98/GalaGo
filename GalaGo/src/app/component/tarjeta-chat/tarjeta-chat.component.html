@@ -10,9 +10,9 @@
                     <div class="card-body">
                 <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
                         <br>
-                        <h5 class="card-title" style="color: #104967 ;">{{chat.nombre}}</h5>
+                        <h5  class="card-title" style="color: #104967 ;"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
                         <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
-                        <p class="card-text" ><small class="text-body-secondary">{{chat.hora}}</small></p>
+                        <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'21/09/2023 19:42' }}</small></p>
                         <hr>
                     </div>
                 </div>

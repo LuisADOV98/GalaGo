@@ -3,7 +3,19 @@
     <div class="contenido_Chat">
 
         <div class="Chats">
-            <h1 class="chatsText">Chats</h1>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a routerLink="/chat" class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                </ul>
+                
+            </nav>
+            <div><h1 class="chatsText">Chats</h1></div>
+            
         </div>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
@@ -15,6 +27,8 @@
         </nav>
         <div class="card-body">
             <div>
+                
+
                 <p *ngFor="let mensaje of mensajesenviados" class="enviado p-2" >
                     <!-- [ngClass]="(usuarioLogueado.uid==mensaje.emisor)? 'enviado':'recibido' "> -->
                         {{mensaje.texto}}

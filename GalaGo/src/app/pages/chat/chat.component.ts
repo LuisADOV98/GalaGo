@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { Chat } from 'src/app/models/chat';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  providers: [DatePipe],
 })
 export class ChatComponent {
   public chats: Chat[];
+  
   constructor(){
     this.chats = [
                 new Chat("../../../assets/imageneschat/userAlberto.png",'Alberto','Traje boda',new Date(2023, 8, 19)),
