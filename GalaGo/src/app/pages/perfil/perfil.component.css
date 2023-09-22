@@ -1,0 +1,107 @@
+.padre{
+    /* border: 2px solid red; */
+    margin-top: 50px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--rosa, #FFC9CE);
+    font-size: 1.3em;
+    }
+.padre2{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.separacion{
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.abajo{
+    display: flex;
+    justify-content: space-between;
+}
+/* .image{
+    border: 2px solid red;
+
+} */
+.foto{
+    padding-top: 10px;
+    padding-left: 5px;
+}
+.button{
+    background: transparent;
+    border: 4px solid white;
+}
+.user{
+    font-size: 1.7em;
+}
+
+.pestañas{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 20px;
+
+}
+.prenda{
+    /* border: 2px solid rebeccapurple; */
+    width: 48.4444444444444%;
+    height: 41px;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: var(--Azul-secundario, #CFE2EB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.favoritos{
+    width: 48.4444444444444%;
+    height: 41px;
+    font-size: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* background: var(--Azul-secundario, #CFE2EB); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carta{
+    position: fixed;
+    /* border: 2px solid rebeccapurple; */
+    width: 96.8888888888888%;
+    height: 477.345px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-left: 6px;
+    margin-right: 5px;
+    
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: var(--Azul-secundario, #CFE2EB);
+}
+
+.textoCarta{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 100%;
+    margin-right: 15px;
+}
+.tarjetas{
+    height: 100%;
+    /* border: 2px solid red; */
+
+    flex-wrap: wrap;
+
+}
