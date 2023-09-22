@@ -6,6 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+  isMisPrendasActive: boolean = true; // Inicialmente, Mis Prendas está activo
+  isFavoritosActive: boolean = false;
+  toggleTab(tab: string) {
+    if (tab === 'mis-prendas') {
+      this.isMisPrendasActive = true;
+      this.isFavoritosActive = false;
+    } else if (tab === 'favoritos') {
+      this.isMisPrendasActive = false;
+      this.isFavoritosActive = true;
+    }
+  }
   // ngOnInit(): void {
   //   this.verTodas();
   // }
