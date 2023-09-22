@@ -9,6 +9,14 @@
     flex-direction: column;
     align-items: center;
 }
+
+.boton{
+    width: 20px;
+    position: relative;
+    left: -177px;
+    margin-bottom: -60px;
+}
+
 .padre{
     display: flex;
     flex-direction: column;
@@ -32,7 +40,7 @@
 }
 
 .logo{
-    padding-top: 50px;
+    padding-top: 30px;
     color: var(--AZUL-LISO, #104967);
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
@@ -41,7 +49,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    margin-left: 20px
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .intro{
@@ -199,3 +208,169 @@ p{
     transform: scale(1.1);
    }
 
+   /* samsung s22 */
+   @media screen and (max-width: 412px ){
+    /* se adapta bien, no hago cambios */
+  }
+
+  /* Ipad mini */
+  @media screen and (min-width: 768px ){
+    .boton{
+        width: 30px;
+        left: -350px;
+    }
+    .logo{
+        padding-top: 20px;
+        font-size: 90px;
+        margin-bottom: 25px;
+    }
+    
+    .intro{
+        font-size: 30px;
+    }
+    p{
+        font-size: 19px;
+    }
+    
+    .gala{
+        font-size: 21px;
+    }
+   }
+
+   /* NOSOTROS */
+.row1, .row2{
+    gap: 15px;
+}
+.desc-padre{
+    gap: 15px;
+}
+/* TARJETA */
+.card {
+    width: 222px;
+    height: 182px;;
+   }
+.horizontal{
+    width: 222px;
+    height: 182px;
+}   
+   /*Image*/
+   .card-avatar {
+    margin-bottom: 0.5rem;
+   }
+   .card-avatar img{
+    width: 110px;
+    height: 110px;
+    }
+   
+   /*Card footer*/
+   .card-social{
+    gap: 19px;
+    width: 100%;
+   }
+   .card-social__item svg {
+    height: 22px;
+    width: 22px;
+   }
+   
+   /*Text*/
+   .card-title {
+    font-size: 22px;
+    margin-bottom: -2px;
+    margin-top: -2px;
+   }
+   
+   .card-subtitle {
+    font-size: 12px;
+   }
+   
+   /*Hover*/
+   .izq:hover{
+    transform:  scale(1.6) translateX(15%);
+   }
+   .izqV:hover{
+    transform:  scale(1.6) translateX(20%);
+   }
+   .der:hover{
+    transform:  scale(1.6) translateX(-15%);
+   }
+   .derV:hover{
+    transform:  scale(1.6) translateX(-20%);
+   }
+   .centro:hover{
+    transform:  scale(1.6);
+   }
+
+   /* ipad air */
+   @media screen and (min-width: 820px ){
+    
+    .intro{
+        font-size: 36px;
+        margin-top: -10px;
+    }
+    p{
+        font-size: 22px;
+    }
+    
+    .gala{
+        font-size: 24px;
+    }
+   }
+
+   /* NOSOTROS */
+.row1, .row2{
+    gap: 18px;
+}
+.desc-padre{
+    gap: 18px;
+}
+/* TARJETA */
+.card {
+    width: 242px;
+    height: 202px;
+   }
+ 
+   /*Image*/
+   .card-avatar {
+    margin-bottom: 0.5rem;
+   }
+   .card-avatar img{
+    width: 120px;
+    height: 120px;
+    }
+   
+   /*Card footer*/
+   .card-social{
+    gap: 19px;
+    width: 100%;
+   }
+   .card-social__item svg {
+    height: 22px;
+    width: 22px;
+   }
+   
+   /*Text*/
+   .card-title {
+    font-size: 25px;
+   }
+   
+   .card-subtitle {
+    font-size: 13px;
+   }
+   
+   /*Hover*/
+   .izq:hover{
+    transform:  scale(1.8) translateX(15%);
+   }
+   .izqV:hover{
+    transform:  scale(1.8) translateX(20%);
+   }
+   .der:hover{
+    transform:  scale(1.8) translateX(-15%);
+   }
+   .derV:hover{
+    transform:  scale(1.8) translateX(-20%);
+   }
+   .centro:hover{
+    transform:  scale(1.8);
+   }
+   
