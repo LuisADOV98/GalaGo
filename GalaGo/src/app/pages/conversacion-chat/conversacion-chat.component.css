@@ -27,10 +27,13 @@ body{
 } */
 
 .boton{
-    width: 20px;
-    position: relative;
-    left: -165px;
-    margin-bottom: -60px;
+ 
+        width: 20px;
+        margin-left: 10px;
+        margin-bottom: -40px;
+        margin-top:-20px;
+        /* border: 2px solid red; */
+
 }
 
 
@@ -81,6 +84,7 @@ div.container-fluid{
 
 .input-group-text{
     background-color: var(--pink);
+    margin-right: 60px;
 }
 .input-group-text:active{
    
