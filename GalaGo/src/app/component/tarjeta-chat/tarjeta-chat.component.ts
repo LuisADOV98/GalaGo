@@ -9,6 +9,7 @@ import { Chat } from 'src/app/models/chat';
 export class TarjetaChatComponent {
  //Para la comunicación PADRE-HIJO los decoradores @Input
  @Input() chat: Chat; 
+ public leido = false;
  
 
  ngOnInit():void{}

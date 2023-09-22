@@ -2,7 +2,7 @@ body{
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    width: 390px;
+    width: 100%;
     height: 844px;
     position: relative; 
     /* border: 0.5px red solid; */
@@ -10,6 +10,7 @@ body{
 
 
 .Chats{
+    
     height: 44px;
     width: 100%;
     margin-top: 44px;
@@ -21,11 +22,13 @@ body{
 }
 
 
-.chatsText{
-    width: 86px;
-    height: 27px;
+h1.chatsText{
+    /* width: 86px;
+    height: 27px; */
     flex-shrink: 0;
     /* TIPOGRAFÍA */
+    /* margin-left: 130px ; */
+    margin-top:10px;
     color: #000;
     text-align: center; 
     font-feature-settings: 'clig' off, 'liga' off;
@@ -35,4 +38,30 @@ body{
     font-weight: 400;
     line-height: 130%; 
     letter-spacing: 1.2px;
+}
+
+/* Samsung Galaxy S20 Ultra */
+@media screen and (max-width: 412px )
+{
+    body{
+    height: 800px;
+  }
+
+ } 
+
+ /* Ipad mini */
+ @media screen and (min-width: 768px )
+ {
+    body{
+        height: 800px;
+      }
+       
+}
+/* ipad air */
+@media screen and (min-width: 820px )
+{
+    body{
+        height: 800px;
+      }
+
 }
