@@ -1,23 +1,44 @@
 
-<div class="contenido_Chat">
+
+    <div class ="padre">
+        <img src="{{chat.foto}}" class="imagen" routerLink="/conversacion-chat" alt="...">
+        <br>
+        <div class ="column1">
+            <div class="row1">
+                <h5  class="card-title"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
+                <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'21/09/2023 19:42' }}</small></p>
+            </div>
+            <div class="row2">
+                <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="8" [ngStyle]="{fill:leido? '#FFF': '#104967'}"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
         <!-- <div class="card" style="width: 24rem;"> -->
-        <div class="card mb-3" style="max-width: 390px;">
+        <!-- <div class="card mb-3" style="max-width: 390px;">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="row">
                     <img src="{{chat.foto}}" class="img-fluid rounded-start"style="width: 67px; max-height: 56px;" alt="...">
                 </div> 
                 <div class="col-md-8"> 
-                    <div class="card-body">
+                    <div class="card-body"> -->
                 <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
-                        <br>
-                        <h5  class="card-title" style="color: #104967 ;"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
-                        <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
-                        <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'21/09/2023 19:42' }}</small></p>
-                        <hr>
+                        <!-- <br> -->
+                        <!-- <div class="row1">
+                            <h5  class="card-title" style="color: #104967 ;"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
+                            <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'21/09/2023 19:42' }}</small></p>
+                        </div>
+                        <div class="row2">
+                            <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
+                        </div> -->
+                        <!-- <hr>
                     </div>
                 </div>
             </div>
     
-        </div>
-</div>
+        </div> -->
+
 

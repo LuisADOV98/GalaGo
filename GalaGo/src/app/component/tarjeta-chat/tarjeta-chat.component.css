@@ -1,0 +1,97 @@
+.padre{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    /* border:2px red solid; */
+    gap:40px;
+}
+    .column1{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+    }
+        .row1,.row2{
+        display: flex;
+        justify-content: space-between;
+        /* border:2px red solid; */
+        margin-right: 30px;
+        font-size: 15px;
+        gap:5px;
+        }
+    .imagen{
+        /* border:2px red solid; */
+        margin-left: 30px;
+        /* style="width: 67px; max-height: 56px;"  */
+        width: 67px;
+        height: 56px;
+    }
+    svg{
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+    a{
+        text-decoration: none;
+        color:var(--dark_blue);
+    }
+
+/* Samsung Galaxy S20 Ultra */
+@media screen and (max-width: 412px )
+{
+    /* .Chats{
+        height: ;
+    } */
+    .padre{
+    height: 50px;
+    font-size: 30px;
+  }
+  .column1{
+    height: 50px;
+    font-size: 30px;
+  }
+ 
+ } 
+
+ /* Ipad mini */
+ @media screen and (min-width: 768px )
+ {
+   .padre{
+    height: 60px;
+    font-size: 30px;
+    width: 760px;
+  }
+
+  .column1{
+    height: 60px;
+    font-size: 30px;
+    width: 760px;
+  }
+   .imagen{
+    width:120px;
+    height:100px;
+   }
+       
+}
+/* ipad air */
+@media screen and (min-width: 820px )
+{
+    .padre{
+        height: 60px;
+        font-size: 30px;
+        width: 812px;
+      }
+    
+      .column1{
+        height: 60px;
+        font-size: 30px;
+        width: 812px;
+      }
+       .imagen{
+        width:120px;
+        height:100px;
+       }
+       .row1, .row2{
+        font-size: 50%;
+       }
+}
