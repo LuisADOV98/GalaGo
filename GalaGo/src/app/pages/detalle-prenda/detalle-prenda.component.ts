@@ -13,9 +13,10 @@ export class DetallePrendaComponent implements OnInit {
 
   id:any;
   prenda:Prenda;
-  router: any;
+  // router: any;
   constructor(private route: ActivatedRoute,
-    private location: Location){
+    private location: Location,
+    private router: Router){
 
   }
   ngOnInit(): void {
@@ -70,13 +71,13 @@ export class DetallePrendaComponent implements OnInit {
   }
 
 //para ir para atrás
-  navegarAtras():void {
+  public navegarAtras():void {
     this.location.back();
   }
 
 
-  public irChat(){
-    this.router.navigate(["/conversacion-chat"]);
+  public irChat(): void{
+    this.router.navigate(["/conversacion-chat"])
   }
 
 }
