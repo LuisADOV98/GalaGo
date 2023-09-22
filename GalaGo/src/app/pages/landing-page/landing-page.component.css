@@ -5,6 +5,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    width: 70%;
+    border: blue 2px solid;
 
     margin-top: 44px;
 

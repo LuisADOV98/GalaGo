@@ -18,11 +18,11 @@ export class HomeComponent{
   public ubicacionActive = false;
 
   public prendas: Prenda[];
-  public arrTipo: String[]
-  public arrTalla: String[]
-  public arrEvento: String[]
-  public arrEstado: String[]
-  public arrUbicacion: String[]
+  public arrTipo: String[];
+  public arrTalla: String[];
+  public arrEvento: String[];
+  public arrEstado: String[];
+  public arrUbicacion: String[];
 
   public selectedTallaMujer: String = "";
   public selectedTallaHombre: String = "";

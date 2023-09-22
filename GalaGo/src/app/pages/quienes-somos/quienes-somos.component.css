@@ -1,0 +1,375 @@
+.fondo{
+    background-image: url('../../../assets/quienesSomos/fondo2.png');
+    height: 95vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton{
+    width: 20px;
+    position: relative;
+    left: -177px;
+    margin-bottom: -60px;
+}
+
+.padre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+}
+
+.quienesSomos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    width: 97%;
+    height: 70vh;
+    border-radius: 5px;
+    background: rgba(255, 229, 233, 0.89);
+    position: relative;
+    z-index: 2;
+}
+
+.logo{
+    padding-top: 30px;
+    color: var(--AZUL-LISO, #104967);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: var(--titulo);
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.intro{
+    font-size: 20px;
+    font-family: Pavanam;
+    color: var(--AZUL-LISO, #104967);
+}
+p{
+    text-align: center;
+    width: 90%;
+    color: var(--AZUL-LISO, #104967);
+    text-align: center;
+    font-family: Pavanam;
+    font-size: 14px;
+}
+
+.gala{
+    text-align: center;
+    font-family: Pattaya;
+}
+
+/* NOSOTROS */
+.desc-padre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+.row1, .row2{
+    display: flex;
+    position: relative;
+    gap: 5px;
+}
+.desc-padre{
+    position: relative;
+    gap: 5px;
+}
+/* TARJETA */
+.card {
+    width: 120px;
+    height: 142px;
+    /* padding: 0.5rem 0.5rem; */
+    border-style: none;
+    border-radius: 0%;
+   
+    /* transition: box-shadow .3s ease, transform .2s ease; */
+   }
+.horizontal{
+    width: 182px;
+    height: 142px;
+}
+.rosa{
+    background: var(--pink);
+}
+.azul{
+    background: var(--ligth_blue);
+}
+   
+   .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease, opacity .2s ease;
+   }
+   
+   /*Image*/
+   .card-avatar {
+    margin-bottom: 0.4rem;
+   }
+   .card-avatar img{
+    width: 80px;
+    height: 80px;
+    
+    border-radius: 100px;
+   }
+   
+   /*Card footer*/
+   .card-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    opacity: 0;
+    transition: transform .2s ease, opacity .2s ease;
+   }
+   .cs-rosa{
+    background: var(--pink);
+   }
+   .cs-azul{
+    background: var(--ligth_blue);
+   }
+   .card-social__item {
+    list-style: none;
+   }
+   
+   .card-social__item svg {
+    height: 18px;
+    width: 18px;
+    fill: var(--dark_blue);
+    cursor: pointer;
+    transition: fill 0.2s ease ,transform 0.2s ease;
+   }
+   
+   /*Text*/
+   .card-title {
+    color: var(--dark_blue);
+    font-size: 14px;
+    margin-top: 0.2rem;
+    font-family: Pattaya;
+   }
+   
+   .card-subtitle {
+    color: #40667c;
+    font-size: 9px;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    box-shadow: 0 8px 50px #23232333;
+    z-index: 1000;
+   }
+   .izq:hover{
+    transform:  scale(1.3) translateX(15%);
+   }
+   .izqV:hover{
+    transform:  scale(1.6) translateX(20%);
+   }
+   .der:hover{
+    transform:  scale(1.3) translateX(-15%);
+   }
+   .derV:hover{
+    transform:  scale(1.6) translateX(-20%);
+   }
+   .centro:hover{
+    transform:  scale(1.6);
+   }
+   
+   
+   .card:hover .card-social {
+    /* transform: translateY(100%); */
+    opacity: 1;
+   }
+   
+   .card-social__item svg:hover {
+    fill: #232323;
+    transform: scale(1.1);
+   }
+   
+   .card-avatar:hover {
+    transform: scale(1.1);
+   }
+
+   /* samsung s22 */
+    /* se adapta bien, no hago cambios */
+
+
+  /* Ipad mini */
+  /* @media screen and (min-width: 768px ){ */
+    /* .boton{
+        width: 30px;
+        left: -350px;
+    }
+    .logo{
+        padding-top: 20px;
+        font-size: 90px;
+        margin-bottom: 25px;
+    }
+    
+    .intro{
+        font-size: 30px;
+    }
+    p{
+        font-size: 19px;
+    }
+    
+    .gala{
+        font-size: 21px;
+    }
+   } */
+
+   /* NOSOTROS */
+    /* .row1, .row2{
+        gap: 15px;
+    }
+    .desc-padre{
+        gap: 15px;
+    } */
+    /* TARJETA */
+    /* .card {
+        width: 222px;
+        height: 182px;;
+    }
+    .horizontal{
+        width: 222px;
+        height: 182px;
+    }    */
+   /*Image*/
+   /* .card-avatar {
+    margin-bottom: 0.5rem;
+   }
+   .card-avatar img{
+    width: 110px;
+    height: 110px;
+    } */
+   
+   /*Card footer*/
+   /* .card-social{
+    gap: 19px;
+    width: 100%;
+   }
+   .card-social__item svg {
+    height: 22px;
+    width: 22px;
+   } */
+   
+   /*Text*/
+   /* .card-title {
+    font-size: 22px;
+    margin-bottom: -2px;
+    margin-top: -2px;
+   }
+   
+   .card-subtitle {
+    font-size: 12px;
+   } */
+   
+   /*Hover*/
+   /* .izq:hover{
+    transform:  scale(1.6) translateX(15%);
+   }
+   .izqV:hover{
+    transform:  scale(1.6) translateX(20%);
+   }
+   .der:hover{
+    transform:  scale(1.6) translateX(-15%);
+   }
+   .derV:hover{
+    transform:  scale(1.6) translateX(-20%);
+   }
+   .centro:hover{
+    transform:  scale(1.6);
+   } */
+
+   /* ipad air */
+   /* @media screen and (min-width: 820px ){
+    
+    .intro{
+        font-size: 36px;
+        margin-top: -10px;
+    }
+    p{
+        font-size: 22px;
+    }
+    
+    .gala{
+        font-size: 24px;
+    }
+   } */
+
+   /* NOSOTROS */
+    /* .row1, .row2{
+        gap: 18px;
+    }
+    .desc-padre{
+        gap: 18px;
+    } */
+    /* TARJETA */
+    /* .card {
+        width: 242px;
+        height: 202px;
+    } */
+    
+   /*Image*/
+   /* .card-avatar {
+    margin-bottom: 0.5rem;
+   }
+   .card-avatar img{
+    width: 120px;
+    height: 120px;
+    } */
+   
+   /*Card footer*/
+   /* .card-social{
+    gap: 19px;
+    width: 100%;
+   }
+   .card-social__item svg {
+    height: 22px;
+    width: 22px;
+   } */
+   
+   /*Text*/
+   /* .card-title {
+    font-size: 25px;
+   }
+   
+   .card-subtitle {
+    font-size: 13px;
+   }
+    */
+   /*Hover*/
+   /* .izq:hover{
+    transform:  scale(1.8) translateX(15%);
+   }
+   .izqV:hover{
+    transform:  scale(1.8) translateX(20%);
+   }
+   .der:hover{
+    transform:  scale(1.8) translateX(-15%);
+   }
+   .derV:hover{
+    transform:  scale(1.8) translateX(-20%);
+   }
+   .centro:hover{
+    transform:  scale(1.8);
+   } */
+   
