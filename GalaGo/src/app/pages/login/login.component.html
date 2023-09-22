@@ -1,34 +1,77 @@
+<!-- <div class="padreSupremo">
+  <div class="padre2">
+    <div class="padre">
+      <h1 class="hijo">GalaGo</h1>
+    </div>
+    <section class="section_form">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="formulario">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" [(ngModel)]="user.email" #emailId="ngModel" [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+            <div *ngIf="userForm.controls.email?.invalid && (userForm.controls.email?.dirty || userForm.controls.email?.touched)"
+                class="invalid-feedback">
+                <div *ngIf="userForm.controls.email?.errors?.required">El email es obligatorio</div>
+                <div *ngIf="userForm.controls.email?.errors?.email">El email es incorrecto</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="user.password"
+                #passwordId="ngModel"
+                [ngClass]="{ 'is-invalid': userForm.controls.password?.invalid && (userForm.controls.password?.dirty || userForm.controls.password?.touched) }"
+                minlength="8" required>
+            <div *ngIf="userForm.controls.password?.invalid && (userForm.controls.password?.dirty || userForm.controls.password?.touched)"
+                class="invalid-feedback">
+                <div *ngIf="userForm.controls.password?.errors?.required">La contraseña es obligatoria</div>
+                <div *ngIf="userForm.controls.password?.errors?.minlength">La clave tiene que tener al menos 8 caracteres</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-danger btn-block" [disabled]="userForm.invalid">Submit</button>
+        </div>
+    </form>
+      <p class="signup-link">
+        ¿No tienes cuenta?
+        <a href="/registro" class="signup-link link">Regístrate</a>
+      </p>
+    </section>
+  </div>
+  <div class="foto">
+  </div>
+</div> -->
 <div class="padreSupremo">
-    <div class="padre2">
-  
-      <div class="padre">
-        <h1 class="hijo">GalaGo</h1>
-      </div>
-      <!-- <div class="fotito">
-        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSvlnHpeFGWDvFpQx_JgD32n9_P01ELrahFRwggDKBQFGlnRM7U" alt="" class="photo">
-      </div> -->
-      <!-- <div class="input-group">
-        <input required="" type="text" name="text" autocomplete="off" class="input">
-        <label class="user-label">First Name</label>
-        <input required="" type="text" name="text" autocomplete="off" class="input2">
-        <label class="user-label2">Second Name</label>
-      </div> -->
-      
-      <section class="section_form">
-        <form id="consultation-form" class="feed-form" action="#">
-          <input name="email" required="" placeholder="E-mail" type="email">
-          <input required="" placeholder="Password" type="password">
-          <button class="button_submit">LOGIN</button>
-        </form>
-        <p class="signup-link">
-          ¿No tienes cuenta?
-          <a href="/registro" class="signup-link link"> Registrate</a>
-        </p>
-        
-      </section>
+  <div class="padre2">
+    <div class="padre">
+      <h1 class="hijo">GalaGo</h1>
     </div>
+    <section class="section_form">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form">
+          <div class="form-group">
+             
+              <input type="email" name="email" placeholder="E-mail" class="form-control" [(ngModel)]="login.email" #emailId="ngModel" [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+              <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback">
+                  <div *ngIf="emailId.errors.required" class="email">El email es obligatorio</div>
+                  <div *ngIf="emailId.errors.email">El email es incorrecto</div>
+              </div>
+          </div>
+  </form>
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form">
+          <div class="form-group">
+              <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="login.password" #passwordId="ngModel" [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+              <div *ngIf="(passwordId.dirty ||passwordId.touched) && passwordId.invalid" class="invalid-feedback">
+                  <div *ngIf="passwordId.errors.required">La contraseña es obligatoria</div>
+                  <div *ngIf="passwordId.errors.minlength">La clave tiene que tener al menos 8 caracteres</div>
+              </div>
+          </div>
+          
+  </form>
+  <button class="button_submit">Login</button>
+  <p class="signup-link">
+    ¿No tienes cuenta?
+    <a href="/registro" class="signup-link link">Regístrate</a>
+  </p>
+    </section>
     <div class="foto">
-  
     </div>
     </div>
-    
+</div>

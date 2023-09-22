@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
-
+  // ngOnInit(): void {
+  //   this.verTodas();
+  // }
 }
