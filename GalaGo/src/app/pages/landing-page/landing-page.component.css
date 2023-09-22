@@ -5,9 +5,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 70%;
-    border: blue 2px solid;
-
+    width: 100%;
+   
     margin-top: 44px;
 
     position: relative;
@@ -60,7 +59,7 @@
 
     .slogan img{
         height: 70px;
-        width: 250px;
+        width: 285px;
     }
 }
 

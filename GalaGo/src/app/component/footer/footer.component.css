@@ -14,7 +14,7 @@
     bottom: 0;
 }
 .info{
-    width: 100%;
+    width: 340px;
     display: flex;
     width: 100%;
     gap: 106px;
@@ -23,10 +23,11 @@
     align-items: center;
     gap: 70px;
     margin-left: 0px;
+    height: 44px;
 
 }
 .info a{
-    width: 50%;
+    width: 220px;
     text-decoration: none;
     color: var(--dark_blue);
     display: flex;
@@ -37,7 +38,7 @@
     width: 50%;
     color: var(--dark_blue);
     align-items: center;
-    margin-top: 0px;
+    margin-top: 15px;
 }
 
 
@@ -69,6 +70,7 @@
     }
     .info a{
         font-size: 26px;
+        width: 280px;
     }
     .info p{
         font-size: 26px;
@@ -80,7 +82,9 @@
 @media screen and (min-width: 820px)
 {
 .foo{
+    margin-top: 30px;
     height: 80px;
+    width: 100%;
 }    
 .info{
     width: 730px;
@@ -89,9 +93,16 @@
 }
 .info a{
     font-size: 27px;
+    width: 300px;
 }
 .info p{
+    width: 300px;
     font-size: 27px;
     margin-top: 20px;
+    width: 200px;
+    margin-right: 28px;
 }
 }
+
+
+
