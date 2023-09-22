@@ -70,7 +70,7 @@
   }
   
   
-  .feed-form {
+  .myForm {
       /* border: 2px solid red; */
       /* position: fixed; */
       display: flex;
@@ -78,7 +78,7 @@
       width: 300px;
       margin-left: 27px;
     }
-    .feed-form input {
+    .myForm input {
       /* position: fixed; */
       width: 270px;
       height: 30px;
@@ -86,17 +86,16 @@
       /* background: rgb(216,179,193); background en mismo color, queda feo*/
       /* background-color: white; backgroound en blanco*/
       background: transparent;
-      margin-bottom: 15px;
+      margin-bottom: 9px;
       border: 2px solid #104967; /* borde en negro
       /* border: 2px solid rgb(255, 255, 255); borde en blanco */
       /* border: 2px solid rgb(216,179,193); borde en mismo color */
-      padding: 0 20px;
       font-weight: 300;
       font-size: 14px;
     }
   
     
-    .button_submit:hover, .feed-form input:hover {
+    .button_submit:hover, .myForm input:hover {
       transform: scale(1.009);
       box-shadow: 0px 0px 3px 0px #ffffff;
     } 

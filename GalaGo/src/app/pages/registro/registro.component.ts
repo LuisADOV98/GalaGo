@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -9,12 +9,38 @@ import { User } from 'src/app/models/user';
 })
 
 export class RegistroComponent {
-  public register: User
-constructor(){
-  this.register =new User()
-}
-  onSubmit(form: NgForm) {
-    console.log(form.value);
-    console.log(this.register);
+  // public register: User
+  public myForm: FormGroup
+  constructor(private formBuilder: FormBuilder){
+    this.buildForm();
+  }
+  // onSubmit(form: NgForm) {
+  //   console.log(form.value);
+  //   console.log(this.register);
+  // }
+  public register(){
+    const user =this.myForm.value;
+    console.log(user);
+    
+  }
+  private buildForm(){
+    const minPassLength = 8;
+    this.myForm = this.formBuilder.group({
+      nombre: [, Validators.required],
+      apellido: [, Validators.required],
+      email: [, [Validators.required, Validators.email]],
+      url: [, Validators.required],
+      password: [, [Validators.required, Validators.minLength(minPassLength)]],
+      password2: [, [Validators.required, this.checkPassword]],
+
+    })
+  }
+  private checkPassword(control: AbstractControl){
+    let resultado = {matchPassword: true};
+
+
+    if (control.parent?.value.password == control.value)
+    resultado = null;
+  return resultado;
   }
 }
