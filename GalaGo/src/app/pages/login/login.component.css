@@ -1,4 +1,10 @@
+.boton{
+  width: 20px;
 
+  margin-left: 10px;
+  margin-bottom: -40px;
+  /* border: 2px solid red; */
+}
 .padreSupremo{
 
   background: linear-gradient(180deg, #FFACB7 0.01%, #93BFD3 100%);

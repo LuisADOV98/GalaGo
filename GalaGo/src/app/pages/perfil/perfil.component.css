@@ -2,6 +2,7 @@
     /* border: 2px solid red; */
     margin-top: 50px;
     height: 48px;
+    width: 390px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +54,7 @@
 }
 .prenda{
     /* border: 2px solid rebeccapurple; */
-    width: 48.4444444444444%;
+    width: 48.4%;
     height: 41px;
     font-size: 20px;
     border-top-left-radius: 5px;
@@ -62,10 +63,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-decoration: none;
+    color: black;
 }
 .favoritos{
-    width: 48.4444444444444%;
+    width: 48.4%;
     height: 41px;
     font-size: 20px;
     border-top-left-radius: 5px;
@@ -74,6 +76,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: black;
+
 }
 .carta{
     position: fixed;

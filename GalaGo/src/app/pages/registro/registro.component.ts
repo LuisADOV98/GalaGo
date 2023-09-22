@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -11,7 +12,7 @@ import { User } from 'src/app/models/user';
 export class RegistroComponent {
   // public register: User
   public myForm: FormGroup
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder, private route: Router){
     this.buildForm();
   }
   // onSubmit(form: NgForm) {
@@ -21,7 +22,7 @@ export class RegistroComponent {
   public register(){
     const user =this.myForm.value;
     console.log(user);
-    
+    this.route.navigate(['/login']);
   }
   private buildForm(){
     const minPassLength = 8;

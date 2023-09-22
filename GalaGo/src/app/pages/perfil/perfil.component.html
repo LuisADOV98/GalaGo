@@ -22,12 +22,14 @@
 </section>
 </section>
 <section class="pestañas">
-    <div class="prenda">
+    <!-- <div class="prenda">
         Mis Prendas
-    </div>
-    <div class="favoritos">
+    </div> -->
+    <a routerLink="/perfil" [ngClass]="{ 'active': isMisPrendasActive }" (click)="toggleTab('mis-prendas')" class="prenda">Mis Prendas</a>
+    <!-- <div class="favoritos">
         Favoritos
-    </div>
+    </div> -->
+    <a routerLink="/favoritos" [ngClass]="{ 'active': isFavoritosActive }" (click)="toggleTab('favoritos')" class="favoritos">Favoritos</a>
 </section>
 <section class="carta">
     <div class="textoCarta">

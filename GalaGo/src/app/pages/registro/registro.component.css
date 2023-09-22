@@ -1,3 +1,10 @@
+.boton{
+  width: 20px;
+
+  margin-left: 10px;
+  margin-bottom: -40px;
+  /* border: 2px solid red; */
+}
 .padreSupremo{
   /* background: linear-gradient(141deg, rgb(126, 189, 255) 4.01%, rgb(241,148,159), rgb(209,110,130)); */
   /* background: url("https://s3-alpha-sig.figma.com/img/70e1/b870/dcf048ae7ee70b5349529554c823aa29?Expires=1696204800&Signature=W-4Vbq6lGcdhGqmkR4D9Y4io8UPOOxNWf8IweIvpcASOirMHwnnzfzdIEfX1UptXzAkJDdaJcFV6P9b4Pxs9btabY~aP2ihfDkNvker0WtrEN8SNEoJk2CirSCGVPpQulDJEk4A0-vURJyT0TXgC7i0js-~ACZenYJGs2qMl5KWAYpcnbaNKNnsrNuYqXr5oDuH9ISAZy9YMkl5jnyjuHmfZB4GiKbxvy3Dh3bMVtMUO7inBvxS-VTiLS0r51y1aqxxA31Zk8pY7jpTFrNkOk0ofq6lPBWRYagm49Qvr-7xRx3HI~IfUmNucw~1WRGGxtLNrnKneIsgKrhg4YQtc2A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"); */
@@ -77,6 +84,7 @@
       flex-direction: column;
       width: 300px;
       margin-left: 27px;
+      overflow-y: auto;
     }
     .myForm input {
       /* position: fixed; */
@@ -86,7 +94,7 @@
       /* background: rgb(216,179,193); background en mismo color, queda feo*/
       /* background-color: white; backgroound en blanco*/
       background: transparent;
-      margin-bottom: 9px;
+      margin-bottom: 10px;
       border: 2px solid #104967; /* borde en negro
       /* border: 2px solid rgb(255, 255, 255); borde en blanco */
       /* border: 2px solid rgb(216,179,193); borde en mismo color */
@@ -96,7 +104,6 @@
   
     
     .button_submit:hover, .myForm input:hover {
-      transform: scale(1.009);
       box-shadow: 0px 0px 3px 0px #ffffff;
     } 
     
@@ -122,7 +129,11 @@
       justify-content: center;
       /* border: 2px solid red; */
       /* width: 330px; */
-      height: 400px;
+      height: 360px;
       border-radius: 5px;
       background: rgba(255, 201, 206, 0.65);    
+    }
+    .texto{
+      /* border: 2px solid red; */
+      height: 5px;
     }
