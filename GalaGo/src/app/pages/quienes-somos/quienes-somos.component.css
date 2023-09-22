@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: -10px;
 }
 
 .boton{
@@ -214,7 +215,7 @@ p{
   }
 
   /* Ipad mini */
-  @media screen and (min-width: 768px ){
+  /* @media screen and (min-width: 768px ){
     .boton{
         width: 30px;
         left: -350px;
@@ -237,14 +238,15 @@ p{
     }
    }
 
-   /* NOSOTROS */
+
 .row1, .row2{
     gap: 15px;
 }
 .desc-padre{
     gap: 15px;
 }
-/* TARJETA */
+
+
 .card {
     width: 222px;
     height: 182px;;
@@ -253,7 +255,7 @@ p{
     width: 222px;
     height: 182px;
 }   
-   /*Image*/
+
    .card-avatar {
     margin-bottom: 0.5rem;
    }
@@ -262,7 +264,7 @@ p{
     height: 110px;
     }
    
-   /*Card footer*/
+
    .card-social{
     gap: 19px;
     width: 100%;
@@ -272,7 +274,7 @@ p{
     width: 22px;
    }
    
-   /*Text*/
+
    .card-title {
     font-size: 22px;
     margin-bottom: -2px;
@@ -283,7 +285,7 @@ p{
     font-size: 12px;
    }
    
-   /*Hover*/
+
    .izq:hover{
     transform:  scale(1.6) translateX(15%);
    }
@@ -298,10 +300,10 @@ p{
    }
    .centro:hover{
     transform:  scale(1.6);
-   }
+   } */
 
    /* ipad air */
-   @media screen and (min-width: 820px ){
+   /* @media screen and (min-width: 820px ){
     
     .intro{
         font-size: 36px;
@@ -316,20 +318,21 @@ p{
     }
    }
 
-   /* NOSOTROS */
-.row1, .row2{
-    gap: 18px;
-}
-.desc-padre{
-    gap: 18px;
-}
-/* TARJETA */
-.card {
+
+    .row1, .row2{
+        gap: 18px;
+    }
+    .desc-padre{
+        gap: 18px;
+    }
+
+
+    .card {
     width: 242px;
     height: 202px;
    }
  
-   /*Image*/
+
    .card-avatar {
     margin-bottom: 0.5rem;
    }
@@ -338,7 +341,7 @@ p{
     height: 120px;
     }
    
-   /*Card footer*/
+
    .card-social{
     gap: 19px;
     width: 100%;
@@ -348,7 +351,7 @@ p{
     width: 22px;
    }
    
-   /*Text*/
+ 
    .card-title {
     font-size: 25px;
    }
@@ -357,7 +360,7 @@ p{
     font-size: 13px;
    }
    
-   /*Hover*/
+  
    .izq:hover{
     transform:  scale(1.8) translateX(15%);
    }
@@ -372,5 +375,5 @@ p{
    }
    .centro:hover{
     transform:  scale(1.8);
-   }
+   } */
    
