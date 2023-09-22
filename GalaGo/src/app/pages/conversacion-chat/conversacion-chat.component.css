@@ -15,16 +15,24 @@ body{
     height: 35px;
 }
 
-.page-link{
-    /* border:10px solid rgb(174, 255, 0);
-    border-radius: 14px; */
+/* .page-link{
+    border:10px solid rgb(174, 255, 0);
+    border-radius: 14px;
     margin-top: 2px;
     margin-right: 235px;
     background-color: var(--pink);
     border-color: var(--white);
     height: 30px;
     width: 30px;
+} */
+
+.boton{
+    width: 20px;
+    position: relative;
+    left: -165px;
+    margin-bottom: -60px;
 }
+
 
 .Chats{
     height: 44px;
@@ -124,11 +132,7 @@ img.d-inline-block.align-text-top{
 @media screen and (max-width: 412px )
 {
   
-    .page-link{
-        height: 50px;
-        width: 40px;
-        margin-top: 3px;
-    }
+   
     div.container-fluid{
         height: 40px;
         display: flex;
@@ -186,11 +190,7 @@ img.d-inline-block.align-text-top{
         width: 100px;
         margin-right: 2px;
     }
-    .page-link{
-        height: 50px;
-        width: 40px;
-        margin-top: 3px;
-    }
+   
     
     input.form-control.ng-untouched.ng-pristine.ng-valid{
         margin-top: 30px;
@@ -241,11 +241,7 @@ img.d-inline-block.align-text-top{
         height: 80px;
         width: 100px;
     }
-    .page-link{
-        height: 50px;
-        width: 40px;
-        margin-top: 3px;
-    }
+   
     input.form-control.ng-untouched.ng-pristine.ng-valid{
         margin-top: 165px;
     }
