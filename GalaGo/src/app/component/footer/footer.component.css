@@ -8,20 +8,21 @@
     width: 100%;
     background-color: #cfe2eb;
     padding: 20px;
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    margin-top: 10px;
 }
 .info{
-    width: 100%;
+    width: 340px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 70px;
     margin-left: 0px;
+    height: 44px;
 
 }
 .info a{
-    width: 50%;
+    width: 220px;
     text-decoration: none;
     color: var(--dark_blue);
 }
@@ -29,7 +30,7 @@
     width: 50%;
     color: var(--dark_blue);
     align-items: center;
-    margin-top: 0px;
+    margin-top: 15px;
 }
 
 
@@ -55,33 +56,45 @@
     }    
     .info{
         width: 100%;
-        gap: 210px;
-        margin-right: -97px;
+        gap: 30px;
+        margin-right: -10px;
     }
     .info a{
         font-size: 26px;
+        width: 280px;
     }
     .info p{
         font-size: 26px;
         margin-top: 20px;
+        width: 200px;
     }    
 }
 
 @media screen and (min-width: 820px)
 {
 .foo{
+    margin-top: 30px;
     height: 80px;
+    width: 100%;
 }    
 .info{
-    width: 100%;
-    gap: 220px;
-    margin-right: -100px;
+    width: 750px;
+    gap: 110px;
+    margin-right: -50px;
+    height: 80px;
 }
 .info a{
     font-size: 27px;
+    width: 300px;
 }
 .info p{
+    width: 300px;
     font-size: 27px;
     margin-top: 20px;
+    width: 200px;
+    margin-right: 28px;
 }
 }
+
+
+
