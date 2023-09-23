@@ -29,7 +29,7 @@ export class HomeComponent{
   public selectedEvento: String = "";
   public selectedUbicacion: String = ""; 
   public valorRango: number = 0;
-  public valorGlobo: number = 0;
+  // public valorGlobo: number = 0;
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
