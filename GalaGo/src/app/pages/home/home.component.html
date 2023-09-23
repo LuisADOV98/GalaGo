@@ -86,7 +86,7 @@
 
 <!-- SELECCIÓN DE TALLAS HOMBRE -->
 <div class="filtro" *ngIf="hombreActive">
-    <select class="form-select" #talla placeholder="Talla">
+    <select class="form-select" #talla placeholder="Talla" (change)="tallaHombre(talla.value)">
       <option selected disabled fill="#FFC9CE">Talla hombre...</option>
       <ng-container *ngFor="let talla of arrTalla">
           <option value="">

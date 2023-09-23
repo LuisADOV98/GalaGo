@@ -9,7 +9,6 @@ import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  
  
   respuesta:Prenda[] = [];
 
