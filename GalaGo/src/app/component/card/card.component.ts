@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
@@ -9,7 +9,6 @@ import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  
  
   respuesta:Prenda[] = [];
 
@@ -44,7 +43,7 @@ export class CardComponent implements OnInit {
     this.groupedItems.push(this.respuesta.slice(i, i+2))
    } */
 
-   this.verTodas();
+  //  this.verTodas();
   }
 
   // constructor(public perfil: PerfilComponent) {}

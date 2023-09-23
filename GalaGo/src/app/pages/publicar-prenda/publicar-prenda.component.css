@@ -136,24 +136,26 @@
   }
 
 /* samsung s22 */
-   @media screen and (max-width: 412px )
+   @media screen and (min-width: 412px )
   {
     .form-control{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
     .form-select{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
     .btn{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
     .barra{
       margin-top: 50px;
     }
-   
+    .barra h1{
+      font-size: 25px;
+    }
    } 
 
 /* Ipad mini */
@@ -163,23 +165,23 @@
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 625px;
      }
      .form-select{
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 625px;
      }
      .btn{
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 625px;
        margin-bottom: 40px;
      }
      .formulario{
-       gap: 10px;
+       gap: 15px;
      }
      .form-group div p{
       padding: 8px;
@@ -200,15 +202,15 @@
 
   
 .imagesUpload{
-  width: 700px;
-  gap: 18px;
+  width: 850px;
+  gap: 10px;
   margin-top: 20px;
 }
 
 
 .custum-file-upload {
-  height: 220px;
-  width: 287px;
+  height: 120px;
+  width: 150px;
   gap: 20px;
   border: 2px dashed var(--dark_blue);
   background-color: var(--white);
@@ -221,7 +223,7 @@
 }
 
 .custum-file-upload .icon svg {
-  height: 160px;
+  height: 100px;
   fill: #e8e8e8;
 }
 
@@ -234,23 +236,23 @@
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 630px;
      }
      .form-select{
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 630px;
      }
      .btn{
       border: 2px solid var(--dark_blue);
        height: 60px;
        font-size: 30px;
-       width: 600px;
+       width: 630px;
        margin-bottom: 40px;
      }
      .formulario{
-       gap: 10px;
+       gap: 20px;
      }
      .form-group div p{
       padding: 8px;
@@ -271,16 +273,16 @@
 
   
 .imagesUpload{
-  width: 700px;
-  gap: 18px;
+  width: 850px;
+  gap: 10px;
   margin-top: 20px;
 }
 
 
 .custum-file-upload {
-  height: 220px;
-  width: 287px;
-  gap: 20px;
+  height: 150px;
+  width: 150px;
+  
   border: 2px dashed var(--dark_blue);
   background-color: var(--white);
 }
@@ -292,7 +294,7 @@
 }
 
 .custum-file-upload .icon svg {
-  height: 160px;
+  height: 100px;
   fill: #e8e8e8;
 }
 } 

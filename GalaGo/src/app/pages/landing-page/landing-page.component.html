@@ -15,6 +15,6 @@
 </div>
 
 <div class="cardsContainer">
-    <app-card></app-card>
+    <app-card class="app-card" *ngFor="let prenda of prendas" [prenda]="prenda" [prendas]="prendas" ></app-card>
 </div>
 <app-footer></app-footer>

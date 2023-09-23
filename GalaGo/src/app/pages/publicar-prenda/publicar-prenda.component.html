@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-          <input type="text" #precio class="form-control"  name="precio" [(ngModel)]="prenda.precio" #precioId="ngModel"
+          <input type="number" #precio class="form-control"  name="precio" [(ngModel)]="prenda.precio" #precioId="ngModel"
           [ngClass]="{ 'is-invalid': (precioId.dirty || precioId.touched) && precioId.invalid }" placeholder="Precio" required>
           <div *ngIf="(precioId.dirty || precioId.touched) && precioId.invalid" class="invalid-feedback">
             <p *ngIf="precioId.errors.required">Por favor introduzca un precio.</p>
@@ -59,7 +59,7 @@
 
         <div class="form-group">
           <input type="text" #descripcion class="form-control"  name="descripcion" [(ngModel)]="prenda.descripcion" #descripcionId="ngModel"
-          [ngClass]="{ 'is-invalid': (descripcionId.dirty || descripcionId.touched) && descripcionId.invalid }" placeholder="descripcion" required>
+          [ngClass]="{ 'is-invalid': (descripcionId.dirty || descripcionId.touched) && descripcionId.invalid }" placeholder="Descripcion" required>
           <div *ngIf="(descripcionId.dirty || descripcionId.touched) && descripcionId.invalid" class="invalid-feedback">
             <p *ngIf="descripcionId.errors.required">Por favor introduzca una descripcion.</p>
           </div>
@@ -69,9 +69,9 @@
             <select class="form-select" #tipo name="tipo" [(ngModel)]="prenda.tipo" #tipoId="ngModel"
             [ngClass]="{ 'is-invalid': (tipoId.dirty || tipoId.touched) && tipoId.invalid }" placeholder="Tipo" required>
               <option selected disabled value="">Tipo...</option>
-              <option>{{arrTipo[0]}} </option>
-              <option>{{arrTipo[1]}} </option>
-              <option>{{arrTipo[2]}} </option>
+              <ng-container *ngFor="let tipo of arrTipo">
+                <option [value]="tipo">{{tipo}}</option>
+              </ng-container>
             </select>
             <div *ngIf="(descripcionId.dirty || descripcionId.touched) && descripcionId.invalid" class="invalid-feedback">
               <p *ngIf="descripcionId.errors.required">Por favor escoja un tipo.</p>
@@ -84,11 +84,9 @@
           <select class="form-select" #talla name="talla" [(ngModel)]="prenda.talla" #tallaId="ngModel"
           [ngClass]="{ 'is-invalid': (tallaId.dirty || tallaId.touched) && tallaId.invalid }" placeholder="Talla" required>
             <option selected disabled value="">Talla...</option>
-            <option>{{arrTalla[0]}}</option>
-            <option>{{arrTalla[1]}}</option>
-            <option>{{arrTalla[2]}}</option>
-            <option>{{arrTalla[3]}}</option>
-            <option>{{arrTalla[4]}}</option>
+            <ng-container *ngFor="let talla of arrTalla">
+              <option [value]="talla">{{talla}}</option>
+            </ng-container>
           </select>
           <div *ngIf="(tallaId.dirty || tallaId.touched) && tallaId.invalid" class="invalid-feedback">
             <p *ngIf="tallaId.errors.required">Por favor escoja una talla.</p>
@@ -99,10 +97,9 @@
             <select class="form-select" #evento name="evento" [(ngModel)]="prenda.evento" #eventoId="ngModel"
             [ngClass]="{ 'is-invalid': (eventoId.dirty || eventoId.touched) && eventoId.invalid }" placeholder="Evento" required>
               <option selected disabled value="">Evento...</option>
-              <option>{{arrEvento[0]}}</option>
-              <option>{{arrEvento[1]}}</option>
-              <option>{{arrEvento[2]}}</option>
-              <option>{{arrEvento[3]}}</option>
+              <ng-container *ngFor="let evento of arrEvento">
+                <option [value]="evento">{{evento}}</option>
+              </ng-container>
             </select>
             <div *ngIf="(eventoId.dirty || eventoId.touched) && eventoId.invalid" class="invalid-feedback">
               <p *ngIf="eventoId.errors.required">Por favor escoja un evento.</p>
@@ -113,9 +110,9 @@
             <select class="form-select" #estado name="estado" [(ngModel)]="prenda.estado" #estadoId="ngModel"
             [ngClass]="{ 'is-invalid': (estadoId.dirty || estadoId.touched) && estadoId.invalid }" placeholder="Estado" required>
               <option selected disabled value="">Estado...</option>
-              <option>{{arrEstado[0]}}</option>
-              <option>{{arrEstado[1]}}</option>
-              <option>{{arrEstado[2]}}</option>
+              <ng-container *ngFor="let estado of arrEstado">
+                <option [value]="estado">{{estado}}</option>
+              </ng-container>
             </select>
             <div *ngIf="(estadoId.dirty || estadoId.touched) && estadoId.invalid" class="invalid-feedback">
               <p *ngIf="estadoId.errors.required">Por favor escoja un estado.</p>
@@ -126,10 +123,9 @@
             <select class="form-select" #ubicacion name="ubicacion" [(ngModel)]="prenda.ubicacion" #ubicacionId="ngModel"
             [ngClass]="{ 'is-invalid': (ubicacionId.dirty || ubicacionId.touched) && ubicacionId.invalid }" placeholder="Ubicacion" required>
               <option selected disabled value="">Ubicacion...</option>
-              <option>{{arrUbicacion[0]}}</option>
-              <option>{{arrUbicacion[1]}}</option>
-              <option>{{arrUbicacion[2]}}</option>
-              <option>{{arrUbicacion[3]}}</option>
+              <ng-container *ngFor="let ubicacion of arrUbicacion">
+                <option [value]="ubicacion">{{ubicacion}}</option>
+              </ng-container>
             </select>
             <div *ngIf="(ubicacionId.dirty || ubicacionId.touched) && ubicacionId.invalid" class="invalid-feedback">
               <p *ngIf="ubicacionId.errors.required">Por favor escoja una ubicacion.</p>
