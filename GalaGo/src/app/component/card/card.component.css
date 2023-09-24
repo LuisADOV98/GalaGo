@@ -1,11 +1,11 @@
 .tarjeta {
     position: relative;
     text-align: left;
-    width: 183px;
+    width: 173px;
     height: 233px;
     font-size: 13px;
     font-family: "Pavanam";
-    margin-left: 12px;
+    /* margin-left: 12px; */
     margin-bottom: 0px;
     margin-top: 2px;
 
@@ -63,6 +63,7 @@
             margin-left: 5px;
             color: black;
             font-weight: 500;
+            font-size: 13px;
         }
 
         .precio {
@@ -184,3 +185,101 @@
             right: 0px;
             border: none;
         }
+@media screen and (min-width: 412px) {
+    /* .tarjeta{
+        width: 180px;
+        height: 250px;
+        font-size: 17px;
+    } */
+}
+@media screen and (min-width: 768px) {
+    .tarjeta{
+        width: 300px;
+        height: 360px;
+        font-size: 25px;
+    }
+    .foto{
+        width: 300px;
+        height: 300px;
+    }
+    .texto {
+        top: 300px;
+        width: 300px;
+        height: 60px;
+    }
+    .contenedor_texto{
+        width: 300px;
+        height: 60px;
+    }
+    .titulo{
+        margin-top: 10px;
+        letter-spacing: 0.06em;
+        width: 158.28px;
+        height: 16.07px;
+        margin-left: 5px;
+        color: black;
+        font-weight: 500;
+        font-size: 25px;
+    }
+    .precio{
+        top: 32.16px;
+        left: 5px;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        color: rgba(0, 0, 0, 0.7);
+        width: 100px;
+        height: 25px;
+    }
+    .heart-container{
+        top: 10.89%;
+        left: 85%;
+        width: 28px;
+        height: 25.066px;
+    }
+
+}
+@media screen and (min-width: 820px) {
+    .tarjeta{
+        width: 300px;
+        height: 360px;
+        font-size: 25px;
+    }
+    .foto{
+        width: 300px;
+        height: 300px;
+    }
+    .texto {
+        top: 300px;
+        width: 300px;
+        height: 60px;
+    }
+    .contenedor_texto{
+        width: 300px;
+        height: 60px;
+    }
+    .titulo{
+        margin-top: 10px;
+        letter-spacing: 0.06em;
+        width: 158.28px;
+        height: 16.07px;
+        margin-left: 5px;
+        color: black;
+        font-weight: 500;
+        font-size: 25px;
+    }
+    .precio{
+        top: 32.16px;
+        left: 5px;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        color: rgba(0, 0, 0, 0.7);
+        width: 100px;
+        height: 25px;
+    }
+    .heart-container{
+        top: 10.89%;
+        left: 85%;
+        width: 28px;
+        height: 25.066px;
+    }
+}

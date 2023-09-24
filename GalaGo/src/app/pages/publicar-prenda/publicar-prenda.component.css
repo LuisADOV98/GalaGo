@@ -29,11 +29,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 75px;
 }
 .form-group{
- 
-  width: 100%;
+  height: 45px;
+  width: 390px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -53,11 +54,23 @@
     background-color: var(--dark_blue);
     color: var(--white);
     width: 320px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn1{
+  background-color: var(--white);
+  color: red;
+  width: 320px;
+  margin-bottom: 50px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
 }
 
 .form-select{
@@ -156,6 +169,11 @@
     .barra h1{
       font-size: 25px;
     }
+    .btn1{
+      height: 50px;
+      font-size: 20px;
+    }
+    
    } 
 
 /* Ipad mini */
@@ -178,8 +196,13 @@
        height: 60px;
        font-size: 30px;
        width: 625px;
-       margin-bottom: 40px;
+   
      }
+     .btn1{
+      height: 60px;
+      font-size: 30px;
+      width: 625px;
+    }
      .formulario{
        gap: 15px;
      }
@@ -249,8 +272,13 @@
        height: 60px;
        font-size: 30px;
        width: 630px;
-       margin-bottom: 40px;
+       /* margin-bottom: 40px; */
      }
+     .btn1{
+      height: 60px;
+      font-size: 30px;
+      width: 625px;
+    }
      .formulario{
        gap: 20px;
      }

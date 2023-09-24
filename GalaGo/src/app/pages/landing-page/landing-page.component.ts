@@ -13,7 +13,10 @@ export class LandingPageComponent {
      this.prendas = [
       new Prenda("Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg",1),
       new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",2),
-     
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
     ]
   }
 

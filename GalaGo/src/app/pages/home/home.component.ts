@@ -36,9 +36,10 @@ export class HomeComponent{
 
   constructor(){
     this.prendas = [
-      new Prenda("Uno", 10, "Descip", "Alc", "Nuevo","xs","Boda","Mujer"),
-      new Prenda("Dos", 20, "Descip", "Mdr", "Nuevo","xs","Boda","Hombre"),
-      new Prenda("Tres", 30, "Descip", "Val", "Nuevo","xs","Boda","Accesorio")
+      new Prenda("Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg",1),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",2),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",3),
     ]
     this.arrTipo = ["Accesorio", "Mujer", "Hombre"];
     this.arrTalla = ["Unica","S","M","L","XL","XXL"];

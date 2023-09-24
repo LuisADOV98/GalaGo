@@ -92,22 +92,55 @@
     text-align: center;
     margin-top: 8px;
 }
+.cardsContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 390px;
+    flex-wrap: wrap;
+    padding: 7px;
+    gap: 0;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+}
+
 
 
 /* s22 ultra */
 @media screen and (min-width: 412px) {
     .banner{
-        margin-top: 50px;
+       margin-top: 50px;
     }
     .boton{
         height: 50px;
         width: 150px;
-        margin-top: 320px;
+        margin-top: 205px;
     }
 
     .slogan img{
         height: 70px;
         width: 285px;
+    }
+    .cardsContainer{
+        width: 412px;
+        gap: 10px;
+        padding: 16px;
+        margin-bottom: 0;
+    }
+    .textoslogan{
+        height: 100px;
+        width: 285px;
+    }
+    .textoslogan .p1{
+        height: 90px;
+        width: 285px;
+        font-size: 15px;
+        margin-bottom: 60px;
+
+    }
+    .textoslogan span{
+        margin-right: 15px;
+        font-size: 15px;
     }
 }
 
@@ -130,6 +163,25 @@
         height: 90px;
         width: 450px;
     }
+    .cardsContainer{
+        width: 768px;
+        gap: 50px;
+        padding: 50px;
+    }
+    .textoslogan{
+        height: 100px;
+        width: 450px;
+    }
+    .textoslogan .p1{
+        height: 90px;
+        width: 450px;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .textoslogan span{
+        margin-right: 15px;
+        font-size: 25px;
+    }
 }
 
 /* ipad air */
@@ -150,5 +202,23 @@
     .slogan img{
         height: 100px;
         width: 490px;
+    }
+    .cardsContainer{
+        width: 820px;
+        gap: 50px;
+        padding: 50px;
+    }
+    .textoslogan{
+        height: 100px;
+        width: 450px;
+    }
+    .textoslogan .p1{
+        height: 90px;
+        width: 450px;
+        font-size: 25px;
+    }
+    .textoslogan span{
+        margin-left: 20px;
+        font-size: 25px;
     }
 }
