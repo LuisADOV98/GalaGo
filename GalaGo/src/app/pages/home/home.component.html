@@ -103,7 +103,7 @@
         <!-- <span class="slider-value" #sliderValue>{{valorRango}}</span> -->
 
         <div class="field">
-            <div class="value right">{{valorRango}}€</div>
+            <div class="value">{{valorRango}}€</div>
         </div>
     </div>  
 
@@ -148,30 +148,7 @@
 </div>
 
 
-<div class="cards">
-    <app-card></app-card>
- 
-        <!-- <ul>
-        <li *ngFor="let prenda of prendas">
-            <ng-container *ngIf="(!filtrado && !mujerActive) ; else soloMujer">
-                Titulo: {{prenda.titulo}} 
-                <br>Precio: {{prenda.precio}}
-                <br>Evento: {{prenda.evento}}
-                <br>Tipo: {{prenda.tipo}}
-                <hr>
-            </ng-container>
-
-                <ng-template #soloMujer>
-                <ng-container *ngIf="(mujerActive)">
-                    Titulo: {{prenda.titulo}} 
-                    <br>Precio: {{prenda.precio}}
-                    <br>Evento: {{prenda.evento}}
-                    <br>Tipo: {{prenda.tipo}}
-                    <hr>
-                </ng-container>
-            </ng-template> 
-            
-        </li>
-    </ul> -->
+<div class="cardsContainer">
+    <app-card class="app-card" *ngFor="let prenda of prendas" [prenda]="prenda" [prendas]="prendas" ></app-card>
 </div>
 <app-footer></app-footer>

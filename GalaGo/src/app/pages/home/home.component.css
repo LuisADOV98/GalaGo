@@ -25,10 +25,11 @@
     margin-top: 10px;
     position: relative;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 
 }
 
@@ -51,14 +52,18 @@
 
 .row1, .row2{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 /**** Iconos primera columna ****/
 
 
 /**** Resto de iconos ****/
-.icono{
-    /* border: 1px rgb(17, 0, 255) solid; */
+.icono svg{
+  height: 60px;
+  width: 60px;
+  color: var(--ligth_blue);
 }
 .icono img{
     width: 38px;
@@ -73,16 +78,13 @@
     height: 28px;
 }
 /****** CARDS *****/
-.cards{
-    position: relative; 
-}
+
 
 .form-select{
     background-color:var(--pink);
     border-radius: none;
     border-style: none;
 }
-
 /* hace que se mueste la selección de filtros */
 .display{
     display: block;
@@ -207,3 +209,163 @@
     font-size: 20px;
 
 }
+
+.cardsContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 390px;
+  flex-wrap: wrap;
+  padding: 7px;
+  gap: 0;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+}
+
+
+@media screen and (min-width: 412px) {
+  .cardsContainer{
+      width: 412px;
+      gap: 10px;
+      padding: 16px;
+      margin-bottom: 0;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .filtros{
+    width: 100%;
+    height: 420px;
+    margin-top: 20px;
+    gap: 40px;
+}
+  .cardsContainer{
+      width: 768px;
+      gap: 50px;
+      padding: 50px;
+  }
+
+  .home{
+    height: 80px;
+    margin-top: 80px;
+}
+
+.homeText{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.iconosText{
+  font-size: 25px;
+}
+.icono img{
+  width: 70px;
+  height: 70px;
+}
+.euro{
+  width: 15px;
+  height: 45px;
+}
+.icono svg{
+  height: 110px;
+  width: 110px;
+
+}
+.row1{
+  width: 768px;
+  gap: 90px;
+}
+.row2{
+  width: 768px;
+  gap: 90px;
+}
+
+.form-select{
+  height: 60px;
+  font-size: 25px;
+}
+.slide-rango{
+  height: 20px;
+  border-radius: 20px;
+}
+.value{
+  font-size: 25px;
+}
+.slide-rango::-webkit-slider-thumb {
+  height: 30px;
+  width: 30px;
+}
+
+
+}
+
+
+@media screen and (min-width: 820px) {
+  .filtros{
+    width: 100%;
+    height: 420px;
+    margin-top: 20px;
+    gap: 40px;
+   
+}
+  .cardsContainer{
+      width: 820px;
+      gap: 50px;
+      padding: 50px;
+  }
+  .home{
+    height: 80px;
+    margin-top: 80px;
+}
+
+.homeText{
+    font-size: 50px;
+    margin-top: 20px;
+}
+.iconosText{
+  font-size: 25px;
+}
+.icono img{
+  width: 74px;
+  height: 74px;
+}
+.euro{
+  width: 16px;
+  height: 50px;
+}
+.icono svg{
+  height: 120px;
+  width: 120px;
+
+}
+.row1{
+  width: 820px;
+  gap: 100px;
+}
+.row2{
+  width: 820px;
+  gap: 100px;
+}
+
+.form-select{
+  height: 80px;
+  font-size: 25px;
+}
+.slide-rango{
+  height: 20px;
+  border-radius: 20px;
+}
+.value{
+  font-size: 25px;
+}
+.slide-rango::-webkit-slider-thumb {
+  height: 30px;
+  width: 30px;
+}
+
+
+}
+
+
+
+
