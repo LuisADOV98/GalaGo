@@ -1,42 +1,82 @@
-<app-header></app-header>
+
 <div class="padre">Perfil</div>
 <section class="padre2">
-    <!-- <section class="image"> -->
-<img src="../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png" alt="" class="foto">
-<!-- </section> -->
-<section class="separacion">
-    <div class="user">Luisa Martinez
-        <button class="button">🖋️</button>
-    </div>
-    <div class="e-mail">luisa@gmail.com
-        <button class="button">🖋️</button>
-    </div>
-    <section class="abajo">
-        <div class="lugar">Madrid
-            <button class="button">🖋️</button>
+        <!-- <section class="image"> -->
+    <img src="{{user.photo}}" alt="" class="foto">
+    <!-- </section> -->
+    <section class="separacion">
+
+        <div class="user">{{user.name}}  {{user.last_name}} </div>
+        <div class="e-mail"> {{user.email}}</div>
+
+        <!-- <section class="abajo"> -->
+            <div class="lugar">{{user.ubicacion}}</div>
+        <!-- </section> -->
+
+        <div class="botonesImg">
+            <!-- BTN EDITAR PERFIL  -->
+            <div class="btnImg" routerLink="/editar-perfil"> 
+                <img src="../../../assets/botones/editar.png" alt="">
+            </div>
+
+            <!-- BTN SUBIR PRENDA -->
+            <div class="btnImg" routerLink="/publicar-prenda"> 
+                <img src="../../../assets/botones/subirArch.png" alt="">
+            </div>
         </div>
-        <div class="upload">
-            <button class="button">📁</button>
-        </div>
+
     </section>
+
 </section>
-</section>
-<section class="pestañas">
-    <!-- <div class="prenda">
-        Mis Prendas
-    </div> -->
-    <a routerLink="/perfil" [ngClass]="{ 'active': isMisPrendasActive }" (click)="toggleTab('mis-prendas')" class="prenda">Mis Prendas</a>
-    <!-- <div class="favoritos">
-        Favoritos
-    </div> -->
-    <a routerLink="/favoritos" [ngClass]="{ 'active': isFavoritosActive }" (click)="toggleTab('favoritos')" class="favoritos">Favoritos</a>
-</section>
-<section class="carta">
-    <!-- <div class="textoCarta">
-        <app-card class="tarjetas"></app-card>
-    </div> -->
-    <div class="cardsContainer">
-        <app-card class="app-card" *ngFor="let prenda of prendas" [prenda]="prenda" [prendas]="prendas" ></app-card>
-    </div>    
-</section>
-<!-- <app-footer></app-footer> -->
+
+<!-- CONDICIÓN Y BOTÓN -->
+
+<div class="container">
+    <div class="botones">
+        <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()" [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn">Mis prendas</div>
+        <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()" [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn">Favoritas</div>
+    </div>
+    
+    <!-- Si mis-prendas es true imprime cards(mis prendas) y sino pasa al ng-template e imprime favoritas -->
+    <div class="cards" *ngIf="isMisPrendasActive; else favoritas">
+        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" ></app-card>
+    </div>
+    
+    <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
+    <ng-template #favoritas>
+        <div class="cards">
+            <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card>
+        </div>
+    </ng-template>
+</div>
+
+
+
+
+
+
+<!-- <div class="containerMisPrendas" [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()">
+    <p>Mis prendas</p>
+    <div class="misPrendas" *ngIf="isMisPrendasActive">
+        <div class="cardsContainer">
+            <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" ></app-card>
+        </div> 
+    </div>
+</div>
+
+
+<div class="containerMisFavoritas" [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()"> 
+    <p>Favoritos</p>
+    <div class="misPrendas" *ngIf="isFavoritosActive">
+        <div class="cardsContainer">
+            <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card>
+        </div> 
+    </div>
+</div> -->
+
+
+
+    <!-- <a routerLink="/perfil" [ngClass]="{ 'active': isMisPrendasActive }" (click)="toggleTab('mis-prendas')" class="prenda">Mis Prendas</a>
+    <a routerLink="/favoritos" [ngClass]="{ 'active': isFavoritosActive }" (click)="toggleTab('favoritos')" class="favoritos">Favoritos</a> -->
+
+

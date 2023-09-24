@@ -4,18 +4,18 @@
 
 <div class="padre">
     <div>
-        <img class="imgPerfil" src="{{user.photo}}" alt="">
+        <img class="imgPerfil" src="{{userService.user.photo}}" alt="">
     </div>
     
     <form action="" class="form">
         <input type="text"  #photo placeholder="Pege aquí el enlace de la imagen que desee...">
-        <input type="text"  #name placeholder="{{user.name}}">
-        <input type="text"  #last_name placeholder="{{user.last_name}}">
-        <input type="text"  #ubicacion placeholder="{{user.ubicacion}}">
-        <input type="email" #email placeholder="{{user.email}}">
+        <input type="text"  #name placeholder="{{userService.user.name}}">
+        <input type="text"  #last_name placeholder="{{userService.user.last_name}}">
+        <input type="text"  #ubicacion placeholder="{{userService.user.ubicacion}}">
+        <input type="email" #email placeholder="{{userService.user.email}}">
         <input type="password"  #password placeholder="Introduzca la nueva contraseña">
         <input type="password"  #password2 placeholder="Repita la nueva contraseña">
     </form>
-    <button type="submit" class="btn" (click)="enviar(photo,name,last_name,ubicacion,email,password)" routerLink="/perfil">Guardar</button>
+    <button type="submit" class="btn" (click)="modificarUser(photo.value,name.value,last_name.value,ubicacion.value,email.value,password.value)" >Guardar</button>
     <a href="/perfil" class="cancelar">Cancelar</a>
 </div>

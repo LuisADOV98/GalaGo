@@ -1,2 +1,4 @@
 <!-- añadir header y footer con lógica  -->
+<app-header *ngIf="showHeader" [closeMenu]="closeMenu"></app-header>
 <router-outlet></router-outlet>
+<app-footer *ngIf="showFooter" ></app-footer>

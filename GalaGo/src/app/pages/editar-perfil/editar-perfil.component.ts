@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -9,25 +11,37 @@ import { User } from 'src/app/models/user';
 export class EditarPerfilComponent {
     public user: User;
 
-    constructor(){
-      this.user = new User(1,"Luisa", "Martinez","Madrid", "luisa@gmail.com","12345678","../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png")
+    constructor(public router: Router, public userService: UserService){
+      // this.user = new User (1,"Luisa", "Martinez", "Alicante", "luisita@gmail.com", "12345678", "../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png");
+      this.user = this.userService.user;
     }
+    ngOnInit(){}
 
-    enviar(edPhoto: HTMLInputElement,
-           edName: HTMLInputElement,
-           edLastName: HTMLInputElement,
-           edUbicacion: HTMLInputElement,
-           edEmail: HTMLInputElement,
-           edPassword: HTMLInputElement){
-
-      if(edPhoto.value != "") this.user.photo = edPhoto.value;
-      if(edName.value != "") this.user.name = edName.value;
-      if(edLastName.value != "") this.user.last_name = edLastName.value;
-      if(edUbicacion.value != "") this.user.ubicacion = edUbicacion.value;
-      if(edEmail.value != "") this.user.email = edEmail.value;
-      if(edPassword.value != "") this.user.password = edPassword.value;
-
-      console.log(this.user);
+    modificarUser(edPhoto: string,
+           edName: string,
+           edLastName: string,
+           edUbicacion: string,
+           edEmail: string,
+           edPassword: string){
+           
+      if(edPhoto != "") this.user.photo = edPhoto;
+      if(edName != "") this.user.name = edName;
+      if(edLastName != "") this.user.last_name = edLastName;
+      if(edUbicacion != "") this.user.ubicacion = edUbicacion;
+      if(edEmail != "") this.user.email = edEmail;
+      if(edPassword != "") this.user.password = edPassword;
       
+      console.log("userEd:",this.user);
+      //Verificar misma contraseña 
+      
+      //Actualiza el usuario del perfil CUANDO HAYA USER-SERVICE
+      this.userService.user = this.user;
+      console.log("user:", this.userService);
+      
+     
+      // Redirige al usuario nuevamente a la página de perfil después de guardar
+      this.router.navigate(["/perfil"]);
       }
+
+     
 }
