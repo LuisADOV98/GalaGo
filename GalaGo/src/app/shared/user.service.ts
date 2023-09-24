@@ -13,7 +13,7 @@ export class UserService {
   
   // constructor(private http: HttpClient) {
   constructor() { 
-    // this.url = 'http://localhost:3000/';
+    this.user = new User (1,"Marisa", "Martinez", "Alicante", "luisita@gmail.com", "12345678", "../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png");
     this.logueado = false;
   }
 

@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 
 <div class="home">
     <h1 class="homeText">Home</h1>
@@ -11,7 +11,7 @@
         <div class="icono" [ngClass]="{'click': mujerActive}" (click)="filterMujer()">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
                 <!-- Cambiará el color(fill) del circle cuando mujerActive sea true será rosa (#FFC9CE) y azul cuando sea false (#CFE2EB)-->
-                <circle cx="30" cy="30" r="30" [ngStyle]="{fill:mujerActive ? '#FFC9CE' : '#CFE2EB'}" />
+                <circle cx="30" cy="30" r="30" class="circle" [ngStyle]="{fill:mujerActive ? '#FFC9CE' : '#CFE2EB'}" />
             </svg>
             <img src="../../../assets/home-filtros/mujer.png" alt="" >
             <p class="iconosText">Mujer</p>
@@ -174,4 +174,3 @@
         </li>
     </ul> -->
 </div>
-<app-footer></app-footer>

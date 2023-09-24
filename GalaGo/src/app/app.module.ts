@@ -22,6 +22,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
     ],
   providers: [],
   bootstrap: [AppComponent]
