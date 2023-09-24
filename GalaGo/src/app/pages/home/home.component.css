@@ -33,6 +33,11 @@
 
 }
 
+element.style{
+  fill: black;
+
+}
+
 /* estilo texto de los iconos */
 .iconosText{
     display: flex;
