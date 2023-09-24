@@ -90,8 +90,8 @@ p{
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-size: 2em;
     margin-bottom: 75px;
 }
