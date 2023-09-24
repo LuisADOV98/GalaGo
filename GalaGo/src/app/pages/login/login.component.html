@@ -58,17 +58,17 @@
               </div>
           </div>
   </form>
-          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form">
+          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form2">
           <div class="form-group">
               <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="login.password" #passwordId="ngModel" [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
               <div *ngIf="(passwordId.dirty ||passwordId.touched) && passwordId.invalid" class="invalid-feedback">
-                  <div *ngIf="passwordId.errors.required">La contraseña es obligatoria</div>
-                  <div *ngIf="passwordId.errors.minlength">La clave tiene que tener al menos 8 caracteres</div>
+                  <div *ngIf="passwordId.errors.required" class="contraseña">La contraseña es obligatoria</div>
+                  <div *ngIf="passwordId.errors.minlength" class="contraseña2">La clave tiene que tener al menos 8 caracteres</div>
               </div>
           </div>
           
   </form>
-  <button class="button_submit">Login</button>
+  <button type="submit" class="button_submit" (click)="loginHome()">Login</button>
   <p class="signup-link">
     ¿No tienes cuenta?
     <a href="/registro" class="signup-link link">Regístrate</a>
