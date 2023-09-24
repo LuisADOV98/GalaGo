@@ -1,0 +1,21 @@
+<div class="ed-perfil">
+    <h1 class="ed-perfil-text">Editar perfil</h1>
+</div>
+
+<div class="padre">
+    <div>
+        <img class="imgPerfil" src="{{user.photo}}" alt="">
+    </div>
+    
+    <form action="" class="form">
+        <input type="text"  #photo placeholder="Pege aquí el enlace de la imagen que desee...">
+        <input type="text"  #name placeholder="{{user.name}}">
+        <input type="text"  #last_name placeholder="{{user.last_name}}">
+        <input type="text"  #ubicacion placeholder="{{user.ubicacion}}">
+        <input type="email" #email placeholder="{{user.email}}">
+        <input type="password"  #password placeholder="Introduzca la nueva contraseña">
+        <input type="password"  #password2 placeholder="Repita la nueva contraseña">
+    </form>
+    <button type="submit" class="btn" (click)="enviar(photo,name,last_name,ubicacion,email,password)">Guardar</button>
+    <a href="/perfil" class="cancelar">Cancelar</a>
+</div>

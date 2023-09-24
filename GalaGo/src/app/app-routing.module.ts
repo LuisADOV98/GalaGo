@@ -17,6 +17,7 @@ import { PublicarPrendaComponent } from './pages/publicar-prenda/publicar-prenda
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { Prenda } from './models/prenda';
+import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 
 const routes: Routes = [
   {path:"", component: LandingPageComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:"publicar-prenda", component: PublicarPrendaComponent},
   {path:"quienes-somos", component: QuienesSomosComponent},
   {path:"registro", component: RegistroComponent},
+  {path:"editar-perfil", component: EditarPerfilComponent}
 ];
 
 @NgModule({
