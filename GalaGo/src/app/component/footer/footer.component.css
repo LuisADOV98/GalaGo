@@ -45,6 +45,9 @@
 
 @media screen and (min-width: 412px)
 {
+.foo{
+    margin-top: 50px;
+}
 .info{
     width: 350px;
     gap: 60px;
