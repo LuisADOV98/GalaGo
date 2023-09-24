@@ -60,9 +60,9 @@ line-height: 130%;
   border-color: red; /* Cambia el color del borde cuando el campo es inválido */
 }
 
-.feed-form input.is-invalid + .invalid-feedback {
-  margin-top: 5px; /* Espacio entre el campo de entrada y el mensaje de error */
-}
+/* .feed-form input.is-invalid + .invalid-feedback {
+  margin-top: 5px; Espacio entre el campo de entrada y el mensaje de error
+} */
 
 .invalid-feedback {
   color: red;
@@ -79,7 +79,7 @@ line-height: 130%;
   flex-direction: column;
   width: 300px;
 
-  margin-left: 45px;
+
   padding: 5px;
 }
 .feed-form2 {
@@ -93,12 +93,13 @@ position: absolute;
   margin-left: 45px;
 }
 .feed-form input {
+  width: 291px;
   height: 40px;
   border-radius: 5px;
   /* background: rgb(216,179,193); background en mismo color, queda feo*/
   /* background-color: white; backgroound en blanco*/
   background: transparent;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   border: 2px solid rgb(255, 255, 255); /* borde en negro
   /* border: 2px solid rgb(255, 255, 255); borde en blanco */
   /* border: 2px solid rgb(216,179,193); borde en mismo color */
@@ -113,7 +114,7 @@ position: absolute;
   /* background: rgb(216,179,193); background en mismo color, queda feo*/
   /* background-color: white; backgroound en blanco*/
   background: transparent;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   border: 2px solid rgb(255, 255, 255); /* borde en negro
   /* border: 2px solid rgb(255, 255, 255); borde en blanco */
   /* border: 2px solid rgb(216,179,193); borde en mismo color */
@@ -129,10 +130,12 @@ position: absolute;
 } 
 
 .button_submit {
-  margin-top: 75px;
+/* border: 7px solid red; */
+/* position: absolute; */
+/* margin-top: 20px; */
   width: 291px;
   height: 40px;
-  margin-left: 50px;
+ 
   font-size: 14px;
   color: white;
   background: rgb(9, 58, 84);
@@ -144,9 +147,14 @@ position: absolute;
 
 .section_form{
   /* border: 2px solid red; */
-  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  height: 300px;
+  
 }
-
 .contraseña{
   margin-left: 5px;
 }
@@ -161,6 +169,9 @@ text-decoration: none;
 }
 
 .signup-link {
+  /* border: 2px solid red; */
+/* position: fixed; */
+  /* margin-top: 80px; */
 align-self: center;
 font-weight: 500;
 display: flex;
@@ -174,4 +185,23 @@ font-weight: 400;
 
 .link:hover {
 text-decoration: underline;
+}
+
+
+
+
+.form-group{
+  /* border: 2px solid red; */
+  height: 80px;
+}
+
+.feed-form{
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 180px;
+  width: 300px;
 }

@@ -72,8 +72,19 @@
                     </div>
                 </div>
             </div>
-        
-            <button type="submit" class="button_submit" (click)="register()">Register</button>
+            <div class="form-group">
+              <!-- <label for="ubicacion2">Ubicación</label> -->
+              <select id="ubicacion2" class="form-control" formControlName="ubicacion2" [ngClass]="{ 'is-invalid': (myForm.get('ubicacion2').dirty || myForm.get('ubicacion2').touched) && !myForm.get('ubicacion2').valid}">
+                <!-- <option value="" selected hidden>Selecciona una ubicación...</option> -->
+                <ng-container *ngFor="let ubicacion of arrUbicacion">
+                  <option [value]="ubicacion">{{ubicacion}}</option>
+                </ng-container>
+              </select>
+              <div *ngIf="!myForm.get('ubicacion2').valid" class="invalid-feedback">
+                La ubicación es obligatoria
+              </div>
+            </div>
+            <button type="submit" class="button_submit absolute" (click)="register()">Register</button>
           </form>
         </section>
       </div>

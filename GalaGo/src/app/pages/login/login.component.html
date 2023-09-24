@@ -57,8 +57,8 @@
                   <div *ngIf="emailId.errors.email">El email es incorrecto</div>
               </div>
           </div>
-  </form>
-          <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form2">
+  <!-- </form> -->
+          <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form"> -->
           <div class="form-group">
               <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="login.password" #passwordId="ngModel" [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
               <div *ngIf="(passwordId.dirty ||passwordId.touched) && passwordId.invalid" class="invalid-feedback">
@@ -68,6 +68,7 @@
           </div>
           
   </form>
+
   <button type="submit" class="button_submit" (click)="loginHome()">Login</button>
   <p class="signup-link">
     ¿No tienes cuenta?
