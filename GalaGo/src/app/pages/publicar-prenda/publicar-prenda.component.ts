@@ -24,14 +24,17 @@ export class PublicarPrendaComponent {
     this.prenda = new Prenda("",0,"","","","","","")
   }
 
-  public recogerInfo(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string){
-    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,ubicacion,estado,talla,evento,tipo)
+  public recogerInfo(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,imagen:string ){
+    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,ubicacion,estado,talla,evento,tipo,imagen)
     this.prendas.push(newPrenda)
     console.log(this.prendas);
+    this.router.navigate(["/perfil"]);
     return this.prendas
   }
 
-
+    irHome(){
+      this.router.navigate(["/home"]);
+    }
     onSubmit(prendaForm:NgForm){
       
       console.log(prendaForm.value);

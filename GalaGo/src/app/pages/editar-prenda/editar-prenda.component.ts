@@ -18,25 +18,33 @@ export class EditarPrendaComponent {
   public titulo: string
   public precio: number
   public descripcion:string
-  public prenda:Prenda
+  public prenda1:Prenda
   constructor(public router: Router){
     this.prendas = []
-    this.prenda = new Prenda("",0,"","","","","","")
-  }
-  public editar(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string){
-    console.log(this.prenda);
+    this.prenda1 = new Prenda("Traje boda",10,"usado una vez","Madrid","Semi nuevo","S","Comuniones","Hombre","xs",3)
+  console.log(this.prenda1);}
+
+
+  public editar(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,imagen:string){
     
-    this.prenda.titulo = titulo;
-    this.prenda.precio = precio;
-    this.prenda.descripcion = descripcion;
-    this.prenda.tipo = tipo;
-    this.prenda.talla = talla;
-    this.prenda.evento = evento;
-    this.prenda.estado = estado;
-    this.prenda.ubicacion = ubicacion;
-    this.router.navigate(["/perfil"]);
-    console.log(this.prendas);
+    
+    this.prenda1.titulo = titulo;
+    this.prenda1.precio = precio;
+    this.prenda1.descripcion = descripcion;
+    this.prenda1.tipo = tipo;
+    this.prenda1.talla = talla;
+    this.prenda1.evento = evento;
+    this.prenda1.estado = estado;
+    this.prenda1.ubicacion = ubicacion;
+    this.prenda1.imagen = imagen;
+
+    // this.router.navigate(["/perfil"]);
+    console.log(this.prenda1);
 }
   
+public irPerfil(){
+  this.router.navigate(["/perfil"]);
+}
+
 } 
 

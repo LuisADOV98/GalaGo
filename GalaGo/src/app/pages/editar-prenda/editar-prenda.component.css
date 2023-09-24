@@ -60,6 +60,19 @@
     align-items: center;
 }
 
+.btn1{
+  background-color: var(--white);
+  color: red;
+  width: 320px;
+  margin-bottom: 50px;
+  margin-top: -20px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
 .form-select{
     border: 1px solid var(--dark_blue);
     width: 320px;
@@ -115,8 +128,8 @@
     justify-content: center;
   }
   .custum-file-upload .icon img{
-    height: 200px;
-    width: 265px;
+    height: 100px;
+    width: 140px;
     border-radius: 10px;
   }
   
@@ -149,16 +162,21 @@
   {
     .form-control{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
     .form-select{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
     .btn{
       height: 50px;
-      font-size: 30px;
+      font-size: 20px;
     }
+    .btn1{
+      height: 50px;
+      font-size: 20px;
+    }
+    
     .barra{
       margin-top: 50px;
     }
@@ -189,7 +207,12 @@
       height: 60px;
       font-size: 30px;
       width: 625px;
-      margin-bottom: 40px;
+      /* margin-bottom: 40px; */
+    }
+    .btn1{
+      height: 60px;
+      font-size: 30px;
+      width: 625px;
     }
     .formulario{
       gap: 15px;
@@ -213,7 +236,7 @@
 
  
 .imagesUpload{
- width: 850px;
+ width: 768px;
  gap: 10px;
  margin-top: 20px;
 }
@@ -267,7 +290,12 @@
       height: 60px;
       font-size: 30px;
       width: 630px;
-      margin-bottom: 40px;
+      /* margin-bottom: 40px; */
+    }
+    .btn1{
+      height: 60px;
+      font-size: 30px;
+      width: 625px;
     }
     .formulario{
       gap: 20px;
@@ -291,7 +319,7 @@
 
  
 .imagesUpload{
- width: 850px;
+ width: 820px;
  gap: 10px;
  margin-top: 20px;
 }
