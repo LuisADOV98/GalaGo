@@ -1,0 +1,66 @@
+
+.ed-perfil{
+    height: 44px;
+    width: 100%;
+    margin-top: 44px;
+    background-color: var(--pink);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ed-perfil-text{
+    /* TIPOGRAFÍA */
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-top: 10px;
+}
+
+.imgPerfil{
+    margin-top: 18px;
+}
+
+.padre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+input{
+    border: 1px solid var(--dark_blue);
+    width: 320px;
+    height: 45px;  
+    border-radius: 5px;
+    padding-left: 5px;
+
+}
+.btn{
+    background-color: var(--dark_blue);
+    color: var(--white);
+    width: 320px;
+    margin-bottom: 20px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -4px;
+}
+.cancelar{
+    color: #6c6d6e;
+    text-align: center;
+    font-family: Pavanam;
+    font-size: 17px;
+    letter-spacing: 1.02px;
+    text-decoration: none;
+}

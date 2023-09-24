@@ -32,8 +32,11 @@
     <a routerLink="/favoritos" [ngClass]="{ 'active': isFavoritosActive }" (click)="toggleTab('favoritos')" class="favoritos">Favoritos</a>
 </section>
 <section class="carta">
-    <div class="textoCarta">
+    <!-- <div class="textoCarta">
         <app-card class="tarjetas"></app-card>
-    </div>
+    </div> -->
+    <div class="cardsContainer">
+        <app-card class="app-card" *ngFor="let prenda of prendas" [prenda]="prenda" [prendas]="prendas" ></app-card>
+    </div>    
 </section>
 <!-- <app-footer></app-footer> -->
