@@ -33,8 +33,8 @@
 
 <div class="container">
     <div class="botones">
-        <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()" [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn">Mis prendas</div>
-        <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()" [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn">Favoritas</div>
+        <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()" [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn left">Mis prendas</div>
+        <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()" [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn right">Favoritas</div>
     </div>
     
     <!-- Si mis-prendas es true imprime cards(mis prendas) y sino pasa al ng-template e imprime favoritas -->

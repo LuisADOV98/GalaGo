@@ -1,5 +1,4 @@
 .padre{
-    /* border: 2px solid red; */
     margin-top: 50px;
     height: 48px;
     width: 100%;
@@ -11,7 +10,6 @@
     font-size: 1.3em;
     }
 .padre2{
-    /* border: 2px solid red; */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -35,10 +33,6 @@
     display: flex;
     justify-content: space-between;
 }
-/* .image{
-    border: 2px solid red;
-
-} */
 .foto{
     padding-top: 10px;
     padding-left: 7px;
@@ -59,7 +53,6 @@
     width: 30px;
     justify-content: space-between;
     transform: translate(180px, 12px);
-    /* border: 2px red solid; */
     position: absolute;
 }
 
@@ -71,7 +64,6 @@
 
 
 /* MOSTRAR PRENDAS FAV O MIAS */
-
 .container{
     display: flex;
     flex-direction: column;
@@ -107,20 +99,19 @@
 
     /* Botones mis prendas y favoritas */
     .btn{
-        /* text-align: center;
-        width: 50%;
-        height: 40px;
-        background: var(--ligth_blue); */
-        width: 200px;
+        width: 187.25px;
         height: 41px;
         font-size: 20px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        /* background: var(--Azul-secundario, #CFE2EB); */
         display: flex;
         justify-content: center;
         align-items: center;
     }
+        .right{
+            border-bottom-right-radius: 0px;
+        }
+        .left{
+            border-bottom-left-radius: 0px;
+        }
 
     .cards{
         display: flex;

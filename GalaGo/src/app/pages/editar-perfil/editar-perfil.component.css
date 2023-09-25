@@ -57,7 +57,7 @@ input{
     margin-bottom: -4px;
 }
 .cancelar{
-    color: #6c6d6e;
+    color: red;
     text-align: center;
     font-family: Pavanam;
     font-size: 17px;
