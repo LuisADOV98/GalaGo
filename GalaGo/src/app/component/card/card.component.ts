@@ -29,7 +29,7 @@ export class CardComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  verDetallePrenda(id:number){
+  verDetallePrenda(id:number, propietario :boolean){
     /* detalle-prenda */
     if (this.editable === false && this.router.url === '/landing-page' ||  this.router.url === '/') {
       // Si estás en la página de inicio y la tarjeta no es editable,
@@ -37,7 +37,7 @@ export class CardComponent implements OnInit{
       this.router.navigate(['/login']);
     } else {
       // si no, redirecciona a detalle prenda
-      this.router.navigate(['/detalle-prenda', id]);
+      this.router.navigate(['/detalle-prenda', id, propietario]);
     }
 }
 

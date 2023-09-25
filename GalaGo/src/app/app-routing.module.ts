@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:"chat", component: ChatComponent},
   {path:"contacta", component: ContactaComponent},
   {path:"conversacion-chat", component: ConversacionChatComponent},
-  {path:"detalle-prenda/:id", component: DetallePrendaComponent},
+  {path:"detalle-prenda/:id/:propietario", component: DetallePrendaComponent},
   {path:"editar-prenda", component: EditarPrendaComponent},
   {path:"home", component: HomeComponent},
   {path:"landing-page", component: LandingPageComponent},

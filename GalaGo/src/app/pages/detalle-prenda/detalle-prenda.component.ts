@@ -13,6 +13,7 @@ export class DetallePrendaComponent implements OnInit {
 
   id:any;
   prenda:Prenda;
+  propietario: string;
   // router: any;
   constructor(private route: ActivatedRoute,
     private location: Location,
@@ -21,6 +22,7 @@ export class DetallePrendaComponent implements OnInit {
   }
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+    this.propietario = this.route.snapshot.paramMap.get('propietario');
     console.log(this.id);
 
     // petición al servidor getPrendaById
@@ -78,6 +80,10 @@ export class DetallePrendaComponent implements OnInit {
 
   public irChat(): void{
     this.router.navigate(["/conversacion-chat"])
+  }
+
+  public irEditar(): void{
+    this.router.navigate(["/editar-prenda"])
   }
 
 }
