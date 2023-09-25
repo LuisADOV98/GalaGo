@@ -1,64 +1,45 @@
-
 <body>
     <!-- <div class="contenido_Chat" *ngIf="usuarioLogueado"> -->
     <div class="contenido_Chat">
-
         <div class="Chats">
-            <!--el boton hacia atras para volver al Chat principal-->
-            <!-- <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a routerLink="/chat" class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                </ul>
-                
-            </nav> -->
             <a routerLink="/chat"> 
                 <img class="boton" src="../../../assets/boton_atras/boton_atras.png" alt="">
             </a>
-            <div><h1 class="chatsText">Chats</h1></div>
-            
+            <div><h1 class="chatsText">Chats</h1></div>  
         </div>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img src="../../../assets/imageneschat/userAlberto.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                
-              </a>
-              <div class="textUser">Alberto</div>
+                <a class="navbar-brand" href="#">
+                    <img src="../../../assets/imageneschat/userAlberto.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                </a>
+                <div class="textUser">Alberto</div>
             </div>
         </nav>
+
         <div class="card-body">
-            <div>
-                
-
-                <p *ngFor="let mensaje of mensajesenviados" class="enviado p-2" >
-                    <!-- [ngClass]="(usuarioLogueado.uid==mensaje.emisor)? 'enviado':'recibido' "> -->
-                        {{mensaje.texto}}
-                </p>
-                <p *ngFor="let mensaje of mensajesrecibidos" class="recibido p-2" >
-                <!-- [ngClass]="(usuarioLogueado.uid==mensaje.emisor)? 'enviado':'recibido' "> -->
-                    {{mensaje.texto}}
-                </p>
-                
+            <!-- <div *ngFor="let mensaje of mensajes" [ngClass]="{'userMsg': mensaje.emisor === 'Usuario', 
+                                                              'soporteMsg': mensaje.emisor === 'Soporte'}" > -->
+            <!-- <strong>{{mensaje.emisor}}</strong>: {{mensaje.contenido}} -->
+            <div *ngFor="let mensaje of mensajerecibido" [ngClass]="{'soporteMsg': mensaje.receptor === 'Soporte'}" >    
+                <strong class="recibido">{{mensaje.contenido_recibido}}</strong>
             </div>
+            <div *ngFor="let mensaje1 of mensajes" [ngClass]="{'userMsg': mensaje1.emisor === 'Usuario'}"> 
+                <strong class="enviado">{{mensaje1.contenido}}</strong> 
+            </div> 
+                                                 
+        
         </div>
-        <form class="card-footer text-muted input-group" (ngSumit)="enviarMensaje()">
-            <!-- <div class="input-group mb-3"> -->
-                <!-- <input type="text" class="form-control" placeholder="Escribe un mensaje" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
-
-                <input type="text" class="form-control" placeholder="Escribe un mensaje" [(ngModel)]="nuevoMensaje" [ngModelOptions]="{standalone: true}">
-                <div class="input-group-append" (click)="enviarMensaje()">
-                    <span class="input-group-text" id="basic-addon2">Enviar</span>
-                <!-- </div> -->
-                <!-- <button type="submit" class="btn btn-primary mb-1">Enviar</button> -->
-                </div>
-        </form>
-
+        <form class="card-footer text-muted input-group">
+            <input type="text" #texto class="form-control" placeholder="Escribe un mensaje">
+            <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
+                <span class="input-group-text" id="basic-addon2">Enviar</span>
+            <!-- </div> -->
+            <!-- <button type="submit" class="btn btn-primary mb-1">Enviar</button> -->
+            </div>
+    </form>
     </div>
 </body>
-
-
     
+
+<!-- <button (click)="enviarMensajeNew(texto.value); texto.value=''">Enviar</button> -->
+<!-- <button (click)="enviarMensajeSOPORTENew('test')">TEST MENSAJE SOPORTE</button> -->

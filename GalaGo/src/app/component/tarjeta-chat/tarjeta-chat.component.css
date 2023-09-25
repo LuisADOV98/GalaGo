@@ -1,10 +1,18 @@
-.padre{
+.padre,.hijo1{
     display: flex;
     justify-content:space-around;
     align-items: center;
     width: 100%;
     /* border:2px red solid; */
-    gap:40px;
+    gap:10px;
+    
+}
+.linea{
+  
+  border-bottom: 1px solid #5c5858;
+}
+span.position-absolute.top-0.start-2.translate-middle.badge.rounded-pill.bg-secondary{
+  margin-top: 7px;
 }
     .column1{
         display: flex;
@@ -24,7 +32,7 @@
         margin-left: 30px;
         /* style="width: 67px; max-height: 56px;"  */
         width: 67px;
-        height: 56px;
+        height: auto;
     }
     svg{
         width: 16px;
@@ -37,13 +45,13 @@
     }
 
 /* Samsung Galaxy S20 Ultra */
-@media screen and (max-width: 412px )
+@media screen and (max-width: 412px ) /* de 0px hasta 412 */
 {
     /* .Chats{
         height: ;
     } */
     .padre{
-    height: 50px;
+   /*  height: 100px; */
     font-size: 30px;
   }
   .column1{
@@ -54,10 +62,10 @@
  } 
 
  /* Ipad mini */
- @media screen and (min-width: 768px )
+ @media screen and (min-width: 768px ) /* de 412a768 */
  {
    .padre{
-    height: 60px;
+    /* height: 500px; */
     font-size: 30px;
     width: 760px;
   }
@@ -67,17 +75,17 @@
     font-size: 30px;
     width: 760px;
   }
-   .imagen{
-    width:120px;
+   /* .imagen{
+   width:120px;
     height:100px;
-   }
+   } */
        
 }
 /* ipad air */
-@media screen and (min-width: 820px )
+@media screen and (min-width: 820px ) /* de 768 a 820 */
 {
     .padre{
-        height: 60px;
+       /*  height: 200px; */
         font-size: 30px;
         width: 812px;
       }
@@ -87,10 +95,10 @@
         font-size: 30px;
         width: 812px;
       }
-       .imagen{
+       /* .imagen{
         width:120px;
         height:100px;
-       }
+       } */
        .row1, .row2{
         font-size: 50%;
        }

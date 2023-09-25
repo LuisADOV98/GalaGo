@@ -21,12 +21,16 @@ line-height: 130%; /* 29.9px */
 letter-spacing: 1.15px;
 margin-top: -5px;
 }
-.nav-item1{
-  color:black;
+a{
+  text-decoration: none;
+}
+.nav-item1 a{
+  color:#104967;
 }
 
 .nav-item a{
-  color:var(--color1);
+  color:black;
+  font-size: 100%;
 }
 
 .navbar {
@@ -64,6 +68,41 @@ flex-shrink: 0;
   padding: 10px;
 }
 
+/*nuevos cambios en el header*/
+.submenu{
+  position: absolute;
+  top: 40px;
+  right: 0;
+  overflow: hidden;
+  z-index: 99999;
+  background-color: white;
+  width:50%;
+
+}
+
+
+.submenu ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li{
+  padding: 10px 20px;
+  border-bottom: 1px solid #FFC9CE;
+  /* border-bottom: 1px solid #104967; */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.navbar-toggler{
+  border: none!important;
+}
+.offcanvas-backdrop {
+  background-color: transparent !important;
+}
+/* PARA SAMSUNG GALAXY S20 ULTRA */
 @media screen and (min-width: 412px) {
   .navbar{
     height: 50px;
@@ -76,8 +115,11 @@ flex-shrink: 0;
     font-size: 28px;
     margin-top: -12px;
   }
+  .submenu{
+    top:50px;
+  }
 }
-
+/* PARA IPAD MINI */
 @media screen and (min-width: 768px) {
   .navbar{
     height: 90px;
@@ -101,9 +143,13 @@ flex-shrink: 0;
   .luis{
     height: 90px;
   }
+
+  .submenu{
+    top:80px;
+  }
 }
 
-
+/*PARA IPAD AIR*/
 @media screen and (min-width: 820px) {
   .navbar{
     height: 90px;
@@ -127,4 +173,18 @@ flex-shrink: 0;
   .luis{
     height: 90px;
   }
+  .submenu{
+    
+    top: 80px;
+   
+  
+  }
 }
+
+
+
+
+
+
+
+

@@ -1,6 +1,10 @@
-import { Component,OnInit } from '@angular/core';
-
-
+import { ChangeDetectorRef, Component,OnInit } from '@angular/core';
+import { Mensaje } from 'src/app/models/mensaje';
+import { Mensajerecibido } from 'src/app/models/mensajerecibido';
+// interface Mensaje {
+//   emisor: string,
+//   contenido: string,
+// };
 
 @Component({
   selector: 'app-conversacion-chat',
@@ -8,72 +12,11 @@ import { Component,OnInit } from '@angular/core';
   styleUrls: ['./conversacion-chat.component.css']
 })
 export class ConversacionChatComponent implements OnInit {
-public usuarioLogueado: any;
-public nuevoMensaje: string="";
-// mensajes:any=[
-//   {
-//     emisor:"id",
-//     texto:"Hola que tal",
-//   },
-//   {
-//     emisor:"id",
-//     texto:"Buenos días si digame",
-//   },
-//   {
-//     emisor:"id",
-//     texto:"quiero alquilar el traje de boda",
-//   },
-//   {
-//     emisor:"id",
-//     texto:"¿para que fecha lo necesita?",
-//   },
-//   {
-//     emisor:"id",
-//     texto:"para el 14 de Octubre",
-//   },
-// ];
-
-mensajesenviados:any=[
-  {
-    emisor:"id",
-    texto:"Hola que tal",
-  },
+  public mensajes: Mensaje[] = [];
+  public mensajerecibido: Mensajerecibido[] =[];
   
-  {
-    emisor:"id",
-    texto:"quiero alquilar el traje de boda",
-  },
-  {
-    emisor:"id",
-    texto:"para el 14 de Octubre",
-  },
-  {
-    emisor:"id",
-    texto:"es en Madrid cierto?",
-  },
-];
-
-mensajesrecibidos:any=[
- 
-  {
-    emisor:"id",
-    texto:"Buenos días si digame",
-  },
-  
-  {
-    emisor:"id",
-    texto:"¿para que fecha lo necesita?",
-  },
-  {
-    emisor:"id",
-    texto:"De acuerdo podemos acordar un dia",
-  },
-  {
-    emisor:"id",
-    texto:"Si en Madrid, todo esta en la descripción",
-  },
-];
-
+  // public usuarioLogueado: any;
+  // public nuevoMensaje: string="";
 // mensajes = [
 //   { id: 1, contenido: 'Mensaje 1', leido: false },
 //   { id: 2, contenido: 'Mensaje 2', leido: true },
@@ -83,19 +26,52 @@ mensajesrecibidos:any=[
 
 
 // constructor(private authService:AuthService){}
-constructor(){}
+constructor(private cdRef: ChangeDetectorRef){}
 ngOnInit(): void {
-
+  // console.log("TEST ONINIT")
 // this.authService.getUserLogged().suscribe(usuario=>{
 //   this.usuarioLogueado = usuario;
 // });
 
+
+  // HAGO UNA PETICIÓN A LA BASE DE DATOS CADA X TIEMPO
+  // EN LA QUE RECIBO EL MENSAJE DE SOPORTE TIPO:
+  // {emisor: "Soporte", contenido: "HOLA"}
+  // CUANDO RECIBO ESE MENSAJE LO PUSHEO EN 
+  // this.mensajes.push
+ 
+  setTimeout(() => {
+    this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "Hola, si digame?"})
+    this.cdRef.detectChanges();
+  }, 1000);
+
+  setTimeout(() => {
+    this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "claro, para que fecha lo necesita?"})
+    this.cdRef.detectChanges();
+  }, 10000);
+
+  setTimeout(() => {
+    this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "perfecto,podemos coordinar el pago"})
+    this.cdRef.detectChanges();
+  }, 20000);
 }
 
-enviarMensaje(){
-  console.log(this.nuevoMensaje);
-  this.nuevoMensaje="";
+enviarMensajeNew(msg: string){
+  this.mensajes.push({emisor: "Yo", contenido: msg});
+
 }
+
+// enviarMensajeSOPORTENew(msg: string){
+//   this.mensajes.push({emisor: "Alberto", contenido: "Hola, si digame?"});
+
+// }
+
+
+
+// enviarMensaje(){
+//   console.log(this.nuevoMensaje);
+//   this.nuevoMensaje="";
+// }
 
 // marcarComoNoLeido(mensajeId: number) {
 //   const mensaje = this.mensajes.find((m) => m.id === mensajeId);

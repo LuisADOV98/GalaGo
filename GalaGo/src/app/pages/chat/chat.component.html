@@ -1,4 +1,3 @@
-
 <body>
     <div class="contenido_Chat">
         <div class="Chats">
@@ -8,7 +7,10 @@
            
             <ng-container *ngFor="let chat of chats">
                 <br>
-                <app-tarjeta-chat [chat]="chat" [chats]="chats"></app-tarjeta-chat>
+                <!--AVERIGUAR CUAL DE LOS DOS HACE FALTA-->
+                <!-- <app-tarjeta-chat [chat]="chat" [chats]="chats"></app-tarjeta-chat> -->
+                <app-tarjeta-chat [chat]="chat"></app-tarjeta-chat>
+
             </ng-container>
         </div>
                 
