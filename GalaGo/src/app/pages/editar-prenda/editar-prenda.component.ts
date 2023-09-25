@@ -21,7 +21,7 @@ export class EditarPrendaComponent {
   public prenda1:Prenda
   constructor(public router: Router){
     this.prendas = []
-    this.prenda1 = new Prenda("Traje boda",10,"usado una vez","Madrid","Semi nuevo","S","Comuniones","Hombre","xs",3)
+    this.prenda1 = new Prenda(1,"Traje boda",10,"usado una vez","Madrid","Semi nuevo","S","Comuniones","Hombre","xs")
   console.log(this.prenda1);}
 
 

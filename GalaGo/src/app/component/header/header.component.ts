@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit{
   verSubMenu = false;
 
   //cuando esta registrado/logueado en true//
-  esUsuarioRegistrado = false;
+  esUsuarioRegistrado = true;
  //cuando NO esta registrado/logueado en FALSE/
 // esUsuarioRegistrado = false;
 

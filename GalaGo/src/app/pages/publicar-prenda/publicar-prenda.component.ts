@@ -19,13 +19,14 @@ export class PublicarPrendaComponent {
   public precio: number
   public descripcion:string
   public prenda:Prenda
+  public id: number;
   constructor(public router: Router){
     this.prendas = []
-    this.prenda = new Prenda("",0,"","","","","","")
+    this.prenda = new Prenda(0,"",0,"","","","","","")
   }
 
-  public recogerInfo(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,imagen:string ){
-    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,ubicacion,estado,talla,evento,tipo,imagen)
+  public recogerInfo(id:number = 0, titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,imagen:string ){
+    let newPrenda:Prenda = new Prenda(id,titulo,precio,descripcion,ubicacion,estado,talla,evento,tipo,imagen)
     this.prendas.push(newPrenda)
     console.log(this.prendas);
     this.router.navigate(["/perfil"]);

@@ -12,6 +12,7 @@ export class Prenda {
     public id?: number;
 
     constructor(
+                id:number = 0,
                 titulo?:String,
                 precio?:number,
                 descripcion?:String,
@@ -20,9 +21,7 @@ export class Prenda {
                 talla?:String,
                 evento?:String, 
                 tipo?:String,
-                imagen?: String,
-                id?:number,){
-
+                imagen?: String){
                     
                     this.titulo = titulo;
                     this.precio = precio;

@@ -22,7 +22,7 @@ export class RegistroComponent {
     this.buildForm();
     this.prendas = []
 
-    this.prenda = new Prenda("",0,"","","","","","")
+    this.prenda = new Prenda(0,"",0,"","","","","","","")
 
   }
   // onSubmit(form: NgForm) {
