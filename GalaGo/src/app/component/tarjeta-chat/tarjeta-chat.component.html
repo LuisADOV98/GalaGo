@@ -1,20 +1,26 @@
 
 
     <div class ="padre">
-        <img src="{{chat.foto}}" class="imagen" routerLink="/conversacion-chat" alt="...">
-        <br>
-        <div class ="column1">
-            <div class="row1">
-                <h5  class="card-title"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
-                <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'21/09/2023 19:42' }}</small></p>
-            </div>
-            <div class="row2">
-                <h6 class="card-text"style="color: #104967 ;">{{chat.prenda}}</h6>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+       
+            <img src="{{chat.foto}}" class="imagen" routerLink="/conversacion-chat" alt="...">
+        
+            <div class ="column1">
+            <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
+                <div class="row1">
+                    <h5  class="card-title"><a routerLink="/conversacion-chat">{{chat.nombre}}</a></h5>
+                    <p class="card-text" ><small class="text-body-secondary">{{chat.hora  | date:'24/09/2023 13:42' }}</small></p>
+                </div>
+                <div class="row2">
+                    <h6 class="card-text"style="color: #104967 ;"><small class="text-body-secondary">{{chat.prenda}}</small></h6>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <circle cx="8" cy="8" r="8" [ngStyle]="{fill:leido? '#FFF': '#104967'}"/>
-                </svg>
+                    </svg> -->
+                    <button  class="btn btn-white position-relative">
+                    <span class="position-absolute top-0 start-2 translate-middle badge rounded-pill bg-secondary">2 <span class="visually-hidden">unread</span></span>
+                    </button>
+                </div>
+                <div class="linea"></div>
             </div>
-        </div>
     </div>
 
         <!-- <div class="card" style="width: 24rem;"> -->
