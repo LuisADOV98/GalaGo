@@ -55,12 +55,13 @@ input{
     justify-content: center;
     align-items: center;
     margin-bottom: -4px;
+    font-size: 16px;
 }
 .cancelar{
     color: red;
     text-align: center;
     font-family: Pavanam;
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 1.02px;
     text-decoration: none;
 }

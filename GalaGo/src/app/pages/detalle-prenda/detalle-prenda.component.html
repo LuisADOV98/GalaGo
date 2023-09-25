@@ -53,10 +53,10 @@
         <div class="descripcion">{{prenda.descripcion}}</div>
 
         <button *ngIf="propietario !== 'true'" class="contactar" on-click="irChat()">
-            <h3>Contactar</h3>
+            <p>Contactar</p>
         </button>
-        <button *ngIf="propietario === 'true'" class="contactar" on-click="irEditar()">
-            <h3>Editar</h3>
+        <button *ngIf="propietario === 'true'" class="editar" on-click="irEditar()">
+            <p>Editar</p>
         </button>
             
         </div>

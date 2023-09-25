@@ -181,8 +181,10 @@
             font-family: "Pavanam";
             border-radius: 9px;
             width: 65px;
-            height: 27px;
+            height: 25px;
             right: 0px;
+            bottom: -11px;
+            font-size: 13px;
             border: none;
         }
 @media screen and (min-width: 412px) {

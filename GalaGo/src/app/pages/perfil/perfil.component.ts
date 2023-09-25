@@ -13,7 +13,7 @@ export class PerfilComponent {
   isFavoritosActive: boolean = false;
 
   public misPrendas: Prenda[];
-  public misFavoritas: Prenda[];
+  public misFavoritas: Prenda[]; /////////
 
   public user: User;
 
@@ -65,5 +65,12 @@ export class PerfilComponent {
   // }
   // ngOnInit(): void {
   //   this.verTodas();
+  // }
+
+
+  //PARA FAVORITOS
+  // agregarAFavoritas(prenda: any) {
+  //   // Agregar la prenda a la lista de favoritas
+  //   this.misFavoritas.push(prenda);
   // }
 }

@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Prenda } from 'src/app/models/prenda';
 import { CommonModule } from '@angular/common';
 import { ElementRef, Renderer2, ViewChild } from '@angular/core';
-
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,6 +33,9 @@ export class HomeComponent{
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
+
+  //FAVORITOS
+  // @Output() favoritaAgregada = new EventEmitter<Prenda>();
 
   constructor(){
     this.prendas = [
@@ -126,4 +129,8 @@ export class HomeComponent{
     this.sliderValue.nativeElement.classList.remove("show");
   }
   
+  //FAVORITOS
+  // marcarComoFavorita(prenda: any) {
+  //   this.favoritaAgregada.emit(prenda);
+  // }
 }

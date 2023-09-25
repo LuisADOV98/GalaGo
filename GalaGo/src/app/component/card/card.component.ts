@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { OutletContext, Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
 
@@ -16,6 +16,9 @@ export class CardComponent implements OnInit{
   mostrarCorazon: boolean = true; //para que salga el corazon en las cards, 
                       //x defecto true (LANDING = FALSE)
 
+  //output para enviar info a mis favs
+  @Output() marcarFavorita = new EventEmitter<Prenda>();
+  
   /* logueado = true; */
   
  
@@ -31,7 +34,7 @@ export class CardComponent implements OnInit{
 
   verDetallePrenda(id:number, propietario :boolean){
     /* detalle-prenda */
-    if (this.editable === false && this.router.url === '/landing-page' ||  this.router.url === '/') {
+    if (!this.editable && (this.router.url === '/landing-page' || this.router.url === '/')) {
       // Si estás en la página de inicio y la tarjeta no es editable,
       // redirige a login
       this.router.navigate(['/login']);
@@ -54,7 +57,11 @@ export class CardComponent implements OnInit{
     //     console.log(id);
     // }
 
-
+    marcarComoFavorita(id:number) {
+      console.log(id);
+      
+      this.marcarFavorita.emit(this.prenda);
+    }
 
     verSoloFavoritos(){
           //¿Qué id tiene el usuario? normalmente se guarda en localhost
