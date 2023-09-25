@@ -24,7 +24,7 @@
         position: absolute;
         top: 0px;
         left: -2px;
-        width: 175px;
+        width: 171px;
         height: 185px;
         object-fit: cover;
     }
@@ -47,7 +47,7 @@
     .contenedor_texto {
         position: relative;
         border: 0.2px solid rgba(58, 58, 58, 0.37);
-        width: 175px;
+        width: 171px;
         height: 36.16px;
     }
 
