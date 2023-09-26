@@ -1,3 +1,4 @@
+
 body{
     /* display: flex;
     justify-content: center;
@@ -68,28 +69,22 @@ div.container-fluid{
     font-size: 15px;
 }
 .card-body{
-    height: 655px;/*consultar altura solo del body*/
+    height: 83vh;/*consultar altura solo del body*/
     overflow-y: auto; /* Hace que el contenido sea desplazable verticalmente cuando sea necesario */
     /* position: fixed; */
 }
-.input.form-control{
-    margin-top: -500px;
+input.form-control{
+    margin-top: 10px;
+
+    
 }
 .input-group-text{
     background-color: var(--pink);
-    /* margin-right: 60px; */
+    margin-left: 10px;
 
  
 }
-.input-group-text:active{
-   
-    transition: color 0.3s ease;
-}
 
-.input-group-text:active:hover{
-    background-color: var(--pink);
-    
-} 
  span{
     color: var(--dark_blue);
     text-decoration: none;
@@ -102,7 +97,7 @@ div.container-fluid{
  background-color:#FDECEE;
  color:black;
  min-width: 50.01%;
- border-radius: 5px;
+ border-radius: 10px;
  text-align: left;
  height: 30px;
  font-family: "Pavanam", sans-serif;
@@ -115,14 +110,14 @@ div.container-fluid{
         background-color:#73A4BD;
         color:var(--white);
         min-width: 50.01%;
-        border-radius: 5px;
+        border-radius: 10px;
         text-align: left;
         height: 30px;
         font-family: "Pavanam", sans-serif;
        
 }
 strong.recibido{
-    margin: 9px 0px 0px 15px;
+    margin: 9px 0px 0px 15px; 
 }
 
 strong.enviado{
@@ -152,7 +147,7 @@ img.d-inline-block.align-text-top{
     background-color:#FDECEE;
     color:black;
     min-width: 50.01%;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: left;
     height: 30px;
     font-family: "Pavanam", sans-serif;
@@ -164,12 +159,12 @@ img.d-inline-block.align-text-top{
         background-color:#73A4BD;
         color:var(--white);
         min-width: 50.01%;
-        border-radius: 5px;
+        border-radius: 10px;
         text-align: left;
         height: 30px;
         font-family: "Pavanam", sans-serif;
     }
-/* .bocadillo-redondo{
+/* .bocadillo{
     position: relative;
     height: 30px;
     width: 300px;
@@ -177,9 +172,7 @@ img.d-inline-block.align-text-top{
     border-radius: 5px;
     margin: 20px 0px 0px 20px;
 } */
-
-
-/* .bocadillo-redondo:before{
+/* .bocadillo:before{
     border: 10px solid #73A4BD;
     content: '';
     border-left-color: transparent;
@@ -191,6 +184,19 @@ img.d-inline-block.align-text-top{
     transform: rotate(20deg);
     margin: 20px 0px 0px 20px;
 } */
+div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounded-pill{
+    display: block;
+    float:right;
+    background-color:#73A4BD;
+    color:var(--white);
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    height: 30px;
+    font-family: "Pavanam", sans-serif;
+    gap:5px;
+    margin: 9px 15px 0px 15px;
+}
 
 /* Samsung Galaxy S20 Ultra */
 @media screen and (max-width: 412px )
