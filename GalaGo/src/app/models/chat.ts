@@ -9,8 +9,6 @@ export class Chat {
                 this.foto = foto;
                 this.nombre = nombre;
                 this.prenda = prenda;
-                this.hora = hora
-                
-                
+                this.hora = hora; 
             }
 }
