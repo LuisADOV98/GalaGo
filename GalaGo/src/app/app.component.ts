@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +11,8 @@ export class AppComponent{
   public showHeader: boolean = true;
   public closeMenu: boolean = false;
   public showFooter: boolean = false;
+
+  public header: boolean = true;
 
   //No cierra la navegación actual del resto de páginas
   constructor(private router: Router){
@@ -44,5 +46,21 @@ export class AppComponent{
     return routesToHideHeader.some(route => url.includes(route));
 
   }
+
+
+
+
+
+  // constructor(private router: Router){
+  //   this.router.events.subscribe(event =>{
+  //     if(event instanceof NavigationEnd){
+  //       if((event.url == "/registro") || 
+  //          (event.url == "/login") || 
+  //          (event.url == "/quienes-somos") ){
+  //           this.header = !this.header;
+  //          }
+  //     }
+  //   })
+  // }
 
 }

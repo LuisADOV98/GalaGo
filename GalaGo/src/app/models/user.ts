@@ -7,7 +7,7 @@ export class User {
     public email?: string;
     public password?: string;
 
-    constructor(id_user?:number,name?:string,last_name?:string,ubicacion?:string,email?:string,password?:string,photo?:string,){
+    constructor(id_user?:number,name?:string,last_name?:string,ubicacion?:string,email?:string,password?:string,photo?:string){
         this.id_user  = id_user;
         this.name     = name;
         this.last_name= last_name;

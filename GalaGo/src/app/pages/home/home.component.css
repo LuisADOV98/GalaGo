@@ -223,8 +223,8 @@ element.style{
   flex-wrap: wrap;
   padding: 7px;
   gap: 0;
-  /* margin-left: 10px;
-  margin-right: 10px; */
+   margin-left: 4px;
+  /*margin-right: 10px; */
 }
 
 

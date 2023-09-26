@@ -5,7 +5,6 @@ export class Mensajerecibido {
                     ){
             
                     this.receptor=receptor;
-                    this.contenido_recibido = contenido_recibido;
-            
+                    this.contenido_recibido = contenido_recibido;      
                     }
-    }
+        }

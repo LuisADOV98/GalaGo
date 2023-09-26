@@ -1,6 +1,6 @@
 export class Mensaje {
     constructor(
-                public emisor: string,
+                public emisor: string, //hay que cambiarlo por id
                 public contenido: string,
                 ){
         
