@@ -1,35 +1,53 @@
+
 body{
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    width: 390px;
+    width: 100%;
     height: 844px;
-    position: relative; 
+    /* position: relative;  */
     /* border: 0.5px red solid; */
 }
 
-/* .contenido_Chat{
+.page-item{
+    margin-left: 10px;
+    margin-bottom: 2px;
+    width: 30px;
+    height: 35px;
+}
 
- width: 390px;
-    height: 844px;
-} */
+.boton{
+ 
+        width: 20px;
+        margin-left: 10px;
+        margin-bottom: -40px;
+        margin-top:-20px;
+        /* border: 2px solid red; */
+
+}
+
+
 .Chats{
     height: 44px;
     width: 100%;
     margin-top: 44px;
     background-color: var(--pink);
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content:flex-start;
+    /* align-items: center; */
+  
     
 }
 
 
-.chatsText{
-    width: 86px;
-    height: 27px;
+h1.chatsText{
+      /* border:10px solid rgb(174, 255, 0);
+    border-radius: 14px; */ 
     flex-shrink: 0;
     /* TIPOGRAFÍA */
+    /* margin:auto; */
+    margin-left: 130px ;
+    margin-top:10px;
     color: #000;
     text-align: center; 
     font-feature-settings: 'clig' off, 'liga' off;
@@ -40,11 +58,31 @@ body{
     line-height: 130%; 
     letter-spacing: 1.2px;
 }
+div.container-fluid{
+    height: 40px;
+    width: 390px;
+    display: flex;
+    justify-content:flex-start;
+}
+.textUser{
+    font-family: "Pavanam", sans-serif;
+    font-size: 15px;
+}
 .card-body{
     height: 655px;/*consultar altura solo del body*/
+    overflow-y: auto; /* Hace que el contenido sea desplazable verticalmente cuando sea necesario */
+    /* position: fixed; */
 }
+input.form-control{
+    margin-top: 10px;
+    
+}
+.input-group-text{
+    background-color: var(--pink);
+    margin-left: 10px;
 
-
+ 
+}
 .input-group-text:active{
    
     transition: color 0.3s ease;
@@ -54,15 +92,22 @@ body{
     background-color: var(--pink);
     
 } 
-
+ span{
+    color: var(--dark_blue);
+    text-decoration: none;
+    font-size: large;
+    
+ }
 .enviado{
  display: block;
  float:right;
  background-color:#FDECEE;
  color:black;
  min-width: 50.01%;
- border-radius: 5px;
+ border-radius: 10px;
  text-align: left;
+ height: 30px;
+ font-family: "Pavanam", sans-serif;
 }
 
 .recibido{
@@ -72,7 +117,216 @@ body{
         background-color:#73A4BD;
         color:var(--white);
         min-width: 50.01%;
-        border-radius: 5px;
+        border-radius: 10px;
         text-align: left;
+        height: 30px;
+        font-family: "Pavanam", sans-serif;
        
 }
+strong.recibido{
+    margin: 9px 0px 0px 15px; 
+}
+
+strong.enviado{
+    margin: 9px 15px 0px 15px;
+}
+/* strong.recibido:before{
+    border: 10px solid #73A4BD;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 169px;
+    right: 355px;
+    transform: rotate(20deg);
+} */
+
+
+img.d-inline-block.align-text-top{
+    height: 24px;
+    width: 30px;
+}
+
+.userMsg{
+    display: block;
+    float:right;
+    background-color:#FDECEE;
+    color:black;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    height: 30px;
+    font-family: "Pavanam", sans-serif;
+    }
+    
+.soporteMsg{
+        display: flex;
+        float:left;
+        background-color:#73A4BD;
+        color:var(--white);
+        min-width: 50.01%;
+        border-radius: 10px;
+        text-align: left;
+        height: 30px;
+        font-family: "Pavanam", sans-serif;
+    }
+/* .bocadillo{
+    position: relative;
+    height: 30px;
+    width: 300px;
+    background-color: #73A4BD;
+    border-radius: 5px;
+    margin: 20px 0px 0px 20px;
+} */
+/* .bocadillo:before{
+    border: 10px solid #73A4BD;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 25px;
+    right: 285px;
+    transform: rotate(20deg);
+    margin: 20px 0px 0px 20px;
+} */
+div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounded-pill{
+    display: block;
+    float:right;
+    background-color:#73A4BD;
+    color:var(--white);
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    height: 30px;
+    font-family: "Pavanam", sans-serif;
+    gap:5px;
+    margin: 9px 15px 0px 15px;
+}
+
+/* Samsung Galaxy S20 Ultra */
+@media screen and (max-width: 412px )
+{
+  
+   
+    div.container-fluid{
+        height: 40px;
+        display: flex;
+        justify-content:flex-start;
+    }
+    .textUser{
+        margin-right: 5px;
+        font-size:18px;
+    }
+    .input-group-append{
+        margin-top: 10px;
+        padding: 0px;
+    }
+   
+}
+ /* Ipad mini */
+ @media screen and (min-width: 768px )
+ {
+    .Chats{
+        height: 70px;
+        margin-top: 80px;
+        
+    }
+    .chatsText{
+        font-size: 45px;
+        font-weight: lighter;
+    }
+    .enviado{
+        height: 60px;
+       }
+    p.enviado.p-2{
+
+        font-size: x-large;
+    }
+       .recibido{
+        height: 60px;
+       }
+
+       p.recibido.p-2{
+
+        font-size: x-large;
+    }
+    div.container-fluid{
+        height: 80px;
+        /* display: flex;
+        justify-content:left; */
+    }
+   
+    .textUser{
+        margin-right: 5px;
+        font-size:xx-large;
+        gap:5x;
+    }
+    img.d-inline-block.align-text-top{
+        height: 80px;
+        width: 100px;
+        margin-left: -180px;
+    }
+   
+    
+    input.form-control.ng-untouched.ng-pristine.ng-valid{
+        margin-top: 30px;
+    }
+    span#basic-addon2.input-group-text{
+        margin-top: 30px;
+        font-size: x-large;
+    }
+}
+/* Ipad Air */
+@media screen and (min-width: 820px )
+{
+    .Chats{
+        height: 80px;
+        margin-top: 90px;
+        gap:35px;
+    }
+    .chatsText{
+        font-size: 50px;
+        font-weight: lighter;
+    }
+    .enviado{
+        height: 60px;
+       }
+    p.enviado.p-2{
+
+        font-size: x-large;
+    }
+       .recibido{
+        height: 60px;
+       }
+
+       p.recibido.p-2{
+
+        font-size: x-large;
+    }
+    div.container-fluid{
+        height: 85px;
+        display: flex;
+        justify-content:flex-start;
+    }
+   
+    .textUser{
+        margin-right: 5px;
+        font-size:xx-large;
+    }
+    img.d-inline-block.align-text-top{
+        height: 80px;
+        width: 100px;
+    }
+   
+    input.form-control.ng-untouched.ng-pristine.ng-valid{
+        margin-top: 165px;
+    }
+    span#basic-addon2.input-group-text{
+        margin-top: 165px;
+        font-size: x-large;
+    }
+}
+
+
