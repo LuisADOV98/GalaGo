@@ -91,17 +91,7 @@ input.form-control{
     font-size: large;
     
  }
-.enviado{
- display: block;
- float:right;
- background-color:#FDECEE;
- color:black;
- min-width: 50.01%;
- border-radius: 10px;
- text-align: left;
- height: 30px;
- font-family: "Pavanam", sans-serif;
-}
+
 
 .recibido{
     

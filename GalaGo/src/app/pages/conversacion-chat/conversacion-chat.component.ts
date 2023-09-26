@@ -26,6 +26,8 @@ export class ConversacionChatComponent implements OnInit {
 
 
 // constructor(private authService:AuthService){}
+
+//Detecta el cambio de mensaje que te indica los setTimeout
 constructor(private cdRef: ChangeDetectorRef){}
 ngOnInit(): void {
   // console.log("TEST ONINIT")
@@ -43,7 +45,7 @@ ngOnInit(): void {
   setTimeout(() => {
     this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "Hola, si digame?"})
     this.cdRef.detectChanges();
-  }, 1000);
+  }, 100);
 
   setTimeout(() => {
     this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "claro, para que fecha lo necesita?"})
@@ -56,6 +58,7 @@ ngOnInit(): void {
   }, 20000);
 }
 
+// Boton de enviar (input de mensaje)
 enviarMensajeNew(msg: string){
   this.mensajes.push({emisor: "Yo", contenido: msg});
 
@@ -65,8 +68,6 @@ enviarMensajeNew(msg: string){
 //   this.mensajes.push({emisor: "Alberto", contenido: "Hola, si digame?"});
 
 // }
-
-
 
 // enviarMensaje(){
 //   console.log(this.nuevoMensaje);
