@@ -9,7 +9,7 @@
 }
 .linea{
   
-  border-bottom: 1px solid #FFC9CE;
+  border-bottom: 0.4px solid var(--dark_blue);
 }
 span.position-absolute.top-0.start-2.translate-middle.badge.rounded-pill.bg-secondary{
   margin-top: 7px;
