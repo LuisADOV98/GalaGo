@@ -1,6 +1,6 @@
 .fondo{
     background-image: url('../../../assets/quienesSomos/fondo2.png');
-    height: 95vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -26,192 +26,65 @@
     align-items: center;
     position: relative;
 }
-.padreEnglobado{
-    /* border: 2px solid red; */
-    display: flex;
-    /* margin-left: 1px; */
-}
-.padreMasEnglobado{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
+
 .quienesSomos{
-    /* border: 2px solid red; */
+    border: 2px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: flex-start; 
     align-items: center;
     text-align: center;
     width: 97%;
-    height:73vh;
+    height:80vh;
     border-radius: 5px;
     background: rgba(255, 229, 233, 0.89);
     position: relative;
+    /* transform: translateY(390px); */
     z-index: 2;
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
-.logo{
-    padding-top: 30px;
-    color: var(--AZUL-LISO, #104967);
-    text-align: center;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: var(--titulo);
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
 
-.intro{
-    font-size: 20px;
-    font-family: Pavanam;
-    color: var(--AZUL-LISO, #104967);
-}
-p{
-    text-align: center;
-    width: 90%;
-    color: var(--AZUL-LISO, #104967);
-    text-align: center;
-    font-family: Pavanam;
-    font-size: 14px;
-}
 
-.gala{
-    text-align: center;
-    font-family: Pattaya;
-}
-.texto{
+.padreTarjeta{
+    width: 100%;
     /* border: 2px solid red; */
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 2em;
-    margin-bottom: 75px;
-}
-/* NOSOTROS */
-.desc-padre{
-    /* border: 2px solid red; */
-    width: 185px;
-    display: flex;
-    position: relative;
-    z-index: 10;
-    
-}
-.row1, .row2{
-    display: flex;
-    gap: 5px;
-    
-}
-.desc-padre{
-    position: relative;
-    gap: 5px;
-    
-}
-/* TARJETA */
-.card {
-    /* border: 2px solid red; */
-    width: 184px;
-    height: 100px;
-    /* padding: 0.5rem 0.5rem; */
-    /* border-style: none; */
-    /* border-radius: 0%; */
-    background: transparent;
-    border: none;
-    /* transition: box-shadow .3s ease, transform .2s ease; */
-   }
-.horizontal{
-    width: 300px;
-    height: 50px;
-    
+    padding-left: 20px;
+    gap: 20px;
 }
 
-/* .rosa{
-    background: var(--pink);
-}
-.azul{
-    background: var(--ligth_blue);
-}
- 
-*/
 
 
-   .card-info {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    /* transition: transform .2s ease, opacity .2s ease;
-    border: 2px solid red; */
-    /* background: rgba(255, 229, 233, 0.89); */
-   
-}
-   .fotito{
-    /* border: 2px solid red; */
-    margin-top: 10px;
-        width: 60px;
-        height: 75px;
-        margin-bottom: 90px;
-    
-   }
-   .fotoGit{
-    /* border: 2px solid red; */
-    display: flex;
-    width: 100px;
-    justify-content: center;
-   }
-   /*Image*/
-   /* .card-avatar {
-    margin-bottom: 0.4rem;
-   } */
 
-   
-   /*Card footer*/
-   .card-social{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    opacity: 0;
-    transition: transform .2s ease, opacity .2s ease;
-   }
-   .cs-rosa{
-    background: var(--pink);
-   }
-   .cs-azul{
-    background: var(--ligth_blue);
-   }
-   .card-social__item {
-    list-style: none;
-   }
-   
-   .card-social__item svg {
-    height: 18px;
-    width: 18px;
-    fill: var(--dark_blue);
-    cursor: pointer;
-    transition: fill 0.2s ease ,transform 0.2s ease;
-   }
-   
-   /*Text*/
-   .card-title {
-    color: var(--dark_blue);
-    font-size: 16px;
-    font-family: Pattaya;
-   }
-   
-   .card-subtitle {
-    color: #40667c;
-    font-size: 12px;
-   }
+
+.fotos{
+    width: 70px;
+    height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    /* samsung s22 */
     /* se adapta bien, no hago cambios */

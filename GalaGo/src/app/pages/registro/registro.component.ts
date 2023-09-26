@@ -11,18 +11,21 @@ import { User } from 'src/app/models/user';
 })
 
 export class RegistroComponent {
-  // public register: User
-  public prendas:Prenda[]
 
+  public user: User
+  // public register: User
+
+  // public prendas:Prenda[]
+  public ubicacion: string
   public myForm: FormGroup
   public arrUbicacion:string[] = ["Madrid","Barcelona","Badajoz","avila"]
-  public prenda:Prenda
+  // public prenda:Prenda
 
   constructor(private formBuilder: FormBuilder, private route: Router){
     this.buildForm();
-    this.prendas = []
-
-    this.prenda = new Prenda("",0,"","","","","","")
+    // this.prendas = []
+    // this.prenda = new Prenda("",0,"","","","","","")1
+    this.user = new User()
 
   }
   // onSubmit(form: NgForm) {
@@ -34,6 +37,7 @@ export class RegistroComponent {
     console.log(user);
     this.route.navigate(['/login']);
   }
+  
   private buildForm(){
     const minPassLength = 8;
     this.myForm = this.formBuilder.group({
@@ -54,5 +58,14 @@ export class RegistroComponent {
     if (control.parent?.value.password == control.value)
     resultado = null;
   return resultado;
+  }
+  onSubmit(form:NgForm){
+      
+    console.log(form.value);
+    console.log(this.user);
+
+  }
+  passwordsMatch(): boolean {
+    return this.user.password === this.user.confirmPassword
   }
 }

@@ -6,8 +6,9 @@ export class User {
     public ubicacion?: string;
     public email?: string;
     public password?: string;
+    public confirmPassword?:string
 
-    constructor(id_user?:number,name?:string,last_name?:string,ubicacion?:string,email?:string,password?:string,photo?:string,){
+    constructor(id_user?:number,name?:string,last_name?:string,ubicacion?:string,email?:string,password?:string,photo?:string, confirmPassword?:string){
         this.id_user  = id_user;
         this.name     = name;
         this.last_name= last_name;
@@ -15,6 +16,7 @@ export class User {
         this.email    = email;
         this.photo    = photo;
         this.password = password;
+        this.confirmPassword = confirmPassword
 
     }
     public nombreCompleto():string{
