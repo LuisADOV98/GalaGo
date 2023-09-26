@@ -6,7 +6,7 @@
     </button>
     
     <!--Cuando el usuario no esta registrado muestra solo 3 pág-->
-    <nav class="submenu" *ngIf="verSubMenu && esUsuarioRegistrado === false">
+    <nav class="submenu" *ngIf="verSubMenu && isLoggedIn === false">
         <ul>
           <li class="nav-item"><a routerLink="/registro" >Regístrate</a></li>
           <li class="nav-item"><a routerLink="/login" >Inicia sesión</a></li>
@@ -14,7 +14,7 @@
         </ul>
     </nav>
     <!--Cuando el usuario si esta registrado muestra  7 pág-->
-    <nav class="submenu" *ngIf="verSubMenu && esUsuarioRegistrado === true">
+    <nav class="submenu" *ngIf="verSubMenu && isLoggedIn === true">
       <ul>
         <li class="nav-item"><a routerLink="/publicar-prenda" (click)="mostrarOcultarMenu()">Publicar</a></li>
         <li class="nav-item"><a routerLink="/home" (click)="mostrarOcultarMenu()" >Home</a></li>

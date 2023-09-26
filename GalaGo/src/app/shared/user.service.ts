@@ -21,8 +21,17 @@ export class UserService {
 //     return this.http.post(this.url+"/registro", user); //users
 // }
 
+//Función que se usa en el componente header para saber si el usuario está logeado
+  isLoggedIn(){
+    return this.logueado;
+  }
   public loginUser(newUser: User):Observable<Object>{
     return this.http.post(this.url+"/login", newUser);
+  }
+
+   //Post register
+   public registro(newUser: User):Observable<Object>{
+    return this.http.post(this.url+"/registro",newUser)
   }
 
   // public editUser(user: User):Observable<Object>{

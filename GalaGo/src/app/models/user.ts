@@ -3,7 +3,7 @@ export class User {
     public photo?: string;
     public firstname?: string;
     public surname?: string;
-    public ubicacion?: string;
+    public location?: string; 
     public email?: string;
     public password?: string;
 
@@ -11,7 +11,7 @@ export class User {
         this.id_user = id_user;
         this.firstname = firstname;
         this.surname = surname;
-        this.ubicacion = ubicacion;
+        this.location = ubicacion;
         this.email = email;
         this.photo = photo;
         this.password = password;

@@ -27,7 +27,7 @@ export class EditarPerfilComponent {
       if(edPhoto != "") this.user.photo = edPhoto;
       if(edName != "") this.user.firstname = edName;
       if(edLastName != "") this.user.surname = edLastName;
-      if(edUbicacion != "") this.user.ubicacion = edUbicacion;
+      if(edUbicacion != "") this.user.location = edUbicacion;
       if(edEmail != "") this.user.email = edEmail;
       if(edPassword != "") this.user.password = edPassword;
       
@@ -41,6 +41,10 @@ export class EditarPerfilComponent {
      
       // Redirige al usuario nuevamente a la página de perfil después de guardar
       this.router.navigate(["/perfil"]);
+      }
+
+      cancelar(){
+        this.router.navigate(["/perfil"]);
       }
 
      

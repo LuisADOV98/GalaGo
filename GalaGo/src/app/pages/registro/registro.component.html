@@ -24,15 +24,15 @@
           </div>
             <div class="form-group">
               <div class="texto"></div>
-            <input placeholder="Nombre" type="text" class="form-control" formControlName="nombre" [ngClass]="{ 'is-invalid': (myForm.get('nombre').dirty || myForm.get('nombre').touched) && !myForm.get('nombre').valid}">
-                    <div *ngIf="!myForm.get('nombre').valid" class="invalid-feedback">
+            <input placeholder="Nombre" type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': (myForm.get('firstname').dirty || myForm.get('firstname').touched) && !myForm.get('firstname').valid}">
+                    <div *ngIf="!myForm.get('firstname').valid" class="invalid-feedback">
                         El nombre es obligatorio
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="texto"></div>
-                    <input placeholder="Apellidos" type="text" class="form-control" formControlName="apellido" [ngClass]="{ 'is-invalid': (myForm.get('apellido').dirty || myForm.get('apellido').touched) && !myForm.get('apellido').valid}">
-                    <div *ngIf="!myForm.get('apellido').valid" class="invalid-feedback">
+                    <input placeholder="Apellidos" type="text" class="form-control" formControlName="surname" [ngClass]="{ 'is-invalid': (myForm.get('surname').dirty || myForm.get('surname').touched) && !myForm.get('surname').valid}">
+                    <div *ngIf="!myForm.get('surname').valid" class="invalid-feedback">
                         El apellido es obligatorio
                     </div>
                 </div>
@@ -74,13 +74,13 @@
             </div>
             <div class="form-group">
               <!-- <label for="ubicacion2">Ubicación</label> -->
-              <select id="ubicacion2" class="form-control" formControlName="ubicacion2" [ngClass]="{ 'is-invalid': (myForm.get('ubicacion2').dirty || myForm.get('ubicacion2').touched) && !myForm.get('ubicacion2').valid}">
+              <select id="location" class="form-control" formControlName="location" [ngClass]="{ 'is-invalid': (myForm.get('location').dirty || myForm.get('location').touched) && !myForm.get('location').valid}">
                 <!-- <option value="" selected hidden>Selecciona una ubicación...</option> -->
                 <ng-container *ngFor="let ubicacion of arrUbicacion">
                   <option [value]="ubicacion">{{ubicacion}}</option>
                 </ng-container>
               </select>
-              <div *ngIf="!myForm.get('ubicacion2').valid" class="invalid-feedback">
+              <div *ngIf="!myForm.get('location').valid" class="invalid-feedback">
                 La ubicación es obligatoria
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/user.service';
 // import { UserService } from 'src/app/shared/user.service';
 @Component({
   selector: 'app-header',
@@ -7,19 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit{
   
-  verSubMenu = false;
+  public verSubMenu = false;
 
   //cuando esta registrado/logueado en true//
-  esUsuarioRegistrado = true;
+  // public esUsuarioRegistrado = true;
+
  //cuando NO esta registrado/logueado en FALSE/
 // esUsuarioRegistrado = false;
 
-  // constructor(public userService: UserService){
-  // }
-
-  constructor(){
-
+  constructor(public userService: UserService){
+    
   }
+
+  get isLoggedIn():boolean{
+    return this.userService.logueado;
+  }
+
+
   ngOnInit(): void {
     // Comprobar si el usuario está 
     // registrado
