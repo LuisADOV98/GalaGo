@@ -1,7 +1,7 @@
     <div class="tarjeta">
         <!-- CARD REDIRIGE A LOGIN O DETALLE PRENDA -->
-        <img *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="foto" [src]="prenda.imagen"/>
-        <img *ngIf="!editable" (click)="verDetallePrenda(prenda.id, false)" class="foto" [src]="prenda.imagen"/>
+        <img *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="foto" [src]="prenda.photo1"/>
+        <img *ngIf="!editable" (click)="verDetallePrenda(prenda.id, false)" class="foto" [src]="prenda.photo1"/>
        
         <div class="texto">
     
