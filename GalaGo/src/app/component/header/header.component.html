@@ -8,20 +8,20 @@
     <!--Cuando el usuario no esta registrado muestra solo 3 pág-->
     <nav class="submenu" *ngIf="verSubMenu && esUsuarioRegistrado === false">
         <ul>
-          <li class="nav-item"><a routerLink="/registro" (click)="mostrarOcultarMenu()">Regístrate</a></li>
-          <li class="nav-item"><a routerLink="/login" (click)="mostrarOcultarMenu()">Inicia sesión</a></li>
-          <li class="nav-item1"><a routerLink="/quienes-somos" (click)="mostrarOcultarMenu()">¿Quienes Somos?</a></li>  
+          <li class="nav-item"><a routerLink="/registro" >Regístrate</a></li>
+          <li class="nav-item"><a routerLink="/login" >Inicia sesión</a></li>
+          <li class="nav-item1"><a routerLink="/quienes-somos" >¿Quienes Somos?</a></li>  
         </ul>
     </nav>
     <!--Cuando el usuario si esta registrado muestra  7 pág-->
     <nav class="submenu" *ngIf="verSubMenu && esUsuarioRegistrado === true">
       <ul>
         <li class="nav-item"><a routerLink="/publicar-prenda" (click)="mostrarOcultarMenu()">Publicar</a></li>
-        <li class="nav-item"><a routerLink="/home" (click)="mostrarOcultarMenu()">Home</a></li>
+        <li class="nav-item"><a routerLink="/home" (click)="mostrarOcultarMenu()" >Home</a></li>
         <li class="nav-item"><a routerLink="/chat" (click)="mostrarOcultarMenu()">Chats</a></li>
         <li class="nav-item"><a routerLink="/perfil" (click)="mostrarOcultarMenu()">Favoritos</a></li>
         <li class="nav-item"><a routerLink="/perfil" (click)="mostrarOcultarMenu()">Perfil</a></li>
-        <li class="nav-item" mostrarOcultarMenu()>Cerrar sesión</li>
+        <li class="nav-item" >Cerrar sesión</li>
         <li class="nav-item1"><a routerLink="/contacta" (click)="mostrarOcultarMenu()">¿Necesitas ayuda?</a></li>
       </ul>
   </nav>
