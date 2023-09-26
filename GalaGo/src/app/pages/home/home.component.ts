@@ -36,10 +36,10 @@ export class HomeComponent{
 
   constructor(){
     this.prendas = [
-      new Prenda(1,"Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg"),
-      new Prenda(2,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(3,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(4,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
+      new Prenda("Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg"),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
+      new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
     ]
     this.arrTipo = ["Accesorio", "Mujer", "Hombre"];
     this.arrTalla = ["Unica","S","M","L","XL","XXL"];

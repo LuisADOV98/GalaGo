@@ -1,38 +1,48 @@
 export class Prenda {
    
-    public titulo?: String;
-    public precio?: number;
-    public descripcion?: String; 
-    public ubicacion?: String;//"Madrid","Barcelona","Badajoz","avila"
-    public estado?: String;//"Nuevo", "Semi nuevo","Usado"
-    public evento?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public tipo?: String //"Accesorio", "Mujer", "Hombre"
-    public talla?:String //"Unica","S","M","L","XL","XXL"
-    public imagen?: String
-    public id?: number;
+    public title?: String;
+    public price?: number;
+    public description?: String; 
+    public location?: String;//"Madrid","Barcelona","Badajoz","avila"
+    public state?: String;//"Nuevo", "Semi nuevo","Usado"
+    public event?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
+    public type?: String //"Accesorio", "Mujer", "Hombre"
+    public size?:String //"Unica","S","M","L","XL","XXL"
+    public photo1?: String
+    public photo2?: String
+    public photo3?: String
+    public photo4?: String
+    public idprenda?: number;
 
     constructor(
-                id:number = 0,
-                titulo?:String,
-                precio?:number,
-                descripcion?:String,
-                ubicacion?:String,
-                estado?:String, 
-                talla?:String,
-                evento?:String, 
-                tipo?:String,
-                imagen?: String){
+                
+                title?:String,
+                price?:number,
+                description?:String,
+                location?:String,
+                state?:String, 
+                size?:String,
+                event?:String, 
+                type?:String,
+                photo1?: string,
+                photo2?: string,
+                photo3?: string,
+                photo4?: string,
+                idprenda:number = 0){
                     
-                    this.titulo = titulo;
-                    this.precio = precio;
-                    this.descripcion = descripcion;
-                    this.ubicacion = ubicacion;
-                    this.estado = estado;
-                    this.talla = talla;
-                    this.evento = evento;
-                    this.tipo = tipo;
-                    this.imagen = imagen;
-                    this.id = id;
+                    this.title = title;
+                    this.price = price;
+                    this.description = description;
+                    this.location = location;
+                    this.state = state;
+                    this.size = size;
+                    this.event = event;
+                    this.type = type;
+                    this.photo1 = photo1;
+                    this.photo2 = photo2;
+                    this.photo3 = photo3;
+                    this.photo4 = photo4;
+                    this.idprenda = idprenda;
 
     }
 
