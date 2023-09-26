@@ -23,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +50,8 @@ import { RouterModule, Routes } from '@angular/router';
     AppRoutingModule,
     FormsModule,ReactiveFormsModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
