@@ -42,10 +42,10 @@
 
 
               <!-- PARA BOTON CONTACTAR/EDITAR DE DETALLE-PRENDA -->
-                <p *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="titulo">{{prenda.titulo}}</p>
-                <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.id, false)" class="titulo">{{prenda.titulo}}</p>
+                <p *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="titulo">{{prenda.title}}</p>
+                <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.id, false)" class="titulo">{{prenda.title}}</p>
           
-                <p class="precio">{{prenda.precio}}€</p>
+                <p class="precio">{{prenda.price}}€</p>
             </div>
     
         </div>

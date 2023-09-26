@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
+import { Respuesta } from 'src/app/models/respuesta';
+import { PrendaService } from 'src/app/shared/prenda.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,16 +10,15 @@ import { Prenda } from 'src/app/models/prenda';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
-  public prendas:Prenda[]
-  constructor(public router: Router){
-     this.prendas = [
-      new Prenda(1,"Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg"),
-      new Prenda(2,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(3,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(4,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(5,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png"),
-      new Prenda(6,"Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png")
-    ]
+  public prendas:Prenda[] = []
+
+  constructor(public router: Router, public prendaService: PrendaService){
+    
+     this.prendaService.getPrenda().subscribe((data:Respuesta) =>{
+      this.prendas = data.data;
+      console.log(data.data);
+      
+     })
   }
 
   public irLogin(){
