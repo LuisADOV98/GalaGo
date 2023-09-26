@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TarjetaChatComponent } from './component/tarjeta-chat/tarjeta-chat.component';
@@ -50,7 +50,8 @@ import { RouterModule, Routes } from '@angular/router';
     AppRoutingModule,
     FormsModule,ReactiveFormsModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

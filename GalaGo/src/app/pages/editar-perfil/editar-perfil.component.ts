@@ -25,8 +25,8 @@ export class EditarPerfilComponent {
            edPassword: string){
            
       if(edPhoto != "") this.user.photo = edPhoto;
-      if(edName != "") this.user.name = edName;
-      if(edLastName != "") this.user.last_name = edLastName;
+      if(edName != "") this.user.firstname = edName;
+      if(edLastName != "") this.user.surname = edLastName;
       if(edUbicacion != "") this.user.ubicacion = edUbicacion;
       if(edEmail != "") this.user.email = edEmail;
       if(edPassword != "") this.user.password = edPassword;

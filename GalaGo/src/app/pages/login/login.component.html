@@ -51,7 +51,7 @@
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form">
           <div class="form-group">
              
-              <input type="email" name="email" placeholder="E-mail" class="form-control" [(ngModel)]="login.email" #emailId="ngModel" [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+              <input type="email" name="email" placeholder="E-mail" class="form-control" [(ngModel)]="user.email" #emailId="ngModel" [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
               <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback">
                   <div *ngIf="emailId.errors.required" class="email">El email es obligatorio</div>
                   <div *ngIf="emailId.errors.email">El email es incorrecto</div>
@@ -60,16 +60,16 @@
   <!-- </form> -->
           <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="feed-form"> -->
           <div class="form-group">
-              <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="login.password" #passwordId="ngModel" [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+              <input type="password" name="password" placeholder="Password" class="form-control" [(ngModel)]="user.password" #passwordId="ngModel" [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
               <div *ngIf="(passwordId.dirty ||passwordId.touched) && passwordId.invalid" class="invalid-feedback">
                   <div *ngIf="passwordId.errors.required" class="contraseña">La contraseña es obligatoria</div>
                   <div *ngIf="passwordId.errors.minlength" class="contraseña2">La clave tiene que tener al menos 8 caracteres</div>
               </div>
           </div>
-          
+          <button type="submit" class="button_submit">Login</button>
   </form>
 
-  <button type="submit" class="button_submit" (click)="loginHome()">Login</button>
+  
   <p class="signup-link">
     ¿No tienes cuenta?
     <a href="/registro" class="signup-link link">Regístrate</a>
