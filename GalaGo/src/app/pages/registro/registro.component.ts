@@ -36,10 +36,8 @@ export class RegistroComponent {
     this.selectedUbicacion = "";
 
   }
-  // onSubmit(form: NgForm) {
-  //   console.log(form.value);
-  //   console.log(this.register);
-  // }
+
+  //Recoge los datos del html y los asigna al newUser que se crea 
   public register(ubicacion:string,confirmPassword:string, password:string, email:string, last_name:string, first_name:string, photo:string){
     console.log("entra en register");
     // console.log(ubicacion);
@@ -53,7 +51,7 @@ export class RegistroComponent {
     let newUser = new User(first_name, last_name, ubicacion, email, password, photo)
     console.log(newUser);
 
-    //Llama a la función registro
+    //Llama a la función registro con el userService, envia el newUser y asigna en el else la respuesta al newUser
     this.userService.registro(newUser).subscribe((data:Respuesta)=>{
       if(data.error){
         console.log("Error en user");
@@ -67,7 +65,7 @@ export class RegistroComponent {
     this.route.navigate(['/login']);
     // this.route.navigate(['/login']);
   }
-  
+  //Valida los datos del formulario html
   private buildForm(){
     const minPassLength = 8;
     this.myForm = this.formBuilder.group({
@@ -81,49 +79,20 @@ export class RegistroComponent {
 
     })
   }
+  //Comprueba que la segunda password es igual que la primera
   private checkPassword(control: AbstractControl){
     let resultado = {matchPassword: true};
 
-
     if (control.parent?.value.password == control.value)
     resultado = null;
+
   return resultado;
   }
 
-
-  // public register(){
-  //   console.log("entra en register");
-    
-  //   this.user = this.myForm.value;
-  //   console.log(this.user);
-
-  //   this.user.firstname = this.myForm.get('firstname').value;
-  //   this.user.surname = this.myForm.get('surname').value;
-  //   this.user.email = this.myForm.get('email').value;
-  //   this.user.location = this.myForm.get('location').value;
-  //   this.user.password = this.myForm.get('password').value;
-  //   this.user.photo = this.myForm.get('url').value;
-
-
-  //   //Llama a la función registro
-  //   this.userService.registro(this.user).subscribe((data:Respuesta)=>{
-  //     if(data.error){
-  //       console.log("Error en user");
-  //     }else{
-  //       this.user = data.dataUser;
-  //       console.log("this.arrayUser",this.user);
-        
-  //     }
-  //   });
-
-  //   this.route.navigate(['/login']);
-  // }
-  
   onSubmit(form:NgForm){
       
     console.log(form.value);
     console.log(this.user);
-
   }
 
   ubicacionInfo(ubicacion:string):void{
