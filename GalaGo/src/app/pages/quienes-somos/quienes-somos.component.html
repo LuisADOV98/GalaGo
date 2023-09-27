@@ -20,21 +20,27 @@
                     </p>
                     <!-- <img src="../../../assets/quienesSomos/github-512 2.png" alt="">
                     <img src="" alt=""> -->
+                    <div class="padreSeparacion">
                     <div class="padreTarjeta" *ngFor="let tarjeta of tarjetas">
                         <div class="padreFotos">
                         <img src="{{tarjeta.foto}}" alt="" class="fotos">
                     </div> 
                     <div class="padreTexto">
-                        <h1>
+                        <h1 class="h1">
                      {{tarjeta.nombre}}
                 </h1> 
-                    <p>
-                        - {{tarjeta.rol}}
+                    <p class="p">
+                         {{tarjeta.rol}}
 
                     </p>
                 </div>
-                    </div>
+                <div class="padreFoto">
+                    <img src="../../../assets/quienesSomos/github-512 2.png" alt="">
+                </div>
             </div>
+                    </div>
+                </div>
+                
             </div>
             
         </div>

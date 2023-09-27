@@ -1,6 +1,6 @@
 .fondo{
     background-image: url('../../../assets/quienesSomos/fondo2.png');
-    height: 100vh;
+    height: 94.89vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -15,7 +15,7 @@
     width: 20px;
     position: relative;
     left: -177px;
-    margin-bottom: -60px;
+    margin-bottom: -50px;
 }
 
 .padre{
@@ -26,16 +26,35 @@
     align-items: center;
     position: relative;
 }
+.padreFoto{
+    height: 70px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.padreTexto{
+    width: 200px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 26px; */
+}
 
 .quienesSomos{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
     align-items: center;
     text-align: center;
     width: 97%;
-    height:80vh;
+    height:85vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 5px;
     background: rgba(255, 229, 233, 0.89);
     position: relative;
@@ -43,9 +62,21 @@
     z-index: 2;
     overflow-y: auto;
 }
+.p{
+    /* padding-left: 15px; */
+    font-size: 1.2em;}
+.h1{
+    font-size: 1.5em;
+}
 
 
-
+.padreSeparacion{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+}
 .padreTarjeta{
     width: 100%;
     /* border: 2px solid red; */

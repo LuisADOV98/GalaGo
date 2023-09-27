@@ -89,7 +89,7 @@
     <select class="form-select" #talla placeholder="Talla" (change)="tallaHombre(talla.value)">
       <option selected disabled fill="#FFC9CE">Talla hombre...</option>
       <ng-container *ngFor="let talla of arrTalla">
-          <option value="">
+          <option [value]="talla">
               Talla hombre {{talla}} 
           </option>
       </ng-container>
@@ -125,10 +125,10 @@
 
 <!-- SELECCIÓN DE EVENTOS -->
 <div class="filtro" *ngIf="eventoActive">
-    <select class="form-select" #evento placeholder="Tipo de evento">
+    <select class="form-select" #evento placeholder="Tipo de evento" (change)="eventoInfo(evento.value)">
         <option selected disabled fill="#FFC9CE">Tipo de evento...</option>
         <ng-container *ngFor="let evento of arrEvento">
-            <option value="">
+            <option [value]="evento">
                 Evento: {{evento}} 
             </option>
         </ng-container>
@@ -137,10 +137,10 @@
 
 <!-- SELECCIÓN DE UBICACIÓN -->
 <div class="filtro" *ngIf="ubicacionActive">
-    <select class="form-select" #evento placeholder="ubicacion">
+    <select class="form-select" #ubicacion placeholder="ubicacion" (change)="ubicacionInfo(ubicacion.value)">
         <option selected disabled fill="#FFC9CE">Ubicación...</option>
         <ng-container *ngFor="let provincia of arrUbicacion">
-            <option value="">
+            <option [value]="provincia">
                 Provincia: {{provincia}} 
             </option>
         </ng-container>

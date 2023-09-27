@@ -14,11 +14,12 @@ export class RegistroComponent {
 
   public user: User
   // public register: User
-
+  public ubicacionString: string = "Ubicacion"
   // public prendas:Prenda[]
   public ubicacion: string
   public myForm: FormGroup
-  public arrUbicacion:string[] = ["Madrid","Barcelona","Badajoz","avila"]
+  public arrUbicacion:string[]
+  public selectedUbicacion: string;
   // public prenda:Prenda
 
   constructor(private formBuilder: FormBuilder, private route: Router){
@@ -26,16 +27,29 @@ export class RegistroComponent {
     // this.prendas = []
     // this.prenda = new Prenda("",0,"","","","","","")1
     this.user = new User()
+    this.arrUbicacion = ["Madrid","Barcelona","Badajoz","avila"] 
+    this.selectedUbicacion = "";
 
   }
   // onSubmit(form: NgForm) {
   //   console.log(form.value);
   //   console.log(this.register);
   // }
-  public register(){
-    const user =this.myForm.value;
-    console.log(user);
-    this.route.navigate(['/login']);
+  public register(ubicacion:string,confirmPassword:string, password:string, email:string, last_name:string, first_name:string, photo:string){
+    console.log(ubicacion);
+    console.log(confirmPassword);
+    console.log(password);
+    console.log(email);
+    console.log(last_name);
+    console.log(first_name);
+    console.log(photo);
+
+    let newUser = new User(0, first_name, last_name, ubicacion, email, password, photo)
+    console.log(newUser);
+    
+    
+    
+    // this.route.navigate(['/login']);
   }
   
   private buildForm(){
@@ -47,7 +61,7 @@ export class RegistroComponent {
       url: [, Validators.required],
       password: [, [Validators.required, Validators.minLength(minPassLength)]],
       password2: [, [Validators.required, this.checkPassword]],
-      ubicacion2:[,Validators.required]
+      ubicacion:[,Validators.required]
 
     })
   }
@@ -65,7 +79,9 @@ export class RegistroComponent {
     console.log(this.user);
 
   }
-  passwordsMatch(): boolean {
-    return this.user.password === this.user.confirmPassword
+
+  ubicacionInfo(ubicacion:string):void{
+    this.selectedUbicacion = ubicacion;
+    console.log("selectedUbicacion:",this.selectedUbicacion);
   }
 }
