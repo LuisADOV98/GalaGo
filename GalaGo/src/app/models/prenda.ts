@@ -13,7 +13,7 @@ export class Prenda {
     public photo3?: String
     public photo4?: String
     public idprenda?: number;
-
+    public iduser?: number
     constructor(
                 
                 title?:String,
@@ -28,7 +28,8 @@ export class Prenda {
                 photo2?: string,
                 photo3?: string,
                 photo4?: string,
-                idprenda:number = 0){
+                idprenda:number = 0,
+                iduser:number = 0){
                     
                     this.title = title;
                     this.price = price;
@@ -43,9 +44,14 @@ export class Prenda {
                     this.photo3 = photo3;
                     this.photo4 = photo4;
                     this.idprenda = idprenda;
+                    this.iduser = iduser
 
     }
 
 
     
 }
+
+
+
+

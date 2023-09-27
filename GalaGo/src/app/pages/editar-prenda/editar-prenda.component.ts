@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
+import { Respuesta } from 'src/app/models/respuesta';
+import { PrendaService } from 'src/app/shared/prenda.service';
 
 @Component({
   selector: 'app-editar-prenda',
@@ -13,33 +15,71 @@ export class EditarPrendaComponent {
   public arrTipo: string[] = ["Accesorio", "Mujer", "Hombre"];
   public arrTalla: string[] = ["Unica","S","M","L","XL","XXL"]
   public arrEvento: string[] = ["Bodas","Comuniones","Nochevieja","Disfraces"]
-  public arrEstado:string[] = ["Nuevo", "Semi nuevo","Usado"]
-  public arrUbicacion:string[] = ["Madrid","Barcelona","Badajoz","avila"]
-  public titulo: string
-  public precio: number
-  public descripcion:string
-  public prenda1:Prenda
-  constructor(public router: Router){
-    this.prendas = []
-    this.prenda1 = new Prenda()
-  console.log(this.prenda1);}
+  public arrEstado:string[] = ["Nuevo", "Como nuevo","Usado"]
+  public arrUbicacion:string[] = ['Andalucia', 'Aragon', 'Canarias', 'Cantabria', 'Castilla-La Mancha', 'Castilla y Leon', 'Cataluña', 'Comunidad de Madrid', 'Comunidad Valenciana', 'Extremadura', 'Galicia', 'Islas Baleares', 'La Rioja', 'Murcia', 'Comunidad Foral de Navarra', 'Principado de Asturias', 'Pais Vasco', 'Ceuta', 'Melilla']
+  
+  public prenda:Prenda
+  constructor(public router: Router, public prendaService:PrendaService){
+  this.prenda = new Prenda()
+  
+  console.log(this.prenda);}
 
 
-  public editar(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,foto1:string){
+  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,location:string,photo1:string,photo2:string,photo3:string,photo4:string){
     
+    this.prenda = new Prenda(title,price,description,location,state,size,event,type,photo1,photo2,photo3,photo4)
     
-    this.prenda1.title = titulo;
-    this.prenda1.price = precio;
-    this.prenda1.description = descripcion;
-    this.prenda1.type = tipo;
-    this.prenda1.size = talla;
-    this.prenda1.event = evento;
-    this.prenda1.state = estado;
-    this.prenda1.location = ubicacion;
-    this.prenda1.photo1 = foto1;
+   
+    if (title === "") {
+      this.prenda.title = null
+    }
+    if (price == 0) {
+      this.prenda.price = null
+    }  
+    if (description === "") {
+      this.prenda.description = null
+    }
+    if (type === "") {
+      this.prenda.type = null
+    }
+    if (state === "") {
+      this.prenda.state = null
+    }
+    if (event === "") {
+      this.prenda.event = null
+    }
+    if (location === "") {
+      this.prenda.location = null
+    }
+    if (size === "") {
+      this.prenda.size = null
+    }
+    if (photo1 === "") {
+      this.prenda.photo1 = null
+    }
+    if (photo2 === "") {
+      this.prenda.photo2 = null
+    }
+    if (photo3 === "") {
+      this.prenda.photo3 = null
+    }
+    if (photo4 === "") {
+      this.prenda.photo4 = null
+    }
+
+    this.prendaService.editarPrenda(this.prenda).subscribe((data: Respuesta) =>{
+      this.prenda = data.dataPrenda
+      if (!data.error)
+      {
+        alert("Has editado una Prenda");
+        
+      } 
+      else
+      alert("Algo ha salido mal");
+  
+    })
 
     // this.router.navigate(["/perfil"]);
-    console.log(this.prenda1);
 }
   
 public irPerfil(){
