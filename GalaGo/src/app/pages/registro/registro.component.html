@@ -12,33 +12,58 @@
           <h1 class="hijo">GalaGo</h1>
         </div>
         <section class="section_form">
-          
           <form [formGroup]="myForm" class="myForm">
+       
     
+      <!-- Foto -->
+
+      <div class="form-group">
+        <div class="texto"></div>
+        <input #photo placeholder="Foto" type="url" class="form-control" formControlName="url" [ngClass]="{ 'is-invalid': (myForm.get('url').dirty || myForm.get('url').touched) && !myForm.get('url').valid}">
+        <div *ngIf="!myForm.get('url').valid" class="invalid-feedback">
+            La dirreccion url es obligatorio
+        </div>
+    </div>
+      
             <div class="form-group">
+
+
+
+
+      <!-- Nombre -->
+
               <div class="texto"></div>
-              <input placeholder="Foto" type="url" class="form-control" formControlName="url" [ngClass]="{ 'is-invalid': (myForm.get('url').dirty || myForm.get('url').touched) && !myForm.get('url').valid}">
-              <div *ngIf="!myForm.get('url').valid" class="invalid-feedback">
-                  La dirreccion url es obligatorio
-              </div>
-          </div>
-            <div class="form-group">
-              <div class="texto"></div>
-            <input placeholder="Nombre" type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': (myForm.get('firstname').dirty || myForm.get('firstname').touched) && !myForm.get('firstname').valid}">
+            <input #first_name placeholder="Nombre" type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': (myForm.get('firstname').dirty || myForm.get('firstname').touched) && !myForm.get('firstname').valid}">
                     <div *ngIf="!myForm.get('firstname').valid" class="invalid-feedback">
                         El nombre es obligatorio
                     </div>
                   </div>
+
+
+
+
+
+
+
+
+
+      <!-- Apellidos -->
+
                   <div class="form-group">
                     <div class="texto"></div>
-                    <input placeholder="Apellidos" type="text" class="form-control" formControlName="surname" [ngClass]="{ 'is-invalid': (myForm.get('surname').dirty || myForm.get('surname').touched) && !myForm.get('surname').valid}">
+                    <input #last_name placeholder="Apellidos" type="text" class="form-control" formControlName="surname" [ngClass]="{ 'is-invalid': (myForm.get('surname').dirty || myForm.get('surname').touched) && !myForm.get('surname').valid}">
                     <div *ngIf="!myForm.get('surname').valid" class="invalid-feedback">
                         El apellido es obligatorio
                     </div>
                 </div>
+
+
+
+      <!-- Email -->
+
                 <div class="form-group">
                   <div class="texto"></div>
-                  <input placeholder="E-mail" type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
+                  <input #email placeholder="E-mail" type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
                   <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
                       <div  *ngIf="myForm.get('email').errors.required">
                           La direccion email es obligatoria
@@ -48,48 +73,77 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
-                <div class="texto"></div>
-                <input placeholder="Contraseña" type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
-                <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
-                    <div  *ngIf="myForm.get('password').errors.required">
-                        La contraseña es obligatoria
-                    </div>
-                    <div  *ngIf="myForm.get('password').errors.minlength">
-                        La contraseña es incorrecta
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-              <div class="texto"></div>
-                <input placeholder="Repertir Contraseña" type="password" class="form-control" formControlName="password2" [ngClass]="{ 'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}">
-                <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
-                    <div  *ngIf="myForm.get('password2').errors.required">
-                        La contraseña es obligatoria
-                    </div>
-                    <div  *ngIf="!myForm.get('password2').errors.required && myForm.get('password2').errors.matchPassword">
-                        La contraseña no coincide
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-              <!-- <label for="ubicacion2">Ubicación</label> -->
-              <select id="location" class="form-control" formControlName="location" [ngClass]="{ 'is-invalid': (myForm.get('location').dirty || myForm.get('location').touched) && !myForm.get('location').valid}">
-                <!-- <option value="" selected hidden>Selecciona una ubicación...</option> -->
-                <ng-container *ngFor="let ubicacion of arrUbicacion">
-                  <option [value]="ubicacion">{{ubicacion}}</option>
-                </ng-container>
-              </select>
-              <div *ngIf="!myForm.get('location').valid" class="invalid-feedback">
-                La ubicación es obligatoria
+
+
+      <!-- Contraseña -->
+
+        <div class="form-group">
+          <div class="texto"></div>
+          <input #password placeholder="Contraseña" type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
+          <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
+              <div  *ngIf="myForm.get('password').errors.required">
+                  La contraseña es obligatoria
               </div>
-            </div>
-            <button type="submit" class="button_submit absolute" (click)="register()">Register</button>
-          </form>
+              <div  *ngIf="myForm.get('password').errors.minlength">
+                  La contraseña es incorrecta
+              </div>
+          </div>
+      </div>
+
+
+      <!-- Repetir Contraseña -->
+
+      <div class="form-group">
+        <div class="texto"></div>
+          <input #confirmPassword placeholder="Repertir Contraseña" type="password" class="form-control" formControlName="password2" [ngClass]="{ 'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}">
+          <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
+              <div  *ngIf="myForm.get('password2').errors.required">
+                  La contraseña es obligatoria
+              </div>
+              <div  *ngIf="!myForm.get('password2').errors.required && myForm.get('password2').errors.matchPassword">
+                  La contraseña no coincide
+              </div>
+          </div>
+      </div>
+
+        
+      
+      
+      
+      <!-- Ubicacion -->
+
+      <div class="form-group">
+        <select class="form-control" #ubicacion placeholder="ubicacion" (change)="ubicacionInfo(ubicacion.value)">
+          <option selected disabled [value]="ubicacionString">{{ubicacionString}}</option>
+              <option *ngFor="let provincia of arrUbicacion" [value]="provincia">
+                  Provincia: {{provincia}} 
+              </option>
+        </select>
+    </div>
+    
+      
+      <button type="submit" class="button_submit absolute" (click)="register(ubicacion.value, confirmPassword.value, password.value, email.value, last_name.value, first_name.value, photo.value)">Register</button>
+
+                  
+        </form>
         </section>
       </div>
       <div>
         <img src="../../../assets/imgRegister/man-playing-with-confetti-party 1.png" alt="" class="foto">
       </div>
     </div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
     

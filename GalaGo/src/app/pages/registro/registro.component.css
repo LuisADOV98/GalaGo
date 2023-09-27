@@ -102,7 +102,8 @@
       border-radius: 5px;
       /* background: rgb(216,179,193); background en mismo color, queda feo*/
       /* background-color: white; backgroound en blanco*/
-      background: transparent;
+      /* background: transparent; */
+      color: black;
       margin-bottom: 5px;
       border: 1px solid #104967; /* borde en negro
       /* border: 2px solid rgb(255, 255, 255); borde en blanco */
@@ -163,7 +164,7 @@
       height: 30px;
       width: 270px;
       border-radius: 5px;
-      /* background: transparent; */
+      background: transparent;
       border: 1px solid #104967;
 
     }

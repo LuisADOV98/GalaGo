@@ -16,20 +16,21 @@ export class HomeComponent{
   public precioActive = false;
   public eventoActive = false;
   public ubicacionActive = false;
-
+  
   public prendas: Prenda[];
   public arrTipo: String[];
   public arrTalla: String[];
   public arrEvento: String[];
   public arrEstado: String[];
   public arrUbicacion: String[];
-
+  
   public selectedTallaMujer: String = "";
   public selectedTallaHombre: String = "";
   public selectedEvento: String = "";
-  public selectedUbicacion: String = ""; 
+  public selectedUbicacion: string;
   public valorRango: number = 0;
   // public valorGlobo: number = 0;
+  // public ubicacion: string
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
@@ -46,6 +47,7 @@ export class HomeComponent{
     this.arrEvento = ["Bodas","Comuniones","Nochevieja","Disfraces"];
     this.arrEstado = ["Nuevo", "Semi nuevo","Usado"]
     this.arrUbicacion = ["Madrid","Barcelona","Badajoz","Ávila"]
+    this.selectedUbicacion = "";
     
   }
 
@@ -92,12 +94,12 @@ export class HomeComponent{
     console.log("selectedTallaHombre:",this.selectedTallaHombre);
   }
 
-  evento(evento:string):void{
+  eventoInfo(evento:string):void{
     this.selectedEvento = evento;
     console.log("selectedEvento:",this.selectedEvento);
   }
 
-  ubicacion(ubicacion:string):void{
+  ubicacionInfo(ubicacion:string):void{
     this.selectedUbicacion = ubicacion;
     console.log("selectedUbicacion:",this.selectedUbicacion);
   }
