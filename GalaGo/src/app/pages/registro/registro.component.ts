@@ -18,7 +18,7 @@ export class RegistroComponent {
   public myForm: FormGroup
 
   public prendas:Prenda[]
-  public prenda:Prenda
+  public prenda:Prenda;
 
 
   public arrUbicacion:string[] = ["Madrid","Barcelona","Badajoz","avila"]

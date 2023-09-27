@@ -24,11 +24,12 @@ export class HomeComponent{
   public arrEstado: String[];
   public arrUbicacion: String[];
 
-  public selectedTallaMujer: String = "";
-  public selectedTallaHombre: String = "";
-  public selectedEvento: String = "";
-  public selectedUbicacion: String = ""; 
-  public valorRango: number = 0;
+  public selectedTallaMujer: String;
+  public selectedTallaHombre: String;
+  public selectedEvento: String;
+  public selectedUbicacion: String; 
+  public valorRango: number;
+ 
   // public valorGlobo: number = 0;
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
@@ -44,8 +45,14 @@ export class HomeComponent{
     this.arrTipo = ["Accesorio", "Mujer", "Hombre"];
     this.arrTalla = ["Unica","S","M","L","XL","XXL"];
     this.arrEvento = ["Bodas","Comuniones","Nochevieja","Disfraces"];
-    this.arrEstado = ["Nuevo", "Semi nuevo","Usado"]
-    this.arrUbicacion = ["Madrid","Barcelona","Badajoz","Ávila"]
+    this.arrEstado = ["Nuevo", "Semi nuevo","Usado"];
+    this.arrUbicacion = ["Madrid","Barcelona","Badajoz","Ávila"];
+
+     this.selectedTallaMujer = "";
+     this.selectedTallaHombre = "";
+     this.selectedEvento = "";
+     this.selectedUbicacion = ""; 
+     this.valorRango = 0;
     
   }
 
@@ -92,12 +99,12 @@ export class HomeComponent{
     console.log("selectedTallaHombre:",this.selectedTallaHombre);
   }
 
-  evento(evento:string):void{
+  eventoInfo(evento:string):void{
     this.selectedEvento = evento;
     console.log("selectedEvento:",this.selectedEvento);
   }
 
-  ubicacion(ubicacion:string):void{
+  ubicacionInfo(ubicacion:string):void{
     this.selectedUbicacion = ubicacion;
     console.log("selectedUbicacion:",this.selectedUbicacion);
   }
