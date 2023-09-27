@@ -15,4 +15,8 @@ export class PrendaService {
    
     return this.http.get(`${this.url}/landing-page`)
    }
+
+  public editarPrenda(editPrenda:Prenda):Observable<Object>{
+    return this.http.put(this.url + "/editar-prenda", editPrenda)
+  }
 }
