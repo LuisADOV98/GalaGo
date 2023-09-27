@@ -37,6 +37,18 @@ export class EditarPerfilComponent {
       //Actualiza el usuario del perfil CUANDO HAYA USER-SERVICE
       this.userService.user = this.user;
       console.log("user:", this.userService);
+      this.userService.editUser(this.user).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa (por ejemplo, mostrar un mensaje de éxito)
+          console.log("Perfil actualizado correctamente.", response);
+          // Redirige al usuario nuevamente a la página de perfil después de guardar
+          this.router.navigate(["/perfil"]);
+        },
+        (error) => {
+          // Manejar errores (por ejemplo, mostrar un mensaje de error)
+          console.error("Error al actualizar el perfil.", error);
+        }
+      );
       
      
       // Redirige al usuario nuevamente a la página de perfil después de guardar

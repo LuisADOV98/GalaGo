@@ -34,8 +34,8 @@ export class UserService {
     return this.http.post(this.url+"/registro",newUser)
   }
 
-  // public editUser(user: User):Observable<Object>{
-  //   return this.http.put(this.url+"/user", user);
-  // }
+  public editUser(user: User):Observable<Object>{
+    return this.http.put(this.url+"/editar-perfil", user);
+  }
   
 }
