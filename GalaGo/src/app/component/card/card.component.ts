@@ -30,6 +30,7 @@ export class CardComponent implements OnInit{
   }
 
   verDetallePrenda(id:number, propietario :boolean){
+    //prendaService.getOne()
     /* detalle-prenda */
     if (this.editable === false && this.router.url === '/landing-page' ||  this.router.url === '/') {//cambiar para comprobar si está logeado
       // Si estás en la página de inicio y la tarjeta no es editable,

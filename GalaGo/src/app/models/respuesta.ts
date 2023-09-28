@@ -7,6 +7,7 @@ export class Respuesta
                 public codigo: number,
                 public mensaje: string,
                 public dataUser: User,
+                public dataEnum: string[],//devuelve un array de string de los enum de mysql
                 public data: Prenda[],
                 public dataPrenda: Prenda){}
 }

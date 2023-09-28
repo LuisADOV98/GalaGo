@@ -11,11 +11,33 @@ export class PrendaService {
   private url:string = "http://localhost:3000"
   constructor(private http: HttpClient) { }
 
+  //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
-   
     return this.http.get(`${this.url}/landing-page`)
    }
 
+   public getPrendaHome():Observable<Object> {
+    return this.http.get(`${this.url}/home`)
+   }
+
+  //  ------ ENUM DE LAS COLUMNAS PARA SELECTORES ------ //
+  public enumType():Observable<Object>{
+    return this.http.get(this.url+"/tipo")
+  }
+
+  public enumSize():Observable<Object>{
+    return this.http.get(this.url+"/talla")
+  }
+
+  public enumEvent():Observable<Object>{
+    return this.http.get(this.url+"/evento")
+  }
+
+  public enumState():Observable<Object>{
+    return this.http.get(this.url+"/estado")
+  }
+
+    //  ------ EDITAR PRENDA ------ //
   public editarPrenda(editPrenda:Prenda):Observable<Object>{
     return this.http.put(this.url + "/editar-prenda", editPrenda)
   }

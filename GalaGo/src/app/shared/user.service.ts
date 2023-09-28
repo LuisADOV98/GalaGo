@@ -34,6 +34,12 @@ export class UserService {
     return this.http.post(this.url+"/registro",newUser)
   }
 
+  // EXTRAER LOS VALORES DE LOS ENUM EN ARRAYS
+  //Array de location
+  public enumLocation():Observable<Object>{
+    return this.http.get(this.url+"/locations");
+  }
+
   // public editUser(user: User):Observable<Object>{
   //   return this.http.put(this.url+"/user", user);
   // }

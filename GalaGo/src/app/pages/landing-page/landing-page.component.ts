@@ -24,6 +24,5 @@ export class LandingPageComponent {
   public irLogin(){
     this.router.navigate(["/login"]);
   }
-
   
 }
