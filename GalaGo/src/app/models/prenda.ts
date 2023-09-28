@@ -6,14 +6,14 @@ export class Prenda {
     public location?: String;//"Madrid","Barcelona","Badajoz","avila"
     public state?: String;//"Nuevo", "Semi nuevo","Usado"
     public event?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public type?: String //"Accesorio", "Mujer", "Hombre"
-    public size?:String //"Unica","S","M","L","XL","XXL"
-    public photo1?: String
-    public photo2?: String
-    public photo3?: String
-    public photo4?: String
+    public type?: String; //"Accesorio", "Mujer", "Hombre"
+    public size?:String; //"Unica","S","M","L","XL","XXL"
+    public photo1?: String;
+    public photo2?: String;
+    public photo3?: String;
+    public photo4?: String;
     public idprenda?: number;
-    public iduser?: number
+    public iduser?: number;
     constructor(
                 
                 title?:String,

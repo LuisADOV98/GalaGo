@@ -27,6 +27,8 @@ export class DetallePrendaComponent implements OnInit {
 
     // petición al servidor getPrendaById
 
+    //servicio te devuleve una prenda 
+    //prenda = prendaService 
    switch(this.id){
       case "1":
     this.prenda = {

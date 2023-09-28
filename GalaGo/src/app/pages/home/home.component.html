@@ -87,7 +87,7 @@
 <!-- SELECCIÓN DE TALLAS HOMBRE -->
 <div class="filtro" *ngIf="hombreActive">
     <select class="form-select" #talla placeholder="Talla" (change)="tallaHombre(talla.value)">
-      <option selected disabled fill="#FFC9CE">Talla hombre...</option>
+            <option selected disabled fill="#FFC9CE">Talla hombre...</option>
       <ng-container *ngFor="let talla of arrTalla">
           <option [value]="talla">
               Talla hombre {{talla}} 
@@ -138,10 +138,10 @@
 <!-- SELECCIÓN DE UBICACIÓN -->
 <div class="filtro" *ngIf="ubicacionActive">
     <select class="form-select" #ubicacion placeholder="ubicacion" (change)="ubicacionInfo(ubicacion.value)">
-        <option selected disabled fill="#FFC9CE">Ubicación...</option>
-        <ng-container *ngFor="let provincia of arrUbicacion">
-            <option [value]="provincia">
-                Provincia: {{provincia}} 
+        <option selected disabled fill="#FFC9CE">Comunidad autónoma...</option>
+        <ng-container *ngFor="let comunidad of arrUbicacion">
+            <option [value]="comunidad">
+                 Comunidad: {{comunidad}} 
             </option>
         </ng-container>
       </select> 
