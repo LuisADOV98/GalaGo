@@ -38,6 +38,11 @@ export class PrendaService {
   }
 
     //  ------ EDITAR PRENDA ------ //
+  public addPrenda(newPrenda):Observable<Object>{
+    return this.http.post(this.url + "/publicar-prenda", newPrenda )
+  }
+
+  //  ------ PUBLICAR PRENDA ------ //
   public editarPrenda(editPrenda:Prenda):Observable<Object>{
     return this.http.put(this.url + "/editar-prenda", editPrenda)
   }

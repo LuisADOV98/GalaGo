@@ -14,7 +14,7 @@ export class EditarPrendaComponent {
   public prendas:Prenda[]
   public arrTipo: string[] = ["Accesorio", "Mujer", "Hombre"];
   public arrTalla: string[] = ["Unica","S","M","L","XL","XXL"]
-  public arrEvento: string[] = ["Bodas","Comuniones","Nochevieja","Disfraces"]
+  public arrEvento: string[] = ["Bodas","Comuniones","Noche vieja","Disfraces"]
   public arrEstado:string[] = ["Nuevo", "Como nuevo","Usado"]
   public arrUbicacion:string[] = ['Andalucia', 'Aragon', 'Canarias', 'Cantabria', 'Castilla-La Mancha', 'Castilla y Leon', 'Cataluña', 'Comunidad de Madrid', 'Comunidad Valenciana', 'Extremadura', 'Galicia', 'Islas Baleares', 'La Rioja', 'Murcia', 'Comunidad Foral de Navarra', 'Principado de Asturias', 'Pais Vasco', 'Ceuta', 'Melilla']
   
