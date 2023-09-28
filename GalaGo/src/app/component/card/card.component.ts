@@ -13,6 +13,9 @@ export class CardComponent implements OnInit{
   @Input() prenda: Prenda;
   //usamos el input para recibir datos de 1 prenda desde perfil/mis prendas
   @Input() editable: Boolean;
+  @Input() isFavoritosActive: Boolean;
+
+  @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
   mostrarCorazon: boolean = true; //para que salga el corazon en las cards, 
   //x defecto true (LANDING = FALSE)
   mostrarModal = false;
@@ -39,33 +42,63 @@ export class CardComponent implements OnInit{
 
    constructor(private router: Router, 
     public favoritosService: FavoritosService,
-    private elRef: ElementRef){}
+    private elRef: ElementRef){
+
+    }
 
 
     addToFavorites(){
-      let isFavorito = this.susFavoritos.includes(this.prenda.id);
+      
+      // SI ESO ES TRUE ESTOY EN LA VISTA FAVORITO 
+      // ME LA CARGO DEL ARRAY Y DE BD
+  
+      if(!this.isFavoritosActive){
+        let isFavorito = this.susFavoritos.includes(this.prenda.id);
 
-      if (isFavorito) {
-        // La prenda ya está en favoritos, se muestra el modal
-        this.mostrarModal = true;
-        this.mostrarFavorito = true;
-        this.mostrarNoFavorito = false;
-      } else {
-        // Si la prenda no es editable y no está en favoritos, se añade
-        if(!this.editable && !isFavorito){
-        this.susFavoritos.push(this.prenda.id);
-        this.favoritosService.addArrayFavorite(this.prenda);
-    
-        // Cambia el estado del corazon (el corazon se ve lleno)
-        this.mostrarFavorito = true;
-        this.mostrarNoFavorito = false;
-
-        //si prenda es editable, te lleva a editar prenda
-        } else{
-          this.router.navigate(["/editar-prenda"])
+        if (isFavorito) {
+          // La prenda ya está en favoritos, se muestra el modal
+          this.mostrarModal = true;
+          this.mostrarFavorito = true; //corazon lleno
+          this.mostrarNoFavorito = false; //corazon vacio
+        } else {
+          // Si la prenda no es editable y no está en favoritos, se añade
+          if(!this.editable && !isFavorito){
+          this.susFavoritos.push(this.prenda.id);
+          this.favoritosService.addArrayFavorite(this.prenda);
+      
+          // Cambia el estado del corazon (el corazon se ve lleno)
+          this.mostrarFavorito = true;
+          this.mostrarNoFavorito = false;
+  
+          //si prenda es editable, te lleva a editar prenda
+          } else{
+            this.router.navigate(["/editar-prenda"])
+          }
         }
+      } else {
+
+        this.mostrarModal = true;
       }
+      
     }
+        /* this.mostrarModalPadre.emit(true);
+        
+        let index = -1;
+
+        for (let i = 0; i < this.favoritosService.favorites.length; i++) {
+          
+          if(this.favoritosService.favorites[i].id === this.prenda.id){
+            index = i;
+            break;
+          }
+          
+        }
+
+        if(index != -1){
+          this.favoritosService.favorites.splice(index,1);
+        } */
+
+
 
       /* this.mostrarFavorito = !this.mostrarFavorito;
       this.mostrarNoFavorito = !this.mostrarNoFavorito; */
@@ -88,8 +121,7 @@ export class CardComponent implements OnInit{
   ngOnInit(): void {
 
     // cogemos del servicio todas las id
-    // de las prendas favoritas y nos queda
-    // un array mas o menos asi:
+    // de las prendas favoritas 
     this.susFavoritos = [];
 
     if(!this.editable && this.susFavoritos.includes(this.prenda.id)){
@@ -100,10 +132,27 @@ export class CardComponent implements OnInit{
 
   manejadorRespuestaModal(valor: boolean){
     
-
     this.mostrarModal = false;
 
-    if(valor && !this.editable){
+    if(this.isFavoritosActive && valor === true){
+      /* this.mostrarModalPadre.emit(true); */
+        
+      let index = -1;
+
+      for (let i = 0; i < this.favoritosService.favorites.length; i++) {
+        
+        if(this.favoritosService.favorites[i].id === this.prenda.id){
+          index = i;
+          break;
+        }
+        
+      }
+
+      if(index != -1){
+        this.favoritosService.favorites.splice(index,1);
+      }
+      
+    } else if(valor && !this.editable){
       // elimino la prenda del server
       //(o hago otra petición al server
       // con los favoritos)

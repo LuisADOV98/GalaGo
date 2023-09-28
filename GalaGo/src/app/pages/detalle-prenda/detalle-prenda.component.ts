@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-detalle-prenda',
@@ -14,10 +15,14 @@ export class DetallePrendaComponent implements OnInit {
   id:any;
   prenda:Prenda;
   propietario: string;
+  mostrarFavorito:boolean;
+  mostrarNoFavorito:boolean;
+  esFavoritaEstaPrendaParaEsteUsuario: boolean;
   // router: any;
   constructor(private route: ActivatedRoute,
     private location: Location,
-    private router: Router){
+    private router: Router,
+    private userService: UserService){
 
   }
   ngOnInit(): void {
@@ -25,7 +30,20 @@ export class DetallePrendaComponent implements OnInit {
     this.propietario = this.route.snapshot.paramMap.get('propietario');
     console.log(this.id);
 
-    // petición al servidor getPrendaById
+    //TODO: cuando recibas en la base de datos
+    // los detalles de la prenda 
+
+
+    //TODO: petición al servidor get esteUser/susfavoritos
+    this.esFavoritaEstaPrendaParaEsteUsuario= true;
+    console.log(this.propietario)
+    if(this.esFavoritaEstaPrendaParaEsteUsuario){
+     this.mostrarFavorito = true;
+      this.mostrarNoFavorito =false;
+    } else {
+      this.mostrarFavorito = false;
+      this.mostrarNoFavorito=true;
+    }
 
    switch(this.id){
       case "1":
@@ -84,6 +102,15 @@ export class DetallePrendaComponent implements OnInit {
 
   public irEditar(): void{
     this.router.navigate(["/editar-prenda"])
+  }
+
+  addToFavorites(){
+    console.log(this.userService.user.id_user)
+    console.log(this.id);
+    //TODO:  llamar al ser
+    this.esFavoritaEstaPrendaParaEsteUsuario = !this.esFavoritaEstaPrendaParaEsteUsuario;
+    this.mostrarFavorito = !this.mostrarFavorito;
+    this.mostrarNoFavorito = !this.mostrarNoFavorito;
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { CardComponent } from 'src/app/component/card/card.component';
 import { Prenda } from 'src/app/models/prenda';
 import { User } from 'src/app/models/user';
 import { FavoritosService } from 'src/app/shared/favoritos.service';
@@ -17,6 +18,9 @@ export class PerfilComponent {
   public favoriteCards: Prenda[] = []; /////////
 
   public user: User;
+  public mostrarModal = false;
+
+  @ViewChild('refHijo') hijo: CardComponent
 
   // @Input() prendasFavoritas: Prenda[];
 
@@ -62,6 +66,15 @@ export class PerfilComponent {
   mostrarFavoritos(){
     this.isFavoritosActive = true;
     this.isMisPrendasActive = false;
+  }
+
+  recibirDatos(mostrarModalPadre:any){
+    console.log(mostrarModalPadre)
+    this.mostrarModal = mostrarModalPadre;
+  }
+
+  manejadorRespuestaModal(valor: boolean){
+    this.mostrarModal = false;
   }
 
   // toggleTab(tab: string) {
