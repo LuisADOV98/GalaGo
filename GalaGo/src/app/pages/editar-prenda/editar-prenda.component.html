@@ -59,7 +59,7 @@
 
   <div class="form-group">
     <select class="form-select" #type name="tipo">
-      <option selected disabled value="">{{prenda.type}}</option>
+      <option selected disabled>{{prenda.type}}</option>
       <ng-container *ngFor="let tipo of arrTipo">
         <option [value]="tipo">{{tipo}}</option>
       </ng-container>
@@ -70,7 +70,7 @@
 
   <div class="form-group">
     <select class="form-select" #size name="talla">
-      <option selected disabled value="">{{prenda.size}}</option>
+      <option selected disabled>{{prenda.size}}</option>
       <ng-container *ngFor="let talla of arrTalla">
         <option [value]="talla">{{talla}}</option>
       </ng-container>
@@ -79,7 +79,7 @@
 
   <div class="form-group">
     <select class="form-select" #event name="evento">
-      <option selected disabled value="">{{prenda.event}}</option>
+      <option selected disabled>{{prenda.event}}</option>
       <ng-container *ngFor="let evento of arrEvento">
         <option [value]="evento">{{evento}}</option>
       </ng-container>
@@ -88,7 +88,7 @@
 
   <div class="form-group">
     <select class="form-select" #state name="estado">
-      <option selected disabled value="">{{prenda.state}}</option>
+      <option selected disabled>{{prenda.state}}</option>
       <ng-container *ngFor="let estado of arrEstado">
         <option [value]="estado">{{estado}}</option>
       </ng-container>
@@ -97,7 +97,7 @@
 
   <div class="form-group">
     <select class="form-select" #location name="ubicacion">
-      <option selected disabled value="">{{prenda.location}}</option>
+      <option selected disabled>{{prenda.location}}</option>
       <ng-container *ngFor="let ubicacion of arrUbicacion">
         <option [value]="ubicacion">{{ubicacion}}</option>
       </ng-container>
