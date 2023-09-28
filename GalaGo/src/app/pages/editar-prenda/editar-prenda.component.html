@@ -95,19 +95,12 @@
     </select>
   </div>
 
-  <div class="form-group">
-    <select class="form-select" #location name="ubicacion">
-      <option selected disabled>{{prenda.location}}</option>
-      <ng-container *ngFor="let ubicacion of arrUbicacion">
-        <option [value]="ubicacion">{{ubicacion}}</option>
-      </ng-container>
-    </select>
-  </div>
+ 
 
 
   <div class="form-group">
     <button type="button" class="btn"
-      (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value,location.value,photo1.value,photo2.value,photo3.value,photo4.value)">Editar</button>
+      (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value,photo1.value,photo2.value,photo3.value,photo4.value)">Editar</button>
   </div>
   <button type="button" class="btn1" (click)="irPerfil()">Cancelar</button>
 </form>

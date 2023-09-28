@@ -15,6 +15,8 @@ export class UserService {
   // constructor(private http: HttpClient) {
   constructor(private http: HttpClient) { 
     this.logueado = false;
+    console.log(this.user);
+    
   }
 
 //   public registerUser(user:User):Observable<Object>{

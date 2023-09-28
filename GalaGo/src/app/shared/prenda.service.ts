@@ -39,6 +39,8 @@ export class PrendaService {
 
     //  ------ EDITAR PRENDA ------ //
   public addPrenda(newPrenda):Observable<Object>{
+    console.log(newPrenda);
+    
     return this.http.post(this.url + "/publicar-prenda", newPrenda )
   }
 

@@ -86,7 +86,7 @@
   </div>
 
   <div class="form-group">
-    <input type="number" #precio class="form-control" placeholder="precio">
+    <input type="number" #precio class="form-control" placeholder="precio" required>
 
   </div>
 
@@ -97,36 +97,37 @@
   <div class="form-group">
     <select class="form-select" #tipo name="tipo" required>
       <option selected disabled>Tipo...</option>
-      <option *ngFor="let t of arrTipo">{{t}}</option>
+      <option  *ngFor="let t of arrTipo" [value]="t">{{t}}</option>
     </select>
   </div>
 
 
 
   <div class="form-group">
-    <select class="form-select" #talla name="talla" required>
+    <select class="form-select" type="select" #talla required>
       <option selected disabled>Talla...</option>
-        <option *ngFor="let talla of arrTalla">{{talla}}</option>
+        <option *ngFor="let talla of arrTalla" [value]="talla">{{talla}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <select class="form-select" #evento name="evento" required>
       <option selected disabled>Evento...</option>
-        <option *ngFor="let evento of arrEvento">{{evento}}</option>
+        <option *ngFor="let evento of arrEvento" [value]="evento">{{evento}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <select class="form-select" #estado name="estado" required>
       <option selected disabled>Estado...</option>
-        <option *ngFor="let estado of arrEstado">{{estado}}</option>
+        <option *ngFor="let estado of arrEstado" [value]="estado">{{estado}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <button type="submit" class="btn"
-      (click)="addPrenda(titulo.value,precio.value,descripcion.value,tipo.value,talla.value,evento.value,estado.value,foto1.value,foto2.value,foto3.value,foto4.value)">Publicar</button>
-  </div>
+  (click)="addPrenda(titulo.value,precio.value,descripcion.value,tipo.value,talla.value,evento.value,estado.value,foto1.value,foto2.value,foto3.value,foto4.value)">Publicar</button>
+
+    </div>
   <button type="button" class="btn1"  (click)="irHome()">Cancelar</button>
 </form>

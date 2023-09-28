@@ -3,7 +3,6 @@ export class Prenda {
     public title?: String;
     public price?: number;
     public description?: String; 
-    public location?: String;//"Madrid","Barcelona","Badajoz","avila"
     public state?: String;//"Nuevo", "Semi nuevo","Usado"
     public event?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
     public type?: String; //"Accesorio", "Mujer", "Hombre"
@@ -19,7 +18,6 @@ export class Prenda {
                 title?:String,
                 price?:number,
                 description?:String,
-                location?:String,
                 state?:String, 
                 size?:String,
                 event?:String, 
@@ -34,7 +32,6 @@ export class Prenda {
                     this.title = title;
                     this.price = price;
                     this.description = description;
-                    this.location = location;
                     this.state = state;
                     this.size = size;
                     this.event = event;

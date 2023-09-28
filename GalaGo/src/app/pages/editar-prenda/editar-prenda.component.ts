@@ -25,9 +25,9 @@ export class EditarPrendaComponent {
   console.log(this.prenda);}
 
 
-  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,location:string,photo1:string,photo2:string,photo3:string,photo4:string){
+  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,photo1:string,photo2:string,photo3:string,photo4:string){
     
-    this.prenda = new Prenda(title,price,description,location,state,size,event,type,photo1,photo2,photo3,photo4)
+    this.prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4)
     
    
     if (title === "") {
@@ -48,9 +48,7 @@ export class EditarPrendaComponent {
     if (event === "") {
       this.prenda.event = null
     }
-    if (location === "") {
-      this.prenda.location = null
-    }
+  
     if (size === "") {
       this.prenda.size = null
     }
