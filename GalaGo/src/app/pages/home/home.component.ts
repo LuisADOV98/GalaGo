@@ -3,6 +3,7 @@ import { Prenda } from 'src/app/models/prenda';
 import { CommonModule } from '@angular/common';
 import { ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
+import { FavoritosService } from 'src/app/shared/favoritos.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,7 +18,7 @@ export class HomeComponent{
   public eventoActive = false;
   public ubicacionActive = false;
 
-  public prendas: Prenda[];
+  public prendas: Prenda[]; /////////////
   public arrTipo: String[];
   public arrTalla: String[];
   public arrEvento: String[];
@@ -37,7 +38,7 @@ export class HomeComponent{
   //FAVORITOS
   // @Output() favoritaAgregada = new EventEmitter<Prenda>();
 
-  constructor(){
+  constructor(public favoritosService: FavoritosService){
     this.prendas = [
       new Prenda("Traje boda",20,"vestido azul","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_azul.jpg",1),
       new Prenda("Traje boda",20,"vestido morado","madrid","usado","s","Boda","Mujer","../../../assets/cards/chica_morado.png",2),

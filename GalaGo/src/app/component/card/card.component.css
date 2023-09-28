@@ -113,12 +113,12 @@
         .heart-container .svg-outline,
                 .heart-container .svg-filled {
             fill: var(--heart-color);
-            position: absolute;
+            /* position: absolute; */
         }
 
         .heart-container .svg-filled {
             animation: keyframes-svg-filled 1s;
-            display: none;
+            /* display: none; */
         }
 
         .heart-container .svg-celebrate {
@@ -126,9 +126,9 @@
             animation: keyframes-svg-celebrate .5s;
             animation-fill-mode: forwards;
             display: none;
-            stroke: var(--heart-color);
+            /* stroke: var(--heart-color); */
             fill: var(--heart-color);
-            stroke-width: 2px;
+            stroke-width: 0.5px;
         }
 
         .heart-container .checkbox:checked~.svg-container .svg-filled {

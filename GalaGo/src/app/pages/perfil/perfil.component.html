@@ -45,8 +45,9 @@
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
     <ng-template #favoritas>
         <div class="cards">
-            <app-card  class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" (marcarFavorita)="marcarComoFavorita($event)" [editable]="false" ></app-card>
+            <app-card  class="app-card" *ngFor="let prenda of favoriteCards" [prenda]="prenda"  [editable]="false" ></app-card>
         </div>
+        <!-- (marcarFavorita)="marcarComoFavorita($event)" -->
     </ng-template>
 </div>
 

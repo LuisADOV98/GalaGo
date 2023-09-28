@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalConfirmacionPrendaComponent } from './component/modal-confirmacion-prenda/modal-confirmacion-prenda.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RouterModule, Routes } from '@angular/router';
     QuienesSomosComponent,
     LandingPageComponent,
     HomeComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    ModalConfirmacionPrendaComponent
   ],
   imports: [
     BrowserModule,
