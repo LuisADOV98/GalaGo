@@ -1,14 +1,18 @@
 export class Chat {
-
+//ESTOS ATRIBUTOS TIENEN QUE SER IGUALES QUE EN MYSQL//
         
-    constructor(public foto: string,
-                public nombre: string,
-                public prenda: string,
-                public hora: Date){
+    constructor(public idchat: number,
+                public datehour: Date,
+                public hasnewmessage:boolean, 
+                public firstname:string,
+                public surname:string,
+                public photo:string){
                 
-                this.foto = foto;
-                this.nombre = nombre;
-                this.prenda = prenda;
-                this.hora = hora; 
+                this.idchat = idchat;
+                this.datehour = datehour;
+                this.hasnewmessage = hasnewmessage;
+                this.firstname = firstname; 
+                this.surname = surname; 
+                this.photo = photo; 
             }
 }
