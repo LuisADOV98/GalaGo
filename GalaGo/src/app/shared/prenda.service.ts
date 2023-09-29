@@ -7,13 +7,20 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class PrendaService {
-  public prenda: Prenda
+  public prenda: Prenda;
+  public prendas: Prenda[]
   private url:string = "http://localhost:3000"
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
 
+     
+     
+  }
+
+ 
+  
   //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
-    return this.http.get(`${this.url}/landing-page`)
+    return this.http.get(`${this.url}/landingpage`)
    }
 
  
@@ -39,12 +46,21 @@ export class PrendaService {
   public addPrenda(newPrenda):Observable<Object>{
     console.log(newPrenda);
     
-    return this.http.post(this.url + "/publicar-prenda", newPrenda )
+    return this.http.post(this.url + "/prenda", newPrenda )
+  }
+  // `
+  //  ------ PUBLICAR PRENDA
+  public editarPrenda(prenda:Prenda):Observable<Object>{
+    
+    return this.http.put(this.url + "/prenda",prenda)
   }
 
-  //  ------ PUBLICAR PRENDA ------ //
-  public editarPrenda(editPrenda:Prenda):Observable<Object>{
-    return this.http.put(this.url + "/editar-prenda", editPrenda)
+  public getMisPrendas(iduser:number):Observable<Object>{
+    return this.http.get(`${this.url}/perfil?iduser=${iduser}`  )
+  }
+
+  public getMisFavs(iduser:number):Observable<Object>{
+    return this.http.get(`${this.url}/favoritos?iduser=${iduser}`)
   }
 
 

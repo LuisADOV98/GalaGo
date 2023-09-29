@@ -39,7 +39,7 @@
     
     <!-- Si mis-prendas es true imprime cards(mis prendas) y sino pasa al ng-template e imprime favoritas -->
     <div class="cards" *ngIf="isMisPrendasActive; else favoritas">
-        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" ></app-card>
+        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card>
     </div>
     
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->

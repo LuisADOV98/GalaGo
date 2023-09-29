@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 import { Respuesta } from 'src/app/models/respuesta';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-publicar-prenda',
   templateUrl: './publicar-prenda.component.html',
@@ -20,7 +20,7 @@ export class PublicarPrendaComponent {
   public arrUbicacion:string[]
   public prenda: Prenda 
 
-  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService){
+  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService, private location: Location){
 
     console.log(this.userService.user);
     console.log(this.userService.user.iduser);
@@ -52,14 +52,18 @@ export class PublicarPrendaComponent {
       this.arrEstado = data.dataEnum;
     });
     
+    this.arrUbicacion = [];
+    this.userService.enumLocation().subscribe((data:Respuesta)=>{
+      this.arrUbicacion = data.dataEnum;
+    });
   }
 
   
 
 
-  public addPrenda(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,photo1:string,photo2:string,photo3:string,photo4:string){
+  public addPrenda(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,location:string,photo1:string,photo2:string,photo3:string,photo4:string){
    
-    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,estado,talla,evento,tipo,photo1,photo2,photo3,photo4,"",0,this.userService.user.iduser)
+    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,estado,talla,evento,tipo,photo1,photo2,photo3,photo4,location,0,this.userService.user.iduser)
     console.log(newPrenda);
     
     this.prendaService.addPrenda(newPrenda).subscribe((data:Respuesta) =>{
@@ -75,8 +79,8 @@ export class PublicarPrendaComponent {
     
   }
 
-    irHome(){
-      this.router.navigate(["/home"]);
+    goBack(){
+      this.location.back();
     }
 
 } 

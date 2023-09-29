@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
-import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
+
+import { PrendaService } from 'src/app/shared/prenda.service';
 
 @Component({
   selector: 'app-card',
@@ -9,13 +10,14 @@ import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit{
+  @Output() editarboton = new EventEmitter<Prenda>();
   //usamos el input para recibir datos de 1 prenda desde home
   @Input() prenda: Prenda;
   //usamos el input para recibir datos de 1 prenda desde perfil/mis prendas
   @Input() editable: Boolean;
   mostrarCorazon: boolean = true; //para que salga el corazon en las cards, 
                       //x defecto true (LANDING = FALSE)
-
+ 
   /* logueado = true; */
   
  
@@ -23,7 +25,8 @@ export class CardComponent implements OnInit{
 
 //   groupedItems = [];
 
-   constructor(private router: Router){ 
+   constructor(private router: Router, public prendaService: PrendaService){ 
+    this.prenda = this.prendaService.prenda
    }
 
   ngOnInit(): void {
@@ -43,16 +46,21 @@ export class CardComponent implements OnInit{
 }
 
 //Si card es editable, redirige a editar (desde perfil)
-   redirigir(id:number){
-    if(this.editable){
-        this.router.navigate(["/editar-prenda"])
-        console.log(id);
+   redirigir(prenda:Prenda){
   
-    } else {
-      this.router.navigate(['/detalle-prenda'])
-      console.log(id);
+    if(this.editable){
+      //  this.editarboton.emit(this.prenda);
+        this.prendaService.prenda = prenda;
+       this.router.navigate(["/editar-prenda"]);
+       console.log(prenda);
+       
     }
-    }
+  }
+    // } else {
+    //   this.router.navigate(['/detalle-prenda'])
+    // }
+    //     console.log(id);
+    // }
 
 
 
