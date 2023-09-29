@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { Router } from '@angular/router';
 import {Location } from '@angular/common'
+import { Respuesta } from 'src/app/models/respuesta';
+import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
 
 @Component({
   selector: 'app-detalle-prenda',
@@ -11,65 +13,29 @@ import {Location } from '@angular/common'
 })
 export class DetallePrendaComponent implements OnInit {
 
-  id:any;
+  idprenda:any;
   prenda:Prenda;
   propietario: string;
   // router: any;
   constructor(private route: ActivatedRoute,
     private location: Location,
-    private router: Router){
+    private router: Router, 
+    private detalleService: DetalleprendaService){
 
   }
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+
+    this.detalleService.obtenerDetalle().subscribe((data:Respuesta)=>{
+      let id = data.dataPrenda.idprenda
+    this.idprenda = this.route.snapshot.paramMap.get("idprenda");
     this.propietario = this.route.snapshot.paramMap.get('propietario');
-    console.log(this.id);
+    console.log(this.idprenda);
+    })
+  
+
 
     // petición al servidor getPrendaById
 
-    //servicio te devuleve una prenda 
-    //prenda = prendaService 
-   switch(this.id){
-      case "1":
-    this.prenda = {
-      title: "Traje boda",
-      price: 20,
-      description: "Vestido corto verde de tirantes con lentejuelas. Como nuevo.",
-      size: "S",
-      photo1: "../../../assets/cards/chica_azul_detalle.png",
-    }
-        break;
-      case "2":
-        this.prenda = {
-          title: "Traje boda",
-          price: 20,
-          description: "Vestido rosa de tirantes con volantes en el escote.",
-          size: "S",
-          photo1: "../../../assets/cards/chica_morado_detalle.png",
-        }
-        break;
-      case "3":
-        this.prenda = {
-          title: "Traje boda",
-          price: 20,
-          description: "Vestido naranja ceñido. Tiene la manga izquierda larga y la otra descubierta. Tiene volantes por toda la manga, hasta el pecho.",
-          size: "S",
-          photo1: "../../../assets/cards/chica_rosa_detalle.png",
-        }
-        break;
-        
-      case "4":
-        this.prenda = {
-          title: "Traje boda",
-          price: 20,
-          description: "Cuello con solapa, manga larga acabada en puño con detalles botones. Bolsillo en pecho. Cierre frontal con botones. Color Negro",
-          size: "S",
-          photo1: "../../../assets/cards/chico_blanco_detalle.png",
-        }
-        break; 
-
-
-   }
 
 
   }
