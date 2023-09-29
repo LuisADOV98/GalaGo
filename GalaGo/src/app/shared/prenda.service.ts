@@ -16,9 +16,7 @@ export class PrendaService {
     return this.http.get(`${this.url}/landing-page`)
    }
 
-   public getPrendaHome():Observable<Object> {
-    return this.http.get(`${this.url}/home`)
-   }
+ 
 
   //  ------ ENUM DE LAS COLUMNAS PARA SELECTORES ------ //
   public enumType():Observable<Object>{

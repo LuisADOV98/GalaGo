@@ -43,9 +43,9 @@ export class HomeComponent{
     this.prendas = [];
     this.valorRango = 250;
     this.filtros2();
-    this.prendaService.getPrendaHome().subscribe((data:Respuesta) =>{
-      this.prendas = data.data;
-    });
+    // this.prendaService.filtroTipo().subscribe((data:Respuesta) =>{
+    //   this.prendas = data.data;
+    // });
 
     //-------- ENUM DE LA API PARA SELECTORES --------//
 
