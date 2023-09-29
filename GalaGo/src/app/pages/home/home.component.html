@@ -99,7 +99,7 @@
 <!-- SELECCIÓN DE PRECIO -->
 <div class="div-precio" *ngIf="precioActive">
     <div class="slide-padre">
-        <input type="range" min="0" max="500" class="slide-rango"[(ngModel)]="valorRango" #sliderInput (input)="actualizarValor()">
+        <input type="range" min="0" max="500" class="slide-rango"[(ngModel)]="valorRango" #sliderInput (input)="filtros2()">
         <!-- <span class="slider-value" #sliderValue>{{valorRango}}</span> -->
 
         <div class="field">

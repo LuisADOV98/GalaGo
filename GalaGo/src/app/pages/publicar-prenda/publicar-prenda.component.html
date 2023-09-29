@@ -75,11 +75,37 @@
           </svg>
         </div>
 
-      </label>
+        </label>
+      </div>
     </div>
-  </div>
+    
+        <div class="form-group">
+            <select class="form-select" #tipo name="tipo" [(ngModel)]="prenda.tipo" #tipoId="ngModel"
+            [ngClass]="{ 'is-invalid': (tipoId.dirty || tipoId.touched) && tipoId.invalid }" placeholder="Tipo" required>
+              <option selected disabled value="">Tipo...</option>
+              <ng-container *ngFor="let tipo of arrTipo">
+                <option [value]="tipo">{{tipo}}</option>
+              </ng-container>
+            </select>
+            <div *ngIf="(tipoId.dirty || tipoId.touched) && tipoId.invalid" class="invalid-feedback">
+              <p *ngIf="tipoId.errors.required">Por favor escoja un tipo.</p>
+            </div>
+          </div>
+          
+          
 
-
+        <div class="form-group">
+            <select class="form-select" #evento name="evento" [(ngModel)]="prenda.evento" #eventoId="ngModel"
+            [ngClass]="{ 'is-invalid': (eventoId.dirty || eventoId.touched) && eventoId.invalid }" placeholder="Evento" required>
+              <option selected disabled value="">Evento...</option>
+              <ng-container *ngFor="let evento of arrEvento">
+                <option [value]="evento">{{evento}}</option>
+              </ng-container>
+            </select>
+            <div *ngIf="(eventoId.dirty || eventoId.touched) && eventoId.invalid" class="invalid-feedback">
+              <p *ngIf="eventoId.errors.required">Por favor escoja un evento.</p>
+            </div>
+          </div>
 
   <div class="form-group">
     <input type="text" #titulo class="form-control" placeholder="titulo" required>

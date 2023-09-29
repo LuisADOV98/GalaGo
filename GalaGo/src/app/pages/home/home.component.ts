@@ -22,17 +22,17 @@ export class HomeComponent{
   public ubicacionActive = false;
   
   public prendas: Prenda[];
-  public arrTipo: String[];
-  public arrTalla: String[];
-  public arrEvento: String[];
-  public arrEstado: String[];
-  public arrUbicacion: String[];
+  public arrTipo: string[];
+  public arrTalla: string[];
+  public arrEvento: string[];
+  public arrEstado: string[];
+  public arrUbicacion: string[];
   
-  public selectedTallaMujer: String = "";
-  public selectedTallaHombre: String = "";
-  public selectedEvento: String = "";
+  public selectedTallaMujer: string = "";
+  public selectedTallaHombre: string = "";
+  public selectedEvento: string = "";
   public selectedUbicacion: string = "";
-  public valorRango: number = 0;
+  public valorRango: number;
   // public valorGlobo: number = 0;
   // public ubicacion: string
   
@@ -40,10 +40,12 @@ export class HomeComponent{
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
 
   constructor(public router: Router, public prendaService: PrendaService, public userService: UserService){
-    this.prendas = []
-    this.prendaService.getPrendaHome().subscribe((data:Respuesta) =>{
-      this.prendas = data.data;
-    });
+    this.prendas = [];
+    this.valorRango = 250;
+    this.filtros2();
+    // this.prendaService.filtroTipo().subscribe((data:Respuesta) =>{
+    //   this.prendas = data.data;
+    // });
 
     //-------- ENUM DE LA API PARA SELECTORES --------//
 
@@ -84,33 +86,33 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y aparece el input de TALLA
   filterMujer():void{
     this.mujerActive = !this.mujerActive;
-    console.log("filterMujer:",this.mujerActive);
+    this.filtros2();
   }
   // Recoge el valor del selector de la talla 
   /* Por referencia se pasa el valor elegido en el desplegable, en el html se 
   recoge como (change)="tallaMujer(talla.value)" y se asigna al atributo public*/
   tallaMujer(tallaValue:string):void{
     this.selectedTallaMujer = tallaValue;
-    console.log("selectedTallaMujer:",this.selectedTallaMujer);
+    this.filtros2();
   }
 
   // ----- TIPO HOMBRE ------ //
   // Cambia el filtro de color (activa o desactiva) y aparece el input de TALLA
   filterHombre():void{
-    this.hombreActive = !this.hombreActive;    
-    console.log("hombre",this.hombreActive);    
+    this.hombreActive = !this.hombreActive;
+    this.filtros2();    
   }
   // Recoge el valor del selector de la talla 
   tallaHombre(tallaValue:string):void{
     this.selectedTallaHombre = tallaValue;
-    console.log("selectedTallaHombre:",this.selectedTallaHombre);
+    this.filtros2();
   }
 
   // ----- TIPO ACCESPRIO ------ //
   // Cambia el filtro de color (activa o desactiva) y en este caso no aparece ningún filtro
   filterAccesorio():void{
     this.accesorioActive = !this.accesorioActive;
-    console.log("accesorio",this.accesorioActive);    
+    this.filtros2();
   }
 
 
@@ -118,37 +120,106 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y aparece el input de PRECIO, no neceista otra función para recoger el valor, lo hace con [(ngModel)]
   filterPrecio():void{
     this.precioActive = !this.precioActive;
-    console.log("valor rango precio: ",this.valorRango);
-    console.log("precio",this.precioActive);    
+    this.filtros2();
   }
-
 
   // ----- SELECCIONA EL PRECIO MÁXIMO ------ //
   // Cambia el filtro de color (activa o desactiva) y aparece el input de EVENTO
   filterEvento():void{
     this.eventoActive = !this.eventoActive;
-    console.log("evento",this.eventoActive);    
+    this.filtros2();
   } 
   // Recoge el valor del selector del evento 
   eventoInfo(evento:string):void{
     this.selectedEvento = evento;
-    console.log("selectedEvento:",this.selectedEvento);
+    this.filtros2();
   }
-
 
   // ----- SELECCIONA EL PRECIO MÁXIMO ------ //
   // Cambia el filtro de color (activa o desactiva) y aparece el input de UBICACIÓN
   filterUbicacion():void{
     this.ubicacionActive = !this.ubicacionActive;
-    console.log("ubicacion",this.ubicacionActive);    
+    this.filtros2();
   }
   // Recoge el valor del selector de la ubicacioón 
   ubicacionInfo(ubicacion:string):void{
     this.selectedUbicacion = ubicacion;
-    console.log("selectedUbicacion:",this.selectedUbicacion);
+    this.filtros2();
   }
 
 
+  // ------- FILTROS ------ // 
+  filtros2(){
+    console.log("this.filtros2()");
+    
+    let tipo = undefined;
+    console.log(tipo);
+
+    let size = undefined; 
+    let price = undefined;
+    let event = undefined;
+    let state = undefined;
+    let location = undefined;
+
+    //Asignar el tipo y la talla MUJER
+    if(this.mujerActive){
+      tipo = "Mujer";              
+      if(this.selectedTallaMujer){
+        size = `${this.selectedTallaMujer}`;
+      }
+
+    //Asignar el tipo y la talla HOMBRE
+    }else if(this.hombreActive){
+      tipo = "Hombre";        
+      if(this.selectedTallaHombre){
+        size = `${this.selectedTallaHombre}`;
+        console.log(size);
+      }
+
+    //Asignar el tipo y la talla ACCESORIO
+    }else if(this.accesorioActive){
+      tipo = "Accesorio";
+
+    //Si ninguno está activo es undefined
+    }else{
+      tipo = undefined;
+    }
+    
+    //Asignar el precio 
+    if(this.precioActive){
+      price = this.valorRango;
+      console.log(price);
+    }else{
+      price = undefined;
+    }
+
+    //Asignar evento
+    if(this.eventoActive){
+      if(this.selectedEvento){
+        event = `${this.selectedEvento}`;        
+      }
+      console.log(event);
+    }else{
+      event = undefined;
+    }
+
+    //Asignar ubicación
+    if(this.ubicacionActive){
+      location = `${this.selectedUbicacion}`;
+      console.log(location);
+    }else{
+      location = undefined;
+    }
+    console.log(tipo,size,price,event,state);
+    
+
+    //  Acceso al servicio de filtro para que sólo aparezcan tarjetas tipo = "Mujer" 
+    console.log("datos por parametro home: ", tipo, size, price, event, state);    
+    this.prendaService.filtroTipo(tipo,size,price,event,state).subscribe((data:Respuesta)=>{
+      this.prendas = data.data;
+      console.log("desde api en angular this.prendas: ",this.prendas);
+    })
+  }
 
   // -------- FIN -------- // 
 

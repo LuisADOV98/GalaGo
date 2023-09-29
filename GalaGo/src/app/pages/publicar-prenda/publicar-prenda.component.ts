@@ -59,7 +59,7 @@ export class PublicarPrendaComponent {
 
   public addPrenda(titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,photo1:string,photo2:string,photo3:string,photo4:string){
    
-    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,estado,talla,evento,tipo,photo1,photo2,photo3,photo4,0,this.userService.user.iduser)
+    let newPrenda:Prenda = new Prenda(titulo,precio,descripcion,estado,talla,evento,tipo,photo1,photo2,photo3,photo4,"",0,this.userService.user.iduser)
     console.log(newPrenda);
     
     this.prendaService.addPrenda(newPrenda).subscribe((data:Respuesta) =>{

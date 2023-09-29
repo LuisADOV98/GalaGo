@@ -40,13 +40,13 @@ export class EditarPrendaComponent {
       this.prenda.description = null
     }
     if (type === "") {
-      this.prenda.type = null
+      this.prenda.tipo = null
     }
     if (state === "") {
       this.prenda.state = null
     }
     if (event === "") {
-      this.prenda.event = null
+      this.prenda.evento = null
     }
   
     if (size === "") {
