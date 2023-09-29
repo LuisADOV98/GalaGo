@@ -3,42 +3,42 @@ export class Prenda {
     public title?: String;
     public price?: number;
     public description?: String; 
-    public location?: String;//"Madrid","Barcelona","Badajoz","avila"
     public state?: String;//"Nuevo", "Semi nuevo","Usado"
-    public event?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public type?: String; //"Accesorio", "Mujer", "Hombre"
+    public evento?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
+    public tipo?: String; //"Accesorio", "Mujer", "Hombre"
     public size?:String; //"Unica","S","M","L","XL","XXL"
     public photo1?: String;
     public photo2?: String;
     public photo3?: String;
     public photo4?: String;
+    public location?:string;
     public idprenda?: number;
     public iduser?: number;
+
     constructor(
                 
                 title?:String,
                 price?:number,
                 description?:String,
-                location?:String,
                 state?:String, 
                 size?:String,
-                event?:String, 
-                type?:String,
+                evento?:String, 
+                tipo?:String,
                 photo1?: string,
                 photo2?: string,
                 photo3?: string,
                 photo4?: string,
+                location?:string,
                 idprenda:number = 0,
                 iduser:number = 0){
                     
                     this.title = title;
                     this.price = price;
                     this.description = description;
-                    this.location = location;
                     this.state = state;
                     this.size = size;
-                    this.event = event;
-                    this.type = type;
+                    this.evento = evento;
+                    this.tipo = tipo;
                     this.photo1 = photo1;
                     this.photo2 = photo2;
                     this.photo3 = photo3;

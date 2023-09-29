@@ -66,7 +66,7 @@
         </div>
 
         <div class="form-group">
-            <select class="form-select" #tipo name="tipo" [(ngModel)]="prenda.type" #tipoId="ngModel"
+            <select class="form-select" #tipo name="tipo" [(ngModel)]="prenda.tipo" #tipoId="ngModel"
             [ngClass]="{ 'is-invalid': (tipoId.dirty || tipoId.touched) && tipoId.invalid }" placeholder="Tipo" required>
               <option selected disabled value="">Tipo...</option>
               <ng-container *ngFor="let tipo of arrTipo">
@@ -94,7 +94,7 @@
         </div>
 
         <div class="form-group">
-            <select class="form-select" #evento name="evento" [(ngModel)]="prenda.event" #eventoId="ngModel"
+            <select class="form-select" #evento name="evento" [(ngModel)]="prenda.evento" #eventoId="ngModel"
             [ngClass]="{ 'is-invalid': (eventoId.dirty || eventoId.touched) && eventoId.invalid }" placeholder="Evento" required>
               <option selected disabled value="">Evento...</option>
               <ng-container *ngFor="let evento of arrEvento">

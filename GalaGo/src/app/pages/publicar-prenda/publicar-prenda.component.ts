@@ -22,7 +22,7 @@ export class PublicarPrendaComponent {
   public id: number;
   constructor(public router: Router){
     this.prendas = []
-    this.prenda = new Prenda("",0,"","","","","","","","","","",0)
+    this.prenda = new Prenda("",0,"","","","","","","","","")
   }
 
   public recogerInfo(id:number = 0, titulo:string,precio:number,descripcion:string,tipo:string,talla:string,evento:string,estado:string,ubicacion:string,photo1,photo2,photo3,photo4){

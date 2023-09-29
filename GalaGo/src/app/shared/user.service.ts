@@ -35,7 +35,7 @@ export class UserService {
   }
 
   public editUser(user: User):Observable<Object>{
-    return this.http.put(this.url+"/editar-perfil", user);
+    return this.http.put(this.url+"/editar-perfil",user);
   }
   
   // EXTRAER LOS VALORES DE LOS ENUM EN ARRAYS
@@ -43,6 +43,7 @@ export class UserService {
   public enumLocation():Observable<Object>{
     return this.http.get(this.url+"/locations");
   }
+
 
   // public editUser(user: User):Observable<Object>{
   //   return this.http.put(this.url+"/user", user);
