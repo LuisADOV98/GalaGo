@@ -101,8 +101,6 @@
     </select>
   </div>
 
-
-
   <div class="form-group">
     <select class="form-select" type="select" #talla required>
       <option selected disabled>Talla...</option>
@@ -129,5 +127,5 @@
   (click)="addPrenda(titulo.value,precio.value,descripcion.value,tipo.value,talla.value,evento.value,estado.value,foto1.value,foto2.value,foto3.value,foto4.value)">Publicar</button>
 
     </div>
-  <button type="button" class="btn1"  (click)="irHome()">Cancelar</button>
+  <button type="button" class="btn1"  (click)="goBack()">Cancelar</button>
 </form>

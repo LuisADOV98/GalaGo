@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
+import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
+import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 
 @Component({
@@ -14,33 +17,39 @@ export class PerfilComponent {
 
   public misPrendas: Prenda[];
   public misFavoritas: Prenda[];
-
+  public prenda:Prenda
   public user: User;
 
-  constructor(userService: UserService){
+  constructor(userService: UserService, public prendaService:PrendaService, public router: Router){
     this.user = userService.user;
+    
+    console.log(this.user);
+    
+    this.prendaService.getMisPrendas(this.user.iduser).subscribe((data:Respuesta) =>{
+      this.misPrendas = data.data
+      console.log(this.misPrendas);
+      
+    })
 
-    this.misPrendas = [   
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/mujer-rubia-sorprendida-pelos-ventosos-posando-pared-rosa-hermosa-modelo-emociones-extaticas_273443-1824.jpg?w=1800&t=st=1695554151~exp=1695554751~hmac=8e67fb0c7d36456f7894194b16f3dd34def3b68fb9edd78285b3dd39c151d2de")
-    ]
-
-    this.misFavoritas = [   
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24"),
-      new Prenda ("Vestidin rosa",40,"Prenda muy bonita", "Alicante", "Nuevo", "S", "Boda", "Mujer", "https://img.freepik.com/foto-gratis/chica-atractiva-traje-largo-festivo-lanzando-confeti-retrato-mujer-rubia-vestido-plateado-posando-felizmente-sobre-fondo-purpura_197531-29161.jpg?w=1800&t=st=1695588922~exp=1695589522~hmac=ef02c7a19022b2ec64641ad33a3b841382b082b8fd1c3eccc885c762f81cdc24")
-    ]
+    this.prendaService.getMisFavs(this.user.iduser).subscribe((data:Respuesta) =>{
+      this.misFavoritas= data.data
+    })
   }
-
   ed_perfil(updateUser:User){
     this.user = updateUser;
+  }
+
+  editarPrenda2(prenda:Prenda){
+    console.log(this.prenda.idprenda,"perfil");
+    console.log(prenda, "parametro");
+    this.prendaService.prenda = prenda;
+    console.log("perfil:");
+    console.log(prenda);
+    
+    
+    
+    
+  
   }
 
   mostrarMisPrendas(){

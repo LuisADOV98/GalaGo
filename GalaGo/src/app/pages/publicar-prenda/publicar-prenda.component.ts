@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 import { Respuesta } from 'src/app/models/respuesta';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-publicar-prenda',
   templateUrl: './publicar-prenda.component.html',
@@ -20,7 +20,7 @@ export class PublicarPrendaComponent {
   public arrUbicacion:string[]
   public prenda: Prenda 
 
-  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService){
+  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService, private location: Location){
 
     console.log(this.userService.user);
     console.log(this.userService.user.iduser);
@@ -75,8 +75,8 @@ export class PublicarPrendaComponent {
     
   }
 
-    irHome(){
-      this.router.navigate(["/home"]);
+    goBack(){
+      this.location.back();
     }
 
 } 

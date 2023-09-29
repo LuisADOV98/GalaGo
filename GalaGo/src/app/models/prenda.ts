@@ -4,8 +4,8 @@ export class Prenda {
     public price?: number;
     public description?: String; 
     public state?: String;//"Nuevo", "Semi nuevo","Usado"
-    public event?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public type?: String; //"Accesorio", "Mujer", "Hombre"
+    public evento?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
+    public tipo?: String; //"Accesorio", "Mujer", "Hombre"
     public size?:String; //"Unica","S","M","L","XL","XXL"
     public photo1?: String;
     public photo2?: String;
@@ -20,8 +20,8 @@ export class Prenda {
                 description?:String,
                 state?:String, 
                 size?:String,
-                event?:String, 
-                type?:String,
+                evento?:String, 
+                tipo?:String,
                 photo1?: string,
                 photo2?: string,
                 photo3?: string,
@@ -34,8 +34,8 @@ export class Prenda {
                     this.description = description;
                     this.state = state;
                     this.size = size;
-                    this.event = event;
-                    this.type = type;
+                    this.evento = evento;
+                    this.tipo = tipo;
                     this.photo1 = photo1;
                     this.photo2 = photo2;
                     this.photo3 = photo3;

@@ -3,7 +3,9 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { Respuesta } from 'src/app/models/respuesta';
+import { User } from 'src/app/models/user';
 import { PrendaService } from 'src/app/shared/prenda.service';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-editar-prenda',
@@ -12,61 +14,93 @@ import { PrendaService } from 'src/app/shared/prenda.service';
 })
 export class EditarPrendaComponent {
   public prendas:Prenda[]
-  public arrTipo: string[] = ["Accesorio", "Mujer", "Hombre"];
-  public arrTalla: string[] = ["Unica","S","M","L","XL","XXL"]
-  public arrEvento: string[] = ["Bodas","Comuniones","Noche vieja","Disfraces"]
-  public arrEstado:string[] = ["Nuevo", "Como nuevo","Usado"]
-  public arrUbicacion:string[] = ['Andalucia', 'Aragon', 'Canarias', 'Cantabria', 'Castilla-La Mancha', 'Castilla y Leon', 'Cataluña', 'Comunidad de Madrid', 'Comunidad Valenciana', 'Extremadura', 'Galicia', 'Islas Baleares', 'La Rioja', 'Murcia', 'Comunidad Foral de Navarra', 'Principado de Asturias', 'Pais Vasco', 'Ceuta', 'Melilla']
-  
+  public arrTipo: string[];
+  public arrTalla: string[] 
+  public arrEvento: string[] 
+  public arrEstado:string[] 
   public prenda:Prenda
-  constructor(public router: Router, public prendaService:PrendaService){
-  this.prenda = new Prenda()
+  public user:User
+  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService){
+    this.prenda = this.prendaService.prenda
+    this.user = this.userService.user
+    console.log(this.prendaService.prenda);
+    
+      //Option de tipo de prendaService desde la api
+      this.prendaService.enumType().subscribe((data:Respuesta)=>{
+       
+        this.arrTipo = data.dataEnum;
+      
+        
+      });
   
-  console.log(this.prenda);}
+      //Option de talla de prendaService desde la api
+      this.prendaService.enumSize().subscribe((data:Respuesta)=>{
+        this.arrTalla = data.dataEnum;
+      });
+  
+      //Optios de evento de prendaService desde la api
+      this.arrEvento = [];
+      this.prendaService.enumEvent().subscribe((data:Respuesta)=>{
+        this.arrEvento = data.dataEnum;
+      });
+  
+      //Optios de estado de prendaService desde la api
+      this.arrEstado = [];
+      this.prendaService.enumState().subscribe((data:Respuesta)=>{
+        this.arrEstado = data.dataEnum;
+      });
+}
 
 
   public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,photo1:string,photo2:string,photo3:string,photo4:string){
     
-    this.prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4)
+    let newPrenda: Prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4,this.prendaService.prenda.idprenda)
+    // newPrenda = this.prendaService.prenda
+    // console.log(newPrenda);
+    
+  console.log(newPrenda);
+  
     
    
     if (title === "") {
-      this.prenda.title = null
+      newPrenda.title = null
     }
     if (price == 0) {
-      this.prenda.price = null
+      newPrenda.price = null
     }  
     if (description === "") {
-      this.prenda.description = null
+      newPrenda.description = null
     }
     if (type === "") {
-      this.prenda.type = null
+      newPrenda.tipo = null
     }
     if (state === "") {
-      this.prenda.state = null
+      newPrenda.state = null
     }
     if (event === "") {
-      this.prenda.event = null
+      newPrenda.evento = null
     }
   
     if (size === "") {
-      this.prenda.size = null
+      newPrenda.size = null
     }
     if (photo1 === "") {
-      this.prenda.photo1 = null
+      newPrenda.photo1 = null
     }
     if (photo2 === "") {
-      this.prenda.photo2 = null
+      newPrenda.photo2 = null
     }
     if (photo3 === "") {
-      this.prenda.photo3 = null
+      newPrenda.photo3 = null
     }
     if (photo4 === "") {
-      this.prenda.photo4 = null
+      newPrenda.photo4 = null
     }
 
-    this.prendaService.editarPrenda(this.prenda).subscribe((data: Respuesta) =>{
-      this.prenda = data.dataPrenda
+    this.prendaService.editarPrenda(newPrenda).subscribe((data: Respuesta) =>{
+    
+    console.log(data.data);
+    
       if (!data.error)
       {
         alert("Has editado una Prenda");
