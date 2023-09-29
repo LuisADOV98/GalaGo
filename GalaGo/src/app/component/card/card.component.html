@@ -1,7 +1,7 @@
     <div class="tarjeta">
         <!-- CARD REDIRIGE A LOGIN O DETALLE PRENDA -->
-        <img *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="foto" [src]="prenda.photo1"/>
-        <img *ngIf="!editable" (click)="verDetallePrenda(prenda.id, false)" class="foto" [src]="prenda.photo1"/>
+        <img *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="foto" [src]="prenda.photo1"/>
+        <img *ngIf="!editable" (click)="verDetallePrenda(prenda.idprenda, false)" class="foto" [src]="prenda.photo1"/>
        
         <div class="texto">
     
@@ -42,8 +42,8 @@
 
 
               <!-- PARA BOTON CONTACTAR/EDITAR DE DETALLE-PRENDA -->
-                <p *ngIf="editable"  (click)="verDetallePrenda(prenda.id, true)" class="titulo">{{prenda.title}}</p>
-                <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.id, false)" class="titulo">{{prenda.title}}</p>
+                <p *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="titulo">{{prenda.title}}</p>
+                <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.idprenda, false)" class="titulo">{{prenda.title}}</p>
           
                 <p class="precio">{{prenda.price}}€</p>
             </div>

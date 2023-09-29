@@ -45,14 +45,13 @@ export class CardComponent implements OnInit{
    redirigir(id:number){
     if(this.editable){
         this.router.navigate(["/editar-prenda"])
-    }
         console.log(id);
-  }
-    // } else {
-    //   this.router.navigate(['/detalle-prenda'])
-    // }
-    //     console.log(id);
-    // }
+  
+    } else {
+      this.router.navigate(['/detalle-prenda'])
+      console.log(id);
+    }
+    }
 
 
 

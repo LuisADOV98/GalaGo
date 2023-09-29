@@ -39,7 +39,7 @@ export class EditarPerfilComponent {
       console.log("user:", this.userService);
       this.userService.editUser(this.user).subscribe(
         (response) => {
-          // Manejar la respuesta exitosa (por ejemplo, mostrar un mensaje de éxito)
+          // Manejar la respuesta exitosa 
           console.log("Perfil actualizado correctamente.", response);
           // Redirige al usuario nuevamente a la página de perfil después de guardar
           this.router.navigate(["/perfil"]);
