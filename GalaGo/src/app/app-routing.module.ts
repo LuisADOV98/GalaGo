@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:"card", component: CardComponent},
   {path:"footer", component: FooterComponent},
   {path:"header", component: HeaderComponent},
-  {path:"tarjeta-chat", component: TarjetaChatComponent},
+/*   {path:"tarjeta-chat", component: TarjetaChatComponent}, */
   {path:"chat", component: ChatComponent},
   {path:"contacta", component: ContactaComponent},
   {path:"conversacion-chat", component: ConversacionChatComponent},
