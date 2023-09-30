@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { Router } from '@angular/router';
@@ -12,32 +12,34 @@ import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
   styleUrls: ['./detalle-prenda.component.css']
 })
 export class DetallePrendaComponent implements OnInit {
+ @Input() prendaData:any;
+
+
+  prenda: any
+
 
   idprenda:any;
-  prenda:Prenda;
   propietario: string;
   // router: any;
   constructor(private route: ActivatedRoute,
     private location: Location,
     private router: Router, 
     private detalleService: DetalleprendaService){
+       // console.log(this.prenda)
+    this.idprenda = this.route.snapshot.paramMap.get("idprenda");
+    console.log("ID:", this.idprenda)
+    // Llama al servicio para obtener los detalles de la prenda por su ID
+    this.detalleService.obtenerDetalle(this.idprenda).subscribe(
+      (data:Respuesta) => {
+        // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
+        this.prenda = data.dataPrenda[0];
+        console.log("Detalle de la prenda",this.prenda)
+      },
+    );
 
   }
   ngOnInit(): void {
-
-    this.detalleService.obtenerDetalle().subscribe((data:Respuesta)=>{
-      let id = data.dataPrenda.idprenda
-    this.idprenda = this.route.snapshot.paramMap.get("idprenda");
-    this.propietario = this.route.snapshot.paramMap.get('propietario');
-    console.log(this.idprenda);
-    })
-  
-
-
-    // petición al servidor getPrendaById
-
-
-
+   
   }
 
 //para ir para atrás

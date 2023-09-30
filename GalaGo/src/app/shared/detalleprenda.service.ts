@@ -12,7 +12,7 @@ export class DetalleprendaService {
   constructor(private http: HttpClient) { 
     
   }
-  public obtenerDetalle(): Observable<Object> {
-    return this.http.get(`${this.url}/prendaId`)
+  public obtenerDetalle(idprenda: number): Observable<Object> {
+    return this.http.get(`${this.url}/prendaId/${idprenda}`)
    }
 }

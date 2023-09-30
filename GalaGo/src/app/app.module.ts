@@ -24,6 +24,7 @@ import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { RouterModule, Routes } from '@angular/router';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import { RouterModule, Routes } from '@angular/router';
     QuienesSomosComponent,
     LandingPageComponent,
     HomeComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,
