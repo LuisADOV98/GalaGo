@@ -19,43 +19,55 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 22px;
+    margin-top: 70px;
+    height: 40px;
 }
+
+    .galago img{
+        height: 55px;
+        width: 200px;
+        margin-top: 30px;
+    }
 
 .formulario{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 50px;
+    height: 540px;
+
 }
 
     .formulario h2{
+        width: 274px;
         color: var(--dark_blue);
-        margin-top: 35px;
-        margin-bottom: 20px;
-        align-self: flex-start;
-        margin-left: 58px;
+        margin-top: 10px;
+        margin-bottom: -20px;
+        margin-right: 1px;
     }
 
 /* contenedor del formulario */
-    .form-container {
+    /* .form-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 20px; 
-    }
+        margin-top: 0px; */
+        /* margin: 20px;  */
+    /* } */
     
     /* elementos del formulario */
     .form-group {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
+        /* border: 1px solid red; */
     }
     
 
     label {
         color: var(--dark_blue);
-        font-size: 16px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 24px; /* 150% */
@@ -82,28 +94,192 @@
     }
 
     button{
-        width: 141px;
+        width: 274px;
         height: 40px;
         flex-shrink: 0;
         border-radius: 6px;
         background: var(--dark_blue);
         color: aliceblue;
+        border: none;
     }
 
-.linea {
+/* .linea {
     border-top: 1px solid var(--pink);
     height: 2px;
     max-width: 275px;
     padding: 0;
     margin: 55px auto 0 auto;
+    } */
+
+
+ /* Samsung Galaxy S20 Ultra */
+@media screen and (min-width: 412px ) /* de 0px hasta 412 */
+{
+    .contacta{
+        height: 50px;
+        /* margin-bottom: 100px; */
     }
 
-.footer{
-    margin-top: 10px;
-    margin-left: 58px;
-    color: #000;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
+    .galago img{
+        width: 210px;
+    }
+    
+    .formulario{
+        margin-top: 52px;
+        height: 565px;
+        /* border: 1px solid blueviolet; */
+    }   
+
+    .formulario h2{
+        margin-right: 13px;
+    }
+
+    /* elementos del formulario */
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    
+    input[type="text"],
+    input[type="email"] {
+        height: 45px;
+        width: 288px;
+    }
+
+    textarea{
+        width: 288px;
+        height: 140px;
+    }
+
+    button{
+        width: 288px;
+        height: 48px;
+    }
+ 
+ } 
+
+ /* Ipad mini */
+ @media screen and (min-width: 768px ) /* de 412 a 768 */
+ {
+    .contacta{
+        height: 52px;
+        width: 100%;
+        margin-top: 75px;
+    }
+
+    .contactaTexto{
+        font-size: 23px;
+    }
+
+    .galago{
+        height: 60px;
+    }
+
+    .galago img{
+        height: 75px;
+        width: 270px;
+    }
+
+    .formulario{
+        margin-top: 60px;
+        height: 577px;
+    }
+
+    .formulario h2{
+        width: 290px;
+        margin-right: 230px;
+    }
+    
+    /* elementos del formulario */
+    .form-group {
+        margin-bottom: 20px;
+        /* border: 1px solid red; */
+    }
+    
+
+    label {
+        font-size: 20px;
+    }
+    
+    
+    input[type="text"],
+    input[type="email"] {
+        width: 520px;
+        height: 55px;
+    }
+    
+    textarea{
+        width: 520px;
+        height: 155px;
+    }
+
+    button{
+        width: 520px;
+        height: 50px;
+        font-size: 20px;
+    }  
+    
+}
+/* ipad air */
+@media screen and (min-width: 820px ) /* de 768 a 820 */
+{
+    .contacta{
+        height: 58px;
+        width: 100%;
+    }
+    
+    .contactaTexto{
+        font-size: 24px;
+    }
+    
+    .galago{
+        height: 100px;
+    }
+    
+    .galago img{
+        height: 85px;
+        width: 290px;
+    }
+    
+    .formulario{
+        margin-top: 50px;
+        height: 720px;
+    }
+    
+    .formulario h2{
+        width: 300px;
+        margin-right: 230px;
+        margin-bottom: -60px;
+        margin-top: 0px;
+    }
+    
+    /* elementos del formulario */
+    .form-group {
+        margin-bottom: 30px;
+        /* border: 1px solid red; */
+    }
+    
+
+    label {
+        font-size: 23px;
+    }
+    
+    
+    input[type="text"],
+    input[type="email"] {
+        width: 530px;
+        height: 65px;
+    }
+    
+    textarea{
+        width: 530px;
+        height: 180px;
+        flex-shrink: 0;
+    }
+
+    button{
+        width: 530px;
+        height: 55px;
+        font-size: 24px;
+    }
 }

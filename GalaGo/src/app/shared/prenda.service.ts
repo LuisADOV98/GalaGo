@@ -63,6 +63,16 @@ export class PrendaService {
     return this.http.get(`${this.url}/favoritos?iduser=${iduser}`)
   }
 
+  public postFav(data: { iduser:number, idprenda:number}): Observable<any>{
+      const url = `${this.url}/favoritos`;
+      return this.http.post(url, data);
+  }
+
+  public deleteFav(iduser: number, idprenda: number): Observable<any> {
+    const url = `${this.url}/favoritos/${iduser}/${idprenda}`;
+    return this.http.delete(url);
+  }
+
 
     // ---- FILTROS HOME ---- //
     public filtroTipo(tipo:string, size:string, price:number, evento:string, state:string):Observable<Object>{

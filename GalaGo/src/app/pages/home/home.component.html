@@ -149,5 +149,11 @@
 
 
 <div class="cardsContainer">
-    <app-card class="app-card" *ngFor="let prenda of prendas" [prenda]="prenda" [prendas]="prendas" ></app-card>
+    <app-card 
+        class="app-card" 
+        *ngFor="let prenda of prendas" 
+        [prenda]="prenda" 
+        [prendas]="prendas" 
+        [isFavoritosActive]= "isFavorito(prenda.idprenda)"
+    ></app-card><!-- "isFavorito(prenda.idprenda)" -->
 </div>

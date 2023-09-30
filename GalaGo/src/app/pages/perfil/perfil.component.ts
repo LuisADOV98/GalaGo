@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { CardComponent } from 'src/app/component/card/card.component';
 import { Prenda } from 'src/app/models/prenda';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
+import { FavoritosService } from 'src/app/shared/favoritos.service';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 
@@ -16,11 +18,16 @@ export class PerfilComponent {
   isFavoritosActive: boolean = false;
 
   public misPrendas: Prenda[];
-  public misFavoritas: Prenda[];
-  public prenda:Prenda
-  public user: User;
+  public misFavoritas: any; //favoriteCards
+  public prenda:Prenda;
 
-  constructor(userService: UserService, public prendaService:PrendaService, public router: Router){
+  public user: User;
+  public mostrarModal = false;
+
+  @ViewChild('refHijo') hijo: CardComponent
+
+  constructor(userService: UserService, public prendaService:PrendaService, public router: Router,
+    public favoritosService: FavoritosService){
     this.user = userService.user;
     
     console.log(this.user);
@@ -31,10 +38,16 @@ export class PerfilComponent {
       
     })
 
-    this.prendaService.getMisFavs(this.user.iduser).subscribe((data:Respuesta) =>{
-      this.misFavoritas= data.data
-    })
+    // this.prendaService.getMisFavs(this.user.iduser).subscribe((data:Respuesta) =>{
+    //   this.misFavoritas= data.data
+    // })
   }
+
+  ngOnInit(){
+    this.misFavoritas = this.favoritosService.getFavorites();
+    console.log(this.misFavoritas);
+  }
+
   ed_perfil(updateUser:User){
     this.user = updateUser;
   }
@@ -62,6 +75,16 @@ export class PerfilComponent {
     this.isMisPrendasActive = false;
   }
 
+
+  recibirDatos(mostrarModalPadre:any){
+    console.log(mostrarModalPadre)
+    this.mostrarModal = mostrarModalPadre;
+  }
+
+  manejadorRespuestaModal(valor: boolean){
+    this.mostrarModal = false;
+  }
+  
   // toggleTab(tab: string) {
   //   if (tab === 'mis-prendas') {
   //     this.isMisPrendasActive = true;
