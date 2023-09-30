@@ -1,268 +1,438 @@
-.tarjeta {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    font-size: 13px;
-    font-family: "Pavanam";
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-top: 35px;
-} 
-      
-         .foto {
-            position: absolute;
-            top: 48px;
-            width: 390px;
-            height: 554px;
-            flex-shrink: 0;
-            object-fit:cover;
-        }
-        
-        .texto {
-            margin-top: 565.84px;
-            position: absolute;
-            width: 170px;
-            height: 36px;
-        }
-      
-        .contenedor_texto {
-            position: absolute;
-            width: 175px;
-            height: 36.16px;
-        }
-    
-        #hr{
-            height:8px; 
-            width: 210%;
-            margin: 8px;
-        }
-      
-      
-            .titulo {
-                margin-left: 16px;
-                margin-top: 5px;
-                font-size: 24px;
-            }
-    
-            .contactar{
-                position: absolute;
-                top: 160px;
-                left: 250px;
-                background: var(--dark_blue);
-                color: aliceblue;
-                border-radius: 9px;
-                display: flex;
-                width: 111px;
-                height: 55px;
-                flex-direction: row;
-                justify-content: center;
-                justify-items: center;
-                align-items: center;
-                flex-shrink: 0;
-                border: none;
-            }
-    
-            .talla{
-                color: var(--dark_blue);
-                font-family: "Pavanam";
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 400;
-                position: absolute;
-                top: 63px;
-                left: 16px;
-            }
-            
-            .precio {
-                color: var(--dark_blue);
-                font-family: "Pavanam";
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 400;
-                position: absolute;
-                top: 65px;
-                left: 315px;   
-            } 
-    
-            .descripcion{
-                position: absolute;
-                top: 125px;
-                left: 16px;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 400;
-            }
-            
-            
-            /* boton de uiverse: */
-            
-            .heart-container {
-                --heart-color: rgb(255, 91, 137);
-                position: absolute;
-                top: 15px;
-                left: 320px;
-                width: 30px;
-                height: 14.066px;
-                flex-shrink: 0;
-                transition: .3s;
-            }
-            
-            .heart-container .checkbox {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                z-index: 20;
-                cursor: pointer;
-            }
-            
-            .heart-container .svg-container {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .heart-container .svg-outline,
-                    .heart-container .svg-filled {
-                fill: var(--heart-color);
-                position: absolute;
-            }
-            
-            .heart-container .svg-filled {
-                animation: keyframes-svg-filled 1s;
-                display: none;
-            }
-            
-            .heart-container .svg-celebrate {
-                position: absolute;
-                animation: keyframes-svg-celebrate .5s;
-                animation-fill-mode: forwards;
-                display: none;
-                stroke: var(--heart-color);
-                fill: var(--heart-color);
-                stroke-width: 2px;
-            }
-            
-            .heart-container .checkbox:checked~.svg-container .svg-filled {
-                display: block
-            }
-            
-            .heart-container .checkbox:checked~.svg-container .svg-celebrate {
-                display: block
-            }
-            
-            @keyframes keyframes-svg-filled {
-                0% {
-                transform: scale(0);
-                }
-            
-                25% {
-                transform: scale(1.2);
-                }
-            
-                50% {
-                transform: scale(1);
-                filter: brightness(1.5);
-                }
-            }
-            
-            @keyframes keyframes-svg-celebrate {
-                0% {
-                transform: scale(0);
-                }
-            
-                50% {
-                opacity: 1;
-                filter: brightness(1.5);
-                }
-            
-                100% {
-                transform: scale(1.4);
-                opacity: 0;
-                display: none;
-                }
-            }
-    
-    
-    
-    #btn-atras{
-        position: absolute;
-        top: 60px;
-        left: 0px; 
-        z-index: 9;
-        font-family: "Pavanam";
-        display: flex;
-        height: 2.5em;
-        width: 70px;
-        align-items: center;
-        justify-content: center;
-        color: var(--dark_blue);
-        border-radius: 3px;
-        letter-spacing: 1px;
-        cursor: pointer;
-        border: none;
-        background: none;
-    }
-    
-    #btn-atras > svg {
-        margin-right: 5px;
-        margin-left: 5px;
-        font-size: 20px;
-       }
-    
-/* MEDIA QUERY */
-
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait), 
-          (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+.tarjeta { 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    height: 100%; 
+    font-size: 13px; 
+    font-family: "Pavanam"; 
+    margin-left: 0px; 
+    margin-bottom: 0px; 
+    margin-top: 35px; 
+}  
+       
+         .foto { 
+            position: absolute; 
+            top: 48px; 
+            width: 390px; 
+            height: 554px; 
+            flex-shrink: 0; 
+            object-fit:cover; 
+        } 
+         
+        .texto { 
+            margin-top: 565.84px; 
+            position: absolute; 
+            width: 170px; 
+            height: 36px; 
+        } 
+       
+        .contenedor_texto { 
+            position: absolute; 
+            width: 175px; 
+            height: 36.16px; 
+        } 
      
-            .foto {
-                width: 140%;
-                height: 800px;
-            }
-
-            .tarjeta{
-                margin-top: 300px;
-            }
-
-            #hr{
-                width: 610%;
-            }
-
-            .titulo {
-                margin-left: 30px;
-                font-size: 35px;
-            }
-    
-            .heart-container {
-                left: 700px;
-                width: 50px;
-            }
-
-            .talla{
-                font-size: 40px;
-                top: 100px;
-                left: 30px;
-            }
-
-            .precio {
-                font-size: 40px;
-                top: 100px;
-                left: 700px;   
+        .linea{ 
+            width: 222%; 
+            border-top: 0.5px solid grey; 
+            height: 2px; 
+            margin-top: 5px; 
+        } 
+       
+       
+            .titulo { 
+                margin-left: 16px; 
+                margin-top: 5px; 
+                font-size: 24px; 
             } 
+     
+            .contactar{ 
+                position: absolute; 
+                top: 160px; 
+                left: 250px; 
+                background: var(--dark_blue); 
+                color: aliceblue; 
+                border-radius: 9px; 
+                display: flex; 
+                width: 100px; 
+                height: 35px; 
+                flex-direction: column; 
+                align-items: center; 
+                border: none; 
+                line-height: 34px; 
+                font-size: 16px; 
+ 
+ 
+            } 
+ 
+ 
+            .editar{ 
+                position: absolute; 
+                top: 160px; 
+                left: 250px; 
+                background: var(--dark_blue); 
+                color: aliceblue; 
+                border-radius: 9px; 
+                display: flex; 
+                width: 100px; 
+                height: 35px; 
+                flex-direction: column; 
+                align-items: center; 
+                border: none; 
+                line-height: 34px; 
+                font-size: 16px; 
+            } 
+     
+            .talla{ 
+                color: var(--dark_blue); 
+                font-family: "Pavanam"; 
+                font-size: 20px; 
+                font-style: normal; 
+                font-weight: 400; 
+                position: absolute; 
+                top: 63px; 
+                left: 16px; 
+            } 
+             
+            .precio { 
+                color: var(--dark_blue); 
+                font-family: "Pavanam"; 
+                font-size: 20px; 
+                font-style: normal; 
+                font-weight: 400; 
+                position: absolute; 
+                top: 65px; 
+                left: 315px;    
+            }  
+     
+            .descripcion{ 
+                position: absolute; 
+                top: 125px; 
+                left: 16px; 
+                font-size: 15px; 
+                font-style: normal; 
+                font-weight: 400; 
+            } 
+             
+             
+            /* boton de uiverse: */ 
+             
+            .heart-container { 
+                --heart-color: rgb(255, 91, 137); 
+                position: absolute; 
+                top: 15px; 
+                left: 320px; 
+                width: 30px; 
+                height: 14.066px; 
+                flex-shrink: 0; 
+                transition: .3s; 
+            } 
+             
+            .heart-container .checkbox { 
+                position: absolute; 
+                width: 100%; 
+                height: 100%; 
+                opacity: 0; 
+                z-index: 20; 
+                cursor: pointer; 
+            } 
+             
+            .heart-container .svg-container { 
+                width: 100%; 
+                height: 100%; 
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+            } 
+             
+            .heart-container .svg-outline, 
+                    .heart-container .svg-filled { 
+                fill: var(--heart-color); 
+                position: absolute; 
+            } 
+             
+            .heart-container .svg-filled { 
+                animation: keyframes-svg-filled 1s; 
+                display: none; 
+            } 
+             
+            .heart-container .svg-celebrate { 
+                position: absolute; 
+                animation: keyframes-svg-celebrate .5s; 
+                animation-fill-mode: forwards; 
+                display: none; 
+                stroke: var(--heart-color); 
+                fill: var(--heart-color); 
+                stroke-width: 2px; 
+            } 
+             
+            .heart-container .checkbox:checked~.svg-container .svg-filled { 
+                display: block 
+            } 
+             
+            .heart-container .checkbox:checked~.svg-container .svg-celebrate { 
+                display: block 
+            } 
+             
+            @keyframes keyframes-svg-filled { 
+                0% { 
+                transform: scale(0); 
+                } 
+             
+                25% { 
+                transform: scale(1.2); 
+                } 
+             
+                50% { 
+                transform: scale(1); 
+                filter: brightness(1.5); 
+                } 
+            } 
+             
+            @keyframes keyframes-svg-celebrate { 
+                0% { 
+                transform: scale(0); 
+                } 
+             
+                50% { 
+                opacity: 1; 
+                filter: brightness(1.5); 
+                } 
+             
+                100% { 
+                transform: scale(1.4); 
+                opacity: 0; 
+                display: none; 
+                } 
+            } 
+     
+     
+     
+    #btn-atras{ 
+        position: absolute; 
+        top: 60px; 
+        left: 0px;  
+        z-index: 9; 
+        font-family: "Pavanam"; 
+        display: flex; 
+        height: 2.5em; 
+        width: 70px; 
+        align-items: center; 
+        justify-content: center; 
+        color: var(--dark_blue); 
+        border-radius: 3px; 
+        letter-spacing: 1px; 
+        cursor: pointer; 
+        border: none; 
+        background: none; 
+    } 
+     
+    #btn-atras > svg { 
+        margin-right: 5px; 
+        margin-left: 5px; 
+        font-size: 20px; 
+       } 
+     
+ 
+ 
+ 
+       /* Samsung Galaxy S20 Ultra */ 
+@media screen and (min-width: 412px ) /* de 0px hasta 412 */ 
+{ 
+ 
+ 
+    .tarjeta { 
+        margin-top: 60px; 
+    }  
+           
+    .foto { 
+    width: 100%; 
+    height: 70%; 
+    } 
+     
+    .texto { 
+        margin-top: 634px; 
+        width: 100%; 
+    } 
+     
+    .contenedor_texto { 
+        width: 185px; 
+        height: 36.16px; 
+    } 
+           
+           
+    .titulo { 
+        margin-left: 16px; 
+        margin-top: 5px; 
+        font-size: 24px; 
+    } 
+ 
+ 
+    .contactar{ 
+        left: 270px; 
+    } 
+ 
+ 
+    .editar{ 
+        left: 270px; 
+    } 
+     
+    .precio { 
+        left: 332px;    
+    }  
+ 
+ 
+    .descripcion{ 
+        font-size: 16px; 
+    } 
+     
+     
+    /* boton de uiverse: */ 
+     
+    .heart-container { 
+        left: 336px; 
+    } 
+ }  
+ 
+ 
+ /* Ipad mini */ 
+ @media screen and (min-width: 768px ) /* de 412 a 768 */ 
+ { 
+           
+    .foto { 
+        top: 80px; 
+        width: 100%; 
+        height: 70%; 
+    } 
+     
+    .texto { 
+        margin-top: 740.84px; 
+    } 
+     
+    .contenedor_texto { 
+        width: 346px; 
+    } 
+           
+    .titulo { 
+        font-size: 25px; 
+    } 
+ 
+ 
+    .contactar{ 
+        left: 595px; 
+        width: 120px; 
+        height: 46px; 
+        line-height: 43px; 
+        font-size: 18px; 
+    } 
+ 
+ 
+    .editar{ 
+        left: 595px; 
+        width: 120px; 
+        height: 40px; 
+        line-height: 38px; 
+    } 
+ 
+ 
+    .talla{ 
+        font-size: 22px; 
+    } 
+     
+    .precio { 
+        font-size: 22px; 
+        left: 675px;    
+    }  
+ 
+ 
+    .descripcion{ 
+        font-size: 20px; 
+    } 
+     
+     
+    /* boton de uiverse: */ 
+     
+    .heart-container { 
+        left: 675px; 
+        width: 37px; 
+        height: 14.066px; 
+    } 
+     
+     
+    #btn-atras{ 
+        top: 90px; 
+    } 
+ }  
+     
+ 
+ 
+/* ipad air */ 
+@media screen and (min-width: 820px ) /* de 768 a 820 */ 
+{ 
+ 
+ 
+    .foto { 
+        top: 80px; 
+        width: 100%; 
+        height: 73%; 
+    } 
+     
+    .texto { 
+        margin-top: 890.84px; 
+    } 
+     
+    .contenedor_texto { 
+        width: 369px; 
+    } 
+           
+    .titulo { 
+        font-size: 30px; 
+        margin-top: 1px; 
+    } 
+ 
+ 
+    .contactar{ 
+        left: 635px; 
+        width: 128px; 
+        height: 50px; 
+        line-height: 50px; 
+    } 
+ 
+ 
+    .editar{ 
+        left: 635px; 
+        width: 130px; 
+        height: 50px; 
+        line-height: 50px; 
+    } 
+ 
+ 
+    .talla{ 
+        font-size: 25px; 
+    } 
+     
+    .precio { 
+        font-size: 25px; 
+        left: 720px;    
+    }  
+ 
+ 
+    .descripcion{ 
+        font-size: 22px; 
+    } 
+     
+     
+    /* boton de uiverse: */ 
+     
+    .heart-container { 
+        left: 724px; 
+        width: 38px; 
+        height: 14.066px; 
+    } 
+     
+     
+    #btn-atras{ 
+        top: 90px; 
+    } 
     
-            .descripcion{
-                top: 300px;
-                left: 30px;
-                font-size: 50px;
-            }
-
-            .contactar{
-                top: 900px;
-                left: 40px;
-                padding: 30px;
-                width: 1000px;
-            }
-    }
+ } 
