@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Respuesta } from 'src/app/models/respuesta';
 import { ConversacionChatService } from 'src/app/shared/conversacion-chat.service';
 import { User } from 'src/app/models/user';
+import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
+import { UserService } from 'src/app/shared/user.service';
 
 
 @Component({
@@ -19,57 +21,59 @@ export class ConversacionChatComponent implements OnInit {
   mensaje: any
   iduser:any;
   public mensajes: Mensaje[] = [];
-  public user: User
+  public user: User;
+  public elUserConQuienQuieroHablar: any;
+  public idPrenda: any;
+  public prenda: any;
 
 
 // constructor(private authService:AuthService){}
 
 //Detecta el cambio de mensaje que te indica los setTimeout
-constructor(private cdRef: ChangeDetectorRef, private route: ActivatedRoute,
-  private location: Location,   private router: Router,private conversacionService: ConversacionChatService ){
+constructor(private cdRef: ChangeDetectorRef, 
+    private route: ActivatedRoute,
+    private location: Location,
+    private router: ActivatedRoute,
+    private conversacionService: ConversacionChatService,
+    public  detalleprendaService: DetalleprendaService,
+    public userService: UserService){
+
+      
 
     // console.log(this.prenda)
     this.iduser = this.route.snapshot.paramMap.get("iduser");
     console.log("ID:", this.iduser)
     // Llama al servicio para obtener los detalles de la prenda por su ID
-    this.conversacionService.obtenerConversacion(this.iduser).subscribe(
-      (data:Respuesta) => {
+    /* this.conversacionService.obtenerConversacion(this.iduser).subscribe(
+      (data:Respuesta) => { */
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
-        this.mensaje = data.res_chat[0];
+       /*  this.mensaje = data.res_chat[0];
         console.log("Detalle de la conversación",this.mensaje)
       },
-    );
+    ); */
 
   }
 
 
 ngOnInit(): void {
-  // console.log("TEST ONINIT")
-// this.authService.getUserLogged().suscribe(usuario=>{
-//   this.usuarioLogueado = usuario;
-// });
+  console.log(this.mensajeData);
 
+  this.router.queryParams.subscribe(params =>{
+    this.idPrenda = params['idprenda'];
+   /*  console.log("ESTOY EN CONVERSACION: "+ idprenda)
+    console.log(this.iduser); */
+    this.detalleprendaService.obtenerDetalle(this.idPrenda).subscribe((resp:any) => {
+      this.prenda = resp.dataPrenda[0];
+      this.elUserConQuienQuieroHablar = this.prenda.iduser;
 
-  // HAGO UNA PETICIÓN A LA BASE DE DATOS CADA X TIEMPO
-  // EN LA QUE RECIBO EL MENSAJE DE SOPORTE TIPO:
-  // {emisor: "Soporte", contenido: "HOLA"}
-  // CUANDO RECIBO ESE MENSAJE LO PUSHEO EN 
-  // this.mensajes.push
- 
-//   setTimeout(() => {
-//     this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "Hola, si digame?"})
-//     this.cdRef.detectChanges();
-//   }, 100);
+      /* PETICION DE conversacion */
+      this.conversacionService.obtenerConversacion(this.userService.user.iduser, this.elUserConQuienQuieroHablar).subscribe(resp=>{
+        console.log(resp);
+      })
+    })
+    
+  })
 
-//   setTimeout(() => {
-//     this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "claro, para que fecha lo necesita?"})
-//     this.cdRef.detectChanges();
-//   }, 10000);
-
-//   setTimeout(() => {
-//     this.mensajerecibido.push({receptor:"Alberto", contenido_recibido: "perfecto,podemos coordinar el pago"})
-//     this.cdRef.detectChanges();
-//   }, 20000);
 }
 
 // Boton de enviar (input de mensaje)
@@ -78,10 +82,6 @@ enviarMensajeNew(msg: string){
 
 }
 
-// enviarMensajeSOPORTENew(msg: string){
-//   this.mensajes.push({emisor: "Alberto", contenido: "Hola, si digame?"});
-
-// }
 
 
 }
