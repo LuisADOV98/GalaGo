@@ -27,24 +27,11 @@ export class CardComponent implements OnInit{
   mostrarNoFavorito = true; //corazon vacio
   mostrarFavorito= false; //corazon lleno
 
-
-  // @Input() cardData: Prenda;
-
-  //output para enviar info a mis favs
-  // @Output() agregarFavorito = new EventEmitter<Prenda>();
-  
-  /* logueado = true; */
-  
- 
-//   respuesta:Prenda[] = [];
-
-//   groupedItems = [];
-
   favoritoTrue:any;
   favoritoFalse:any;
   susFavoritos:any;
   
-  /* 1 cogemos la tabla relacion user/favorito */
+  /*cogemos la tabla relacion user/favorito */
   relacionUserFavoritos:any;
 
 
@@ -80,9 +67,9 @@ export class CardComponent implements OnInit{
 
         if (isFavorito === true) { //isfavorito hace referencia a todos usuarios(?) MAL
           // La prenda ya está en favoritos, se muestra el modal
-          this.mostrarModal = true;
-          this.mostrarFavorito = true; //corazon lleno
-          this.mostrarNoFavorito = false; //corazon vacio
+        /*   this.mostrarModal = true; */
+          /* this.mostrarFavorito = true; */ //corazon lleno
+          /* this.mostrarNoFavorito = false; */ //corazon vacio
         } else {
           // Si la prenda no es editable y no está en favoritos, se añade
           if(!this.editable && !isFavorito){
@@ -103,19 +90,19 @@ export class CardComponent implements OnInit{
         /* MOSTRAMOS EL MODAL */
         this.mostrarModal = true;
 
-        this.isFavoritosActive = false;
-        const data = {
+
+/*         const data = {
           iduser: this.userService.user.iduser,
           idprenda: this.prenda.idprenda
         }
 
         this.prendaService.deleteFav(data.iduser, data.idprenda).subscribe(resp=> {
           console.log(resp);
-        })
+        }) */
 
         // DECIRLE AL PADRE QUE ELIMINE EL FAVORITO
         // POR QUE QUE TENEMOS QUE MANDAR EL ID
-        this.idFavAEliminar.emit(this.prenda.idprenda);
+       
 
 /*         this.susFavoritos.filter(id => id!== this.prenda.idprenda)
         this.mostrarModal = true; */
@@ -179,39 +166,20 @@ export class CardComponent implements OnInit{
   manejadorRespuestaModal(valor: boolean){
     
     this.mostrarModal = false;
-
-    if(this.isFavoritosActive && valor === true){
-      /* this.mostrarModalPadre.emit(true); */
-        
-      let index = -1;
-
-      for (let i = 0; i < this.favoritosService.favorites.length; i++) {
-        
-        if(this.favoritosService.favorites[i].idprenda === this.prenda.idprenda){
-          index = i;
-          break;
-        }
-        
-      }
-
-      if(index != -1){
-        this.favoritosService.favorites.splice(index,1);
-      }
-      
-    } else if(valor && !this.editable){
-      // elimino la prenda del server
-      //(o hago otra petición al server
-      // con los favoritos)
-      // (o lo borro tmb del array la prenda)
-      //this.susFavoritos 
-      //this.prenda.id
-      this.susFavoritos = this.susFavoritos.filter(item => item !== this.prenda.idprenda)
     
-      this.mostrarFavorito = false;
-      this.mostrarNoFavorito = true;
-
-      this.favoritosService.removeArrayFavorite(this.prenda);
-    } 
+    if(valor){
+      this.isFavoritosActive = false;
+      this.idFavAEliminar.emit(this.prenda.idprenda);
+      this.prendaService.deleteFav(this.userService.user.iduser, this.prenda.idprenda).subscribe((resp=>{
+        console.log("se ha eliminado de favoritos"+ this.prenda);
+        console.log(resp)
+      }))
+      /* 1 elimino esa prenda de favoritos del user */
+     /*  this.favoritosService. */
+      
+      /* console.log("ok") */
+    } /* this.prenda.idprenda */
+    
   }
 
   verDetallePrenda(id:number, propietario :boolean){
