@@ -19,72 +19,112 @@ export class PerfilComponent {
 
   public misPrendas: Prenda[];
   public misFavoritas: any; //favoriteCards
-  public prenda:Prenda;
+  public prenda: Prenda;
 
   public user: User;
   public mostrarModal = false;
 
+  idsFavoritasParaEsteUsuario: any;
+
+  todasLasPrenas: any;
+
   @ViewChild('refHijo') hijo: CardComponent
 
-  constructor(userService: UserService, public prendaService:PrendaService, public router: Router,
-    public favoritosService: FavoritosService){
+  constructor(public userService: UserService, public prendaService: PrendaService, public router: Router,
+    public favoritosService: FavoritosService,
+    public prendasService: PrendaService) {
     this.user = userService.user;
+
+    //salen las prendas favs del 1 solamente en home!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
+    const iduser = this.userService.user.iduser;
+    this.prendasService.getMisFavs(iduser).subscribe((resp: any) => {
+      /* console.log(resp); */
+      this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
+    })
+
     
+
     console.log(this.user);
-    
-    this.prendaService.getMisPrendas(this.user.iduser).subscribe((data:Respuesta) =>{
+
+    this.prendaService.getMisPrendas(this.user.iduser).subscribe((data: Respuesta) => {
       this.misPrendas = data.data
       console.log(this.misPrendas);
-      
+
     })
+
+
+    this.prendasService.getPrenda().subscribe((resp:any) =>{
+      //this.misFavoritas = resp.data;
+      const todasLasPrendas = resp.data;
+      // FILTRO
+      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.includes(obj.idprenda));
+    })
+
+
+
 
     // this.prendaService.getMisFavs(this.user.iduser).subscribe((data:Respuesta) =>{
     //   this.misFavoritas= data.data
     // })
   }
 
-  ngOnInit(){
-    this.misFavoritas = this.favoritosService.getFavorites();
-    console.log(this.misFavoritas);
+  isFavorito(id:any){
+    /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
+    console.log("ES FAVORITO?"+ id);
+    console.log(this.idsFavoritasParaEsteUsuario.includes(id))
+    return this.idsFavoritasParaEsteUsuario.includes(id);
+  }
+  ngOnInit() {
+    /* this.misFavoritas = this.favoritosService.getFavorites();
+    console.log(this.misFavoritas); */
+    this.prendasService.getPrenda().subscribe((resp:any) =>{
+      //this.misFavoritas = resp.data;
+      const todasLasPrendas = resp.data;
+      // FILTRO
+      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.includes(obj.idprenda));
+    })
   }
 
-  ed_perfil(updateUser:User){
+  ed_perfil(updateUser: User) {
     this.user = updateUser;
   }
 
-  editarPrenda2(prenda:Prenda){
-    console.log(this.prenda.idprenda,"perfil");
+  editarPrenda2(prenda: Prenda) {
+    console.log(this.prenda.idprenda, "perfil");
     console.log(prenda, "parametro");
     this.prendaService.prenda = prenda;
     console.log("perfil:");
     console.log(prenda);
-    
-    
-    
-    
-  
+
+
+
+
+
   }
 
-  mostrarMisPrendas(){
+  mostrarMisPrendas() {
     this.isMisPrendasActive = true;
     this.isFavoritosActive = false;
   }
 
-  mostrarFavoritos(){
+  mostrarFavoritos() {
+
+    console.log("IDS FAV ESTE USER: "+this.idsFavoritasParaEsteUsuario);
+
     this.isFavoritosActive = true;
     this.isMisPrendasActive = false;
   }
 
 
-  recibirDatos(mostrarModalPadre:any){
+  recibirDatos(mostrarModalPadre: any) {
     console.log(mostrarModalPadre)
     this.mostrarModal = mostrarModalPadre;
   }
 
-  manejadorRespuestaModal(valor: boolean){
+  manejadorRespuestaModal(valor: boolean) {
     this.mostrarModal = false;
   }
-  
+
   // toggleTab(tab: string) {
   //   if (tab === 'mis-prendas') {
   //     this.isMisPrendasActive = true;
@@ -98,4 +138,10 @@ export class PerfilComponent {
   // ngOnInit(): void {
   //   this.verTodas();
   // }
+
+  public borrarFav(event){
+    console.log("VAMOS A ELIMINAR: "+ event);
+    console.log("DE:" + this.misFavoritas)
+    this.misFavoritas = this.misFavoritas.filter( prenda => prenda.idprenda !== event);
+  }
 }

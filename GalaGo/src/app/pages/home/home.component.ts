@@ -48,8 +48,9 @@ export class HomeComponent{
     this.valorRango = 250;
     this.filtros2();
 
-    //salen las prendas favs del 1 solamente!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
-    this.prendasService.getMisFavs(1).subscribe((resp:any) => {
+    //salen las prendas favs del 1 solamente en home!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
+    const iduser = this.userService.user.iduser;
+    this.prendasService.getMisFavs(iduser).subscribe((resp:any) => {
       /* console.log(resp); */
       this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
     })

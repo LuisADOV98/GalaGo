@@ -18,6 +18,9 @@ export class CardComponent implements OnInit{
   @Input() isFavoritosActive: Boolean;
 
   @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
+  @Output() idFavAEliminar: EventEmitter<any> = new EventEmitter<any>();
+  
+  
   mostrarCorazon: boolean = true; //para que salga el corazon en las cards, 
   //x defecto true (LANDING = FALSE)
   mostrarModal = false;
@@ -96,6 +99,10 @@ export class CardComponent implements OnInit{
           }
         }
       } else {
+
+        /* MOSTRAMOS EL MODAL */
+        this.mostrarModal = true;
+
         this.isFavoritosActive = false;
         const data = {
           iduser: this.userService.user.iduser,
@@ -105,6 +112,11 @@ export class CardComponent implements OnInit{
         this.prendaService.deleteFav(data.iduser, data.idprenda).subscribe(resp=> {
           console.log(resp);
         })
+
+        // DECIRLE AL PADRE QUE ELIMINE EL FAVORITO
+        // POR QUE QUE TENEMOS QUE MANDAR EL ID
+        this.idFavAEliminar.emit(this.prenda.idprenda);
+
 /*         this.susFavoritos.filter(id => id!== this.prenda.idprenda)
         this.mostrarModal = true; */
       }

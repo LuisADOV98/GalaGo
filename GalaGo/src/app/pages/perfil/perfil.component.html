@@ -1,30 +1,28 @@
-<app-modal-confirmacion-prenda
-*ngIf="mostrarModal"
-(result)="manejadorRespuestaModal($event)">
+<app-modal-confirmacion-prenda *ngIf="mostrarModal" (result)="manejadorRespuestaModal($event)">
 </app-modal-confirmacion-prenda>
 
 <div class="padre">Perfil</div>
 <section class="padre2">
-        <!-- <section class="image"> -->
+    <!-- <section class="image"> -->
     <img src="{{user.photo}}" alt="" class="foto">
     <!-- </section> -->
     <section class="separacion">
 
-        <div class="user">{{user.firstname}}  {{user.surname}} </div>
+        <div class="user">{{user.firstname}} {{user.surname}} </div>
         <div class="e-mail"> {{user.email}}</div>
 
         <!-- <section class="abajo"> -->
-            <div class="lugar">{{user.location}}</div>
+        <div class="lugar">{{user.location}}</div>
         <!-- </section> -->
 
         <div class="botonesImg">
             <!-- BTN EDITAR PERFIL  -->
-            <div class="btnImg" routerLink="/editar-perfil"> 
+            <div class="btnImg" routerLink="/editar-perfil">
                 <img src="../../../assets/botones/editar.png" alt="">
             </div>
 
             <!-- BTN SUBIR PRENDA -->
-            <div class="btnImg" routerLink="/publicar-prenda"> 
+            <div class="btnImg" routerLink="/publicar-prenda">
                 <img src="../../../assets/botones/subirArch.png" alt="">
             </div>
         </div>
@@ -37,19 +35,34 @@
 
 <div class="container">
     <div class="botones">
-        <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()" [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn left">Mis prendas</div>
-        <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()" [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn right">Favoritas</div>
+        <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()"
+            [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn left">Mis prendas</div>
+        <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()"
+            [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn right">Favoritas</div>
     </div>
-    
+
     <!-- Si mis-prendas es true imprime cards(mis prendas) y sino pasa al ng-template e imprime favoritas -->
     <div class="cards" *ngIf="isMisPrendasActive; else favoritas">
-        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" [isFavoritosActive]="isFavoritosActive"></app-card>
+        <app-card class="app-card" 
+        *ngFor="let prenda of misPrendas"
+        [prenda]="prenda"
+        [editable]="true"
+        (editarPrenda2)="editarPrenda2($event)"
+        [isFavoritosActive]="isFavorito(prenda.idprenda)">
+    </app-card>
     </div>
-    
+
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
     <ng-template #favoritas>
         <div class="cards">
-            <app-card #refHijo (mostrarModalPadre)="recibirDatos($event)" class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" [isFavoritosActive]="isFavoritosActive"></app-card>
+            <app-card #refHijo 
+            (mostrarModalPadre)="recibirDatos($event)" 
+            (idFavAEliminar)="borrarFav($event)" 
+            class="app-card"
+                *ngFor="let prenda of misFavoritas"
+                 [prenda]="prenda" 
+                 [editable]="false"
+                [isFavoritosActive]="isFavorito(prenda.idprenda)"></app-card>
         </div>
     </ng-template>
 </div>
