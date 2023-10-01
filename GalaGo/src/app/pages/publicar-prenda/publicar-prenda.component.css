@@ -9,6 +9,9 @@
     align-items: center;
     
 }
+.modal{
+  border: 2px solid red;
+}
 
 .barra h1{
     font-weight: lighter;
@@ -95,62 +98,97 @@
 
 .imagesUpload{
   width: 400px;
+  height: 170px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 10px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 
-.custum-file-upload {
-    height: 110px;
-    width: 150px;
+
+  .download-button {
+    position: relative;
+    border-width: 0;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    z-index: 1;
+    width: 155px;
+   }
+   
+   .download-button .docs {
     display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    gap: 20px;
-    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    z-index: 1;
+    background-color: var(--dark_blue);
+    border: solid 1px var(--dark_blue);
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+   }
+   
+   /* .download-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   } */
+   
+   .download {
+    position: absolute;
+    inset: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px dashed var(--dark_blue);
+    width: 155px;
+    margin: 0 auto;
+    z-index: -1;
+    border-radius: 4px;
+    transform: translateY(0%);
     background-color: var(--white);
-    padding: 1.5rem;
-    border-radius: 10px;
-    /* box-shadow: 0px 48px 35px -48px #e8e8e8; */
+    /* border: solid 1px var(--dark_blue); */
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
+   }
+   
+   .download-button:hover .download {
+    transform: translateY(100%)
+   }
+   
+  .download input{
+    width: 140px;
+    border: solid 1px var(--dark_blue);
+    border-radius: 5px;
   }
-  
-  .custum-file-upload .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .custum-file-upload .icon svg {
-    height: 80px;
-    fill: #e8e8e8;
-  }
-  
-  .custum-file-upload .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .custum-file-upload .text span {
-    font-weight: 400;
-    color: #e8e8e8;
-  }
-  
-  .custum-file-upload input {
-    display: none;
-  }
+   @keyframes docs {
+    0% {
+     transform: translateY(0%);
+    }
+   
+    50% {
+     transform: translateY(-15%);
+    }
+   
+    100% {
+     transform: translateY(0%);
+    }
+   }
+
+
+
+
 
 /* samsung s22 */
    @media screen and (min-width: 412px )
   {
+    .imagesUpload{
+      gap: 7px;
+    }
     .form-control{
       height: 50px;
       font-size: 20px;
@@ -226,28 +264,38 @@
   
 .imagesUpload{
   width: 850px;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-
-.custum-file-upload {
-  height: 120px;
-  width: 150px;
-  gap: 20px;
-  border: 2px dashed var(--dark_blue);
-  background-color: var(--white);
-}
-
-.custum-file-upload .icon {
+  height: 280px;
+  gap: 22px;
+  margin-top: 10px;
+  margin-bottom: 25px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+.download-button .docs {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  height: 60px;
+}
+.download-button .docs svg{
+  height: 35px;
+  width: 30px;
+}
+.download-button {
 
-.custum-file-upload .icon svg {
-  height: 100px;
-  fill: #e8e8e8;
+  height: 60px;
+  width: 300px;
+}
+.download{
+  height: 60px;
+  width: 300px;
+}
+.download input{
+  width: 300px;
+  height: 40px;
 }
 
     }
@@ -301,28 +349,36 @@
 
   
 .imagesUpload{
+  height: 250px;
   width: 850px;
-  gap: 10px;
+  gap: 26px;
   margin-top: 20px;
 }
 
 
-.custum-file-upload {
-  height: 150px;
-  width: 150px;
-  
-  border: 2px dashed var(--dark_blue);
-  background-color: var(--white);
-}
-
-.custum-file-upload .icon {
+.download-button .docs {  
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  height: 60px;
+}
+.download-button .docs svg{
+  height: 35px;
+  width: 30px;
+}
+.download-button {
+
+  height: 60px;
+  width: 300px;
+}
+.download{
+  height: 60px;
+  width: 300px;
+}
+.download input{
+  width: 300px;
+  height: 40px;
 }
 
-.custum-file-upload .icon svg {
-  height: 100px;
-  fill: #e8e8e8;
-}
 } 

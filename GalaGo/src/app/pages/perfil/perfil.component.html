@@ -6,13 +6,17 @@
     <!-- </section> -->
     <section class="separacion">
 
-        <div class="user">{{user.firstname}}  {{user.surname}} </div>
+        <div class="user">
+            <div class="nombrecompleto">
+                <div class="name">{{user.firstname}} </div>
+                <div class="apellido">{{user.surname}}</div>  
+            </div>
         <div class="e-mail"> {{user.email}}</div>
 
         <!-- <section class="abajo"> -->
             <div class="lugar">{{user.location}}</div>
         <!-- </section> -->
-
+ </div>
         <div class="botonesImg">
             <!-- BTN EDITAR PERFIL  -->
             <div class="btnImg" routerLink="/editar-perfil"> 
@@ -33,18 +37,26 @@
 
 <div class="container">
     <div class="botones">
+
         <div [ngClass]="{'click': isMisPrendasActive}" (click)="mostrarMisPrendas()" [ngStyle]="{background:isMisPrendasActive ? '#CFE2EB' : '#FFFF'}" class="btn left">Mis prendas</div>
+  
         <div [ngClass]="{'click': isFavoritosActive}" (click)="mostrarFavoritos()" [ngStyle]="{background:isFavoritosActive ? '#CFE2EB' : '#FFFF'}" class="btn right">Favoritas</div>
     </div>
     
     <!-- Si mis-prendas es true imprime cards(mis prendas) y sino pasa al ng-template e imprime favoritas -->
     <div class="cards" *ngIf="isMisPrendasActive; else favoritas">
+        <div *ngIf="misPrendas.length === 0">
+            <p>Aun no tienes articulos...</p>
+        </div>
         <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card>
     </div>
     
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
     <ng-template #favoritas>
         <div class="cards">
+            <div *ngIf="misFavoritas.length === 0">
+                <p>Aun no has agregado ningun articulo a tus favoritas..</p>
+            </div>
             <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card>
         </div>
     </ng-template>

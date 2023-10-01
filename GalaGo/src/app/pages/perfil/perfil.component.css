@@ -42,8 +42,29 @@
     border: 4px solid white;
 }
 .user{
-    font-size: 1.7em;
+    height: 150px;
+    width: 180px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
 }
+.nombrecompleto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.name{
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+.apellido{
+    font-size: 20px;
+}
+
 
 /* BTNS IMAGEN */
 .botonesImg{
@@ -79,6 +100,11 @@
     background: var(--Azul-secundario, #CFE2EB);
     margin-top: 10px;
 
+}
+.if{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 .botones{
     display: flex;
