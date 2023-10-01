@@ -23,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ModalFavoritosComponent } from './component/modal-favoritos/modal-favoritos.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ import { RouterModule, Routes } from '@angular/router';
     LandingPageComponent,
     HomeComponent,
     EditarPerfilComponent,
+    ModalFavoritosComponent
   ],
   imports: [
     BrowserModule,

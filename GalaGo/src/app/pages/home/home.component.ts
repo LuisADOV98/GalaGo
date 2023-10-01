@@ -35,14 +35,27 @@ export class HomeComponent{
   public valorRango: number;
   // public valorGlobo: number = 0;
   // public ubicacion: string
+  idsFavoritasParaEsteUsuario: any;
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
 
-  constructor(public router: Router, public prendaService: PrendaService, public userService: UserService){
+  constructor(public router: Router,
+     public prendaService: PrendaService,
+      public userService: UserService, 
+      public prendasService: PrendaService){
     this.prendas = [];
     this.valorRango = 250;
     this.filtros2();
+
+    //salen las prendas favs del 1 solamente en home!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
+    const iduser = this.userService.user.iduser;
+    this.prendasService.getMisFavs(iduser).subscribe((resp:any) => {
+      /* console.log(resp); */
+      this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
+    })
+
+
     // this.prendaService.filtroTipo().subscribe((data:Respuesta) =>{
     //   this.prendas = data.data;
     // });
@@ -80,6 +93,11 @@ export class HomeComponent{
     });
   }
 
+
+  isFavorito(id:any){
+    /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
+    return this.idsFavoritasParaEsteUsuario.includes(id);
+  }
   //-------- ACTIVAN O DESACTIVAN EL FILTRO (ICONO REDONDO CAMBIA DE COLOR A ROSA) --------//
   
   // ----- TIPO MUJER ------ //

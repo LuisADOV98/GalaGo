@@ -26,7 +26,7 @@ export class FavoritosService {
   }
 
   removeArrayFavorite(prenda: any) {
-    const index = this.favorites.findIndex(item => item === prenda.id);
+    const index = this.favorites.findIndex(item => item.idprenda === prenda.idprenda);
     if (index !== -1) {
       this.favorites.splice(index, 1); // Eliminar la prenda de favoritos si está en la lista
     }
@@ -54,4 +54,3 @@ export class FavoritosService {
   //   }
   // }
 }
-

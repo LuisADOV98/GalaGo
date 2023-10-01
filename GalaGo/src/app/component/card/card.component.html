@@ -1,150 +1,72 @@
-    <div class="tarjeta">
-        <!-- CARD REDIRIGE A LOGIN O DETALLE PRENDA -->
-        <img *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="foto" [src]="prenda.photo1"/>
-        <img *ngIf="!editable" (click)="verDetallePrenda(prenda.idprenda, false)" class="foto" [src]="prenda.photo1"/>
-       
-        <div class="texto">
-    
-            <div class="contenedor_texto"> 
-    
-                <!-- boton de favoritos de uiverse: -->
-    
-              <div *ngIf="mostrarCorazon" (click)="redirigir(prenda.id)" class="heart-container" title="Like">
-                
-                <input type="checkbox" class="checkbox" id="favoritos">
-                
-                                <!-- BOTON EDITAR -->
-                                <button *ngIf="editable" class="boton-editar" (click)="redirigir(prenda)">Editar</button>
-
-                                <div *ngIf="!editable" class="svg-container">
-                                <!-- HASTA AQUI BTN EDITAR -->
-
-                  <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                    </path>
-                </svg>
-                <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                    </path>
-                </svg>
-                <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="10,10 20,20"></polygon>
-                    <polygon points="10,50 20,50"></polygon>
-                    <polygon points="20,80 30,70"></polygon>
-                    <polygon points="90,10 80,20"></polygon>
-                    <polygon points="90,50 80,50"></polygon>
-                    <polygon points="80,80 70,70"></polygon>
-                </svg>
-    
-                </div>
-              </div>
-             <!-- aqui acaba el boton -->
 
 
-              <!-- PARA BOTON CONTACTAR/EDITAR DE DETALLE-PRENDA -->
-                <p *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="titulo">{{prenda.title}}</p>
-                <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.idprenda, false)" class="titulo">{{prenda.title}}</p>
-          
-                <p class="precio">{{prenda.price}}€</p>
-            </div>
-    
+<app-modal-favoritos
+*ngIf="mostrarModal"
+(result)="manejadorRespuestaModal($event)">
+</app-modal-favoritos>
+
+<div class="tarjeta">
+<!-- CARD REDIRIGE A LOGIN O DETALLE PRENDA -->
+<img *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="foto" [src]="prenda.photo1"/>
+<img *ngIf="!editable" (click)="verDetallePrenda(prenda.idprenda, false)" class="foto" [src]="prenda.photo1"/>
+
+<div class="texto">
+
+    {{ isFavoritosActive}}
+    <div class="contenedor_texto"> 
+
+        <!-- boton de favoritos de uiverse: -->
+
+      <!-- <div *ngIf="mostrarCorazon" (click)="redirigir(prenda.id)"  class="heart-container" title="Like"> -->
+        <div class="heart-container"  title="Like">
+            <!-- (click) = "favoritos(id.value, titulo.value, precio.value, 
+        descripcion.value, ubicacion.value, estado.value, 
+        evento.value, tipo.value, talla.value, imagen.value)" -->
+        
+        <input type="checkbox" (click)="addToFavorites()" class="checkbox" id="favoritos">
+        
+                        <!-- BOTON EDITAR -->
+                        <button *ngIf="editable" class="boton-editar">Editar</button>
+
+                        <div *ngIf="!editable"  class="svg-container">
+                        <!-- HASTA AQUI BTN EDITAR -->
+
+                            <!-- BOTON ELIMINAR FAVORITO -->
+                        <!-- <button *ngIf="misFavoritos" class="boton_eliminar_fav">eliminar</button>
+
+                        <div *ngIf="!misFavoritos" class="svg-container"></div> -->
+                            <!-- HASTA AQUÍ BOTON ELIMINAR FAVORITO -->
+
+
+          <svg *ngIf="!isFavoritosActive" id="favorito-false" viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+            </path>
+        </svg>
+        <!-- LLENO tenemos que activarlo VER CSS  -->
+        <svg *ngIf="isFavoritosActive" id="favorito-true" viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+            </path>
+        </svg>
+        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,10 20,20"></polygon>
+            <polygon points="10,50 20,50"></polygon>
+            <polygon points="20,80 30,70"></polygon>
+            <polygon points="90,10 80,20"></polygon>
+            <polygon points="90,50 80,50"></polygon>
+            <polygon points="80,80 70,70"></polygon>
+        </svg>
+
         </div>
+      </div>
+     <!-- aqui acaba el boton -->
+
+
+      <!-- PARA BOTON CONTACTAR/EDITAR DE DETALLE-PRENDA -->
+        <p *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="titulo">{{prenda.title}}</p>
+        <p *ngIf="!editable"  (click)="verDetallePrenda(prenda.idprenda, false)" class="titulo">{{prenda.title}}</p>
+  
+        <p class="precio">{{prenda.price}}€</p>
     </div>
 
-
-
-
-<!-- <link href="https://fonts.cdnfonts.com/css/pavanam" rel="stylesheet">  --> <!-- fuente pavanam -->
-
-
-
-<!-- <div>
-    <button (click)=verTodas()>prendas</button>
-    <button (click)=verSoloFavoritos()>favoritos</button>
-</div> -->
-
-
-<!-- <div *ngFor="let group of groupedItems" style="display: flex;">
-
-    <ng-container *ngFor="let item of group; let i = index">
-
-        <div class="tarjeta">
-            <img (click)="verDetallePrenda(item.id)" class="foto" [src]="item.imagen"/>
-           
-            <div class="texto">
-        
-                <div class="contenedor_texto"> -->
-        
-                    <!-- boton de favoritos de uiverse: -->
-        
-                  <!-- <div (click)="addFavoritos(item.id)" class="heart-container" title="Like"> -->
-                  <!-- (click)="agregarAFavoritos()" -->
-                    <!-- <input type="checkbox" class="checkbox" id="favoritos">
-                    <div class="svg-container">
-                      <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                        </path>
-                    </svg>
-                    <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                        </path>
-                    </svg>
-                    <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="10,10 20,20"></polygon>
-                        <polygon points="10,50 20,50"></polygon>
-                        <polygon points="20,80 30,70"></polygon>
-                        <polygon points="90,10 80,20"></polygon>
-                        <polygon points="90,50 80,50"></polygon>
-                        <polygon points="80,80 70,70"></polygon>
-                    </svg>
-        
-                    </div>
-                  </div> -->
-                 <!-- aqui acaba el boton -->
-        
-                    <!-- <div (click)="verDetallePrenda(item.id)" class="titulo">{{item.titulo}}</div>
-              
-                    <div class="precio">{{item.precio}}€</div>
-                </div>
-    
-            </div>
-        </div>
-
-    </ng-container>
-
-</div> -->
-
-
-<!-- <div class="tarjeta">
-    <a [routerLink]="['/detalle-prenda', prenda.id]"></a>
-    <img [src]="prenda.imagen" class="foto">
-    <div class="tarjeta-body">
-      <p class="titulo">{{ prenda.titulo }}</p> -->
-
-
-      <!-- (click)="addFavoritos(item.id)" -->
-      <!-- <div class="heart-container" title="Like">
-      <input type="checkbox" class="checkbox" id="favoritos">
-                    <div class="svg-container">
-                      <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                        </path>
-                    </svg>
-                    <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                        </path>
-                    </svg>
-                    <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="10,10 20,20"></polygon>
-                        <polygon points="10,50 20,50"></polygon>
-                        <polygon points="20,80 30,70"></polygon>
-                        <polygon points="90,10 80,20"></polygon>
-                        <polygon points="90,50 80,50"></polygon>
-                        <polygon points="80,80 70,70"></polygon>
-                    </svg>
-        
-                    </div>
-        </div> 
-      <p class="precio">{{ prenda.precio }}€</p>
-    </div>
-</div> -->
+</div>
+</div>
