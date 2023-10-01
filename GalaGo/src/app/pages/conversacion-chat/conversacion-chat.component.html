@@ -12,21 +12,25 @@
                 <a class="navbar-brand" href="#">
                     <img src="../../../assets/imageneschat/userAlberto.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 </a>
-                <div class="textUser">Alberto</div>
+                <div class="textUser">
+                    <app-tarjeta-chat></app-tarjeta-chat>
+                </div>
             </div>
         </nav>
 
         <!-- CONVERSACIÓN -->
         <div class="card-body">
             <!-- imprime los mensajes del user2 -->
-            <div *ngFor="let mensaje of mensajerecibido"  >    
+            <!-- <div *ngFor="let mensaje of mensajerecibido"  >    
                 <strong class="recibido">{{mensaje.contenido_recibido}}</strong> 
-            </div>
+            </div> -->
 
             <!-- imprime mensajes del user1 -->
              <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
         <div *ngFor="let mensaje1 of mensajes"> 
-                <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{mensaje1.contenido}}
+            <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
+
+              <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{mensaje1.contenido}}
                     <svg width="1em" height="2em" viewBox="0 0 16 16" class="position-absolute top-100 start 1 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                     </svg>
