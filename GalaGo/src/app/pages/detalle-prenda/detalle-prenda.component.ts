@@ -49,7 +49,11 @@ export class DetallePrendaComponent implements OnInit {
 
 
   public irChat(): void{
-    this.router.navigate(["/conversacion-chat"])
+
+    /* TODO: Tenemos que mandar enla url la id
+    de la prenda */
+/*     console.log("QUIEROHABLAR CON EL PROPIETARIO DE ESTO:"+ this.idprenda) */
+    this.router.navigate(["/conversacion-chat"], { queryParams: {idprenda: this.idprenda}});
   }
 
   public irEditar(): void{
