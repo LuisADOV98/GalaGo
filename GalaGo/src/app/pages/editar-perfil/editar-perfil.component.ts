@@ -16,6 +16,7 @@ export class EditarPerfilComponent {
       // this.user = new User (1,"Luisa", "Martinez", "Alicante", "luisita@gmail.com", "12345678", "../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png");
       this.user = this.userService.user;
       this.buildForm();
+      
     }
     ngOnInit(){}
 private buildForm(){

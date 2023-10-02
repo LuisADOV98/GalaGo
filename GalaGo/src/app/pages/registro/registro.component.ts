@@ -32,7 +32,7 @@ export class RegistroComponent {
     this.prenda = new Prenda("",0,"","","","","","","","","")
 
     
-    this.arrUbicacion = ["Madrid","Barcelona","Badajoz","avila"] 
+    this.arrUbicacion = ["Comunidad de Madrid","Murcia","Aragon","Comundidad de Valencia"] 
     this.selectedUbicacion = "";
 
   }
