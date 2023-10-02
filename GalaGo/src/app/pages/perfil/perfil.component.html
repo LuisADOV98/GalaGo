@@ -63,7 +63,7 @@
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
     <ng-template #favoritas>
         <div class="cards">
-            <!-- <app-card #refHijo 
+            <app-card #refHijo 
             (mostrarModalPadre)="recibirDatos($event)" 
             (idFavAEliminar)="borrarFav($event)" 
             class="app-card"
@@ -71,11 +71,11 @@
                  [prenda]="prenda" 
                  [editable]="false"
                 [isFavoritosActive]="isFavorito(prenda.idprenda)">
-            </app-card> -->
+            </app-card>
             <div *ngIf="misFavoritas.length === 0">
                 <p>Aun no has agregado ningun articulo a tus favoritas..</p>
             </div>
-            <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card>
+            <!-- <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card> -->
         </div>
     </ng-template>
 </div>

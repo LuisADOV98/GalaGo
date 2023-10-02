@@ -18,13 +18,13 @@ export class PerfilComponent {
   isFavoritosActive: boolean = false;
 
   public misPrendas: Prenda[];
-  public misFavoritas: any; //favoriteCards
+  public misFavoritas: Prenda[]; //favoriteCards
   public prenda: Prenda;
 
   public user: User;
   public mostrarModal = false;
 
-  idsFavoritasParaEsteUsuario: any;
+  idsFavoritasParaEsteUsuario: Prenda[];
 
   todasLasPrenas: any;
 
