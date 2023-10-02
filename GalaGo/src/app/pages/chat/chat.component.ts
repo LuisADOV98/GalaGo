@@ -5,6 +5,7 @@ import { UserService } from 'src/app/shared/user.service';
 import { ChatService } from 'src/app/shared/chat.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { Respuesta } from 'src/app/models/respuesta';
+import { ConversacionChatService } from 'src/app/shared/conversacion-chat.service';
 
 @Component({
   selector: 'app-chat',

@@ -1,16 +1,19 @@
-.padre,.hijo1{
+.padre{
     display: flex;
     justify-content:space-around;
     align-items: center;
     width: 100%;
     /* border:2px red solid; */
-    gap:10px;
+    gap:10px; /*separacion entre chats*/
+    margin-bottom: 3px;
+    margin-top: 13px;
     
 }
 .linea{
-  
   border-bottom: 0.4px solid var(--dark_blue);
-  margin-top: 12%;
+  width: 85%;
+  margin-top: 2%;
+  transform: translateX(8%);
 }
 /* .card-text1{
   margin-left: 1px;
@@ -22,6 +25,7 @@ span.position-absolute.top-0.start-2.translate-middle.badge.rounded-pill.bg-seco
         display: flex;
         flex-direction: column;
         width: 70%;
+        gap: 10px; 
     }
         .row1,.row2{
         display: flex;
@@ -29,7 +33,6 @@ span.position-absolute.top-0.start-2.translate-middle.badge.rounded-pill.bg-seco
         /* border:2px red solid; */
         margin-right: 30px;
         font-size: 15px;
-        gap:5px;
         }
     .imagen{
         /* border:2px red solid; */
