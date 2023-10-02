@@ -26,10 +26,23 @@ export class DetallePrendaComponent implements OnInit {
     private router: Router, 
     private detalleService: DetalleprendaService){
        // console.log(this.prenda)
-    this.idprenda = this.route.snapshot.paramMap.get("idprenda");
-    console.log("ID:", this.idprenda)
+      //  FORMA PARA PILLAR EL ID
+      this.idprenda = this.route.snapshot.paramMap.get("idprenda");
+      console.log("ID:", this.idprenda)
+
+
+
+      //  FORMA PARA PILLAR EL PROPIETARIO
+    this.propietario = this.route.snapshot.paramMap.get('propietario');
+    console.log("Propietario:", this.propietario)
+    // this.propietario = true;
+
+
+
+
+
     // Llama al servicio para obtener los detalles de la prenda por su ID
-    this.detalleService.obtenerDetalle(this.idprenda).subscribe(
+    this.detalleService.obtenerDetalle(this.idprenda, this.propietario).subscribe(
       (data:Respuesta) => {
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
         this.prenda = data.dataPrenda[0];
