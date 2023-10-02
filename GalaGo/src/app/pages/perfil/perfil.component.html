@@ -51,13 +51,13 @@
         *ngFor="let prenda of misPrendas"
         [prenda]="prenda"
         [editable]="true"
-        (editarPrenda2)="editarPrenda2($event)"
-        [isFavoritosActive]="isFavorito(prenda.idprenda)">
-    </app-card>
+        (editarPrenda2)="editarPrenda2($event)"></app-card>
+        <!-- [isFavoritosActive]="isFavorito(prenda.idprenda)" -->
+       
         <div *ngIf="misPrendas.length === 0">
             <p>Aun no tienes articulos...</p>
         </div>
-        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card>
+        <!-- <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card> -->
     </div>
 
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
@@ -74,7 +74,7 @@
             <div *ngIf="misFavoritas.length === 0">
                 <p>Aun no has agregado ningun articulo a tus favoritas..</p>
             </div>
-            <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card>
+            <!-- <app-card class="app-card" *ngFor="let prenda of misFavoritas" [prenda]="prenda" [editable]="false" ></app-card> -->
         </div>
     </ng-template>
 </div>

@@ -95,11 +95,6 @@ export class PerfilComponent {
     this.prendaService.prenda = prenda;
     console.log("perfil:");
     console.log(prenda);
-
-
-
-
-
   }
 
   mostrarMisPrendas() {

@@ -35,7 +35,7 @@ export class HomeComponent{
   public valorRango: number;
   // public valorGlobo: number = 0;
   // public ubicacion: string
-  idsFavoritasParaEsteUsuario: any;
+  public idsFavoritasParaEsteUsuario: any;
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
@@ -94,7 +94,7 @@ export class HomeComponent{
   }
 
 
-  isFavorito(id:any){
+  isFavorito(id:number){
     /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
     return this.idsFavoritasParaEsteUsuario.includes(id);
   }
