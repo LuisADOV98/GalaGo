@@ -86,6 +86,21 @@ ngOnInit(): void {
     })
     
   })*/
+  // this.router.queryParams.subscribe(params =>{
+  //   this.idPrenda = params['idprenda'];
+  //  /*  console.log("ESTOY EN CONVERSACION: "+ idprenda)
+  //   console.log(this.iduser); */
+  //   this.detalleprendaService.obtenerDetalle(this.idPrenda).subscribe((resp:any) => {
+  //     this.prenda = resp.dataPrenda[0];
+  //     this.elUserConQuienQuieroHablar = this.prenda.iduser;
+
+  //     /* PETICION DE conversacion */
+  //     this.conversacionService.obtenerConversacion(this.userService.user.iduser, this.elUserConQuienQuieroHablar).subscribe(resp=>{
+  //       console.log(resp);
+  //     })
+  //   })
+    
+  // })
 
 }
 
