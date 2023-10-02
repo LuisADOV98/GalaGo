@@ -21,6 +21,7 @@ export class TarjetaChatComponent {
  public leido = false;
  public idUsuario1: number;
  public idUsuario2: number;
+
  
  constructor(private userService:UserService, private router: Router, public mensaje: ConversacionChatService){ 
   this.idUsuario1 = userService.user.iduser;
@@ -30,7 +31,7 @@ export class TarjetaChatComponent {
  ngOnInit():void{}
  public testevent(): void{
 
-//console.log(this.chatData)
-  this.router.navigate(["/conversacion-chat"], { queryParams: {iduser2:this.chatData.iduser2}});
-}
+  //console.log(this.chatData)
+    this.router.navigate(["/conversacion-chat"], { queryParams: {iduser2:this.chatData.iduser2}});
+  }
 }
