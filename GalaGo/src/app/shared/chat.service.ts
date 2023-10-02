@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ChatService {
   private url:string = "http://localhost:3000";
-  // public chat:Chat;
+  // public chatData:Chat;
   constructor(private http: HttpClient) { }
 
 

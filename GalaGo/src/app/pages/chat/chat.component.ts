@@ -40,7 +40,9 @@ obtenerTodosLosChats(){
   // hacer una query con sa id y que me de todos los dados
  
   // const iduser1 = this.userService.user.id_user; // ¿El usuario que esta logueado?
+  console.log("user logged");
 console.log(this.userService.user);
+
 //this.userService.user.iduser está obteniendo la propiedad iduser de un objeto almacenado en el servicio userService es necesario NO se usa chatService?
   this.chatService.getAllChat(this.userService.user.iduser).subscribe((res:any)=>{
     console.log(res);

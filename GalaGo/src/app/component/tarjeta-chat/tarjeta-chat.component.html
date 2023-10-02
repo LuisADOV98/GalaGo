@@ -7,7 +7,7 @@
 
 <div class ="padre">
        
-    <img [src]="chatData.photo" class="imagen" routerLink="/conversacion-chat" alt="...">
+    <img [src]="chatData.photo" class="imagen" [routerLink]="['/conversacion-chat' ,chatData.iduser2]" alt="...">
 
     <div class ="column1">
     <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->

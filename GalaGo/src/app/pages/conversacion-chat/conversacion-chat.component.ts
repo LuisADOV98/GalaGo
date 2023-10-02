@@ -9,6 +9,7 @@ import { ConversacionChatService } from 'src/app/shared/conversacion-chat.servic
 import { User } from 'src/app/models/user';
 import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
 import { UserService } from 'src/app/shared/user.service';
+import { ChatService } from 'src/app/shared/chat.service';
 
 
 @Component({
@@ -18,39 +19,49 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class ConversacionChatComponent implements OnInit {
   @Input() mensajeData:any;
-  mensaje: any
-  iduser:any;
-  public mensajes: Mensaje[] = [];
+  // mensaje: any
+  iduser1:any;
+  iduser2:any;
+  public messages: [];
   public user: User;
   public elUserConQuienQuieroHablar: any;
   public idPrenda: any;
   public prenda: any;
+  public chatData:any;
 
 
 // constructor(private authService:AuthService){}
 
 //Detecta el cambio de mensaje que te indica los setTimeout
 constructor(private cdRef: ChangeDetectorRef, 
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private location: Location,
-    private router: ActivatedRoute,
+    private activatedRouter: ActivatedRoute,
     private conversacionService: ConversacionChatService,
     public  detalleprendaService: DetalleprendaService,
-    public userService: UserService){
+    public userService: UserService,
+    public chatService: ChatService){
 
-      
-
+   //la variable this.user se esta guardando en this.userService.user esto hace que se muestre el user en el componente conversacion-chat   
+   this.user =this.userService.user;
+  //  this.
     // console.log(this.prenda)
-    this.iduser = this.route.snapshot.paramMap.get("iduser");
-    console.log("ID:", this.iduser)
+    this.iduser2 = this.activatedRouter.snapshot.paramMap.get("iduser2");
+   
+    console.log("okkkkkk")
+console.log(this.iduser2)
+console.log(this.userService.user.iduser)
+    
     // Llama al servicio para obtener los detalles de la prenda por su ID
-    /* this.conversacionService.obtenerConversacion(this.iduser).subscribe(
-      (data:Respuesta) => { */
+    this.conversacionService.obtenerConversacion(this.userService.user.iduser,this.iduser2).subscribe(
+      (data:any) => { 
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
-       /*  this.mensaje = data.res_chat[0];
-        console.log("Detalle de la conversación",this.mensaje)
+       this.messages = data;
+      //  this.messages = data.res_chat[0];
+       console.log(this.messages)
+        
       },
-    ); */
+    );
 
   }
 
@@ -58,29 +69,33 @@ constructor(private cdRef: ChangeDetectorRef,
 ngOnInit(): void {
   console.log(this.mensajeData);
 
-  this.router.queryParams.subscribe(params =>{
+  /*this.activatedRouter.queryParams.subscribe(params =>{
     this.idPrenda = params['idprenda'];
-   /*  console.log("ESTOY EN CONVERSACION: "+ idprenda)
-    console.log(this.iduser); */
+   
+   
+    //console.log("ESTOY EN CONVERSACION: "+ idprenda)
+    //console.log(this.iduser); 
     this.detalleprendaService.obtenerDetalle(this.idPrenda).subscribe((resp:any) => {
       this.prenda = resp.dataPrenda[0];
       this.elUserConQuienQuieroHablar = this.prenda.iduser;
 
-      /* PETICION DE conversacion */
+      // PETICION DE conversacion
       this.conversacionService.obtenerConversacion(this.userService.user.iduser, this.elUserConQuienQuieroHablar).subscribe(resp=>{
         console.log(resp);
       })
     })
     
-  })
+  })*/
 
 }
+
+
 
 // Boton de enviar (input de mensaje)
-enviarMensajeNew(msg: string){
+/*enviarMensajeNew(msg: string){
   this.mensajes.push({iduser:1,message:msg})
 
-}
+}*/
 
 
 

@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { Chat } from 'src/app/models/chat';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
@@ -15,7 +16,12 @@ export class TarjetaChatComponent {
  @Input() chatData:any;
  public leido = false;
  
- constructor(private userService:UserService){ }
+ constructor(private userService:UserService,private router: Router){ }
 
  ngOnInit():void{}
+ public testevent(): void{
+
+//console.log(this.chatData)
+  this.router.navigate(["/conversacion-chat"], { queryParams: {iduser2:this.chatData.iduser2}});
+}
 }

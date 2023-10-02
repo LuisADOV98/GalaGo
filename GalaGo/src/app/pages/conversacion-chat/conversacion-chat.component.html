@@ -27,10 +27,10 @@
 
             <!-- imprime mensajes del user1 -->
              <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
-        <div *ngFor="let mensaje1 of mensajes"> 
+        <div *ngFor="let item of messages"> 
             <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
 
-              <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{mensaje1.contenido}}
+              <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{item.message}}
                     <svg width="1em" height="2em" viewBox="0 0 16 16" class="position-absolute top-100 start 1 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                     </svg>
@@ -41,14 +41,14 @@
                     
         </div>
 
-        <form class="card-footer text-muted input-group">
+        <!-- <form class="card-footer text-muted input-group">
             <input type="text" #texto class="form-control" placeholder="Escribe un mensaje">
             <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
-                <span class="input-group-text" id="basic-addon2">Enviar</span>
+                <span class="input-group-text" id="basic-addon2">Enviar</span> -->
             <!-- </div> -->
             <!-- <button type="submit" class="btn btn-primary mb-1">Enviar</button> -->
-            </div>
-        </form>
+            <!-- </div> -->
+        <!-- </form> -->
     </div>
 </body>
     
