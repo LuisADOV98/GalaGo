@@ -9,19 +9,27 @@
     
     <form action="" class="form" [formGroup]="myForm">
         <input type="text"  #photo placeholder="Pege aquí el enlace de la imagen que desee...">
-        <input type="text"  #name placeholder="{{userService.user.firstname}}" maxlength="12">
-        <input type="text"  #last_name placeholder="{{userService.user.surname}}">
+        <input type="text"  #name placeholder="{{userService.user.firstname}}" maxlength="20">
+        <input type="text"  #last_name placeholder="{{userService.user.surname}}" maxlength="20">
         <input type="text"  #ubicacion placeholder="{{userService.user.location}}">
-        <input type="email" #email placeholder="{{userService.user.email}}">
+        <!-- <input type="email" #email placeholder="{{userService.user.email}}"> -->
+
+        <div class="form-group">
+            <div class="texto"></div>
+            <input #email placeholder="{{userService.user.email}}" type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
+            <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
+                <div  *ngIf="myForm.get('email').errors.email">
+                    La direccion email es incorrecta
+                </div>
+            </div>
+        </div>
+
         <!-- Contraseña -->
 
         <div class="form-group">
             <div class="texto"></div>
             <input #password placeholder="Contraseña" type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
             <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
-                <div  *ngIf="myForm.get('password').errors.required">
-                    La contraseña es obligatoria
-                </div>
                 <div  *ngIf="myForm.get('password').errors.minlength">
                     La contraseña requiere mas de 8 caracteres
                 </div>
@@ -35,9 +43,6 @@
           <div class="texto"></div>
             <input #password2 placeholder="Repertir Contraseña" type="password" class="form-control" formControlName="password2" [ngClass]="{ 'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}">
             <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
-                <div  *ngIf="myForm.get('password2').errors.required">
-                    La contraseña es obligatoria
-                </div>
                 <div  *ngIf="!myForm.get('password2').errors.required && myForm.get('password2').errors.matchPassword">
                     La contraseña no coincide
                 </div>
