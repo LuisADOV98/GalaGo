@@ -26,9 +26,9 @@
         <input type="checkbox" (click)="addToFavorites()" class="checkbox" id="favoritos">
         
                         <!-- BOTON EDITAR -->
-                        <button *ngIf="editable" class="boton-editar">Editar</button>
+                        <button *ngIf="editable" class="boton-editar" (click)="redirigir(prenda)">Editar</button>
 
-                        <div *ngIf="!editable"  class="svg-container">
+                        <div *ngIf="!editable" class="svg-container">
                             
                         <!-- HASTA AQUI BTN EDITAR -->
 
