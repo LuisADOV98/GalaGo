@@ -56,11 +56,11 @@
         <div class="descripcion">{{prenda.description}}</div>
 
         <button *ngIf="propietario !=='true'" class="contactar" (click)="irChat()">
-            <p>Contactar</p>
-        </button>
-        <button *ngIf="propietario =='true'" class="contactar" (click)="irEditar()">
-            <p>Editar</p>
-        </button>
+          <p>Contactar</p>
+      </button>
+      <button *ngIf="propietario =='true'" class="contactar" (click)="irEditar()">
+          <p>Editar</p>
+      </button>
             
         </div>
 
