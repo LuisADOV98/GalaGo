@@ -16,7 +16,7 @@ export class CardComponent implements OnInit{
   //usamos el input para recibir datos de 1 prenda desde perfil/mis prendas
   @Input() editable: Boolean;
   @Input() isFavoritosActive: Boolean;
-
+  @Output() editarboton = new EventEmitter<Prenda>();
   @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
   @Output() idFavAEliminar: EventEmitter<any> = new EventEmitter<any>();
   
@@ -40,7 +40,7 @@ export class CardComponent implements OnInit{
     private favoritosService: FavoritosService,
     private prendaService: PrendaService,
     private userService: UserService){
-
+      this.prenda = this.prendaService.prenda
     
     }
 
@@ -136,5 +136,17 @@ export class CardComponent implements OnInit{
     }
   }
 
+
+
+  redirigir(prenda:Prenda){
+  
+    if(this.editable){
+      //  this.editarboton.emit(this.prenda);
+        this.prendaService.prenda = prenda;
+       this.router.navigate(["/editar-prenda"]);
+       console.log(prenda);
+       
+    }
+  }
 }
 

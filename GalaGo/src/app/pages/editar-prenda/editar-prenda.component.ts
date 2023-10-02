@@ -52,13 +52,13 @@ export class EditarPrendaComponent {
       });
 
       this.arrUbicacion = [];
-    this.userService.enumLocation().subscribe((data:Respuesta)=>{
-      this.arrUbicacion = data.dataEnum;
-    });
+      this.userService.enumLocation().subscribe((data:Respuesta)=>{
+        this.arrUbicacion = data.dataEnum;
+      });
 }
 
 
-  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,location,photo1:string,photo2:string,photo3:string,photo4:string){
+  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,photo1:string,photo2:string,photo3:string,photo4:string, location:string){
     
     let newPrenda: Prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4,location,this.prendaService.prenda.idprenda)
     // newPrenda = this.prendaService.prenda
@@ -125,4 +125,3 @@ public irPerfil(){
 }
 
 } 
-

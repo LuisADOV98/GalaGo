@@ -93,69 +93,33 @@
     align-items: center;
 }
 
+
+  
+  
 .imagesUpload{
   width: 400px;
+  height: 300px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 10px;
+  gap: 10px;
+  margin-top: 3px;
+  margin-bottom: 10px;
 }
 
-
-.custum-file-upload {
-    height: 110px;
-    width: 150px;
-    display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    gap: 20px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed var(--dark_blue);
-    background-color: var(--white);
-    padding: 1.5rem;
-    border-radius: 10px;
-    /* box-shadow: 0px 48px 35px -48px #e8e8e8; */
-  }
-  
-  .custum-file-upload .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .custum-file-upload .icon img{
-    height: 100px;
+   .fotos{
+    height: 105px;
     width: 140px;
-    border-radius: 10px;
+    border-radius: 5px;
   }
-  
-  .custum-file-upload .icon svg {
-    height: 80px;
-    fill: #e8e8e8;
+ 
+  .download input{
+    width: 140px;
+    border: solid 1px var(--dark_blue);
+    border-radius: 5px;
   }
-  
-  .custum-file-upload .text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .custum-file-upload .text span {
-    font-weight: 400;
-    color: #e8e8e8;
-  }
-  
-  .custum-file-upload input {
-    display: none;
-  }
-
-
-
-
 
 
    @media screen and (min-width: 412px )
