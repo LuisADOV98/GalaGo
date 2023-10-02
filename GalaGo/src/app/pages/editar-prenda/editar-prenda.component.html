@@ -8,28 +8,28 @@
   <div class="imagesUpload"> 
     
     <div>
-    <img class="fotos" src="{{prendaService.prenda.photo1}}" alt="">
+    <img class="fotos" src="{{prendaService.prenda?.photo1}}" alt="">
       <div class="download">
         <input type="text" #photo1>
       </div>
     </div>
      
     <div>
-      <img class="fotos" src="{{prendaService.prenda.photo2}}" alt="">
+      <img class="fotos" src="{{prendaService.prenda?.photo2}}" alt="">
       <div class="download">
         <input type="text" #photo2>
       </div>
     </div>
 
       <div>
-     <img class="fotos" src="{{prendaService.prenda.photo3}}" alt="">
+     <img class="fotos" src="{{prendaService.prenda?.photo3}}" alt="">
       <div class="download">
         <input type="text" #photo3>
       </div>
     </div>
 
     <div>
-      <img class="fotos" src="{{prendaService.prenda.photo4}}" alt="">
+      <img class="fotos" src="{{prendaService.prenda?.photo4}}" alt="">
       <div class="download">
         <input type="text" #photo4>
       </div>
@@ -38,40 +38,40 @@
   </div>
 
   <div class="form-group">
-    <input type="text" #title class="form-control" name="titulo" [value]="prendaService.prenda.title">
+    <input type="text" #title class="form-control" name="titulo" [value]="prendaService.prenda?.title">
   </div>
 
   <div class="form-group">
-    <input type="number" #price class="form-control" name="precio" [value]="prenda.price">
+    <input type="number" #price class="form-control" name="precio" [value]="prenda?.price">
   </div>
 
   <div class="form-group">
-    <input type="text" #description class="form-control" name="descripcion" [value]="prendaService.prenda.description">
+    <input type="text" #description class="form-control" name="descripcion" [value]="prendaService.prenda?.description">
   </div>
 
   <div class="form-group">
-    <select class="form-select" #type name="tipo" [value]="prendaService.prenda.tipo">
+    <select class="form-select" #type name="tipo" [value]="prendaService.prenda?.tipo">
       <option selected disabled></option>
         <option *ngFor="let tipo of arrTipo" [value]="tipo">{{tipo}}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <select class="form-select" #size name="talla" [value]="prendaService.prenda.size">
+    <select class="form-select" #size name="talla" [value]="prendaService.prenda?.size">
       <option selected disabled></option>
         <option *ngFor="let talla of arrTalla" [value]="talla">{{talla}}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <select class="form-select" #event name="evento" [value]="prendaService.prenda.evento">
+    <select class="form-select" #event name="evento" [value]="prendaService.prenda?.evento">
       <option selected disabled></option>
         <option *ngFor="let evento of arrEvento" [value]="evento">{{evento}}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <select class="form-select" #state name="estado" [value]="prendaService.prenda.state">
+    <select class="form-select" #state name="estado" [value]="prendaService.prenda?.state">
       <option selected disabled></option>
         <option *ngFor="let estado of arrEstado" [value]="estado">{{estado}}</option>
     </select>
@@ -79,7 +79,7 @@
 
 
   <div class="form-group">
-    <select class="form-select" #location name="Ubicacion" [value]="userService.user.location">
+    <select class="form-select" #location name="Ubicacion" [value]="userService.user?.location">
       <option selected disabled></option>
         <option *ngFor="let ubicacion of arrUbicacion" [value]="ubicacion">{{ubicacion}}</option>
     </select>

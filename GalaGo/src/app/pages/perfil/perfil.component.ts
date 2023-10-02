@@ -71,8 +71,8 @@ export class PerfilComponent {
   isFavorito(id:any){
     /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
     console.log("ES FAVORITO?"+ id);
-    console.log(this.idsFavoritasParaEsteUsuario.includes(id))
-    return this.idsFavoritasParaEsteUsuario.includes(id);
+    console.log(this.idsFavoritasParaEsteUsuario.indexOf(id))
+    return this.idsFavoritasParaEsteUsuario.indexOf(id);
   }
   ngOnInit() {
     /* this.misFavoritas = this.favoritosService.getFavorites();
@@ -81,7 +81,7 @@ export class PerfilComponent {
       //this.misFavoritas = resp.data;
       const todasLasPrendas = resp.data;
       // FILTRO
-      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.includes(obj.idprenda));
+      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.indexOf(obj.idprenda));
     })
   }
 

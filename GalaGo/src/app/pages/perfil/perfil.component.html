@@ -54,7 +54,7 @@
         (editarPrenda2)="editarPrenda2($event)"
         [isFavoritosActive]="isFavorito(prenda.idprenda)">
         </app-card> -->
-        <div *ngIf="misPrendas.length === 0">
+        <div *ngIf="misPrendas?.length === 0">
             <p>Aun no tienes articulos...</p>
         </div>
         <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card>

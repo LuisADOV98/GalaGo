@@ -10,7 +10,7 @@
 
 
 
-    <img class="foto" [src]="prenda.photo1"/>
+    <img class="foto" [src]="prenda?.photo1"/>
 
    
     <div class="texto">
@@ -44,16 +44,16 @@
           </div>
          <!-- HASTA AQUI boton -->
 
-        <div class="titulo">{{prenda.title}}</div>
+        <div class="titulo">{{prenda?.title}}</div>
             
         <!-- linea negra -->
         <div class="linea"></div> 
             
-        <div class="talla">Talla {{prenda.size}} EU</div>
+        <div class="talla">Talla {{prenda?.size}} EU</div>
 
-        <div class="precio">{{prenda.price}}€</div>
+        <div class="precio">{{prenda?.price}}€</div>
 
-        <div class="descripcion">{{prenda.description}}</div>
+        <div class="descripcion">{{prenda?.description}}</div>
 
         <button *ngIf="propietario !=='true'" class="contactar" (click)="irChat()">
           <p>Contactar</p>
