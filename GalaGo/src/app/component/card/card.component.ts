@@ -67,9 +67,7 @@ export class CardComponent implements OnInit{
 
         if (isFavorito === true) { //isfavorito hace referencia a todos usuarios(?) MAL
           // La prenda ya está en favoritos, se muestra el modal
-        /*   this.mostrarModal = true; */
-          /* this.mostrarFavorito = true; */ //corazon lleno
-          /* this.mostrarNoFavorito = false; */ //corazon vacio
+
         } else {
           // Si la prenda no es editable y no está en favoritos, se añade
           if(!this.editable && !isFavorito){
@@ -89,61 +87,9 @@ export class CardComponent implements OnInit{
 
         /* MOSTRAMOS EL MODAL */
         this.mostrarModal = true;
-
-
-/*         const data = {
-          iduser: this.userService.user.iduser,
-          idprenda: this.prenda.idprenda
-        }
-
-        this.prendaService.deleteFav(data.iduser, data.idprenda).subscribe(resp=> {
-          console.log(resp);
-        }) */
-
-        // DECIRLE AL PADRE QUE ELIMINE EL FAVORITO
-        // POR QUE QUE TENEMOS QUE MANDAR EL ID
-       
-
-/*         this.susFavoritos.filter(id => id!== this.prenda.idprenda)
-        this.mostrarModal = true; */
       }
       
     }
-        /* this.mostrarModalPadre.emit(true);
-        
-        let index = -1;
-
-        for (let i = 0; i < this.favoritosService.favorites.length; i++) {
-          
-          if(this.favoritosService.favorites[i].id === this.prenda.id){
-            index = i;
-            break;
-          }
-          
-        }
-
-        if(index != -1){
-          this.favoritosService.favorites.splice(index,1);
-        } */
-
-
-
-      /* this.mostrarFavorito = !this.mostrarFavorito;
-      this.mostrarNoFavorito = !this.mostrarNoFavorito; */
-   /*  console.log(this.prenda);
-    console.log("entra: addToFavorites")
-
-    if(this.favoritoFalse.style.display === "block"){
-      console.log("entra: vacio")
-      this.favoritoTrue.style.display = "block";
-      this.favoritoFalse.style.display = "none";
-    } else {
-      console.log("entra: lleno")
-
-      this.favoritoTrue.style.display = "none";     
-      this.favoritoFalse.style.display = "block";
-    } */
-    
 
 
   ngOnInit(): void {
@@ -174,11 +120,7 @@ export class CardComponent implements OnInit{
         console.log("se ha eliminado de favoritos"+ this.prenda);
         console.log(resp)
       }))
-      /* 1 elimino esa prenda de favoritos del user */
-     /*  this.favoritosService. */
-      
-      /* console.log("ok") */
-    } /* this.prenda.idprenda */
+    } 
     
   }
 
@@ -196,100 +138,3 @@ export class CardComponent implements OnInit{
 
 }
 
-//Si card es editable, redirige a editar (desde perfil)
-  //  redirigir(id:number){
-  //   if(this.editable){
-  //       this.router.navigate(["/editar-prenda"])
-  //   }
-  //       console.log(id);
-  // }
-    // } else {
-    //   this.router.navigate(['/detalle-prenda'])
-    // }
-    //     console.log(id);
-    // }
-
-    // agregarFavorito(){
-    //   // console.log(this.prenda);
-    //   this.favoritosService.disparadorDeFavs.emit({data: this.prenda})
-      
-    //   // this.favoritosService.disparadorDeFavs.emit(this.prenda);
-    // }
-
-    // marcarComoFavorita(id:number) {
-    //   console.log(id);
-      
-    //   this.marcarFavorita.emit(this.prenda);
-    // }
-
-    // verSoloFavoritos(){
-          //¿Qué id tiene el usuario? normalmente se guarda en localhost
-          // hacer una petición al servidor sobre que favoritos tiene
-          // con todas las ids de las prendas favoritas me las guardo en 
-          // borro respuesta y meto los favoritos en respuesta
-          
-          // borro esto
-         /*  this.respuesta = [];
-          this.groupedItems = []; */
-          // meto todas sus prendas favoritas aqui:
-         /*  this.respuesta = []; */
-      
-         /*  for(let i = 0; i < this.respuesta.length; i +=2){
-            this.groupedItems.push(this.respuesta.slice(i, i+2))
-           } */
-          
-        // }
-
-
-//   ngOnInit(): void {
-//     this.verTodas();
-//   }
-
-//   addFavoritos(id:number){
-//     console.log(id);
-//   }
-
-//   verSoloFavoritos(){
-//     //¿Qué id tiene el usuario? normalmente se guarda en localhost
-//     // hacer una petición al servidor sobre que favoritos tiene
-//     // con todas las ids de las prendas favoritas me las guardo en 
-//     // borro respuesta y meto los favoritos en respuesta
-    
-//     // borro esto
-//     this.respuesta = [];
-//     this.groupedItems = [];
-//     // meto todas sus prendas favoritas aqui:
-//     this.respuesta = [];
-
-//     for(let i = 0; i < this.respuesta.length; i +=2){
-//       this.groupedItems.push(this.respuesta.slice(i, i+2))
-//      }
-    
-//   }
-
-
-//      /* this.groupedItems = []; */
-//     // meto todas sus prendas aqui:
-//     /* this.respuesta = []; */
-//     for(let i = 0; i < this.respuesta.length; i +=2){
-//       this.groupedItems.push(this.respuesta.slice(i, i+2))
-//      }
-//   }
-
-
-// //PARA DETALLE-CARD
-//   verDetallePrenda(id:number){
-//     /* detalle-prenda */
-//     this.router.navigate(['/detalle-prenda', id]);
-//   }
-// }
-
-///////////////////////////////////////////////////////////////////////////////////////
-
-  // agregarAFavoritos(){
-    // this.perfil.favoritos.push(this);
-    //ENTRAMOS EN PERFIL (PERFILCOMPONENT CONSTRUCTOR) 
-    //Y DESPUES EN FAVORITOS(TS DE PERFIL, EL ARRAY DONDE SE GUARDAN LAS CARDS FAVS)
-    //HACEMOS .PUSH PARA AÑADIR LAS CARDS AL ARRAY
-  // }
-  
