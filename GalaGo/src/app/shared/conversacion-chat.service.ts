@@ -19,5 +19,9 @@ public obtenerConversacion(iduser1:number, iduser2:number):Observable<Object>{
   return this.http.get(this.url+"/conversacion", { params:params });
 }
 
+//info del user2 para conversación chat
+public infoUser2(idUser2:number):Observable<Object>{
+  return this.http.get(`${this.url}/user2${idUser2}`)
+}
 
 }
