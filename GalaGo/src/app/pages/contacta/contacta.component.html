@@ -8,22 +8,34 @@
     <img src="../../../assets/galago/GalaGo.png" alt="">
 </div>
 
-<div class="formulario">
+<div  class="formulario">
     <h2>Mándanos un mensaje</h2>
-    <form (ngSubmit)="enviarMensaje()">
+    <form [formGroup]="datos">
       <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+        <input #first_name placeholder="Nombre" type="text" class="form-control" formControlName="firstname">
+                <!-- <div *ngIf="!myForm.get('firstname').valid" class="invalid-feedback">
+                    El nombre es obligatorio
+                </div> -->
+
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        <input #email placeholder="E-mail" type="email" class="form-control" formControlName="email">
+        <!-- <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
+            <div  *ngIf="myForm.get('email').errors.required">
+                La direccion email es obligatoria
+            </div>
+            <div  *ngIf="myForm.get('email').errors.email">
+                La direccion email es incorrecta
+            </div>
+        </div> -->
       </div>
       <div class="form-group">
         <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" [(ngModel)]="mensaje" required></textarea>
+        <textarea #mensaje name="mensaje" type="text" class="form-control" formControlName="mensaje"></textarea>
       </div>
-      <button type="submit" [disabled]="!nombre || !email || !mensaje">Enviar</button>
+      <button type="submit" (click)="enviarMensaje()">Enviar</button>
     </form>
   </div>
 
