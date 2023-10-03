@@ -133,6 +133,7 @@
 </div>
 
 
+
 <div class="cardsContainer">
     <app-card 
         class="app-card" 
@@ -141,4 +142,10 @@
         [prendas]="prendas" 
         [isFavoritosActive]= "isFavorito(prenda.idprenda)"
     ></app-card><!-- "isFavorito(prenda.idprenda)" -->
+</div>
+
+<div *ngIf="prendas?.length === 0" class="containerNOcards">
+   <div class="sorry">
+        <h2>Lo siento, no hay artículos</h2>
+   </div>
 </div>

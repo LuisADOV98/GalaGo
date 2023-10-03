@@ -227,6 +227,47 @@ element.style{
   /*margin-right: 10px; */
 }
 
+/* CUANDO NO HAY PRENDAS */
+.containerNOcards{
+  width: 390px;
+  height: 44vh;
+  /* border: red 2px solid; */
+  /* z-index: 10; */
+  background-image: url("../../../assets/home/mujerAmarillo.png");
+  background-repeat: no-repeat;
+  background-size: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50px);
+}
+
+.sorry{
+  background-color: #fafafa10 ;
+  backdrop-filter: blur(0.2rem);
+  border: 2ps solid #fafafa10;
+
+  height: 40px;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.sorry h2{
+  position: absolute;
+  color: #000;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Pavanam;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 13px */
+  letter-spacing: 0.6px;
+  text-align: center;
+ 
+}
 
 @media screen and (min-width: 412px) {
   .cardsContainer{
