@@ -35,13 +35,19 @@ margin-left: 10px;
 
 }
 .foto{
-  /* border: 2px solid red; */
-width: 390px;
-height: 400px;
-background: url("https://s3-alpha-sig.figma.com/img/7338/7e1b/6766fc2fea47c7ab3d36892b5a6ca8c1?Expires=1696204800&Signature=mZmRn356~nG2PQunCr-QdRHbWrXHadoNvDDs-rfBSa9EBIh3lUK5PgWVOZMcCJDKbqLEvtm544QQgyPQBrii1R4rcZOofEqXGw8tGWRjXAECh69~uRLFWP9SOHRO-V9nMjudGhbXlEf8vQl45V77CMB~oN7~aUhjIrDwNuXLR0RydoeSRFrVATxwIFSBAffJ7ZcQE35JaVMWa4fe20jSK2cxosdQvtH0jzJbaSqCLeW~y2R5cGAZvo35f0TFzPWJS61EwDOv2n6T47zPTsUCifLNfUPV3gqkvyCjIgjUQlIeSSVM2uRvcdFOAva5qL5Fah9cwqAXTAdRIp-0PPzcyw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
-background-size: 250px;
-background-position-x: right;
-background-repeat: no-repeat;
+  width: 100%;
+  border: 2px solid blue;
+
+
+}
+.foto img{
+  border: 2px solid red;
+  width: 80%;
+  /* height: 400px; */
+  /* background-size: 250px;
+  background-position-x: right; */
+  /* background-repeat: no-repeat; */
+  position: fixed;
 }
 .hijo{
  
