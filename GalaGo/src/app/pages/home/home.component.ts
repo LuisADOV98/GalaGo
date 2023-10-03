@@ -33,9 +33,8 @@ export class HomeComponent{
   public selectedEvento: string = "";
   public selectedUbicacion: string = "";
   public valorRango: number;
-  // public valorGlobo: number = 0;
-  // public ubicacion: string
-  public idsFavoritasParaEsteUsuario: number[] = []; //CAMBIO AQUI DE ANY A NUMBER[]=[] 
+
+  public idsFavoritasParaEsteUsuario: number[] = []; //CAMBIO AQUI DE ANY A NUMBER[]=[] y el error includes se quita
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
@@ -44,9 +43,10 @@ export class HomeComponent{
      public prendaService: PrendaService,
       public userService: UserService, 
       public prendasService: PrendaService){
-    this.prendas = [];
-    this.valorRango = 250;
-    this.filtros2();
+
+      this.prendas = [];
+      this.valorRango = 250;
+      this.filtros2();
 
     //salen las prendas favs del 1 solamente en home!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
     const iduser = this.userService.user.iduser;
@@ -54,10 +54,6 @@ export class HomeComponent{
       /* console.log(resp); */
       this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
     });
-
-    // this.prendaService.filtroTipo().subscribe((data:Respuesta) =>{
-    //   this.prendas = data.data;
-    // });
 
     //-------- ENUM DE LA API PARA SELECTORES --------//
 
@@ -104,6 +100,13 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y aparece el input de TALLA
   filterMujer():void{
     this.mujerActive = !this.mujerActive;
+
+    //si se activa mujer, hombre y accesorio se desactiva 
+    if(this.hombreActive || this.accesorioActive) {
+      this.hombreActive = false;
+      this.accesorioActive = false;
+    }
+
     this.filtros2();
   }
   // Recoge el valor del selector de la talla 
@@ -118,6 +121,13 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y aparece el input de TALLA
   filterHombre():void{
     this.hombreActive = !this.hombreActive;
+
+    //si se activa hombre, mujer y accesorio se desactiva 
+    if(this.mujerActive || this.accesorioActive) {
+      this.mujerActive = false;
+      this.accesorioActive = false;
+    }    
+
     this.filtros2();    
   }
   // Recoge el valor del selector de la talla 
@@ -130,6 +140,13 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y en este caso no aparece ningún filtro
   filterAccesorio():void{
     this.accesorioActive = !this.accesorioActive;
+    
+    //si se activa mujer, hombre y accesorio se desactiva 
+    if(this.hombreActive || this.mujerActive) {
+      this.hombreActive = false;
+      this.mujerActive = false;
+    }
+    
     this.filtros2();
   }
 
@@ -168,8 +185,6 @@ export class HomeComponent{
 
   // ------- FILTROS ------ // 
   filtros2(){
-    console.log("this.filtros2()");
-    
     let tipo = undefined;
     console.log(tipo);
 
@@ -235,8 +250,13 @@ export class HomeComponent{
     console.log("datos por parametro home: ", tipo, size, price, event, state);    
     this.prendaService.filtroTipo(tipo,size,price,event,state).subscribe((data:Respuesta)=>{
       this.prendas = data.data;
-      console.log("desde api en angular this.prendas: ",this.prendas);
+
+      console.log("desde api en angular this.prendas: ");
+      console.log(this.prendas);
+      
     })
+
+   
   }
 
   // -------- FIN -------- // 

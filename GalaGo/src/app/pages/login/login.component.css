@@ -36,13 +36,15 @@ margin-left: 10px;
 }
 .foto{
   width: 100%;
-  border: 2px solid blue;
-
+  height: 90vh;
+  /* border: 2px solid blue; */
+  margin-top: -60px;
 
 }
 .foto img{
-  border: 2px solid red;
-  width: 80%;
+  /* border: 2px solid red; */
+  width: 750px;
+  transform: translateX(-15%);
   /* height: 400px; */
   /* background-size: 250px;
   background-position-x: right; */
