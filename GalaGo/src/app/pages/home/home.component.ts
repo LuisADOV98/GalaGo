@@ -24,7 +24,7 @@ export class HomeComponent{
   public prendas: Prenda[];
   public arrTipo: string[];
   public arrTalla: string[];
-  public arrEvento: string[];
+  public arrEvento: string[]; //include
   public arrEstado: string[];
   public arrUbicacion: string[];
   
@@ -35,7 +35,7 @@ export class HomeComponent{
   public valorRango: number;
   // public valorGlobo: number = 0;
   // public ubicacion: string
-  idsFavoritasParaEsteUsuario: any;
+  public idsFavoritasParaEsteUsuario: number[] = []; //CAMBIO AQUI DE ANY A NUMBER[]=[] 
   
   @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
   @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
@@ -53,8 +53,7 @@ export class HomeComponent{
     this.prendasService.getMisFavs(iduser).subscribe((resp:any) => {
       /* console.log(resp); */
       this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
-    })
-
+    });
 
     // this.prendaService.filtroTipo().subscribe((data:Respuesta) =>{
     //   this.prendas = data.data;
@@ -93,8 +92,9 @@ export class HomeComponent{
     });
   }
 
+  ngOnInit():void{}
 
-  isFavorito(id:any){
+  isFavorito(id:number){
     /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
     return this.idsFavoritasParaEsteUsuario.includes(id);
   }
