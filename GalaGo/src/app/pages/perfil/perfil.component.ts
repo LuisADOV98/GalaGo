@@ -57,7 +57,7 @@ export class PerfilComponent {
       //this.misFavoritas = resp.data;
       const todasLasPrendas = resp.data;
       // FILTRO
-      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.includes(obj.idprenda));
+      this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.indexOf(obj.idprenda));
     })
 
 
