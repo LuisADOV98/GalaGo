@@ -6,6 +6,7 @@ import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
+// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-editar-prenda',
@@ -13,6 +14,8 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./editar-prenda.component.css']
 })
 export class EditarPrendaComponent {
+  // public mostrarInput: Boolean = false
+  // public texto:string = ""
   public prendas:Prenda[]
   public arrTipo: string[];
   public arrTalla: string[] 
@@ -124,4 +127,8 @@ public irPerfil(){
   this.router.navigate(["/perfil"]);
 }
 
+
+// abrirModal(texto) {
+//   this.modalService.open(texto);
+// }
 } 

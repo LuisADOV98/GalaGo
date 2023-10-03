@@ -6,7 +6,13 @@
 
 
   <div class="imagesUpload"> 
-    
+
+<!-- 
+    <div class="modal-body">
+      <img src="{{prendaService.prenda?.photo1}}" alt="Foto" (click)="mostrarInput = true">
+      <input *ngIf="mostrarInput" type="text" [(ngModel)]="texto">
+    </div>
+     -->
     <div>
     <img class="fotos" src="{{prendaService.prenda?.photo1}}" alt="">
       <div class="download">
