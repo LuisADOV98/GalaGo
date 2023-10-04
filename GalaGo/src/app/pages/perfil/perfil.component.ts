@@ -23,7 +23,7 @@ export class PerfilComponent {
 
   public user: User;
   public mostrarModal = false;
-
+  mostrarModal1 = false
   idsFavoritasParaEsteUsuario: Prenda[] = [];
 
   todasLasPrenas: any;
@@ -67,6 +67,21 @@ export class PerfilComponent {
     //   this.misFavoritas= data.data
     // })
   }
+
+
+  deletePrenda(idprenda:number){
+    this.prendaService.delete(idprenda).subscribe((data:Respuesta)=>{
+      console.log(idprenda);
+      
+      if (data.error == false) {
+       
+        this.misPrendas = this.misPrendas.filter(prenda => prenda.idprenda != idprenda);
+          console.log(data);
+        
+      }
+    })
+  }
+  
 
   isFavorito(id:any){
     /* console.log(this.idsFavoritasParaEsteUsuario.includes(id)) */
@@ -125,6 +140,9 @@ export class PerfilComponent {
     this.mostrarModal = false;
   }
 
+  manejadorRespuestaModalDLT(valor: boolean) {
+    this.mostrarModal1 = true;
+  }
   // toggleTab(tab: string) {
   //   if (tab === 'mis-prendas') {
   //     this.isMisPrendasActive = true;
@@ -143,5 +161,11 @@ export class PerfilComponent {
     console.log("VAMOS A ELIMINAR: "+ event);
     console.log("DE:" + this.misFavoritas)
     this.misFavoritas = this.misFavoritas.filter( prenda => prenda.idprenda !== event);
+  }
+  
+  public eliminar(event){
+    console.log("VAMOS A ELIMINAR: "+ event);
+    console.log("DE:" + this.misPrendas)
+    this.misPrendas = this.misPrendas.filter( prenda => prenda.idprenda !== event);
   }
 }

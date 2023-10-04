@@ -1,5 +1,8 @@
 
-
+<app-modal-delete
+*ngIf="mostrarModal1"
+(result1)="manejadorRespuestaModalDLT($event)">
+</app-modal-delete>
 <app-modal-favoritos
 *ngIf="mostrarModal"
 (result)="manejadorRespuestaModal($event)">
@@ -9,7 +12,7 @@
 <!-- CARD REDIRIGE A LOGIN O DETALLE PRENDA -->
 <img *ngIf="editable"  (click)="verDetallePrenda(prenda.idprenda, true)" class="foto" [src]="prenda.photo1"/>
 <img *ngIf="!editable" (click)="verDetallePrenda(prenda.idprenda, false)" class="foto" [src]="prenda.photo1"/>
-
+<button *ngIf="editable" class="boton-eliminar" (click)="deletePrenda()">X</button>
 <div class="texto">
 
     <!-- {{ isFavoritosActive}} -->
@@ -27,7 +30,7 @@
         
                         <!-- BOTON EDITAR -->
                         <button *ngIf="editable" class="boton-editar" (click)="redirigir(prenda)">Editar</button>
-
+                        
                         <div *ngIf="!editable" class="svg-container">
                             
                         <!-- HASTA AQUI BTN EDITAR -->
