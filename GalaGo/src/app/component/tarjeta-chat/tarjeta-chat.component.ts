@@ -15,6 +15,7 @@ export class TarjetaChatComponent {
  @Input() user:User;
  @Input() chatData:any;
  public leido = false;
+
  
  constructor(private userService:UserService,private router: Router){ }
 
@@ -24,4 +25,7 @@ export class TarjetaChatComponent {
 //console.log(this.chatData)
   this.router.navigate(["/conversacion-chat"], { queryParams: {iduser2:this.chatData.iduser2}});
 }
+
+
+
 }
