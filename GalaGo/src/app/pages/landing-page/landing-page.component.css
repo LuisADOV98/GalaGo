@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     width: 200px;
     margin-left: 15px;
     height: 60px;
@@ -55,6 +55,7 @@
   -webkit-text-fill-color: transparent;
     font-family: var(--titulo);
     margin-left: 5px;
+    font-size: 19px;
 }
 .textoslogan span{
     font-weight: lighter;
@@ -140,6 +141,11 @@
         margin-bottom: 60px;
 
     }
+
+    .textoslogan .titulo{
+        font-size: 22px;
+      }
+
     .textoslogan span{
         margin-right: 15px;
         font-size: 15px;
@@ -174,11 +180,16 @@
         height: 100px;
         width: 450px;
     }
+
+    .textoslogan .titulo{
+        font-size: 31px;
+    }
+
     .textoslogan .p1{
         height: 90px;
         width: 450px;
         font-size: 25px;
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
     .textoslogan span{
         margin-right: 15px;
@@ -214,6 +225,11 @@
         height: 100px;
         width: 450px;
     }
+
+    .textoslogan .titulo{
+        font-size: 33px;
+    }
+    
     .textoslogan .p1{
         height: 90px;
         width: 450px;
