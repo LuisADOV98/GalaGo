@@ -1,6 +1,7 @@
 import { Prenda } from "./prenda";
 import { User } from "./user";
 import { Chat } from "./chat";
+import { Propietarioprenda } from "./propietarioprenda";
 
 export class Respuesta 
 {
@@ -12,7 +13,9 @@ export class Respuesta
                 public data?: Prenda[],
                 public dataPrenda?: Prenda,
                 public result?:Chat[],
-                public res_chat?: Chat){}
+                public res_chat?: Chat,
+                public data1?:Propietarioprenda[],
+                public dataPropietario?:Propietarioprenda){}
   
                 
 }

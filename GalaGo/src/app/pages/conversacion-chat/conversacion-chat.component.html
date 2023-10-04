@@ -1,4 +1,6 @@
 <body>
+
+    
     <!-- <div class="contenido_Chat" *ngIf="usuarioLogueado"> -->
     <div class="contenido_Chat">
         <div class="Chats">
@@ -7,28 +9,23 @@
             </a>
             <div><h1 class="chatsText">Chats</h1></div>  
         </div>
+
+
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <!-- <img src="../../../assets/imageneschat/userAlberto.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
-                    <img class="d-inline-block align-text-top" [src]="user.photo"/>
+                    <img class="d-inline-block align-text-top" [src]="propietarioprenda.photo"/>
                 </a>
-                <div class="textUser">{{user.firstname}}
+                <div class="textUser">{{propietarioprenda.firstname}}
                 </div>
             </div>
         </nav>
 
         <!-- CONVERSACIÓN -->
         <div class="card-body">
-            <!-- imprime los mensajes del user2 -->
-            <!-- <div *ngFor="let mensaje of mensajerecibido"  >    
-                <strong class="recibido">{{mensaje.contenido_recibido}}</strong> 
-            </div> -->
-
-            <!-- imprime mensajes del user1 -->
-             <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
+            
         <div *ngFor="let item of messages"> 
-            <!-- <strong class="enviado">{{mensaje1.contenido}}</strong>  -->
 
               <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{item.message}}
                     <svg width="1em" height="2em" viewBox="0 0 16 16" class="position-absolute top-100 start 1 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg">
@@ -41,14 +38,14 @@
                     
         </div>
 
-        <!-- <form class="card-footer text-muted input-group">
+        <form class="card-footer text-muted input-group">
             <input type="text" #texto class="form-control" placeholder="Escribe un mensaje">
             <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
-                <span class="input-group-text" id="basic-addon2">Enviar</span> -->
-            <!-- </div> -->
+                <span class="input-group-text" id="basic-addon2">Enviar</span>
+            </div>
             <!-- <button type="submit" class="btn btn-primary mb-1">Enviar</button> -->
-            <!-- </div> -->
-        <!-- </form> -->
+            
+        </form>
     </div>
 </body>
     
