@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
+import { FotosService } from 'src/app/shared/fotos.service';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -14,8 +15,10 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./editar-prenda.component.css']
 })
 export class EditarPrendaComponent {
-  // public mostrarInput: Boolean = false
-  // public texto:string = ""
+  modalInfo: string
+  
+  @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
+  public mostrarModal = false;
   public prendas:Prenda[]
   public arrTipo: string[];
   public arrTalla: string[] 
@@ -24,7 +27,7 @@ export class EditarPrendaComponent {
   public arrUbicacion:string[]
   public prenda:Prenda
   public user:User
-  constructor(public router: Router, public prendaService:PrendaService, public userService:UserService){
+  constructor(private fotosService: FotosService,public router: Router, public prendaService:PrendaService, public userService:UserService){
     this.prenda = this.prendaService.prenda
     this.user = this.userService.user
     console.log(this.prendaService.prenda);
@@ -61,9 +64,33 @@ export class EditarPrendaComponent {
 }
 
 
-  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,photo1:string,photo2:string,photo3:string,photo4:string, location:string){
+
+manejadorRespuestaModal(event) {
+  // Lógica para abrir el modal
+  this.mostrarModal = false;
+}
+
+// cerrarModal(photo1:string) {
+//   // Lógica para cerrar el modal
+//   this.modalInfo = photo1;
+//   this.mostrarModal = false;
+//   return this.modalInfo
+// }
+
+modalFotos(url:string){
+  this.fotosService.setImagenEdit(url);
+  if(this.mostrarModal == false){
+    this.mostrarModal = true
+  
+} else{
+  
+    this.mostrarModal = false;
+  
+}}
+
+  public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string,photo1:string,photo2:string,photo3:string,photo4:string){
     
-    let newPrenda: Prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4,location,this.prendaService.prenda.idprenda)
+    let newPrenda: Prenda = new Prenda(title,price,description,state,size,event,type,photo1,photo2,photo3,photo4,this.prendaService.prenda.idprenda)
     // newPrenda = this.prendaService.prenda
     // console.log(newPrenda);
     
@@ -120,7 +147,7 @@ export class EditarPrendaComponent {
   
     })
 
-    // this.router.navigate(["/perfil"]);
+    this.router.navigate(["/perfil"]);
 }
   
 public irPerfil(){
@@ -128,7 +155,4 @@ public irPerfil(){
 }
 
 
-// abrirModal(texto) {
-//   this.modalService.open(texto);
-// }
-} 
+}

@@ -46,8 +46,29 @@ input{
     height: 45px;  
     border-radius: 5px;
     padding-left: 5px;
+    text-decoration: black;
 
 }
+option{
+    text-decoration: blue;
+}
+.placeholderUbi{
+    text-decoration: red;
+}
+
+/* Cambiar el color del placeholder para el campo #last_name */
+#last_name {
+    color: #0000FF; /* Cambia #0000FF al color que desees */
+}
+
+select{
+    border: 1px solid var(--dark_blue);
+    width: 320px;
+    height: 45px;  
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
 .btn{
     background-color: var(--dark_blue);
     color: var(--white);

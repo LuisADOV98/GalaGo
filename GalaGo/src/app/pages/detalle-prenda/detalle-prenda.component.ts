@@ -36,29 +36,107 @@ export class DetallePrendaComponent implements OnInit {
               private conversacionChatService: ConversacionChatService){
               
     
-                // console.log(this.prenda)
-    this.idprenda = this.route.snapshot.paramMap.get("idprenda");
-    console.log("ID:", this.idprenda)
+          //  FORMA PARA PILLAR EL ID
+      this.idprenda = this.route.snapshot.paramMap.get("idprenda");
+      console.log("ID:", this.idprenda)
+
+
+
+      //  FORMA PARA PILLAR EL PROPIETARIO
+    this.propietario = this.route.snapshot.paramMap.get('propietario');
+    console.log("Propietario:", this.propietario)
+
+
+
+
+
+
     // Llama al servicio para obtener los detalles de la prenda por su ID
     this.detalleService.obtenerDetalle(this.idprenda, this.propietario).subscribe(
       (data:Respuesta) => {
-    // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
-      this.prenda = data.dataPrenda[0];
-      
-      console.log(data);
-      console.log(data.dataPrenda);
-      console.log("Detalle de la prenda",this.prenda);
-      //aquí obtengo el ID del propietario prenda
-      console.log("EL PROPIETARIO PRENDA:",this.prenda.iduser)
+        // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
+        this.prenda = data.dataPrenda[0];
 
-     
-      }
+        // this.images = [
+        //   this.prenda.photo1,
+        //   this.prenda.photo2,
+        //   this.prenda.photo3,
+        //   this.prenda.photo4
+        // ];
+
+
+
+        console.log("Detalle de la prenda",this.prenda)
+      },
     );
 
   }
+  // propietario: string;
+  // currentImageIndex = 0;
+  // images: string[] = [];
+  // // router: any;
+  // constructor(private route: ActivatedRoute,
+  //   private location: Location,
+  //   private router: Router, 
+  //   private detalleService: DetalleprendaService){
+  //      // console.log(this.prenda)
+  //     //  FORMA PARA PILLAR EL ID
+  //     this.idprenda = this.route.snapshot.paramMap.get("idprenda");
+  //     console.log("ID:", this.idprenda)
+
+
+
+  //     //  FORMA PARA PILLAR EL PROPIETARIO
+  //   this.propietario = this.route.snapshot.paramMap.get('propietario');
+  //   console.log("Propietario:", this.propietario)
+
+
+
+
+
+
+  //   // Llama al servicio para obtener los detalles de la prenda por su ID
+  //   this.detalleService.obtenerDetalle(this.idprenda, this.propietario).subscribe(
+  //     (data:Respuesta) => {
+  //       // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
+  //       this.prenda = data.dataPrenda[0];
+
+  //       this.images = [
+  //         this.prenda.photo1,
+  //         this.prenda.photo2,
+  //         this.prenda.photo3,
+  //         this.prenda.photo4
+  //       ];
+
+
+
+  //       console.log("Detalle de la prenda",this.prenda)
+  //     },
+  //   );
+
+  // }
 
 
   ngOnInit(): void {}
+
+  // navegarAdelante(): void {
+  //   if (this.currentImageIndex > 0) {
+  //     this.currentImageIndex--;
+  //   }
+  // }
+
+  // cambiarImagenAtras(): void {
+  //   if (this.currentImageIndex < this.images.length - 1) {
+  //     this.currentImageIndex++;
+  //   }
+  // }
+
+
+
+
+
+
+
 
 //para ir para atrás
   public navegarAtras():void {
@@ -89,6 +167,7 @@ export class DetallePrendaComponent implements OnInit {
   public irEditar(): void{
     this.router.navigate(["/editar-prenda"])
   }
+
 
 
 

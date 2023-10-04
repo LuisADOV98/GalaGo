@@ -57,7 +57,7 @@
         <div *ngIf="misPrendas?.length === 0">
             <p>Aun no tienes articulos...</p>
         </div>
-        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" ></app-card>
+        <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" (prendaDeleted)="deletePrenda($event)"></app-card>
     </div>
 
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->

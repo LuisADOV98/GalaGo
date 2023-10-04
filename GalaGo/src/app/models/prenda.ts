@@ -11,7 +11,6 @@ export class Prenda {
     public photo2?: String;
     public photo3?: String;
     public photo4?: String;
-    public location?:string;
     public idprenda?: number;
     public iduser?: number;
 
@@ -28,7 +27,6 @@ export class Prenda {
                 photo2?: string,
                 photo3?: string,
                 photo4?: string,
-                location?:string,
                 idprenda:number = 0,
                 iduser:number = 0){
                     
