@@ -94,4 +94,10 @@ export class PrendaService {
       }
       return endPoint;
     } 
+
+    // funcion para eliminar prendas del usuario
+    public delete(idprenda:number){
+      return this.http.request('delete', this.url + "/prenda",{body:{idprenda:idprenda}});
+
+    }
 }

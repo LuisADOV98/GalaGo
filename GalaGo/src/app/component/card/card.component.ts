@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, ElementRef } from '@angular/core';
 import { OutletContext, Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
+import { Respuesta } from 'src/app/models/respuesta';
 import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
 import { FavoritosService } from 'src/app/shared/favoritos.service';
 import { PrendaService } from 'src/app/shared/prenda.service';
@@ -19,11 +20,12 @@ export class CardComponent implements OnInit{
   @Output() editarboton = new EventEmitter<Prenda>();
   @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
   @Output() idFavAEliminar: EventEmitter<any> = new EventEmitter<any>();
-  
-  
+  @Output() prendaDeleted = new EventEmitter<number>();
+  public prendas: Prenda[] = []
   mostrarCorazon: boolean = true; //para que salga el corazon en las cards, 
   //x defecto true (LANDING = FALSE)
   mostrarModal = false;
+  mostrarModal1 = false;
   mostrarNoFavorito = true; //corazon vacio
   mostrarFavorito= false; //corazon lleno
 
@@ -41,9 +43,18 @@ export class CardComponent implements OnInit{
     private prendaService: PrendaService,
     private userService: UserService){
       this.prenda = this.prendaService.prenda
-    
+      this.prendas = this.prendaService.prendas
     }
 
+    deletePrenda(){
+      if(this.editable == false){
+        this.editable = true
+      
+    } else{
+      
+        this.mostrarModal1 = true;
+      
+    }}
 
     addToFavorites(){
       
@@ -148,5 +159,18 @@ export class CardComponent implements OnInit{
        
     }
   }
+
+  manejadorRespuestaModalDLT(valor: boolean){
+    
+    this.mostrarModal1 = false;
+
+    if(valor){
+      this.editable = false
+      this.prendaDeleted.emit(this.prenda.idprenda);
+      this.prendaService.delete(this.prenda.idprenda).subscribe((data:Respuesta) =>{
+        this.prendas = data.data
+      })
+    }
 }
 
+}

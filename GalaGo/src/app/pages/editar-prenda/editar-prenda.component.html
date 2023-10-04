@@ -1,3 +1,6 @@
+<app-modal-editar *ngIf="mostrarModal"  (result)="manejadorRespuestaModal($event)">
+</app-modal-editar>
+
 <div class="barra">
   <h1>Editar</h1>
 </div>
@@ -5,42 +8,28 @@
 <form class="formulario">
 
 
-  <div class="imagesUpload"> 
+  <div class="imagesUpload">
 
-<!-- 
-    <div class="modal-body">
-      <img src="{{prendaService.prenda?.photo1}}" alt="Foto" (click)="mostrarInput = true">
-      <input *ngIf="mostrarInput" type="text" [(ngModel)]="texto">
-    </div>
-     -->
-    <div>
-    <img class="fotos" src="{{prendaService.prenda?.photo1}}" alt="">
-      <div class="download">
-        <input type="text" #photo1>
-      </div>
-    </div>
-     
-    <div>
-      <img class="fotos" src="{{prendaService.prenda?.photo2}}" alt="">
-      <div class="download">
-        <input type="text" #photo2>
-      </div>
-    </div>
 
-      <div>
-     <img class="fotos" src="{{prendaService.prenda?.photo3}}" alt="">
-      <div class="download">
-        <input type="text" #photo3>
-      </div>
+
+
+    <div>
+      <button class="boton-foto" (click)="modalFotos(photo1.value)"> <img class="fotos" #photo1 src="{{prendaService.prenda?.photo1}}" alt=""> </button>
     </div>
 
     <div>
-      <img class="fotos" src="{{prendaService.prenda?.photo4}}" alt="">
-      <div class="download">
-        <input type="text" #photo4>
-      </div>
+      <button class="boton-foto" (click)="modalFotos(photo2.value)"> <img class="fotos" #photo2 src="{{prendaService.prenda?.photo2}}" alt=""> </button>
     </div>
-    
+
+    <div>
+      <button class="boton-foto" (click)="modalFotos(photo3.value)"> <img class="fotos" #photo3 src="{{prendaService.prenda?.photo3}}" alt=""> </button>
+    </div>
+
+    <div>
+      <button class="boton-foto" (click)="modalFotos(photo4.value)"> <img class="fotos" #photo4 src="{{prendaService.prenda?.photo4}}" alt=""> </button>
+    </div>
+
+
   </div>
 
   <div class="form-group">
@@ -58,41 +47,35 @@
   <div class="form-group">
     <select class="form-select" #type name="tipo" [value]="prendaService.prenda?.tipo">
       <option selected disabled></option>
-        <option *ngFor="let tipo of arrTipo" [value]="tipo">{{tipo}}</option>
+      <option *ngFor="let tipo of arrTipo" [value]="tipo">{{tipo}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <select class="form-select" #size name="talla" [value]="prendaService.prenda?.size">
       <option selected disabled></option>
-        <option *ngFor="let talla of arrTalla" [value]="talla">{{talla}}</option>
+      <option *ngFor="let talla of arrTalla" [value]="talla">{{talla}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <select class="form-select" #event name="evento" [value]="prendaService.prenda?.evento">
       <option selected disabled></option>
-        <option *ngFor="let evento of arrEvento" [value]="evento">{{evento}}</option>
+      <option *ngFor="let evento of arrEvento" [value]="evento">{{evento}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <select class="form-select" #state name="estado" [value]="prendaService.prenda?.state">
       <option selected disabled></option>
-        <option *ngFor="let estado of arrEstado" [value]="estado">{{estado}}</option>
+      <option *ngFor="let estado of arrEstado" [value]="estado">{{estado}}</option>
     </select>
   </div>
 
 
   <div class="form-group">
-    <select class="form-select" #location name="Ubicacion" [value]="userService.user?.location">
-      <option selected disabled></option>
-        <option *ngFor="let ubicacion of arrUbicacion" [value]="ubicacion">{{ubicacion}}</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <button type="button" class="btn" (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value,photo1.value,photo2.value,photo3.value,photo4.value,location.value)">Editar</button>
+    <button type="button" class="btn"
+      (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value,photo1.value,photo2.value,photo3.value,photo4.value)">Editar</button>
   </div>
   <button type="button" class="btn1" (click)="irPerfil()">Cancelar</button>
-  </form>
+</form>

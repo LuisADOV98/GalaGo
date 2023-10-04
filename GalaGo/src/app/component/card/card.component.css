@@ -170,6 +170,27 @@
             display: none;
             }
         }
+        .boton-eliminar{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            margin-top: 3px;
+            align-items: center;
+            /* background-color: #093a5484; */
+            background-color: #fafafa10;
+            /* background-color: rgba(0, 0, 0, 0.374); */
+            backdrop-filter: blur(4px);
+            border: 1px solid #fafafa10;
+            color: var(--white);
+            font-family: "Pavanam";
+            border-radius: 9px;
+            width: 30px;
+            height: 23px;
+            font-size:medium;
+            /* font-weight: bold; */
+            text-align: center;
+            /* border: none; */
+        }
 
         .boton-editar{
             position: absolute;

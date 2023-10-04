@@ -24,6 +24,8 @@ import { CommonModule } from '@angular/common';
 import { EditarPerfilComponent } from './pages/editar-perfil/editar-perfil.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalFavoritosComponent } from './component/modal-favoritos/modal-favoritos.component';
+import { ModalEditarComponent } from './component/modal-editar/modal-editar.component';
+import { ModalDeleteComponent } from './component/modal-delete/modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ModalFavoritosComponent } from './component/modal-favoritos/modal-favor
     LandingPageComponent,
     HomeComponent,
     EditarPerfilComponent,
-    ModalFavoritosComponent
+    ModalFavoritosComponent,
+    ModalEditarComponent,
+    ModalDeleteComponent
   ],
   imports: [
     BrowserModule,
