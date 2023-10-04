@@ -25,4 +25,8 @@ export class DetalleprendaService {
     return this.http.get(`${this.url}/conversacionPropietarioPrenda/${iduser}`)
 
    }
+
+  //  public crearChat(iduser1:number,iduser2:number):Observable<Object>{
+  //   return this.http.post(`${this.url}/chat${iduser1}`)
+  //  }
 }

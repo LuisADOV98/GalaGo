@@ -7,6 +7,9 @@ import { Respuesta } from 'src/app/models/respuesta';
 import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
 import { User } from 'src/app/models/user';
 import { Propietarioprenda } from 'src/app/models/propietarioprenda';
+import { ConversacionChatComponent } from '../conversacion-chat/conversacion-chat.component';
+import { ConversacionChatService } from 'src/app/shared/conversacion-chat.service';
+import { RespuestaPropietario } from 'src/app/models/respuesta-propietario';
 
 
 @Component({
@@ -17,16 +20,20 @@ import { Propietarioprenda } from 'src/app/models/propietarioprenda';
 export class DetallePrendaComponent implements OnInit {
  @Input() prendaData:any;
   prenda: Prenda
+  propietario:any;
   idprenda:any;
-  //iduser:User;
+
+  iduser1:any;
+  iduser2:any
   firstname:User;
   photo:User
-  propietario:any;
+  
   propietarioprenda:Propietarioprenda
   constructor(private route: ActivatedRoute,
               private location: Location,
               private router: Router, 
-              private detalleService: DetalleprendaService){
+              private detalleService: DetalleprendaService,
+              private conversacionChatService: ConversacionChatService){
               
     
           //  FORMA PARA PILLAR EL ID
@@ -142,10 +149,16 @@ export class DetallePrendaComponent implements OnInit {
    
     /* TODO: Tenemos que mandar enla url la id
     de la prenda */
-  console.log("IDPRENDA DEL PROPIETARIO:"+ this.idprenda)
+    console.log("IDPRENDA DEL PROPIETARIO:"+ this.idprenda)
     // this.router.navigate(["/conversacion-chat"], { queryParams: {idprenda: this.idprenda}});
     // this.router.navigate(["/conversacion-chat/:iduser2"], { queryParams: {idprenda: this.idprenda}});
     this.router.navigate(["conversacion-chat", this.prenda.iduser]);
+    this.conversacionChatService.crearConversacion(this.iduser1,this.iduser2).subscribe(
+      (data:RespuestaPropietario)=> {
+        // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
+          this.propietarioprenda = data.dataPropietario[0];
+      }
+    )
 
   }
 
