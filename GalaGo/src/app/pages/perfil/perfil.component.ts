@@ -24,7 +24,7 @@ export class PerfilComponent {
   public user: User;
   public mostrarModal = false;
 
-  idsFavoritasParaEsteUsuario: Prenda[];
+  idsFavoritasParaEsteUsuario: Prenda[] = [];
 
   todasLasPrenas: any;
 
