@@ -20,6 +20,8 @@ export class DetallePrendaComponent implements OnInit {
 
   idprenda:any;
   propietario: string;
+  currentImageIndex = 0;
+  images: string[] = [];
   // router: any;
   constructor(private route: ActivatedRoute,
     private location: Location,
@@ -35,7 +37,7 @@ export class DetallePrendaComponent implements OnInit {
       //  FORMA PARA PILLAR EL PROPIETARIO
     this.propietario = this.route.snapshot.paramMap.get('propietario');
     console.log("Propietario:", this.propietario)
-    // this.propietario = true;
+
 
 
 
@@ -46,6 +48,16 @@ export class DetallePrendaComponent implements OnInit {
       (data:Respuesta) => {
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
         this.prenda = data.dataPrenda[0];
+
+        this.images = [
+          this.prenda.photo1,
+          this.prenda.photo2,
+          this.prenda.photo3,
+          this.prenda.photo4
+        ];
+
+
+
         console.log("Detalle de la prenda",this.prenda)
       },
     );
@@ -54,6 +66,25 @@ export class DetallePrendaComponent implements OnInit {
   ngOnInit(): void {
    
   }
+
+  navegarAdelante(): void {
+    if (this.currentImageIndex > 0) {
+      this.currentImageIndex--;
+    }
+  }
+
+  cambiarImagenAtras(): void {
+    if (this.currentImageIndex < this.images.length - 1) {
+      this.currentImageIndex++;
+    }
+  }
+
+
+
+
+
+
+
 
 //para ir para atrás
   public navegarAtras():void {

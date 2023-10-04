@@ -1,3 +1,25 @@
+.navegar{
+    position: absolute;
+    /* border: 2px solid red; */
+    background-color: rgb(243,154,160);
+    border-radius: 50000px;
+    top: 300px;
+    right: 15px;
+    border: none;
+}
+.navegar2{
+    left: 15px;
+    background-color: rgb(243,154,160);
+    border-radius: 50000px;
+    border: none;
+    position: absolute;
+    /* border: 2px solid red; */
+    top: 300px;
+}
+
+
+
+
 .tarjeta { 
     display: flex; 
     flex-direction: column; 
@@ -211,7 +233,7 @@
     #btn-atras{ 
         position: absolute; 
         top: 60px; 
-        left: 0px;  
+        left: 10px;  
         z-index: 9; 
         font-family: "Pavanam"; 
         display: flex; 
@@ -220,11 +242,12 @@
         align-items: center; 
         justify-content: center; 
         color: var(--dark_blue); 
-        border-radius: 3px; 
+        background-color: rgb(243,154,160);
+        border-radius: 50000px;
         letter-spacing: 1px; 
         cursor: pointer; 
         border: none; 
-        background: none; 
+        /* background: none;  */
     } 
      
     #btn-atras > svg { 
