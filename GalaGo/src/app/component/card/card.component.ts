@@ -65,7 +65,7 @@ export class CardComponent implements OnInit{
 
         let isFavorito = this.susFavoritos.includes(this.prenda.idprenda);
 
-        if (isFavorito === true) { //isfavorito hace referencia a todos usuarios(?) MAL
+        if (isFavorito === true) {
           // La prenda ya está en favoritos, se muestra el modal
 
         } else {
