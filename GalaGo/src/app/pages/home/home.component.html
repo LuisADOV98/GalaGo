@@ -96,6 +96,42 @@
     </select>
 </div>
 
+<!-- SELECCIÓN DE ESTADO DE MUJER -->
+<div class="filtro" *ngIf="mujerActive">
+    <select class="form-select" #estado placeholder="Estado" (change)="estadoPrenda(estado.value)">
+      <option selected disabled fill="#FFC9CE">Estado de la prenda...</option>
+      <ng-container *ngFor="let estado of arrEstado">
+          <option [value]="estado">
+              Estado: {{estado}} 
+          </option>
+      </ng-container>
+    </select>
+</div>
+
+<!-- SELECCIÓN DE ESTADO DE HOMBRE -->
+<div class="filtro" *ngIf="hombreActive">
+    <select class="form-select" #estado placeholder="Estado" (change)="estadoPrenda(estado.value)">
+      <option selected disabled fill="#FFC9CE">Estado de la prenda...</option>
+      <ng-container *ngFor="let estado of arrEstado">
+          <option [value]="estado">
+              Estado: {{estado}} 
+          </option>
+      </ng-container>
+    </select>
+</div>
+
+<!-- SELECCIÓN DE ESTADO DE ACCESORIO -->
+<div class="filtro" *ngIf="accesorioActive">
+    <select class="form-select" #estado placeholder="Estado" (change)="estadoPrenda(estado.value)">
+      <option selected disabled fill="#FFC9CE">Estado del accesorio...</option>
+      <ng-container *ngFor="let estado of arrEstado">
+          <option [value]="estado">
+              Estado: {{estado}} 
+          </option>
+      </ng-container>
+    </select>
+</div>
+
 <!-- SELECCIÓN DE PRECIO -->
 <div class="div-precio" *ngIf="precioActive">
     <div class="slide-padre">

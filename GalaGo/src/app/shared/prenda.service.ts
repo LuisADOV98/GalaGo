@@ -75,19 +75,22 @@ export class PrendaService {
 
 
     // ---- FILTROS HOME ---- //
-    public filtroTipo(tipo:string, size:string, price:number, evento:string, state:string):Observable<Object>{
-      console.log("datos por parametro", tipo, size, price, evento, state);
+    public filtroTipo(tipo:string, size:string, price:number, evento:string, state:string, location:string):Observable<Object>{
+      console.log("datos por parametro: ");
+      console.log(tipo, size, price, evento, state, location);
+      
       let endPoint: Observable<Object>;
-      if((tipo === undefined) && (size === undefined) && (price === undefined) && (evento === undefined) && (state === undefined)){
+      if((tipo === undefined) && (size === undefined) && (price === undefined) && (evento === undefined) && (state === undefined) && (location === undefined)){
           endPoint = this.http.get(`${this.url}/home`);
           console.log("endpoint: ", `${this.url}/home`);
       }else{
         let queryParams = [];
         if(tipo !== undefined) queryParams.push(`tipo=${tipo}`);
         if(size !== undefined) queryParams.push(`size=${size}`);
-        if(price !== undefined || price !== 0) queryParams.push(`price<=${price}`);
+        if(price !== undefined) queryParams.push(`price<=${price}`);
         if(evento !== undefined) queryParams.push(`evento=${evento}`);
         if(state !== undefined) queryParams.push(`state=${state}`);
+        if(location !== undefined) queryParams.push(`location=${location}`);
 
         endPoint = this.http.get(`${this.url}/home?${queryParams.join('&')}`)
         console.log("endpoint: ", `${this.url}/home?${queryParams.join('&')}`);

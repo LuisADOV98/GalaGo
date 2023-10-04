@@ -11,7 +11,18 @@
         <input type="text"  #photo placeholder="Pegue aquí el enlace de la imagen que desee...">
         <input type="text"  #name placeholder="{{userService.user.firstname}}" maxlength="20">
         <input type="text"  #last_name placeholder="{{userService.user.surname}}" maxlength="20">
-        <input type="text"  #ubicacion placeholder="{{userService.user.location}}">
+        <!-- <input type="text"  #ubicacion placeholder="{{userService.user.location}}"> -->
+        <!-- SELECCIÓN DE UBICACIÓN -->
+        <select class="form-select" #ubicacion placeholder="ubicacion" (change)="ubicacionInfo(ubicacion.value)">
+            <option selected disabled fill="#FFC9CE" class="placeholderUbi">Comunidad autónoma...</option>
+            <ng-container *ngFor="let comunidad of arrUbicacion">
+                <option [value]="comunidad" class="comunidad">
+                    {{comunidad}} 
+                </option>
+            </ng-container>
+        </select> 
+
+
         <!-- <input type="email" #email placeholder="{{userService.user.email}}"> -->
 
         <div class="form-group">

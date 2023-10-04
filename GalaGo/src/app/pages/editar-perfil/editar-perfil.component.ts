@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
 
@@ -11,14 +12,27 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class EditarPerfilComponent {
     public user: User;
-    public myForm: FormGroup
+    public myForm: FormGroup;
+    public arrUbicacion: string[];
+    public selectedUbicacion: string;
     constructor(public router: Router, public userService: UserService, private formBuilder: FormBuilder){
       // this.user = new User (1,"Luisa", "Martinez", "Alicante", "luisita@gmail.com", "12345678", "../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png");
       this.user = this.userService.user;
       this.buildForm();
-      
+
+      //Optios de ubicacion de userService desde la api
+      this.arrUbicacion = [];
+      this.userService.enumLocation().subscribe((data:Respuesta)=>{
+        this.arrUbicacion = data.dataEnum;
+      });
     }
     ngOnInit(){}
+
+// Recoge el valor del selector de la ubicacioón 
+ubicacionInfo(ubicacion:string):void{
+  this.selectedUbicacion = ubicacion;
+}
+
 private buildForm(){
     const minPassLength = 8;
     this.myForm = this.formBuilder.group({
@@ -29,7 +43,6 @@ private buildForm(){
       password: [, [Validators.required, Validators.minLength(minPassLength)]],
       password2: [, [Validators.required, this.checkPassword]],
       location:[,Validators.required]
-
     })
   }
   //Comprueba que la segunda password es igual que la primera
