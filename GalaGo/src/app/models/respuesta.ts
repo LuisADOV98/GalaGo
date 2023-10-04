@@ -15,7 +15,7 @@ export class Respuesta
                 public result?:Chat[],
                 public res_chat?: Chat,
                 public data1?:Propietarioprenda[],
-                public dataPropietario?:Propietarioprenda){}
+                ){}
   
                 
 }
