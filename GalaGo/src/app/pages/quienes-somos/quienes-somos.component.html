@@ -2,9 +2,17 @@
     <div class="fondo">
         <div class="padre">
                 <!-- <div class="row-encabezado"> -->
-                    <a routerLink="/landing-page"> 
-                        <img class="boton" src="../../../assets/botones/atras.png" alt="">
-                    </a>
+                    <!-- si el usuario esta logueado, el boton de atrás te lleva a home, si no a la landing -->
+                    <ng-container *ngIf="estaLogueado(); else noLogueado">
+                        <a routerLink="/home">
+                          <img class="boton" src="../../../assets/botones/atras.png" alt="">
+                        </a>
+                    </ng-container>
+                      <ng-template #noLogueado>
+                        <a routerLink="/landing-page">
+                          <img class="boton" src="../../../assets/botones/atras.png" alt="">
+                        </a>
+                      </ng-template>
                     <h1 class="logo">GalaGo!</h1>
                 <!-- </div> -->
             <div class="quienesSomos">
