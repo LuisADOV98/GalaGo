@@ -46,22 +46,12 @@
         margin-bottom: -20px;
         margin-right: 1px;
     }
-
-/* contenedor del formulario */
-    /* .form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 0px; */
-        /* margin: 20px;  */
-    /* } */
     
     /* elementos del formulario */
     .form-group {
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
-        /* border: 1px solid red; */
     }
     
 
@@ -70,7 +60,7 @@
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
-        line-height: 24px; /* 150% */
+        line-height: 24px;
     }
     
     
@@ -103,21 +93,13 @@
         border: none;
     }
 
-/* .linea {
-    border-top: 1px solid var(--pink);
-    height: 2px;
-    max-width: 275px;
-    padding: 0;
-    margin: 55px auto 0 auto;
-    } */
-
 
  /* Samsung Galaxy S20 Ultra */
 @media screen and (min-width: 412px ) /* de 0px hasta 412 */
 {
     .contacta{
         height: 50px;
-        /* margin-bottom: 100px; */
+        margin-top: 50px;
     }
 
     .galago img{
@@ -127,7 +109,6 @@
     .formulario{
         margin-top: 52px;
         height: 565px;
-        /* border: 1px solid blueviolet; */
     }   
 
     .formulario h2{
@@ -164,7 +145,7 @@
     .contacta{
         height: 52px;
         width: 100%;
-        margin-top: 75px;
+        margin-top: 80px;
     }
 
     .contactaTexto{
@@ -193,7 +174,6 @@
     /* elementos del formulario */
     .form-group {
         margin-bottom: 20px;
-        /* border: 1px solid red; */
     }
     
 
@@ -226,6 +206,7 @@
     .contacta{
         height: 58px;
         width: 100%;
+        margin-top: 80px;
     }
     
     .contactaTexto{
@@ -256,7 +237,6 @@
     /* elementos del formulario */
     .form-group {
         margin-bottom: 30px;
-        /* border: 1px solid red; */
     }
     
 
