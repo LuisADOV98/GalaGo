@@ -33,7 +33,7 @@ export class PerfilComponent {
   constructor(public userService: UserService, public prendaService: PrendaService, public router: Router,
     public favoritosService: FavoritosService,
     public prendasService: PrendaService) {
-    this.user = userService.user;
+    this.user = userService.user;    
 
     //salen las prendas favs del 1 solamente en home!!!!!!!!!!!!!(por esto lo del corazon marcado en home)
     const iduser = this.userService.user.iduser;
@@ -42,16 +42,12 @@ export class PerfilComponent {
       this.idsFavoritasParaEsteUsuario = resp.data.map(item => item.idprenda)
     })
 
-    
-
     console.log(this.user);
 
     this.prendaService.getMisPrendas(this.user.iduser).subscribe((data: Respuesta) => {
       this.misPrendas = data.data
       console.log(this.misPrendas);
-
     })
-
 
     this.prendasService.getPrenda().subscribe((resp:any) =>{
       //this.misFavoritas = resp.data;
@@ -59,9 +55,6 @@ export class PerfilComponent {
       // FILTRO
       this.misFavoritas = todasLasPrendas.filter(obj => this.idsFavoritasParaEsteUsuario.includes(obj.idprenda));
     })
-
-
-
 
     // this.prendaService.getMisFavs(this.user.iduser).subscribe((data:Respuesta) =>{
     //   this.misFavoritas= data.data
@@ -111,11 +104,6 @@ export class PerfilComponent {
     this.prendaService.prenda = prenda;
     console.log("perfil:");
     console.log(prenda);
-
-
-
-
-
   }
 
   mostrarMisPrendas() {

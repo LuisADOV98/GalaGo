@@ -32,9 +32,12 @@ export class RegistroComponent {
     this.prenda = new Prenda("",0,"","","","","","","","","")
 
     
-    this.arrUbicacion = ["Comunidad de Madrid","Murcia","Aragon","Comundidad de Valencia"] 
+    //Optios de ubicacion de userService desde la api
+    this.arrUbicacion = [];
+    this.userService.enumLocation().subscribe((data:Respuesta)=>{
+      this.arrUbicacion = data.dataEnum;
+    });
     this.selectedUbicacion = "";
-
   }
 
   //Recoge los datos del html y los asigna al newUser que se crea 
