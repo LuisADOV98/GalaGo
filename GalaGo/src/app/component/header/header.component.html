@@ -3,7 +3,8 @@
 
 <nav class="navbar bg-body-bg fixed-top">
   <div class="luis">
-    <a class="navbar-brand" href="#">GalaGo!</a>
+    <a class="navbar-brand" href="#" *ngIf="!isLoggedIn">GalaGo!</a>
+    <a class="navbar-brand" href="#" *ngIf="isLoggedIn" routerLink="/home">GalaGo!</a>
     <button  style="border: none;" (click)="mostrarOcultarMenu()"  class="navbar-toggler" type="button">
            <span class="navbar-toggler-icon custom-toggler-icon"></span>
     </button>
