@@ -1,28 +1,28 @@
 export class Prenda {
    
-    public title?: String;
+    public title?: string;
     public price?: number;
-    public description?: String; 
-    public state?: String;//"Nuevo", "Semi nuevo","Usado"
-    public evento?: String;//"Bodas","Comuniones","Nochevieja","Disfraces"
-    public tipo?: String; //"Accesorio", "Mujer", "Hombre"
-    public size?:String; //"Unica","S","M","L","XL","XXL"
-    public photo1?: String;
-    public photo2?: String;
-    public photo3?: String;
-    public photo4?: String;
+    public description?: string; 
+    public state?: string;//"Nuevo", "Semi nuevo","Usado"
+    public evento?: string;//"Bodas","Comuniones","Nochevieja","Disfraces"
+    public tipo?: string; //"Accesorio", "Mujer", "Hombre"
+    public size?:string; //"Unica","S","M","L","XL","XXL"
+    public photo1?: string;
+    public photo2?: string;
+    public photo3?: string;
+    public photo4?: string;
     public idprenda?: number;
     public iduser?: number;
 
     constructor(
                 
-                title?:String,
+                title?:string,
                 price?:number,
-                description?:String,
-                state?:String, 
-                size?:String,
-                evento?:String, 
-                tipo?:String,
+                description?:string,
+                state?:string, 
+                size?:string,
+                evento?:string, 
+                tipo?:string,
                 photo1?: string,
                 photo2?: string,
                 photo3?: string,

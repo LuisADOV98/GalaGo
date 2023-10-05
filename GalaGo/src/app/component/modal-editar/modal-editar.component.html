@@ -4,11 +4,12 @@
         
         <div class="orden">
             <div class="modal1">
-                <input #photo1 class="inputmodal" type="text">
+                <h2>Edita la imagen</h2>
+                <input #photo placeholder="Ingrese la url de la imagen...">
             </div>
             <div class="botones">
-                <button type="submit" (click)="enviar()">Confirmar</button>
-                <button type="button" (click)="enviarFalse()">Cancelar</button>
+                <button (click)="updateImage(photo.value)">Confirmar</button>
+                <button (click)="closeModal()">Cancelar</button>
             </div>
             
         </div>
@@ -19,7 +20,7 @@
 
 
 <!-- <div class="modal1">
-    <input #photo placeholder="Introduce la nueva foto" class="inputmodal" type="text">
+    <input #photo  class="inputmodal" type="text">
 </div>
 <div class="botones">
     <button type="submit"  (click)="enviar(photo.value)">Confirmar</button>

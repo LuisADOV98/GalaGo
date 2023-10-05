@@ -91,6 +91,7 @@ export class CardComponent implements OnInit{
   
           //si prenda es editable, te lleva a editar prenda
           } else{
+            this.editable = true
             this.router.navigate(["/editar-prenda"])
           }
         }
@@ -152,7 +153,6 @@ export class CardComponent implements OnInit{
   redirigir(prenda:Prenda){
   
     if(this.editable){
-      //  this.editarboton.emit(this.prenda);
         this.prendaService.prenda = prenda;
        this.router.navigate(["/editar-prenda"]);
        console.log(prenda);

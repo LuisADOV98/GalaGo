@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class PrendaService {
   public prenda: Prenda;
   public prendas: Prenda[]
+  public prendafotoid: number;
   private url:string = "http://localhost:3000"
   constructor(private http: HttpClient) { 
 
@@ -102,5 +103,10 @@ export class PrendaService {
     public delete(idprenda:number){
       return this.http.request('delete', this.url + "/prenda",{body:{idprenda:idprenda}});
 
+    }
+
+
+    sendImageUrl(imageUrl: string): Observable<Object> {
+      return this.http.post<any>(`${this.url}/imagen`, imageUrl);
     }
 }

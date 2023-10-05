@@ -1,5 +1,5 @@
-<app-modal-editar *ngIf="mostrarModal"  (result)="manejadorRespuestaModal($event)">
-</app-modal-editar>
+<app-modal-editar [imageUrl]="selectedImageUrl" *ngIf="modalOpen" (closeModalEvent)="closeModal()" (updateImageEvent)="newPhoto($event)" ></app-modal-editar>
+
 
 <div class="barra">
   <h1>Editar</h1>
@@ -11,22 +11,22 @@
   <div class="imagesUpload">
 
 
-
-
+    
+    
     <div>
-      <button class="boton-foto" (click)="modalFotos(photo1.value)"> <img class="fotos" #photo1 src="{{prendaService.prenda?.photo1}}" alt=""> </button>
+      <button class="boton-foto" (click)="openModal(1)"> <img class="fotos" #photo1 src="{{prendaService.prenda?.photo1}}" alt=""> </button>
+    </div>
+    
+    <div>
+      <button class="boton-foto" (click)="openModal(2)"> <img class="fotos" #photo2 src="{{prendaService.prenda?.photo2}}" alt=""> </button>
     </div>
 
     <div>
-      <button class="boton-foto" (click)="modalFotos(photo2.value)"> <img class="fotos" #photo2 src="{{prendaService.prenda?.photo2}}" alt=""> </button>
+      <button class="boton-foto" (click)="openModal(3)"> <img class="fotos" #photo3 src="{{prendaService.prenda?.photo3}}" alt=""> </button>
     </div>
 
     <div>
-      <button class="boton-foto" (click)="modalFotos(photo3.value)"> <img class="fotos" #photo3 src="{{prendaService.prenda?.photo3}}" alt=""> </button>
-    </div>
-
-    <div>
-      <button class="boton-foto" (click)="modalFotos(photo4.value)"> <img class="fotos" #photo4 src="{{prendaService.prenda?.photo4}}" alt=""> </button>
+      <button class="boton-foto" (click)="openModal(4)"> <img class="fotos" #photo4 src="{{prendaService.prenda?.photo4}}" alt=""> </button>
     </div>
 
 
@@ -75,7 +75,7 @@
 
   <div class="form-group">
     <button type="button" class="btn"
-      (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value,photo1.value,photo2.value,photo3.value,photo4.value)">Editar</button>
+      (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value)">Guardar</button>
   </div>
   <button type="button" class="btn1" (click)="irPerfil()">Cancelar</button>
 </form>
