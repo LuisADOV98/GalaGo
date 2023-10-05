@@ -71,7 +71,7 @@
             .contactar{ 
                 position: absolute; 
                 top: 160px; 
-                left: 250px; 
+                left: 275px; 
                 background: var(--dark_blue); 
                 color: aliceblue; 
                 border-radius: 9px; 
@@ -111,7 +111,7 @@
                 font-size: 20px; 
                 font-style: normal; 
                 font-weight: 400; 
-                position: absolute; 
+                /* position: absolute;  */
                 top: 63px; 
                 left: 16px; 
             } 
@@ -123,34 +123,39 @@
                 font-style: normal; 
                 font-weight: 400; 
                 position: absolute; 
-                top: 65px; 
-                left: 315px;    
+                top: 60px; 
+                left: 330px;    
             }  
      
             .ubicacion{ 
-                position: absolute; 
+                /* position: absolute;  */
                 top: 80px; 
                 left: 16px; 
-                font-size: 15px; 
+                font-size: 20px; 
                 font-style: normal; 
                 font-weight: 400; 
+
             } 
             .estado{ 
-                position: absolute; 
+                /* position: absolute;  */
                 top: 110px; 
                 left: 16px; 
-                font-size: 15px; 
+                font-size: 20px; 
                 font-style: normal; 
                 font-weight: 400; 
             } 
             .descripcion{ 
-                position: absolute; 
+                /* position: absolute;  */
                 top: 150px; 
                 left: 16px; 
-                font-size: 15px; 
+                font-size: 20px; 
                 font-style: normal; 
                 font-weight: 400; 
-            } 
+                flex-wrap: wrap;
+                height: 50px; 
+                width: 230px;
+                margin-bottom: 20px;
+                } 
              
              
             /* boton de uiverse: */ 
@@ -245,7 +250,12 @@
             } 
      .info{
         width: 340px;
+        height: 250px;
+        gap: 15px;
+        padding: 10px;
+        bottom: 20px;
      }
+
      
      
     #btn-atras{ 
