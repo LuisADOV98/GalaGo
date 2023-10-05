@@ -46,13 +46,20 @@
     width: 100%;
     /* border:2px red solid; */
     gap:10px;
+    margin-bottom: 3px;
+    margin-top:13px
     
 }
 .linea{
   
   border-bottom: 0.4px solid var(--dark_blue);
-  margin-top: 12%;
+  /* width: 120%; */
+  margin-top: 10%;
+  /* margin-left:2%; */
+ 
 }
+   
+
 /* .card-text1{
   margin-left: 1px;
 } */
@@ -63,27 +70,20 @@ span.position-absolute.top-0.start-2.translate-middle.badge.rounded-pill.bg-seco
         display: flex;
         flex-direction: column;
         width: 70%;
+        gap:10px;
     }
-        .row1,.row2{
-        display: flex;
-        justify-content: space-between;
-        /* border:2px red solid; */
-        margin-right: 30px;
-        font-size: 15px;
-        gap:5px;
-        }
+    .row1,.row2{
+      display: flex;
+      justify-content: space-between;
+      margin-right: 30px;
+      font-size: 15px;
+      }
     .imagen{
-        /* border:2px red solid; */
-        margin-left: 30px;
-        /* style="width: 67px; max-height: 56px;"  */
-        width: 67px;
-        height: auto;
+      margin-left: 30px;
+      width: 63px;
+      height: 63px;
     }
-    svg{
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-    }
+ 
     a{
         text-decoration: none;
         color:var(--dark_blue);

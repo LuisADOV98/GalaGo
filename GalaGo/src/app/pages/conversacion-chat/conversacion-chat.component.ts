@@ -125,6 +125,18 @@ ngOnInit():void {
 
 // // Boton de enviar (input de mensaje)
 enviarMensajeNew(msg: string){
+  const mensaje = msg;
+  const iduser1 = this.user.iduser;
+  /* const iduser2 = this.iduser2; */
+  // idChat
+
+
+  // guardar el mensaje en base de datos
+
+  // volver a leer la tabla de sus mensajes y mostrarla
+
+  /* this.conversacionService.crearMensaje() */
+
   this.mensajes.push({iduser:1,message:msg})
 
 }
