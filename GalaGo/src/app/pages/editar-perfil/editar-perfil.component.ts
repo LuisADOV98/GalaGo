@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastComponent } from 'src/app/component/toast/toast.component';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
@@ -15,6 +16,12 @@ export class EditarPerfilComponent {
     public myForm: FormGroup;
     public arrUbicacion: string[];
     public selectedUbicacion: string;
+
+    // TOAST
+    public titleToast: string = "";
+    public message: string = ""; 
+    public activeToast: boolean = false;
+
     constructor(public router: Router, public userService: UserService, private formBuilder: FormBuilder){
       // this.user = new User (1,"Luisa", "Martinez", "Alicante", "luisita@gmail.com", "12345678", "../../../assets/imgRegister/portada-foto-perfil-redes-sociales-consejos 1.png");
       this.user = this.userService.user;
@@ -52,7 +59,7 @@ private buildForm(){
     if (control.parent?.value.password == control.value)
     resultado = null;
 
-  return resultado;
+    return resultado;
   }
     modificarUser(edPhoto: string,
            edName: string,
@@ -78,23 +85,38 @@ private buildForm(){
         (response) => {
           // Manejar la respuesta exitosa 
           console.log("Perfil actualizado correctamente.", response);
-          // Redirige al usuario nuevamente a la página de perfil después de guardar
-          this.router.navigate(["/perfil"]);
+          
+          //TOAST
+            console.log('emtro');
+            this.message = "El perfil se ha editado correctamente"
+            this.titleToast = "Perfil editado"
+            this.activeToast = true //toast para funcion changeStateToast
+            console.log(this.titleToast);
+            console.log(this.activeToast);
         },
         (error) => {
           // Manejar errores (por ejemplo, mostrar un mensaje de error)
           console.error("Error al actualizar el perfil.", error);
-        }
-      );
+
+          // TOAST
+          this.message = "No se ha podido editar el perfil"
+          this.titleToast = "Perfil no editado"
+          this.activeToast = true //toast para funcion changeStateToast  
+        });
       
-     
-      // Redirige al usuario nuevamente a la página de perfil después de guardar
-      this.router.navigate(["/perfil"]);
+        setTimeout(() => {
+          // Redirige al usuario nuevamente a la página de perfil después de guardar
+          this.router.navigate(["/perfil"]);
+        }, ToastComponent.TOAST_TIME);   
+      }
+
+      //Cambia el estado TOAST para que toast se muestre
+      changeStateToast(state: boolean) {
+        this.activeToast = state;
+        console.log("changeStateToast",state);
       }
 
       cancelar(){
         this.router.navigate(["/perfil"]);
       }
-
-     
 }

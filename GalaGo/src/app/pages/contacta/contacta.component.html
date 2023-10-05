@@ -40,3 +40,7 @@
   </div>
 
   <app-footer></app-footer>
+  <!-- TOAST -->
+<ng-container *ngIf="activeToast">
+  <app-toast [titleToast]="titleToast" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+</ng-container>

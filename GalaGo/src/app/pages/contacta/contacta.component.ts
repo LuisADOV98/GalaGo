@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastComponent } from 'src/app/component/toast/toast.component';
 
 @Component({
   selector: 'app-contacta',
@@ -8,9 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contacta.component.css']
 })
 export class ContactaComponent {
-  // nombre: string = '';
-  // email: string = '';
-  // mensaje: string = '';
+  // toast
+  public titleToast: string = "";
+  public message: string = ""; 
+  public activeToast: boolean = false;
   datos: FormGroup
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder){
     this.datos = this.formBuilder.group({
@@ -30,13 +32,19 @@ export class ContactaComponent {
     console.log(params);
     this.httpClient.post("http://localhost:3000/envio", params).subscribe(resp =>{
       console.log(resp);
+      console.log('emtro');
+      this.message = "Gracias por contactar con nosotros"
+      this.titleToast = "Email enviado "
+      this.activeToast = true //toast para funcion changeStateToast
+      //TARDA UNOS SEGUNDOS EN SALIR DE LA PAGINA PARA QUE SE VEA EL TOAST
+      setTimeout(() => {
+      }, ToastComponent.TOAST_TIME); 
       
-    })
-
-
-    // console.log('Mensaje enviado:');
-    // console.log('Nombre:', this.nombre);
-    // console.log('Email:', this.email);
-    // console.log('Mensaje:', this.mensaje);
+    });
   }
+    //Cambia el estado TOAST para que toast se muestre
+    changeStateToast(state: boolean) {
+      this.activeToast = state;
+      console.log("changeStateToast",state);
+    }
 }
