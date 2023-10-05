@@ -3,9 +3,9 @@
 
 <div class="padre">Perfil</div>
 <section class="padre2">
-    <!-- <section class="image"> -->
+   
     <img src="{{user.photo}}" alt="" class="foto">
-    <!-- </section> -->
+  
     <section class="separacion">
 
         <div class="user">
@@ -15,9 +15,9 @@
             </div>
         <div class="e-mail"> {{user.email}}</div>
 
-        <!-- <section class="abajo"> -->
+     
         <div class="lugar">{{user.location}}</div>
-        <!-- </section> -->
+
  </div>
         <div class="botonesImg">
             <!-- BTN EDITAR PERFIL  -->
@@ -68,8 +68,8 @@
     </div>
 
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
-    <ng-template #favoritas>
-        <div class="cards">
+    <ng-template class="hola" #favoritas>
+        <div class="masDeUnaPrendaFav">
             <!-- NO HAY PRENDAS -->
             <div *ngIf="misFavoritas.length === 0">
                 <p>Aun no has agregado ningun articulo a tus favoritas..</p>
