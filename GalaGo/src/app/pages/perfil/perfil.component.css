@@ -208,6 +208,35 @@
         padding: 15px;
         margin-bottom: 20px;
      }
+     .padre{
+        height: 80px;
+        width: 100%;
+        margin-top: 90px;
+        font-weight: lighter;
+        /* margin-top: 10px; */
+        font-size: 50px;
+    }
+    .padre2{
+        height: 200px;
+        width: 100%;
+        gap: 20px;
+    }
+    .user{
+        height: 200px;
+        width: 550px;
+       }
+       .padre2 img{
+        height: 200px;
+        width: 200px;
+       }
+       .btnImg{margin-left: 270px;
+        height: 40px;
+        width: 40px;
+       }
+       .btnImg img{
+        height: 100%;
+        width: 100%;
+       }
 }
 
 

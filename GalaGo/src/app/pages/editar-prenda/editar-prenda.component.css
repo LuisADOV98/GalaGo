@@ -225,6 +225,24 @@
      margin-top: 10px;
      font-size: 50px;
  }
+ .user{
+  height: 200px;
+ }
+ .foto{
+  height: 200px;
+  width: 200px;
+ }
+ .botonesimg{
+  margin-left: 270px;
+ }
+ .btnImg{
+  height: 40px;
+  width: 40px;
+ }
+ .btnImg img{
+  height: 40px;
+  width: 40px;
+ }
 
  
 .imagesUpload{
