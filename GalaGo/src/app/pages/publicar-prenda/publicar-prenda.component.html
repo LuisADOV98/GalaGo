@@ -92,3 +92,7 @@
     </div>
   <button type="button" class="btn1"  (click)="goBack()">Cancelar</button>
 </form>
+
+<ng-container *ngIf="activeToast">
+  <app-toast [titleToast]="titleToast" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+</ng-container>

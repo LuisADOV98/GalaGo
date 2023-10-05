@@ -74,11 +74,13 @@
 
 
   <div class="form-group">
-    <button type="button" class="btn"
+    <button type="button" class="btn" 
       (click)="editar(title.value,price.value,description.value,type.value,size.value,event.value,state.value)">Guardar</button>
   </div>
   <button type="button" class="btn1" (click)="irPerfil()">Cancelar</button>
 </form>
+
+<!-- TOAST -->
 <ng-container *ngIf="activeToast">
-  <app-toast [title]="title" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+  <app-toast [titleToast]="titleToast" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
 </ng-container>
