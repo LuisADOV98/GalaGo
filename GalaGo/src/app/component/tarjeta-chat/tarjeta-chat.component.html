@@ -7,12 +7,12 @@
 
 <div class ="padre">
        
-    <img [src]="chatData.photo" class="imagen" [routerLink]="['/conversacion-chat' ,chatData.iduser2]" alt="...">
+    <img [src]="chatData.photo" class="imagen" (click)="irMensajes()" alt="...">
 
     <div class ="column1">
     <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
         <div class="row1">
-            <h5  class="card-title"><a [routerLink]="['/conversacion-chat',chatData.iduser2]">{{chatData.firstname}} {{chatData.surname}}</a></h5>
+            <h5  class="card-title" (click)="irMensajes()">{{chatData.firstname}} {{chatData.surname}}</h5>
             <!-- <p class="card-text1">{{chatData.surname}}</p> -->
             <p class="card-text" ><small class="text-body-secondary">{{chatData.datehour  | date:'28/09/2023 13:42' }}</small></p>
         </div>

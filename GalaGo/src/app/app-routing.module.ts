@@ -27,7 +27,7 @@ const routes: Routes = [
 /*   {path:"tarjeta-chat", component: TarjetaChatComponent}, */
   {path:"chat", component: ChatComponent},
   {path:"contacta", component: ContactaComponent},
-  {path:"conversacion-chat/:iduser2", component: ConversacionChatComponent},
+  {path:"conversacion-chat", component: ConversacionChatComponent},
   {path:"detalle-prenda", component: DetallePrendaComponent},
   {path:"editar-prenda", component: EditarPrendaComponent},
   {path:"home", component: HomeComponent},

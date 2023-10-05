@@ -75,17 +75,17 @@ export class DetallePrendaComponent implements OnInit {
     /* TODO: Tenemos que mandar enla url la id
     de la prenda */
     console.log("IDPRENDA DEL PROPIETARIO:"+ this.idprenda)
-    // this.router.navigate(["/conversacion-chat"], { queryParams: {idprenda: this.idprenda}});
-    // this.router.navigate(["/conversacion-chat/:iduser2"], { queryParams: {idprenda: this.idprenda}});
+
     
     this.conversacionChatService.crearConversacion(this.iduser1,this.iduser2).subscribe(
-      (data:RespuestaPropietario)=> {
-        // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
-          this.propietarioprenda = data.dataPropietario[0];
+      (resp:RespuestaPropietario)=> {
+        // CUANDO crea el nuevo chat devuelve el propietarioPrenda
+          this.conversacionChatService.propietarioPrenda = resp.data[0];
+          this.conversacionChatService.idchat =resp.idchat;
+          this.router.navigate(["conversacion-chat"]);
       }
     )
-
-    this.router.navigate(["conversacion-chat", this.prenda.iduser]);
+  
 
   }
 

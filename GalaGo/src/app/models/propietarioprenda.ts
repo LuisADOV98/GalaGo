@@ -6,10 +6,10 @@ export class Propietarioprenda {
         public photo?:string,
         ){
 
-        this.iduser= iduser;
-        this.idprenda = idprenda;
-        this.firstname = firstname;
-        this.photo = photo;
+        // this.iduser= iduser;
+        // this.idprenda = idprenda;
+        // this.firstname = firstname;
+        // this.photo = photo;
         }
 }
 

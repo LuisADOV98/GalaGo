@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chat } from '../models/chat';
 import { Observable } from 'rxjs/internal/Observable';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
   private url:string = "http://localhost:3000";
-  // public chatData:Chat;
   constructor(private http: HttpClient) { }
 
 

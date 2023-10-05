@@ -1,4 +1,5 @@
 import { Propietarioprenda } from "./propietarioprenda";
+import { User } from "./user";
 
 export class RespuestaPropietario 
 {
@@ -6,8 +7,9 @@ export class RespuestaPropietario
         constructor(public error: boolean,
                     public codigo: number,
                     public mensaje: string,
-                    public data?: Propietarioprenda[],
-                    public dataPropietario?:Propietarioprenda){}
+                    public data?: User,
+                    public idchat?:number,
+                    ){}
       
                     
     }
