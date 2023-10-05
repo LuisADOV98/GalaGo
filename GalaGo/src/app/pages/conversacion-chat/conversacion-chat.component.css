@@ -139,7 +139,7 @@ img.d-inline-block.align-text-top{
     min-width: 50.01%;
     border-radius: 10px;
     text-align: left;
-    height: 30px;
+    height: auto;
     font-family: "Pavanam", sans-serif;
     }
     
@@ -151,7 +151,7 @@ img.d-inline-block.align-text-top{
         min-width: 50.01%;
         border-radius: 10px;
         text-align: left;
-        height: 30px;
+        height: auto;
         font-family: "Pavanam", sans-serif;
     }
 /* .bocadillo{
@@ -188,10 +188,16 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
     margin: 9px 15px 0px 15px;
 }
 
+/* .contenido_Chat{
+    background-color: #000;
+} */
+
 /* Samsung Galaxy S20 Ultra */
 @media screen and (max-width: 412px )
 {
-  
+    /* .contenido_Chat{
+        background-color: #fa0707;
+    } */
    
     div.container-fluid{
         height: 40px;
@@ -208,9 +214,14 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
     }
    
 }
+
  /* Ipad mini */
- @media screen and (min-width: 768px )
+ @media screen and (min-width: 413px) and (max-width: 819px) 
  {
+    /* .contenido_Chat{
+        background-color: #13d230;
+    } */
+   
     .Chats{
         height: 70px;
         margin-top: 80px;
@@ -264,6 +275,10 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
 /* Ipad Air */
 @media screen and (min-width: 820px )
 {
+
+    /* .contenido_Chat{
+        background-color: #2d08fc;
+    } */
     .Chats{
         height: 80px;
         margin-top: 90px;
@@ -313,3 +328,29 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
 }
 
 
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+/* .card-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} */
+
+.contenido_Chat{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.card-body{
+    flex: 1;
+    overflow: auto;
+}
+
+.card-footer{
+    flex-shrink: 0;
+}

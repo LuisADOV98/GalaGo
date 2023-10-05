@@ -1,54 +1,37 @@
-<body>
-
-    
-    <!-- <div class="contenido_Chat" *ngIf="usuarioLogueado"> -->
-    <div class="contenido_Chat">
-        <div class="Chats">
-            <a routerLink="/chat"> 
-                <img class="boton" src="../../../assets/boton_atras/boton_atras.png" alt="">
-            </a>
-            <div><h1 class="chatsText">Chats</h1></div>  
+<div class="contenido_Chat">
+    <div class="Chats">
+        <a routerLink="/chat">
+            <img class="boton" src="../../../assets/boton_atras/boton_atras.png" alt="">
+        </a>
+        <div>
+            <h1 class="chatsText">Chats</h1>
         </div>
-
-
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <!-- <img src="../../../assets/imageneschat/userAlberto.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> -->
-                    <img class="d-inline-block align-text-top" [src]="conversacionChatService.propietarioPrenda.photo"/>
-                </a>
-                <div class="textUser">{{conversacionChatService.propietarioPrenda.firstname}}
-                </div>
-            </div>
-        </nav>
-
-        <!-- CONVERSACIÓN -->
-        <div class="card-body">
-            
-        <div *ngFor="let item of messages"> 
-
-              <div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">{{item.message}}
-                    <svg width="1em" height="2em" viewBox="0 0 16 16" class="position-absolute top-100 start 1 translate-middle mt-1" fill="var(--bs-secondary)" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-                    </svg>
-                </div>
-            </div>
-
-           
-                    
-        </div>
-
-        <form class="card-footer text-muted input-group">
-            <input type="text" #texto class="form-control" placeholder="Escribe un mensaje">
-            <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
-                <span class="input-group-text" id="basic-addon2">Enviar</span>
-            </div>
-            <!-- <button type="submit" class="btn btn-primary mb-1">Enviar</button> -->
-            
-        </form>
     </div>
-</body>
-    
 
-<!-- <button (click)="enviarMensajeNew(texto.value); texto.value=''">Enviar</button> -->
-<!-- <button (click)="enviarMensajeSOPORTENew('test')">TEST MENSAJE SOPORTE</button> -->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="d-inline-block align-text-top" [src]="conversacionChatService.propietarioPrenda.photo" />
+            </a>
+            <div class="textUser">{{conversacionChatService.propietarioPrenda.firstname}}
+            </div>
+        </div>
+    </nav>
+
+    <div class="card-body" #chatContainer>
+        <div *ngFor="let item of messages">
+            <div [ngClass]="user.iduser === item.iduser ? 'text-right': 'text-left'">
+                <p [ngClass]="user.iduser === item.iduser ? 'userMsg': 'soporteMsg'">{{item.message}}</p>
+            </div>
+        </div>
+
+    </div>
+    <form class="card-footer text-muted input-group">
+        <input maxlength="200" type="text" #texto class="form-control" placeholder="Escribe un mensaje">
+        <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
+            <span class="input-group-text" id="basic-addon2">Enviar</span>
+        </div>
+
+    </form>
+
+</div>
