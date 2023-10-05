@@ -37,6 +37,7 @@ export class CardComponent implements OnInit{
   /*cogemos la tabla relacion user/favorito */
   relacionUserFavoritos:any;
 
+  // Modelo Prenda
   public prendaDetalle: Prenda;
 
    constructor(private router: Router, 
@@ -46,7 +47,6 @@ export class CardComponent implements OnInit{
     private userService: UserService,
     private detalleService: DetalleprendaService){
       this.prenda = this.prendaService.prenda;
-      this.prendaDetalle = this.detalleService.prenda;
 
       
     
@@ -141,6 +141,8 @@ export class CardComponent implements OnInit{
         this.detalleService.prenda = data.dataPrenda[0];
 
         console.log("Detalle de la prenda",this.detalleService.prenda)
+
+        
       },
     );
     if (!this.editable && (this.router.url === '/landing-page' || this.router.url === '/')) {

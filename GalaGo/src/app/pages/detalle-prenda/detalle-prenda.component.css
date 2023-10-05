@@ -127,9 +127,9 @@
                 left: 315px;    
             }  
      
-            .descripcion{ 
+            .ubicacion{ 
                 position: absolute; 
-                top: 100px; 
+                top: 80px; 
                 left: 16px; 
                 font-size: 15px; 
                 font-style: normal; 
@@ -137,13 +137,13 @@
             } 
             .estado{ 
                 position: absolute; 
-                top: 170px; 
+                top: 110px; 
                 left: 16px; 
                 font-size: 15px; 
                 font-style: normal; 
                 font-weight: 400; 
             } 
-            .ubicacion{ 
+            .descripcion{ 
                 position: absolute; 
                 top: 150px; 
                 left: 16px; 

@@ -8,9 +8,10 @@ import { Propietarioprenda } from '../models/propietarioprenda';
   providedIn: 'root'
 })
 export class DetalleprendaService {
-  public prenda: Prenda
-  public iduser: Propietarioprenda
   private url:string = "http://localhost:3000"
+  public prenda: Prenda;
+  public iduser: Propietarioprenda;
+  public images: string[] = [];
   constructor(private http: HttpClient) { 
     
   }

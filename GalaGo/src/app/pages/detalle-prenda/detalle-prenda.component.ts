@@ -22,9 +22,12 @@ export class DetallePrendaComponent implements OnInit {
   public user:User;
 
 
-
   public idprenda:any;
   public propietario: boolean;
+  public currentImageIndex = 0;
+
+  // Definir un índice actual para la imagen
+  currentIndex: number = 0;
 
 
 
@@ -32,56 +35,26 @@ export class DetallePrendaComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private location: Location,
     private router: Router, 
-    private detalleService: DetalleprendaService,
+    public detalleService: DetalleprendaService,
     private prendaService: PrendaService,
     private userService: UserService){
       
       this.user = this.userService.user;
       console.log(this.user);
       
-
-      this.prenda = this.detalleService.prenda;
-      console.log(this.prenda);
-
-      // console.log(this.prenda.idprenda);
-      
-
-
-
-
-      
-       // Condicional para que salga editar/contactar dependiendo de si eres propietario o no
-      // if(this.prenda.iduser === this.user.iduser){
-      //   this.propietario = true;
-      //   console.log(this.propietario);
-        
-        
-      // }else{
-      //   this.propietario = false;
-      //   console.log(this.propietario);
-      // }
-
-
-
-
-    // Llama al servicio para obtener los detalles de la prenda por su ID
-    // this.detalleService.obtenerDetalle(this.detalleService.prenda.idprenda).subscribe(
-    //   (data:Respuesta) => {
-    //     // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
-    //     this.prenda = data.dataPrenda[0];
-
-    //     console.log("Detalle de la prenda",this.prenda)
-    //   },
-    // );
-    // console.log(this.detalleService.prenda);
-    
-
   }
   ngOnInit(): void {
-   
   }
 
+  navegarAdelante() {
+    // Avanzar al siguiente índice de imagen, circular al principio si llegamos al final
+    this.currentIndex = (this.currentIndex + 1) % 4; // 4 es el número total de imágenes
+  }
 
+  cambiarImagenAtras() {
+    // Retroceder al índice de imagen anterior, circular al final si estamos en el principio
+    this.currentIndex = (this.currentIndex - 1 + 4) % 4; // 4 es el número total de imágenes
+  }
 
 
 //para ir para atrás
