@@ -114,6 +114,9 @@
   width: 130px;
   border: none;
   border-radius: 5px;
+  /* background-image: url(../../../assets/langdingpage/nofoto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 .fotos{
   height: 100%;
@@ -121,6 +124,29 @@
   border-radius: 5px;
 }
 
+.modalcontainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index:1000;
+  pointer-events: none;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,0.7);
+  margin-top: 100px;
+
+}
+
+.cuadro{
+  margin-bottom: 500px;
+  width: 250px;
+  height: 150px;
+  border: 2px solid black;
+}
 
 
 

@@ -26,7 +26,7 @@
         descripcion.value, ubicacion.value, estado.value, 
         evento.value, tipo.value, talla.value, imagen.value)" -->
         
-        <input type="checkbox" (click)="addToFavorites()" class="checkbox" id="favoritos">
+        <input type="checkbox" *ngIf="!editable" (click)="addToFavorites()" class="checkbox" id="favoritos">
         
             <!-- BOTON EDITAR -->
             <button *ngIf="editable" class="boton-editar" (click)="redirigir(prenda)">Editar</button>

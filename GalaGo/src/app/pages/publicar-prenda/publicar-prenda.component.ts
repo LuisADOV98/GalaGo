@@ -75,7 +75,7 @@ export class PublicarPrendaComponent {
       alert("Algo ha salido mal")
     })
    
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/perfil"]);
     
   }
 

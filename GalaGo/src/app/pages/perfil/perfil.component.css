@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--rosa, #FFC9CE);
+    background: var(--pink);
     font-size: 1.3em;
     }
 .padre2{
@@ -91,9 +91,9 @@
     justify-content: space-between;
     align-items: center;
     width: 96%;
-    /* height: 477.345px; */
-    /* margin-left: 6px;
-    margin-right: 5px; */
+    /* height: 477.345px;  */
+    margin-left: 7.5px;
+    /* margin-right: 5px;  */
     
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -190,7 +190,25 @@
         margin-top: 14px;
     } 
    
-
+    @media screen and (min-width: 768px){
+    /* .app-card{
+        width: 750px;
+        gap: 0;
+        padding: 0;
+    } */
+     .cards{
+        width: 750px;
+       gap:25px;
+       padding: 25px;
+       
+     }
+     .container{
+        gap: 0;
+       width: 768px;
+        padding: 15px;
+        margin-bottom: 20px;
+     }
+}
 
 
     

@@ -54,13 +54,28 @@
     align-items: center;
 }
 .botones{
-    gap: 40px;
+    gap: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+.botones button{
+    width: 100px;
+}
 .modal1{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    padding: 10px;
+}
+.modal1 input{
+    border-radius: 5px;
+    width: 235px;
+    height: 40px;
+    border: 1px solid var(--dark_blue);
+    padding: 3px;
+}
+.modal1 h2{
+    color: var(--dark_blue);
 }
