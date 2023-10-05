@@ -243,7 +243,9 @@
                 display: none; 
                 } 
             } 
-     
+     .info{
+        width: 340px;
+     }
      
      
     #btn-atras{ 

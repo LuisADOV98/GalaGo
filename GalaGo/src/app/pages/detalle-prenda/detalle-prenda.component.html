@@ -64,7 +64,7 @@
             
         <!-- linea negra -->
         <div class="linea"></div> 
-            
+            <div class="info">
         <div class="talla">Talla {{detalleService.prenda?.size}} EU</div>
 
         <div class="precio">{{detalleService.prenda?.price}}€</div>
@@ -73,7 +73,7 @@
         <div class="estado">{{detalleService.prenda?.state}}</div>
         <div class="descripcion">{{detalleService.prenda?.description}}</div>
 
-        
+        </div>
           <!-- detalle-prenda.component.html -->
           <button *ngIf="detalleService.prenda?.iduser !== user.iduser" class="contactar" (click)="irChat()">
           <p>Contactar</p>
