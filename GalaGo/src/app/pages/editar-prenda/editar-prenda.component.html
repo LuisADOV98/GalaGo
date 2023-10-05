@@ -79,3 +79,6 @@
   </div>
   <button type="button" class="btn1" (click)="irPerfil()">Cancelar</button>
 </form>
+<ng-container *ngIf="activeToast">
+  <app-toast [title]="title" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+</ng-container>

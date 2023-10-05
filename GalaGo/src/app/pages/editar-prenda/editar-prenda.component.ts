@@ -16,7 +16,11 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class EditarPrendaComponent {
   modalInfo: string
-  
+  // toast
+  public title: string;
+  public message: string;
+  public activeToast: boolean = false;
+  // 
   @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
   public modalOpen: Boolean = false
   urlImage: string;
@@ -145,12 +149,17 @@ this.closeModal()
     
       if (!data.error)
       {
-        alert("Has editado una Prenda");
-        
+        console.log('emtro');
+         this.message = "Se ha editado tu articulo"
+        this.title = "Editado"
+        this.activeToast = true
       } 
       else
-      alert("Algo ha salido mal");
-  
+      console.log('salgp');
+      
+      this.message = "No se ha editado tu articulo"
+        this.title = "Articulo no editado"
+        this.activeToast = true
     })
 
     this.router.navigate(["/perfil"]);
@@ -161,4 +170,7 @@ public irPerfil(){
 }
 
 
+public changeStateToast(state: boolean) {
+  this.activeToast = state;
+}
 }

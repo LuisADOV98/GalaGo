@@ -58,11 +58,11 @@
             <p>Aun no tienes articulos...</p>
         </div>
 
-        <div *ngIf="misPrendas.length > 1" class="masDeUnaPrendaMia">
+        <div *ngIf="misPrendas?.length > 1" class="masDeUnaPrendaMia">
             <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" (prendaDeleted)="deletePrenda($event)"></app-card>
         </div>
 
-        <div *ngIf="misPrendas.length === 1" class="unaPrenda">
+        <div *ngIf="misPrendas?.length === 1" class="unaPrenda">
             <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" (prendaDeleted)="deletePrenda($event)"></app-card>
         </div>
     </div>
@@ -89,7 +89,7 @@
             </div>
 
              <!-- HAY MÁS DE 1 PRENDA -->
-             <div *ngIf="misFavoritas.length > 1" class="masDeUnaPrendaFav">
+             <div *ngIf="misFavoritas?.length > 1" class="masDeUnaPrendaFav">
                 <app-card #refHijo 
                     (mostrarModalPadre)="recibirDatos($event)" 
                     (idFavAEliminar)="borrarFav($event)" 
