@@ -68,12 +68,10 @@
         <div class="talla">Talla {{detalleService.prenda?.size}} EU</div>
 
         <div class="precio">{{detalleService.prenda?.price}}€</div>
-
-        <div class="estado">Estado: {{detalleService.prenda?.state}}</div>
+        <div class="estado">{{detalleService.prenda?.state}}</div>
+        <div class="ubicacion">Ubicado en {{detalleService.prenda?.location}}</div>
         
-        <div class="ubicacion">Ubicado en {{user?.location}}</div>
-        
-        <div class="descripcion">Descripcion: {{detalleService.prenda?.description}}</div>
+        <div class="descripcion">{{detalleService.prenda?.description}}</div>
 
         </div>
           <!-- detalle-prenda.component.html -->

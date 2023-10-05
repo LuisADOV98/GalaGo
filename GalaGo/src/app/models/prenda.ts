@@ -13,9 +13,9 @@ export class Prenda {
     public photo4?: string;
     public idprenda?: number;
     public iduser?: number;
+    public location?: string;
 
     constructor(
-                
                 title?:string,
                 price?:number,
                 description?:string,
@@ -27,8 +27,9 @@ export class Prenda {
                 photo2?: string,
                 photo3?: string,
                 photo4?: string,
-                idprenda:number = 0,
-                iduser:number = 0){
+                idprenda?:number,
+                iduser?:number,
+                location?: string ){
                     
                     this.title = title;
                     this.price = price;
@@ -41,9 +42,9 @@ export class Prenda {
                     this.photo2 = photo2;
                     this.photo3 = photo3;
                     this.photo4 = photo4;
+                    this.location = location;
                     this.idprenda = idprenda;
-                    this.iduser = iduser
-
+                    this.iduser = iduser;
     }
 
 
