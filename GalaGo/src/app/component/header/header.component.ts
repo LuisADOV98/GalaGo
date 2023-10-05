@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/user.service';
 import { ElementRef, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit{
   
   public verSubMenu = false;
 
-  constructor(public userService: UserService, private el: ElementRef){
+  constructor(public userService: UserService, private el: ElementRef, public route: Router){
     
   }
 
@@ -27,7 +28,9 @@ export class HeaderComponent implements OnInit{
     }
   }
 
-
+  home(){
+    this.route.navigate(['/home']);
+  }
   ngOnInit(): void {
     // Comprobar si el usuario está 
     // registrado

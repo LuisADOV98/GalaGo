@@ -20,14 +20,15 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class DetallePrendaComponent implements OnInit {
  @Input() prendaData:any;
-  prenda: Prenda
+ public prenda: Prenda
 
-  idprenda:any;
+  public idprenda:any;
 
-  iduser1:any;
-  iduser2:any;
-  firstname:User;
-  photo:User
+  public iduser1:any;
+  public iduser2:any;
+  public firstname:User;
+  public photo:User;
+  public locationUser: string;
   public user:User;
 
 
@@ -48,6 +49,8 @@ export class DetallePrendaComponent implements OnInit {
       
       this.user = this.userService.user;
       console.log(this.user);
+      console.log(this.detalleService.prenda);
+      
       
   }
   ngOnInit(): void {
