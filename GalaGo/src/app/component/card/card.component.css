@@ -25,7 +25,7 @@
         top: 0px;
         left: -2px;
         width: 171px;
-        height: 185px;
+        height: 180px;
         object-fit: cover;
     }
 
@@ -48,7 +48,8 @@
         position: relative;
         border: 0.2px solid rgba(58, 58, 58, 0.37);
         width: 171px;
-        height: 36.16px;
+        height: 38px;
+        top: -5px;
     }
 
 

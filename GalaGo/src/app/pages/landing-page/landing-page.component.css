@@ -67,8 +67,9 @@
     
     height: auto;
     width: 100%;
-    margin-top:30px;
+    margin-top:20px;
     margin-bottom: 20px;
+    
 }
 
 
@@ -97,12 +98,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 390px;
+    width: 380px;
     flex-wrap: wrap;
-    padding: 7px;
-    gap: 0;
-    margin-left: 4px;
-
+    padding: 10px;
+    gap: 10px;
+    margin-left: 8px;
+  
     /* margin-left: 10px;
     margin-right: 10px; */
 }
