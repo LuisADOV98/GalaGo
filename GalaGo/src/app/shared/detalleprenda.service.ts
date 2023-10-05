@@ -14,8 +14,8 @@ export class DetalleprendaService {
   constructor(private http: HttpClient) { 
     
   }
-  public obtenerDetalle(idprenda: number, propietario:string): Observable<Object> {
-    return this.http.get(`${this.url}/prendaId/${idprenda}/${propietario}`)
+  public obtenerDetalle(idprenda: number): Observable<Object> {
+    return this.http.get(`${this.url}/prendaId?idprenda=${idprenda}`)
    }
 
    public obtenerPropietario(iduser: number): Observable<Object> {

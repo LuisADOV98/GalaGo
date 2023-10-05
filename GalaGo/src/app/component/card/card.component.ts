@@ -1,7 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, ElementRef } from '@angular/core';
 import { OutletContext, Router } from '@angular/router';
 import { Prenda } from 'src/app/models/prenda';
+import { Respuesta } from 'src/app/models/respuesta';
+import { DetallePrendaComponent } from 'src/app/pages/detalle-prenda/detalle-prenda.component';
 import { PerfilComponent } from 'src/app/pages/perfil/perfil.component';
+import { DetalleprendaService } from 'src/app/shared/detalleprenda.service';
 import { FavoritosService } from 'src/app/shared/favoritos.service';
 import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
@@ -34,13 +37,18 @@ export class CardComponent implements OnInit{
   /*cogemos la tabla relacion user/favorito */
   relacionUserFavoritos:any;
 
+  public prendaDetalle: Prenda;
 
    constructor(private router: Router, 
     private elRef: ElementRef,
     private favoritosService: FavoritosService,
     private prendaService: PrendaService,
-    private userService: UserService){
-      this.prenda = this.prendaService.prenda
+    private userService: UserService,
+    private detalleService: DetalleprendaService){
+      this.prenda = this.prendaService.prenda;
+      this.prendaDetalle = this.detalleService.prenda;
+
+      
     
     }
 
@@ -126,13 +134,22 @@ export class CardComponent implements OnInit{
 
   verDetallePrenda(id:number, propietario :boolean){
     /* detalle-prenda */
+    console.log(id);
+    this.detalleService.obtenerDetalle(id).subscribe(
+      (data:Respuesta) => {
+        // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
+        this.detalleService.prenda = data.dataPrenda[0];
+
+        console.log("Detalle de la prenda",this.detalleService.prenda)
+      },
+    );
     if (!this.editable && (this.router.url === '/landing-page' || this.router.url === '/')) {
       // Si estás en la página de inicio y la tarjeta no es editable,
       // redirige a login
       this.router.navigate(['/login']);
     } else {
       // si no, redirecciona a detalle prenda
-      this.router.navigate(['/detalle-prenda', id, propietario]);
+      this.router.navigate(['/detalle-prenda']);
     }
   }
 
