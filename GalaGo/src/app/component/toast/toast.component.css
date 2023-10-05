@@ -1,0 +1,73 @@
+*{
+    font-family: 'Montserrat light';
+    font-size: 13px;
+}
+
+.toast {
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    z-index: 99999;
+    width: 250px;
+    height: 60px;
+
+    border: 1px solid #3eb738;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.2s ease-in-out;
+    opacity: 90;
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+  }
+  .errorToast{
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    z-index: 99999;
+    width: 300px;
+    height: 70px;
+
+    border: 1px solid #b40528;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.2s ease-in-out;
+    opacity: 90;
+    background-color: rgba(255, 255, 255, 0.797);
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+  }
+
+
+
+  .toast-header {
+    width: 15px;
+    background-color: #3eb738;
+
+  }
+  .toast-header-error {
+    width: 15px;
+    background-color: #b40528;
+
+  }
+
+
+  .toast-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .toast-body p{
+    color:  #000000;
+  }
+  .title{
+    color:  #3eb738;
+  }
+  .title-error{
+    color:  #b40528;
+  }

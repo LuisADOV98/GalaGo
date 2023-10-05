@@ -26,6 +26,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModalFavoritosComponent } from './component/modal-favoritos/modal-favoritos.component';
 import { ModalEditarComponent } from './component/modal-editar/modal-editar.component';
 import { ModalDeleteComponent } from './component/modal-delete/modal-delete.component';
+import { ToastComponent } from './component/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ModalDeleteComponent } from './component/modal-delete/modal-delete.comp
     EditarPerfilComponent,
     ModalFavoritosComponent,
     ModalEditarComponent,
-    ModalDeleteComponent
+    ModalDeleteComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
