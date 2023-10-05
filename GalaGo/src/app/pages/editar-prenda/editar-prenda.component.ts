@@ -35,9 +35,9 @@ export class EditarPrendaComponent {
 
   //le asignamos valor desde el html en la funcion photo...
   public photo1:string ;
-  public photo2:string = "";
-  public photo3:string = "";
-  public photo4:string = "";
+  public photo2:string;
+  public photo3:string;
+  public photo4:string;
   constructor(public router: Router, public prendaService:PrendaService, public userService:UserService){
     this.prenda = this.prendaService.prenda
     this.user = this.userService.user

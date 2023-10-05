@@ -43,14 +43,14 @@ export class PrendaService {
     return this.http.get(this.url+"/estado")
   }
 
-    //  ------ EDITAR PRENDA ------ //
+    //  ------ PUBLICAR PRENDA ------ //
   public addPrenda(newPrenda):Observable<Object>{
     console.log(newPrenda);
     
     return this.http.post(this.url + "/prenda", newPrenda )
   }
   // `
-  //  ------ PUBLICAR PRENDA
+  //  ------ EDITAR PRENDA
   public editarPrenda(prenda:Prenda):Observable<Object>{
     
     return this.http.put(this.url + "/prenda",prenda)
