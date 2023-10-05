@@ -127,9 +127,25 @@
                 left: 315px;    
             }  
      
+            .ubicacion{ 
+                position: absolute; 
+                top: 80px; 
+                left: 16px; 
+                font-size: 15px; 
+                font-style: normal; 
+                font-weight: 400; 
+            } 
+            .estado{ 
+                position: absolute; 
+                top: 110px; 
+                left: 16px; 
+                font-size: 15px; 
+                font-style: normal; 
+                font-weight: 400; 
+            } 
             .descripcion{ 
                 position: absolute; 
-                top: 125px; 
+                top: 150px; 
                 left: 16px; 
                 font-size: 15px; 
                 font-style: normal; 

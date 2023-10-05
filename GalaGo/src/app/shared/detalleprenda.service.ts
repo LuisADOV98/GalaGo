@@ -8,14 +8,15 @@ import { Propietarioprenda } from '../models/propietarioprenda';
   providedIn: 'root'
 })
 export class DetalleprendaService {
-  public prenda: Prenda
-  public iduser: Propietarioprenda
   private url:string = "http://localhost:3000"
+  public prenda: Prenda;
+  public iduser: Propietarioprenda;
+  public images: string[] = [];
   constructor(private http: HttpClient) { 
     
   }
-  public obtenerDetalle(idprenda: number, propietario:string): Observable<Object> {
-    return this.http.get(`${this.url}/prendaId/${idprenda}/${propietario}`)
+  public obtenerDetalle(idprenda: number): Observable<Object> {
+    return this.http.get(`${this.url}/prendaId?idprenda=${idprenda}`)
    }
 
    public obtenerPropietario(iduser: number): Observable<Object> {
