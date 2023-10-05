@@ -37,9 +37,9 @@ export class HomeComponent{
 
   public idsFavoritasParaEsteUsuario: number[] = []; //CAMBIO AQUI DE ANY A NUMBER[]=[] y el error includes se quita
   
-  @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span>
-  @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
-  @ViewChild('estado') estadoSelect: ElementRef; // Agregar referencia al select
+  @ViewChild('sliderValue') sliderValue: ElementRef; // Referencia al elemento <span> para el rango de precio html
+  // @ViewChild('sliderInput') sliderInput: ElementRef; // Referencia al elemento <input>
+  // @ViewChild('estado') estadoSelect: ElementRef; // Agregar referencia al select
 
 
   constructor(public router: Router,
@@ -119,6 +119,7 @@ export class HomeComponent{
       this.hombreActive = false;
       this.accesorioActive = false;
       this.selectedEstado = "";
+      this.selectedTallaMujer = "";
     }
 
     this.filtros2();
@@ -144,6 +145,7 @@ export class HomeComponent{
       this.mujerActive = false;
       this.accesorioActive = false;
       this.selectedEstado = "";
+      this.selectedTallaHombre = "";
     }    
 
     this.filtros2();    
@@ -174,15 +176,6 @@ export class HomeComponent{
   estadoPrenda(estado:string){
     this.selectedEstado = estado;
     this.filtros2();
-    this.resetearSelect();
-  }
-
-  // Método para restablecer el select cuando selectedEstado es una cadena vacía
-  resetearSelect() {
-    if (this.selectedEstado === "") {
-      // Restablecer el valor seleccionado del select al valor predeterminado
-      this.estadoSelect.nativeElement.value = "";
-    }
   }
 
   // ----- SELECCIONA EL PRECIO MÁXIMO ------ //
@@ -208,6 +201,7 @@ export class HomeComponent{
   // Cambia el filtro de color (activa o desactiva) y aparece el input de UBICACIÓN
   filterUbicacion():void{
     this.ubicacionActive = !this.ubicacionActive;
+    if(!this.ubicacionActive) this.selectedUbicacion = "";
     this.filtros2();
   }
   // Recoge el valor del selector de la ubicacioón 
@@ -256,6 +250,16 @@ export class HomeComponent{
       price = undefined;
     }
 
+    //Asignar evento
+    if(this.eventoActive){
+      if(this.selectedEvento){
+        event = `${this.selectedEvento}`;        
+      }
+      console.log(event);
+    }else{
+      event = undefined;
+    }
+
     //Asignar ubicación
     if(this.ubicacionActive && this.selectedUbicacion !== ""){
       location = `${this.selectedUbicacion}`;
@@ -268,11 +272,16 @@ export class HomeComponent{
 
     //  Acceso al servicio de filtro para que sólo aparezcan tarjetas tipo = "Mujer" 
     console.log("datos por parametro home: ", tipo, size, price, event, state);    
-    this.prendaService.filtroTipo(tipo,size,price,event,state,location).subscribe((data:Respuesta)=>{
-      this.prendas = data.data;
+    this.prendaService.filtroTipo(tipo,size,price,event,state,location).subscribe((data2:Respuesta)=>{
+      this.prendas = data2.data;
 
       console.log("desde api en angular this.prendas: ");
-      console.log(this.prendas);
+      console.log(data2.data);
+
+      console.log("solo data");
+      console.log(data2);
+      
+      
       
     })
 
