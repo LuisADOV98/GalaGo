@@ -10,6 +10,7 @@ import { Propietarioprenda } from 'src/app/models/propietarioprenda';
 import { ConversacionChatComponent } from '../conversacion-chat/conversacion-chat.component';
 import { ConversacionChatService } from 'src/app/shared/conversacion-chat.service';
 import { RespuestaPropietario } from 'src/app/models/respuesta-propietario';
+import { UserService } from 'src/app/shared/user.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class DetallePrendaComponent implements OnInit {
   idprenda:any;
 
   iduser1:any;
-  iduser2:any
+  iduser2:any;
   firstname:User;
   photo:User
   
@@ -33,21 +34,22 @@ export class DetallePrendaComponent implements OnInit {
               private location: Location,
               private router: Router, 
               private detalleService: DetalleprendaService,
-              private conversacionChatService: ConversacionChatService){
+              private conversacionChatService: ConversacionChatService,
+              private userService: UserService){
               
     
-          //  FORMA PARA PILLAR EL ID
+      //  FORMA PARA PILLAR EL ID
       this.idprenda = this.route.snapshot.paramMap.get("idprenda");
       console.log("ID:", this.idprenda)
 
 
 
-      //  FORMA PARA PILLAR EL PROPIETARIO
+    //  FORMA PARA PILLAR EL PROPIETARIO
     this.propietario = this.route.snapshot.paramMap.get('propietario');
     console.log("Propietario:", this.propietario)
 
 
-
+    this.iduser1 = this.userService.user.iduser;            
 
 
 
@@ -56,7 +58,7 @@ export class DetallePrendaComponent implements OnInit {
       (data:Respuesta) => {
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
         this.prenda = data.dataPrenda[0];
-
+        this.iduser2 = data.dataPrenda[0].iduser;
         // this.images = [
         //   this.prenda.photo1,
         //   this.prenda.photo2,
@@ -119,6 +121,10 @@ export class DetallePrendaComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // NECESITAMOS RELLENAR 
+  /* iduser1:any;
+  iduser2:any; */
+
   // navegarAdelante(): void {
   //   if (this.currentImageIndex > 0) {
   //     this.currentImageIndex--;
@@ -152,13 +158,15 @@ export class DetallePrendaComponent implements OnInit {
     console.log("IDPRENDA DEL PROPIETARIO:"+ this.idprenda)
     // this.router.navigate(["/conversacion-chat"], { queryParams: {idprenda: this.idprenda}});
     // this.router.navigate(["/conversacion-chat/:iduser2"], { queryParams: {idprenda: this.idprenda}});
-    this.router.navigate(["conversacion-chat", this.prenda.iduser]);
+    
     this.conversacionChatService.crearConversacion(this.iduser1,this.iduser2).subscribe(
       (data:RespuestaPropietario)=> {
         // Maneja la respuesta y asigna los detalles de la prenda a 'prenda'
           this.propietarioprenda = data.dataPropietario[0];
       }
     )
+
+    this.router.navigate(["conversacion-chat", this.prenda.iduser]);
 
   }
 

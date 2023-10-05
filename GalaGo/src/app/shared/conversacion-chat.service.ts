@@ -25,7 +25,12 @@ public obtenerConversacion(iduser1:number, iduser2:number):Observable<Object>{
 public crearConversacion(iduser1:number,iduser2:number):Observable<Object>{
   let parametro = {iduser1:iduser1, iduser2:iduser2}
   console.log(parametro);
-return this.http.post(this.url+"/chat",parametro);
+  return this.http.post(this.url+"/chat",parametro);
 }
 
+public crearMensaje(message:string,iduser:number,idchat:number):Observable<Object>{
+  let paramsMensaje ={message:message,iduser:iduser,idchat:idchat}
+  console.log(paramsMensaje);
+  return this.http.post(this.url+"/conversacion",paramsMensaje);
+}
 }
