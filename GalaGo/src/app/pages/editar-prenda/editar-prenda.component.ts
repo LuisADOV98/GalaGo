@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastComponent } from 'src/app/component/toast/toast.component';
 import { Prenda } from 'src/app/models/prenda';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
@@ -15,12 +16,14 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./editar-prenda.component.css']
 })
 export class EditarPrendaComponent {
-  modalInfo: string
-  // toast
-  public title: string;
-  public message: string;
+  modalInfo: string;
+
+  // TOAST
+  public titleToast: string = "";
+  public message: string = ""; 
   public activeToast: boolean = false;
-  // 
+
+  // MODAL
   @Output() mostrarModalPadre: EventEmitter<any> = new EventEmitter<any>();
   public modalOpen: Boolean = false
   urlImage: string;
@@ -71,31 +74,28 @@ export class EditarPrendaComponent {
       });
 }
 
-//recoge info del modal
-newPhoto(valor:string){
-  this.photo1 = valor;
-  this.photo2 = valor;
-  this.photo3 = valor;
-  this.photo4 = valor;
+  //recoge info del modal
+  newPhoto(valor:string){
+    this.photo1 = valor;
+    this.photo2 = valor;
+    this.photo3 = valor;
+    this.photo4 = valor;
 
-let arrPhotos = [this.photo1,this.photo2,this.photo3,this.photo4]
-  return arrPhotos
-}
+  let arrPhotos = [this.photo1,this.photo2,this.photo3,this.photo4]
+    return arrPhotos
+  }
 
-openModal(idprenda:number){
+  openModal(idprenda:number){
 
-this.modalOpen = true;
-this.prendaService.prendafotoid = idprenda;
-}
-closeModal(){
-  this.modalOpen = false;
-}
-confirmar(){
-
-this.closeModal()
-}
-
-
+    this.modalOpen = true;
+    this.prendaService.prendafotoid = idprenda;
+    }
+    closeModal(){
+      this.modalOpen = false;
+    }
+    confirmar(){
+      this.closeModal()
+    } 
 
 
   public editar(title:string,price:number,description:string,type:string,size:string,event:string,state:string){
@@ -105,8 +105,6 @@ this.closeModal()
     // console.log(newPrenda);
     
   console.log(newPrenda);
-  
-    
    
     if (title === "") {
       newPrenda.title = null
@@ -145,32 +143,38 @@ this.closeModal()
 
     this.prendaService.editarPrenda(newPrenda).subscribe((data: Respuesta) =>{
     
-    console.log(data.data);
+      console.log(data.data);
     
+      //TOAST 
       if (!data.error)
       {
         console.log('emtro');
-         this.message = "Se ha editado tu articulo"
-        this.title = "Editado"
-        this.activeToast = true
+        this.message = "Se ha editado tu articulo"
+        this.titleToast = "Editado"
+        this.activeToast = true //toast para funcion changeStateToast
       } 
-      else
-      console.log('salgp');
-      
-      this.message = "No se ha editado tu articulo"
-        this.title = "Articulo no editado"
-        this.activeToast = true
+      else{
+        console.log('salgp');
+        
+        this.message = "No se ha editado tu articulo"
+        this.titleToast = "ERROR"
+        this.activeToast = true //toast para funcion changeStateToast
+      }
     })
 
-    this.router.navigate(["/perfil"]);
-}
+    //TARDA UNOS SEGUNDOS EN SALIR DE LA PAGINA PARA QUE SE VEA EL TOAST
+    setTimeout(() => {
+      this.router.navigate(["/perfil"]);
+    }, ToastComponent.TOAST_TIME);   
+  }
+
+  //Cambia el estado TOAST para que toast se muestre
+  changeStateToast(state: boolean) {
+    this.activeToast = state;
+    console.log("changeStateToast",state);
+  }
   
-public irPerfil(){
-  this.router.navigate(["/perfil"]);
-}
-
-
-public changeStateToast(state: boolean) {
-  this.activeToast = state;
-}
+  public irPerfil(){
+    this.router.navigate(["/perfil"]);
+  }
 }

@@ -1,9 +1,11 @@
+<!-- contenedor del toastr  -->
+    <!-- isPut clase de css roja o verde  -->
 <div class="toast" *ngIf="showToast" [ngClass]="{'toast':isPut,'errorToast': !isPut}">
 
     <div class="toast-header" [ngClass]="{'toast-header ':isPut,'toast-header-error': !isPut}"></div>
 
     <div class="toast-body">
-        <strong class="title" [ngClass]="{'title':isPut,'title-error': !isPut}" >{{title}}:</strong>
+        <strong class="title" [ngClass]="{'titleToast':isPut,'titleToast-error': !isPut}" >{{titleToast}}:</strong>
         <p>{{message}}</p>
     </div>
 
