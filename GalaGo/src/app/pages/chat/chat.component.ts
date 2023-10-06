@@ -44,7 +44,7 @@ obtenerTodosLosChats(){
 console.log(this.userService.user);
 
 //this.userService.user.iduser está obteniendo la propiedad iduser de un objeto almacenado en el servicio userService es necesario NO se usa chatService?
-  this.chatService.getAllChat(this.userService.user.iduser).subscribe((res:any)=>{
+  this.chatService.getAllChat(this.userService.user?.iduser).subscribe((res:any)=>{
     console.log(res);
     
     // this.books = res.result;

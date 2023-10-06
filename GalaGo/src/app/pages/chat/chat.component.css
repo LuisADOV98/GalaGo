@@ -7,8 +7,40 @@ body{
     position: relative; 
     /* border: 0.5px red solid; */
 }
-
-
+.if{
+    /* background-color: var(--ligth_blue); */
+    /* border: solid 2px var(--pink); */
+    display: flex;
+    width: 90%;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 18px;
+    height: 500px;
+}
+.nube h3{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+.nube{
+    
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 60%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-image: url(../../../assets/langdingpage/burburja1.jpg)
+}
+.luis{
+    gap: 100px;
+}
 .Chats{
     
     height: 44px;
