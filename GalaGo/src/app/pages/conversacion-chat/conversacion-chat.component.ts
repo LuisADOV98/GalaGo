@@ -29,7 +29,6 @@ export class ConversacionChatComponent implements OnInit, AfterViewChecked {
   public prenda: any;
   mensajes:Mensaje[];
   propietarioPrenda:Propietarioprenda;
-  // texto='';
   @ViewChild("chatContainer") private chatContainer: ElementRef;
 
 
@@ -82,7 +81,7 @@ ngOnInit():void {
 
 
 // // Boton de enviar (input de mensaje)
-enviarMensajeNew(msg: string){
+enviarMensaje(msg: string){
   const mensaje = msg;
   const iduser1 = this.user.iduser;
   const idChat = this.conversacionChatService.idchat;
@@ -118,15 +117,6 @@ enviarMensajeNew(msg: string){
 
 }
 
-// actualizarContador() {
-//   const maxCaracteres = 50; // Establece el límite de caracteres
-//   const caracteresRestantes = maxCaracteres - this.texto.length;
-//   document.getElementById('contador').textContent = `${caracteresRestantes} caracteres restantes`;
-
-//   if (this.texto.length > maxCaracteres) {
-//     this.texto = this.texto.substring(0, maxCaracteres); // Limita el texto al máximo de caracteres
-//   }
-// }
 
 }
 

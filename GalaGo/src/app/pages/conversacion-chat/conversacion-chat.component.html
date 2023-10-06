@@ -21,14 +21,14 @@
     <div class="card-body" #chatContainer>
         <div *ngFor="let item of messages">
             <div [ngClass]="user.iduser === item.iduser ? 'text-right': 'text-left'">
-                <p [ngClass]="user.iduser === item.iduser ? 'userMsg': 'soporteMsg'">{{item.message}}</p>
+                <p [ngClass]="user.iduser === item.iduser ? 'userLogueado': 'propietarioPrendas'">{{item.message}}</p>
             </div>
         </div>
 
     </div>
     <form class="card-footer text-muted input-group">
-        <input maxlength="200" type="text" #texto class="form-control" placeholder="Escribe un mensaje">
-        <div class="input-group-append" (click)="enviarMensajeNew(texto.value); texto.value=''">
+        <input maxlength="32" type="text" #texto class="form-control" placeholder="Escribe un mensaje">
+        <div class="input-group-append" (click)="enviarMensaje(texto.value); texto.value=''">
             <span class="input-group-text" id="basic-addon2">Enviar</span>
         </div>
 
