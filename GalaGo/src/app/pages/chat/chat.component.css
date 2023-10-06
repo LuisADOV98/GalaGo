@@ -20,7 +20,16 @@ body{
     align-items: center;
     
 }
+/* #nochat{ 
+    background-image: url('/assets/imagenesChat/gatitoTriste.jpg');
+    display: flex;
+    justify-content: center;
+    
+    width: 300px;
+    height:400px;
+   
 
+} */
 
 h1.chatsText{
     /* width: 86px;
@@ -43,26 +52,30 @@ h1.chatsText{
 /* Samsung Galaxy S20 Ultra */
 @media screen and (max-width: 412px )
 {
-    body{
-    height: 800px;
-  }
+   
 
  } 
 
  /* Ipad mini */
  @media screen and (min-width: 768px )
  {
-    body{
-        height: 800px;
-      }
+  
        
+      h1.chatsText{
+       
+        font-size: 30px;
+        
+    }
 }
 /* ipad air */
 @media screen and (min-width: 820px )
 {
-    body{
-        height: 800px;
-      }
+    
+      h1.chatsText{
+       
+        font-size: 30px;
+        
+    }
 
 }
 

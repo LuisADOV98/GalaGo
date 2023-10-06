@@ -1,4 +1,4 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component,OnInit,Input, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { Mensaje } from 'src/app/models/mensaje';
 import { Location } from '@angular/common';
 
@@ -18,7 +18,7 @@ import { Propietarioprenda } from 'src/app/models/propietarioprenda';
   templateUrl: './conversacion-chat.component.html',
   styleUrls: ['./conversacion-chat.component.css']
 })
-export class ConversacionChatComponent implements OnInit {
+export class ConversacionChatComponent implements OnInit, AfterViewChecked {
   @Input() mensajeData:any;
   // mensaje: any
   // iduser1:any;
@@ -28,7 +28,8 @@ export class ConversacionChatComponent implements OnInit {
   public idPrenda: any;
   public prenda: any;
   mensajes:Mensaje[];
-  propietarioPrenda:Propietarioprenda
+  propietarioPrenda:Propietarioprenda;
+  @ViewChild("chatContainer") private chatContainer: ElementRef;
 
 
 //Detecta el cambio de mensaje que te indica los setTimeout
@@ -63,6 +64,13 @@ constructor(
     );
 
   }
+  ngAfterViewChecked(): void {
+    this.scroll();
+  }
+
+  private scroll(){
+    this.chatContainer.nativeElement.scrollTop = this.chatContainer.nativeElement.scrollHeight;
+  }
 
 
 ngOnInit():void {
@@ -73,9 +81,28 @@ ngOnInit():void {
 
 
 // // Boton de enviar (input de mensaje)
-enviarMensajeNew(msg: string){
+enviarMensaje(msg: string){
   const mensaje = msg;
   const iduser1 = this.user.iduser;
+  const idChat = this.conversacionChatService.idchat;
+  
+  // hacer post a la tabla mensaje
+  this.conversacionChatService.crearMensaje(mensaje, iduser1, idChat).subscribe(resp => {
+    console.log(resp);
+    // Obtenemos todos y los pintam os
+    this.conversacionChatService.obtenerConversacion(idChat).subscribe(
+      (data:any) => { 
+        
+       this.messages = data;
+       console.log(this.messages)
+        
+      },
+    );
+  })
+
+  
+
+  
   /* const iduser2 = this.iduser2; */
   // idChat
 
@@ -86,10 +113,9 @@ enviarMensajeNew(msg: string){
 
   /* this.conversacionService.crearMensaje() */
 
-  this.mensajes.push({iduser:1,message:msg})
+  /* this.mensajes.push({iduser:1,message:msg}) */
 
 }
-
 
 
 }

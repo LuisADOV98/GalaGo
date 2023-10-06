@@ -1,14 +1,4 @@
 
-body{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    width: 100%;
-    height: 844px;
-    /* position: relative;  */
-    /* border: 0.5px red solid; */
-}
-
 .page-item{
     margin-left: 10px;
     margin-bottom: 2px;
@@ -26,6 +16,17 @@ body{
 
 }
 
+
+.contenido_Chat{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.card-footer{
+    flex-shrink: 0;
+}
 
 .Chats{
     height: 44px;
@@ -58,6 +59,10 @@ h1.chatsText{
     line-height: 130%; 
     letter-spacing: 1.2px;
 }
+.bg-body-tertiary {
+   
+    margin-bottom: 8px;
+}
 div.container-fluid{
     height: 40px;
     width: 390px;
@@ -68,11 +73,19 @@ div.container-fluid{
     font-family: "Pavanam", sans-serif;
     font-size: 15px;
 }
-.card-body{
+/* .card-body{
     height: 83vh;/*consultar altura solo del body*/
-    overflow-y: auto; /* Hace que el contenido sea desplazable verticalmente cuando sea necesario */
+    /* overflow-y: auto; Hace que el contenido sea desplazable verticalmente cuando sea necesario */
     /* position: fixed; */
+/*}*/
+.card-body{
+    flex: 1;
+    overflow: auto;
 }
+input {
+    padding-left: 10px; /* Agrega un margen izquierdo de 10px */
+    padding-right: 10px; /* Agrega un margen derecho de 10px */
+  }
 input.form-control{
     margin-top: 10px;
 
@@ -91,8 +104,14 @@ input.form-control{
     font-size: large;
     
  }
+ .text-left{
+    text-align: left;
+}
+ .text-right{
+    text-align: right;
+}
 
-
+/* 
 .recibido{
     
         display: block;
@@ -112,7 +131,7 @@ strong.recibido{
 
 strong.enviado{
     margin: 9px 15px 0px 15px;
-}
+} */
 /* strong.recibido:before{
     border: 10px solid #73A4BD;
     content: '';
@@ -131,7 +150,7 @@ img.d-inline-block.align-text-top{
     width: 30px;
 }
 
-.userMsg{
+.userLogueado{
     display: block;
     float:right;
     background-color:#FDECEE;
@@ -141,9 +160,11 @@ img.d-inline-block.align-text-top{
     text-align: left;
     height: 30px;
     font-family: "Pavanam", sans-serif;
+    margin-right: 12px;
+    padding-left: 8px;
     }
     
-.soporteMsg{
+.propietarioPrendas{
         display: flex;
         float:left;
         background-color:#73A4BD;
@@ -153,6 +174,9 @@ img.d-inline-block.align-text-top{
         text-align: left;
         height: 30px;
         font-family: "Pavanam", sans-serif;
+        margin-left: 12px;
+        padding-left: 8px;
+
     }
 /* .bocadillo{
     position: relative;
@@ -174,7 +198,7 @@ img.d-inline-block.align-text-top{
     transform: rotate(20deg);
     margin: 20px 0px 0px 20px;
 } */
-div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounded-pill{
+/* div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounded-pill{
     display: block;
     float:right;
     background-color:#73A4BD;
@@ -186,12 +210,15 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
     font-family: "Pavanam", sans-serif;
     gap:5px;
     margin: 9px 15px 0px 15px;
-}
+} */
+
 
 /* Samsung Galaxy S20 Ultra */
 @media screen and (max-width: 412px )
 {
-  
+    /* .contenido_Chat{
+        background-color: #fa0707;
+    } */
    
     div.container-fluid{
         height: 40px;
@@ -208,9 +235,14 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
     }
    
 }
+
  /* Ipad mini */
- @media screen and (min-width: 768px )
+ @media screen and (min-width: 413px) and (max-width: 819px) 
  {
+    /* .contenido_Chat{
+        background-color: #13d230;
+    } */
+   
     .Chats{
         height: 70px;
         margin-top: 80px;
@@ -220,21 +252,7 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
         font-size: 45px;
         font-weight: lighter;
     }
-    .enviado{
-        height: 60px;
-       }
-    p.enviado.p-2{
-
-        font-size: x-large;
-    }
-       .recibido{
-        height: 60px;
-       }
-
-       p.recibido.p-2{
-
-        font-size: x-large;
-    }
+   
     div.container-fluid{
         height: 80px;
         /* display: flex;
@@ -245,6 +263,7 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
         margin-right: 5px;
         font-size:xx-large;
         gap:5x;
+        margin-left: -80px;
     }
     img.d-inline-block.align-text-top{
         height: 80px;
@@ -260,34 +279,35 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
         margin-top: 30px;
         font-size: x-large;
     }
+    .userLogueado{
+        
+        height: 60px;
+        font-size: x-large;
+        }
+        
+    .propietarioPrendas{
+           
+        height: 60px;
+        font-size: x-large;  
+        }
 }
 /* Ipad Air */
 @media screen and (min-width: 820px )
 {
+
+    /* .contenido_Chat{
+        background-color: #2d08fc;
+    } */
     .Chats{
         height: 80px;
         margin-top: 90px;
         gap:35px;
     }
     .chatsText{
-        font-size: 50px;
+        font-size: 200px;
         font-weight: lighter;
     }
-    .enviado{
-        height: 60px;
-       }
-    p.enviado.p-2{
-
-        font-size: x-large;
-    }
-       .recibido{
-        height: 60px;
-       }
-
-       p.recibido.p-2{
-
-        font-size: x-large;
-    }
+    
     div.container-fluid{
         height: 85px;
         display: flex;
@@ -297,19 +317,32 @@ div.position-relative.py-2.px-4.text-bg-secondary.border.border-secondary.rounde
     .textUser{
         margin-right: 5px;
         font-size:xx-large;
+        margin-left: -80px;
+        
     }
     img.d-inline-block.align-text-top{
         height: 80px;
         width: 100px;
+        margin-left: -200px;
     }
    
     input.form-control.ng-untouched.ng-pristine.ng-valid{
-        margin-top: 165px;
+        margin-top: 30px;
     }
     span#basic-addon2.input-group-text{
         margin-top: 165px;
         font-size: x-large;
     }
+
+    .userLogueado{
+        
+        height: 60px;
+        font-size: x-large;
+        }
+        
+    .propietarioPrendas{
+           
+            height: 60px;
+            font-size: x-large;  
+        }
 }
-
-

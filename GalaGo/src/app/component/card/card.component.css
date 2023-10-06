@@ -2,7 +2,7 @@
     position: relative;
     text-align: left;
     width: 173px;
-    height: 222px;
+    height: 218px;
     font-size: 13px;
     font-family: "Pavanam";
     /* margin-left: 12px; */
@@ -48,7 +48,9 @@
         position: relative;
         border: 0.2px solid rgba(58, 58, 58, 0.37);
         width: 171px;
-        height: 36.16px;
+        height: 38px;
+        /* top: -8px; */
+        background-color: var(--white);
     }
 
 

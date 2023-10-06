@@ -1,5 +1,5 @@
 <!--  -->
-<body>
+<!-- 
     <div class="contenido_Chat">
         <div class="Chats">
             <h1 class="chatsText">Chats</h1>
@@ -8,30 +8,30 @@
         <app-tarjeta-chat [chatData]="chat"></app-tarjeta-chat>
     </div>
     </div>
-</body>
+-->
 
 
 
 
-<!-- <body>
+
     <div class="contenido_Chat">
         <div class="Chats">
             <h1 class="chatsText">Chats</h1>
-        </div> -->
+        </div>
         <!-- <div *ngIf = "chats.length >=1; else noChat" class="condicional_ngIf"> -->
-        <!-- <div *ngIf="chats && chats.length > 0; else noChat" class="condicional_ngIf"> -->
-            <!-- <div class="condicional_ngIf">   -->
-            <!-- <ng-container *ngFor="let chat of chats">
-                <br> -->
-                <!-- <app-tarjeta-chat [chat]="chat" [chats]="chats"></app-tarjeta-chat> -->
-                <!-- <app-tarjeta-chat [chat]="chat"></app-tarjeta-chat>
-
-            </ng-container> -->
-        <!-- </div> -->
+        <div class="containerChat" *ngIf="chats && chats.length > 0; else noChat" class="condicional_ngIf">
+            <div class="condicional_ngIf">
+                <ng-container *ngFor="let chat of chats">
+                
+                    <app-tarjeta-chat [chatData]="chat" ></app-tarjeta-chat>
+               
+                </ng-container>
+            </div>
+        </div>
                 
         <!--En caso que el array chats este vacío se deberá mostrar un mensaje indicándolo (haciendo
         uso del *ngIf)-->
-        <!-- <ng-template #noChat >No hay chats en este momento</ng-template>
+        <ng-template #noChat >No hay chats en este momento</ng-template>
  
     </div>
-</body> -->
+

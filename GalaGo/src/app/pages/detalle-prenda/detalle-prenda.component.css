@@ -31,18 +31,20 @@
     margin-bottom: 0px; 
     margin-top: 35px; 
 }  
-       
+       .todo{
+        margin-bottom: 300px;
+       }
          .foto { 
             position: absolute; 
             top: 48px; 
             width: 390px; 
-            height: 554px; 
+            height: 500px; 
             flex-shrink: 0; 
             object-fit:cover; 
         } 
          
         .texto { 
-            margin-top: 565.84px; 
+            margin-top: 510px; 
             position: absolute; 
             width: 170px; 
             height: 36px; 
@@ -63,7 +65,7 @@
        
        
             .titulo { 
-                margin-left: 16px; 
+                margin-left: 10px; 
                 margin-top: 5px; 
                 font-size: 24px; 
             } 
@@ -90,7 +92,7 @@
  
             .editar{ 
                 position: absolute; 
-                top: 160px; 
+                top: 220px; 
                 left: 250px; 
                 background: var(--dark_blue); 
                 color: aliceblue; 
@@ -106,9 +108,9 @@
             } 
      
             .talla{ 
-                color: var(--dark_blue); 
+                /* color: var(--dark_blue);  */
                 font-family: "Pavanam"; 
-                font-size: 20px; 
+                font-size: 19px; 
                 font-style: normal; 
                 font-weight: 400; 
                 /* position: absolute;  */
@@ -131,7 +133,7 @@
                 /* position: absolute;  */
                 top: 80px; 
                 left: 16px; 
-                font-size: 20px; 
+                font-size: 19px; 
                 font-style: normal; 
                 font-weight: 400; 
 
@@ -140,7 +142,7 @@
                 /* position: absolute;  */
                 top: 110px; 
                 left: 16px; 
-                font-size: 20px; 
+                font-size: 19px; 
                 font-style: normal; 
                 font-weight: 400; 
             } 
@@ -148,11 +150,11 @@
                 /* position: absolute;  */
                 top: 150px; 
                 left: 16px; 
-                font-size: 20px; 
+                font-size: 19px; 
                 font-style: normal; 
                 font-weight: 400; 
                 flex-wrap: wrap;
-                height: 50px; 
+                height: 150px; 
                 width: 230px;
                 margin-bottom: 20px;
                 } 
@@ -249,11 +251,12 @@
                 } 
             } 
      .info{
+        margin-left: 5px;
         width: 340px;
         height: 250px;
         gap: 15px;
-        padding: 10px;
-        bottom: 20px;
+        padding: 5px;
+        bottom: 0px;
      }
 
      

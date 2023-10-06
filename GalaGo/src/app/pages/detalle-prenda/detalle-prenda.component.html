@@ -59,19 +59,19 @@
             </div>
           </div>
          <!-- HASTA AQUI boton -->
-
+      <div class="todo">
         <div class="titulo">{{detalleService.prenda?.title}}</div>
             
         <!-- linea negra -->
         <div class="linea"></div> 
             <div class="info">
-        <div class="talla">Talla {{detalleService.prenda?.size}} EU</div>
+        <div class="talla">- Talla {{detalleService.prenda?.size}} EU</div>
 
         <div class="precio">{{detalleService.prenda?.price}}€</div>
-        <div class="estado">{{detalleService.prenda?.state}}</div>
-        <div class="ubicacion">Ubicado en {{detalleService.prenda?.location}}</div>
+        <div class="estado">- {{detalleService.prenda?.state}}</div>
+        <div class="ubicacion">- Ubicado en {{detalleService.prenda?.location}}</div>
         
-        <div class="descripcion">{{detalleService.prenda?.description}}</div>
+        <div class="descripcion">- {{detalleService.prenda?.description}}</div>
 
         </div>
           <!-- detalle-prenda.component.html -->
@@ -87,5 +87,5 @@
     </div>
 
 </div>
-
+</div>
 <!-- <p>{{prenda | json}}</p> -->
