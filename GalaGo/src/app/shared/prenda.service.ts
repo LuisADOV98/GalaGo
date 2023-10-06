@@ -21,7 +21,7 @@ export class PrendaService {
   //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
     console.log(`${this.url}/landingpage`);
-    return this.http.get(`${this.url}/landingpage`)
+    return this.http.get("https://apirestgalago.vercel.app");
    }
 
  
