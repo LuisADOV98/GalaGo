@@ -12,7 +12,7 @@ public mensaje:Mensaje;
 public propietarioPrenda : User;
 public idchat:number;
 // private url: string ="http://localhost:3000"
-private url:string = "https://apirestgalago.vercel.app"
+private url:string = "https://api-rest-gala-go.vercel.app"
   constructor(private http: HttpClient) { }
 
 //obtiene chat para ver la conversación

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
   // private url:string = "http://localhost:3000";
-  private url:string = "https://apirestgalago.vercel.app"
+  private url:string = "https://api-rest-gala-go.vercel.app"
   public user:User;
   public logueado: boolean;
   
