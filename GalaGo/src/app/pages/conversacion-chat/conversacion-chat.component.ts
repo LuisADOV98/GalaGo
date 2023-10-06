@@ -47,7 +47,8 @@ constructor(
    this.user =this.userService.user;
   //  this.
     
-    this.iduser2 = this.activatedRoute.snapshot.paramMap.get("iduser2");
+  // COMENTO PARA PROBAR A ASIGNAR EL IDUSER2 DE DETALLESERVICE
+    // this.iduser2 = this.activatedRoute.snapshot.paramMap.get("iduser2");
     
 
     this.propietarioPrenda = this.conversacionChatService.propietarioPrenda;

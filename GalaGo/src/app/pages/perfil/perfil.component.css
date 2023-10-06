@@ -184,17 +184,17 @@
     }
 
     /* Si sólo aparece una prenda */
-    /* .unaPrenda{
-        display: flex;
+    .unaPrenda{
+        /* display: flex;
         justify-content: center;
         align-items: center;
         width: 390px;
         flex-wrap: wrap;  
         padding: 7px;
-        gap: 14px;
+        gap: 14px; */
         margin-left: 10px;
         margin-top: 14px;
-    }  */
+    } 
    
     @media screen and (min-width: 768px){
     /* .app-card{

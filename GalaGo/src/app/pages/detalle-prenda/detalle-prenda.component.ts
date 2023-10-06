@@ -23,7 +23,6 @@ export class DetallePrendaComponent implements OnInit {
  public prenda: Prenda
 
   public idprenda:any;
-
   public iduser1:any;
   public iduser2:any;
   public firstname:User;
@@ -50,6 +49,12 @@ export class DetallePrendaComponent implements OnInit {
       this.user = this.userService.user;
       console.log(this.user);
       console.log(this.detalleService.prenda);
+      
+      //se usa para conversación chat, lo tenia Janet en su rama mensaje
+      this.iduser1 = this.userService.user.iduser;
+      this.iduser2 = this.detalleService.prenda;
+      console.log("iduser2 detalle prenda");
+      console.log(this.iduser2);
       
       
   }
@@ -80,7 +85,7 @@ export class DetallePrendaComponent implements OnInit {
     console.log("IDPRENDA DEL PROPIETARIO:"+ this.idprenda)
 
     
-    this.conversacionChatService.crearConversacion(this.iduser1,this.iduser2).subscribe(
+    this.conversacionChatService.crearConversacion(this.iduser1,this.detalleService.prenda.iduser).subscribe(
       (resp:RespuestaPropietario)=> {
         // CUANDO crea el nuevo chat devuelve el propietarioPrenda
           this.conversacionChatService.propietarioPrenda = resp.data[0];

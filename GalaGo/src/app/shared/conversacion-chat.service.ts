@@ -14,9 +14,9 @@ public idchat:number;
 private url: string ="http://localhost:3000"
   constructor(private http: HttpClient) { }
 
+//obtiene chat para ver la conversación
 public obtenerConversacion(idchat:number):Observable<Object>{
   return this.http.get(this.url+`/conversacion?idchat=${idchat}`);
-  
 }
 
 public crearConversacion(iduser1:number,iduser2:number):Observable<Object>{
