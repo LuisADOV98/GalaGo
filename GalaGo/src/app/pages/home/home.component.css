@@ -225,26 +225,28 @@ element.style{
   padding: 7px;
   gap: 14px;
   margin-left: 10px;
-  margin-top: 14px;
+  margin-top: 13px;
 }
 
 /* Si sólo aparece una prenda */
 .cardsContainerUnaPrenda{
   height: 45vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   width: 390px;
   flex-wrap: wrap;  
-  padding-left: 5px;
+  /* padding-left: 5px; */
+  padding: 7px;
   gap: 14px;
-  margin-top: 14px;
+  margin-top: 12px;
+  margin-left: 10px;
 }
 
 /* CUANDO NO HAY PRENDAS */
 .containerNOcards{
   width: 390px;
-  /* height: 51vh; */
+  height: 45vh;
   /* border: red 2px solid; */
   /* z-index: 10; */
   background-image: url("../../../assets/home/mujerAmarillo.png");

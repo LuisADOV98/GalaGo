@@ -180,7 +180,7 @@
 </div>
 
 <!-- Si hay una o dos prendas sale en el centro con justify-content = center y con más tamaño de container -->
-<div class="cardsContainerUnaPrenda" *ngIf="prendas.length < 3">
+<div class="cardsContainerUnaPrenda" *ngIf="prendas.length > 0 && prendas.length < 3">
     <app-card 
         class="app-card" 
         *ngFor="let prenda of prendas" 
@@ -191,7 +191,7 @@
 </div>
 
 <!-- TAMAÑO CONTENEDOR SI NO HAY PRENDAS Y MENSAJE DE QUE NO LAS HAY -->
-<div *ngIf="prendas?.length === 0" class="containerNOcards">
+<div *ngIf="prendas.length === 0" class="containerNOcards">
    <div class="sorry">
         <h2>Lo siento, no hay artículos</h2>
    </div>
