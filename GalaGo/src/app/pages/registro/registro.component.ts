@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastComponent } from 'src/app/component/toast/toast.component';
 import { Prenda } from 'src/app/models/prenda';
 import { Respuesta } from 'src/app/models/respuesta';
 import { User } from 'src/app/models/user';
@@ -23,6 +24,11 @@ export class RegistroComponent {
   public ubicacion: string
   public arrUbicacion:string[]
   public selectedUbicacion: string;
+
+    // TOAST
+    public titleToast: string = "";
+    public message: string = ""; 
+    public activeToast: boolean = false;
   
 
   constructor(private formBuilder: FormBuilder, private route: Router, private userService: UserService){
@@ -32,8 +38,12 @@ export class RegistroComponent {
     this.prenda = new Prenda("",0,"","","","","","","","","")
 
     
-    this.arrUbicacion = ["Comunidad de Madrid","Murcia","Aragon","Comundidad de Valencia"] 
+    //Optios de ubicacion de userService desde la api
+    this.arrUbicacion = [];
     this.selectedUbicacion = "";
+    this.userService.enumLocation().subscribe((data:Respuesta)=>{
+      this.arrUbicacion = data.dataEnum;
+    });   
 
   }
 
@@ -54,17 +64,32 @@ export class RegistroComponent {
     //Llama a la función registro con el userService, envia el newUser y asigna en el else la respuesta al newUser
     this.userService.registro(newUser).subscribe((data:Respuesta)=>{
       if(data.error){
-        console.log("Error en user");
+        console.log("Error en user");        
+        this.message = "Lo siento, se ha producido un error al registrarse"
+        this.titleToast = "ERROR"
+        this.activeToast = true //toast para funcion changeStateToast
+
       }else{
         newUser = data.dataUser;
         console.log("this.arrayUser",newUser);
-        
+        this.message = "Se ha registrado correctamente"
+        this.titleToast = "Registro exitoso"
+        this.activeToast = true //toast para funcion changeStateToast        
       }
     });
-
+    //TARDA UNOS SEGUNDOS EN SALIR DE LA PAGINA PARA QUE SE VEA EL TOAST
+    setTimeout(() => {
     this.route.navigate(['/login']);
-    // this.route.navigate(['/login']);
+    }, ToastComponent.TOAST_TIME);   
+
   }
+
+  //Cambia el estado TOAST para que toast se muestre
+  changeStateToast(state: boolean) {
+    this.activeToast = state;
+    console.log("changeStateToast",state);
+  }
+
   //Valida los datos del formulario html
   private buildForm(){
     const minPassLength = 8;

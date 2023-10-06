@@ -65,3 +65,8 @@
     <button type="submit" class="btn" (click)="modificarUser(photo.value,name.value,last_name.value,ubicacion.value,email.value,password.value)">Guardar</button>
     <a class="cancelar" (click)="cancelar()">Cancelar</a>
 </div>
+
+<!-- TOAST -->
+<ng-container *ngIf="activeToast">
+    <app-toast [titleToast]="titleToast" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+</ng-container>

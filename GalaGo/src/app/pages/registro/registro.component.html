@@ -132,6 +132,11 @@
         <img src="../../../assets/imgRegister/man-playing-with-confetti-party 1.png" alt="" class="foto">
       </div>
     </div>
+
+<!-- TOAST -->
+<ng-container *ngIf="activeToast">
+  <app-toast [titleToast]="titleToast" [message]="message" (eventToast)="changeStateToast($event)"></app-toast>
+</ng-container>
     
 
     

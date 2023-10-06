@@ -6,6 +6,7 @@ import { PrendaService } from 'src/app/shared/prenda.service';
 import { UserService } from 'src/app/shared/user.service';
 import { Respuesta } from 'src/app/models/respuesta';
 import { Location } from '@angular/common';
+import { ToastComponent } from 'src/app/component/toast/toast.component';
 @Component({
   selector: 'app-publicar-prenda',
   templateUrl: './publicar-prenda.component.html',
@@ -18,7 +19,12 @@ export class PublicarPrendaComponent {
   public arrEvento: string[] 
   public arrEstado:string[] 
   public arrUbicacion:string[]
-  public prenda: Prenda 
+  public prenda: Prenda;
+
+  // toast
+  public titleToast: string = "";
+  public message: string = ""; 
+  public activeToast: boolean = false;
 
   constructor(public router: Router, public prendaService:PrendaService, public userService:UserService, private location: Location){
 
@@ -66,19 +72,38 @@ export class PublicarPrendaComponent {
     this.prendaService.addPrenda(newPrenda).subscribe((data:Respuesta) =>{
       this.prendas = data.data
 
-      if (!data.error){
-        alert("Se ha añadido tu prenda")
-      } else
-      alert("Algo ha salido mal")
+      //TOAST 
+      if (!data.error)
+      {
+        console.log('emtro');
+        this.message = "Se ha publicado el articulo correctamente"
+        this.titleToast = "Publicación con éxito"
+        this.activeToast = true //toast para funcion changeStateToast
+        console.log(this.titleToast);
+        console.log(this.activeToast);
+        
+      } 
+      else{
+        console.log('salgp');
+        
+        this.message = "No se ha publicado el articulo"
+        this.titleToast = "ERROR"
+        this.activeToast = true //toast para funcion changeStateToast
+      }
     })
-   
-    this.router.navigate(["/perfil"]);
-    
+    //TARDA UNOS SEGUNDOS EN SALIR DE LA PAGINA PARA QUE SE VEA EL TOAST
+    setTimeout(() => {
+      this.router.navigate(["/perfil"]);
+    }, ToastComponent.TOAST_TIME);
   }
 
     goBack(){
       this.location.back();
     }
 
+  //Cambia el estado TOAST para que toast se muestre
+  changeStateToast(state: boolean) {
+    this.activeToast = state;
+    console.log("changeStateToast",state);
+  }
 } 
-

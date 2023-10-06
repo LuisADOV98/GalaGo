@@ -1,22 +1,22 @@
 *{
     font-family: 'Montserrat light';
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .toast {
     position: fixed;
-    top: 85px;
+    top: 40px;
     right: 10px;
     z-index: 99999;
-    width: 250px;
-    height: 60px;
+    width: 280px;
+    height: 90px;
 
-    border: 1px solid #3eb738;
+    border: 0.5px solid #78bc56;
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: opacity 0.2s ease-in-out;
     opacity: 90;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
 
     display: flex;
     flex-direction: row;
@@ -24,13 +24,13 @@
   }
   .errorToast{
     position: fixed;
-    top: 90px;
+    top: 40px;
     right: 10px;
     z-index: 99999;
-    width: 300px;
+    width: 280px;
     height: 70px;
 
-    border: 1px solid #b40528;
+    border: 0.5px solid rgba(231, 103, 103, 0.797);
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: opacity 0.2s ease-in-out;
@@ -43,31 +43,35 @@
   }
 
 
-
   .toast-header {
     width: 15px;
-    background-color: #3eb738;
-
+    background-color:  #44b70a;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
   }
   .toast-header-error {
     width: 15px;
     background-color: #b40528;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 
   }
 
-
   .toast-body{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     column-gap: 10px;
+    width: 280px;
   }
   .toast-body p{
     color:  #000000;
   }
-  .title{
-    color:  #3eb738;
+  .titleToast{
+    color:  #44b70a;
   }
-  .title-error{
-    color:  #b40528;
+  .titleToast-error{
+    color:  #ec3434;
   }
