@@ -10,22 +10,17 @@ export class PrendaService {
   public prenda: Prenda;
   public prendas: Prenda[]
   public prendafotoid: number;
-  // private url:string = "http://localhost:3000"
-  private url:string = "https://api-rest-gala-go.vercel.app"
+  private url:string = "http://localhost:3000"
+  // private url:string = "https://api-rest-gala-go.vercel.app"
   constructor(private http: HttpClient) { 
      
   }
 
-  private httpOptions: { headers: HttpHeaders } = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
+
   
   //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
-    console.log(`${this.url}/landingpage`);
-    return this.http.get("https://api-rest-gala-go.vercel.app/landingpage", this.httpOptions);
+    return this.http.get(this.url + "/landingpage");
    }
 
  
