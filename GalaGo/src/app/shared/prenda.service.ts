@@ -11,7 +11,7 @@ export class PrendaService {
   public prendas: Prenda[]
   public prendafotoid: number;
   // private url:string = "http://localhost:3000"
-  private url:string = "uttps://apirestgalago.vercel.app"
+  private url:string = "https://apirestgalago.vercel.app"
   constructor(private http: HttpClient) { 
      
   }
@@ -20,6 +20,7 @@ export class PrendaService {
   
   //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
+    console.log(`${this.url}/landingpage`);
     return this.http.get(`${this.url}/landingpage`)
    }
 
