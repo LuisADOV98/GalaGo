@@ -20,13 +20,14 @@ export class PerfilComponent {
   public misPrendas: Prenda[];
   public misFavoritas: Prenda[]; //favoriteCards
   public prenda: Prenda;
-
   public user: User;
-  public mostrarModal = false;
-  mostrarModal1 = false
-  idsFavoritasParaEsteUsuario: Prenda[] = [];
+  public idsFavoritasParaEsteUsuario: Prenda[] = [];
 
-  todasLasPrenas: any;
+  // MODAL
+  public mostrarModal = false;
+  public mostrarModal1 = false
+  
+  public todasLasPrenas: any;
 
   @ViewChild('refHijo') hijo: CardComponent
 
@@ -111,11 +112,6 @@ export class PerfilComponent {
     this.prendaService.prenda = prenda;
     console.log("perfil:");
     console.log(prenda);
-
-
-
-
-
   }
 
   mostrarMisPrendas() {

@@ -8,24 +8,25 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ToastComponent {
 
   //los recive del padre
-  @Input() title: string;
-  @Input() message: string;
-  @Output() eventToast = new EventEmitter<boolean>() ;
+  @Input() titleToast: string; //envia titulo al padre
+  @Input() message: string; //envia mensaje al padre
+  @Output() eventToast = new EventEmitter<boolean>() ; //recoge el evento que el padre emite
 
   public showToast: boolean = true;
   public isPut : boolean = true;
-  public static readonly TOAST_TIME = 3000;
+  public static readonly TOAST_TIME = 1000; //tiempo que esta activo 
 
 
-  constructor() {}
+  constructor() {
+    console.log("event toast desde toast:");
+    console.log(this.eventToast);
+  }
 
   ngOnInit(): void {
-
-    if(this.title == 'ERROR'){
+    if(this.titleToast == 'ERROR'){
       this.isPut = false;
     }
     this.show() 
-
   }
 
  public show() {
