@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Prenda } from '../models/prenda';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -16,12 +16,16 @@ export class PrendaService {
      
   }
 
- 
+  private httpOptions: { headers: HttpHeaders } = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
   
   //  ------ IMPRIMIR PRENDAS ------ //
   public getPrenda():Observable<Object> {
     console.log(`${this.url}/landingpage`);
-    return this.http.get("https://apirestgalago.vercel.app");
+    return this.http.get("https://apirestgalago.vercel.app/landingpage", this.httpOptions);
    }
 
  
