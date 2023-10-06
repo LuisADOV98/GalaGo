@@ -6,9 +6,9 @@
 </div> -->
 
 <div class ="padre">
-       
-    <img [src]="chatData.photo" class="imagen" (click)="irMensajes()" alt="...">
-
+       <div class="foto">
+    <img [src]="chatData.photo" (click)="irMensajes()" alt="...">
+    </div>
     <div class ="column1">
     <!--Comunicación Padre-Hijo desde el hijo tarjeta-chat.component.ts chat va llamar a cada atributo foto,nombre, prenda,hora-->
         <div class="row1">
@@ -25,10 +25,10 @@
             <span class="position-absolute top-0 start-2 translate-middle badge rounded-pill bg-secondary">2 <span class="visually-hidden">unread</span></span>
             </button>
         </div> --> 
-        <div class="linea"></div>
+        
     </div>
 </div>
-
+<div class="linea"></div>
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- LO QUE CAMBIASTE CON CRISTINA PARA QUE CAMBIARA LA MAQUETACIÓN -->
