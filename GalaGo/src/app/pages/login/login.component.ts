@@ -52,6 +52,11 @@ export class LoginComponent {
       }
     })
   }
+  //Cambia el estado TOAST para que toast se muestre
+  changeStateToast(state: boolean) {
+    this.activeToast = state;
+    console.log("changeStateToast",state);
+  }
 }
 
 

@@ -58,13 +58,13 @@
             <p>Aun no tienes articulos...</p>
         </div>
 
-        <div *ngIf="misPrendas?.length > 1" class="masDeUnaPrendaMia">
+        <div *ngIf="misPrendas?.length > 0" class="masDeUnaPrendaMia">
             <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" (prendaDeleted)="deletePrenda($event)"></app-card>
         </div>
 
-        <div *ngIf="misPrendas?.length === 1" class="unaPrenda">
+        <!-- <div *ngIf="misPrendas?.length === 1" class="unaPrenda">
             <app-card class="app-card" *ngFor="let prenda of misPrendas" [prenda]="prenda" [editable]="true" (editarPrenda2)="editarPrenda2($event)" (prendaDeleted)="deletePrenda($event)"></app-card>
-        </div>
+        </div> -->
     </div>
 
     <!-- Si pincha en favoritos mis-prendas pasa a false y aparece esta ng-templete como sustituto (cards favoritas)-->
