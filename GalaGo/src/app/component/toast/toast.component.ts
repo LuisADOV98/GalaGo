@@ -14,7 +14,7 @@ export class ToastComponent {
 
   public showToast: boolean = true;
   public isPut : boolean = true;
-  public static readonly TOAST_TIME = 1000; //tiempo que esta activo 
+  public static readonly TOAST_TIME = 1700; //tiempo que esta activo 
 
 
   constructor() {

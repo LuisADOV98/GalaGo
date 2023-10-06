@@ -8,7 +8,8 @@ import { Propietarioprenda } from '../models/propietarioprenda';
   providedIn: 'root'
 })
 export class DetalleprendaService {
-  private url:string = "http://localhost:3000"
+  // private url:string = "http://localhost:3000"
+  private url:string = "https://apirestgalago.vercel.app/"
   public prenda: Prenda;
   public iduser: Propietarioprenda;
   public images: string[] = [];

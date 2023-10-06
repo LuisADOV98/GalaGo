@@ -10,7 +10,8 @@ export class PrendaService {
   public prenda: Prenda;
   public prendas: Prenda[]
   public prendafotoid: number;
-  private url:string = "http://localhost:3000"
+  // private url:string = "http://localhost:3000"
+  private url:string = "https://apirestgalago.vercel.app/"
   constructor(private http: HttpClient) { 
 
      

@@ -8,7 +8,8 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class ChatService {
-  private url:string = "http://localhost:3000";
+  // private url:string = "http://localhost:3000";
+  private url:string = "https://apirestgalago.vercel.app/"
   constructor(private http: HttpClient) { }
 
 
