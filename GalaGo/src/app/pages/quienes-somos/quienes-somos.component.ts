@@ -13,7 +13,7 @@ export class QuienesSomosComponent {
   constructor(private userService: UserService){
 
     this.tarjetas = [
-                      new Desarrolladores("Janet Rojas", "Full Stack Developer", "../../../assets/quienesSomos/janet.png", "https://github.com/JanetRW"),
+                      new Desarrolladores("Janet Rojas", "Full Stack Developer", "../../../assets/quienesSomos/janetRW.jpeg", "https://github.com/JanetRW"),
                       new Desarrolladores("Mabel San Román", "Full Stack Developer", "../../../assets/quienesSomos/mabel.jpeg", "https://github.com/masadepizza"),
                       new Desarrolladores("Luis De Oliveira", "Full Stack Developer", "../../../assets/quienesSomos/luis 2.jpg", "https://github.com/LuisADOV98"),
                       new Desarrolladores("Cristina Muñoz", "Full Stack Developer", "../../../assets/quienesSomos/cristina.jpg", "https://github.com/cmr68"),
