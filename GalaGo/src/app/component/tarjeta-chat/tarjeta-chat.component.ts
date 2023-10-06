@@ -26,7 +26,7 @@ export class TarjetaChatComponent {
   let propietarioPrenda = new User(this.chatData.firstname,this.chatData.surname,"","","",this.chatData.photo,0);
   this.conversacionChatService.propietarioPrenda= propietarioPrenda;
   this.conversacionChatService.idchat =this.chatData.idchat;
-console.log(this.conversacionChatService.propietarioPrenda)
+  console.log(this.conversacionChatService.propietarioPrenda)
   this.router.navigate(["/conversacion-chat"]);
 }
 
